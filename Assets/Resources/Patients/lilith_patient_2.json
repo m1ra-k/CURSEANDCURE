@@ -1,7 +1,7 @@
 {
     "healingRanges": [
-        { "start": 0, "end": 10},
-        { "start": 0, "end": 10},
-        { "start": 0, "end": 10}
+        { "yPosition": 0, "height": 10},
+        { "yPosition": 0, "height": 10},
+        { "yPosition": 0, "height": 10}
     ]
 }

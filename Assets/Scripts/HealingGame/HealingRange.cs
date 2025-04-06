@@ -5,12 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class HealingRange
 {
-    public int start;
-    public int end;
+    public int yPosition;
+    public int height;
 
-    public HealingRange(int start, int end)
+    public HealingRange(int yPosition, int height)
     {
-        this.start = start;
-        this.end = end;
+        this.yPosition = yPosition;
+        this.height = height;
     }
 }
