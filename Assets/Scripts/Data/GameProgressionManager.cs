@@ -16,18 +16,17 @@ public string currentScene;
 
     [Header("[State]")]
     public int sceneNumber;
+    public int eventNumber;
     public bool transitioning;
     public string previousScene;
 
     [Header("[Start Screen]")]
     private Button playButton;
     
-    [Header("[Restaurant Overworld]")]
-    public GameObject ravi;
+    [Header("[Overworld]")]
     public GameObject dialogueCanvas;
-    public GameObject tutorialRestaurantOverworld;
-    public GameObject hiddenWall;
-    private DialogueSystemManager dialogueCanvasDialogueSystemManager;
+    public GameObject tutorial;
+    public DialogueSystemManager dialogueSystemManager;
     public bool currentlyTalking;
     public bool facingUp;
     public bool finishedCurrentRound;
@@ -85,6 +84,7 @@ public string currentScene;
                 break;
 
             case "Overworld":
+                dialogueSystemManager = GameObject.FindWithTag("Dialogue").GetComponentInChildren<DialogueSystemManager>();
                 break;
 
             case "HealingGame":

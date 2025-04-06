@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterDialogueData : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public List<TextAsset> characterDialogues = new();
+    public GameProgressionManager GameProgressionManager;
+
+    void Awake()
+    {
+        GameProgressionManager = FindObjectOfType<GameProgressionManager>();
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.KeypadEnter) && CanTalk())
+        {
+            // TODO: afia
+            GameProgressionManager.dialogueSystemManager.SetVisualNovelJSONFile(null);    
+        }
+    }
+
+    // TODO: afia
+    bool CanTalk()
+    {
+        return false;
     }
 }
