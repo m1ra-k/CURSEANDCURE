@@ -139,19 +139,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511715411906664142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a45d5d1be5ba44746bf9675ec79018b7, type: 3}
+  m_Script: {fileID: 11500000, guid: a99d5f2908756984d977c6866a8d0137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 
-  sceneNumber: -1
-  ravi: {fileID: 0}
+  fadeEffect: {fileID: 0}
+  blackTransition: {fileID: 0}
+  sceneNumber: 0
+  eventNumber: 0
   transitioning: 0
-  audioClips:
-  - {fileID: 8300000, guid: 9b511e13680590c4dafa099436842b26, type: 3}
-  - {fileID: 8300000, guid: 98ee901de61ed1e4cbbdc65090986196, type: 3}
-  - {fileID: 8300000, guid: 65dc797f3dde2704e8d0005be865b8a5, type: 3}
+  previousScene: 
+  dialogueCanvas: {fileID: 0}
+  tutorial: {fileID: 0}
+  dialogueSystemManager: {fileID: 0}
+  currentlyTalking: 0
+  facingUp: 0
+  finishedCurrentRound: 0
+  retryButton: {fileID: 0}
+  fadedInTheEnd: 0
+  audioClips: []
   audioSourceBGM: {fileID: 0}
-  nextSceneVisualNovelJSONFile: {fileID: 0}
 --- !u!114 &4448643808385670243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +168,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511715411906664142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f5efadd1efbfca44b0387dcac0bdd48, type: 3}
+  m_Script: {fileID: 11500000, guid: 8971b4c9784fd4c4cadf1f2435597f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

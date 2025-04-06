@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e570dfb82e357b3449398d4bafe55bdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 41cb2016e50f14341a8333bd3fb2e5d5, type: 3}
   m_Name: SpriteCache
   m_EditorClassIdentifier: 

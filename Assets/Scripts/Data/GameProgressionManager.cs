@@ -16,20 +16,18 @@ public string currentScene;
 
     [Header("[State]")]
     public int sceneNumber;
+    public int eventNumber;
     public bool transitioning;
     public string previousScene;
 
     [Header("[Start Screen]")]
     private Button playButton;
     
-    [Header("[Restaurant Overworld]")]
-    public GameObject ravi;
+    [Header("[Overworld]")]
+    public GameObject tutorial;
     public GameObject dialogueCanvas;
-    public GameObject tutorialRestaurantOverworld;
-    public GameObject hiddenWall;
-    private DialogueSystemManager dialogueCanvasDialogueSystemManager;
+    public DialogueSystemManager DialogueSystemManager;
     public bool currentlyTalking;
-    public bool facingUp;
     public bool finishedCurrentRound;
 
     [Header("[Healing Game]")]
@@ -54,7 +52,7 @@ public string currentScene;
             GameProgressionManagerInstance = this;
             DontDestroyOnLoad(gameObject);
 
-            // fadeEffect = GetComponent<FadeEffect>();
+            fadeEffect = GetComponent<FadeEffect>();
         }
         else
         {            
@@ -62,7 +60,7 @@ public string currentScene;
             return;
         }
 
-        // audioSourceBGM = GetComponent<AudioSource>();
+        audioSourceBGM = GetComponent<AudioSource>();
         // currentTrack = -1;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -74,7 +72,7 @@ public string currentScene;
 
         blackTransition = GameObject.Find("Canvas").transform.Find("BlackTransition").gameObject;
 
-        fadeEffect.FadeOut(blackTransition, 1f);
+        fadeEffect.FadeOut(blackTransition, 0.5f);
 
         transitioning = false;
 
@@ -85,6 +83,9 @@ public string currentScene;
                 break;
 
             case "Overworld":
+                dialogueCanvas = GameObject.FindWithTag("Dialogue");
+                DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
+                dialogueCanvas.SetActive(false);
                 break;
 
             case "HealingGame":
