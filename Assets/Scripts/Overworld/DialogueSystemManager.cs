@@ -8,44 +8,46 @@ using System;
 
 public class DialogueSystemManager : MonoBehaviour
 {
-    // data
+    [Header("[Data]")]
+    public GameProgressionManager GameProgressionManager;
     public SpriteCache spriteCache;
 
-    // game objects
-    public GameObject[] currentActiveNPC;
-    public RectTransform[] currentActiveNPCRectTransforms;
-    public GameObject[] oldActiveNPC;
+    [Header("[Images]")]
+    public GameObject[] currentActiveSpeaker;
+    public RectTransform[] currentActiveSpeakerRectTransforms;
+    public GameObject[] oldActiveSpeaker;
     public GameObject currentActiveBG;
     public GameObject oldActiveBG;
-    public GameObject currentActiveCG;
-    public GameObject oldActiveCG;
+    private GameObject currentActiveCG;
+    private GameObject oldActiveCG;
     public GameObject normalBackground;
-    public GameObject cgBackground;
-    public GameObject cgStartTransition;
+    private GameObject cgBackground;
+    private GameObject cgStartTransition;
     
-    // dialogue box
+    [Header("[Dialogue Box]")]
     public GameObject normalDialogue;
     public RectTransform normalDialogueRectTransform;
     private float targetNormalDialogueWidth;
     public GameObject normalCharacterName;
-    public GameObject cgDialogue;
-    public GameObject cgCharacterName;
-
-    // choice boxes
-    public GameObject choiceBoxes;
-    public bool choiceClicked = false;
-    public int choiceMapping = -1;
-
-    // dialogue (move this to a separate file later, a separate file containing all of the json files for every VN scene)
+    private GameObject cgDialogue;
+    private GameObject cgCharacterName;
     public TextAsset visualNovelJSONFile;
     private List<DialogueStruct> dialogueList = new List<DialogueStruct>();
 
-    // main
+    [Header("[Voices]")]
     public List<AudioClip> voices;
     private AudioSource audioSource;
     private int characterNumber;
 
+    [Header("[State]")]
     public bool transitioningScene;
+    public bool finishedDialogue;
+    public bool advanceDisabled;
+
+    [Header("[IGNORE - Choice Boxes]")]
+    public GameObject choiceBoxes;
+    public bool choiceClicked = false;
+    public int choiceMapping = -1;
 
     private DialogueStruct currentDialogue;
     private BaseDialogueStruct currentBaseDialogue;
@@ -55,9 +57,6 @@ public class DialogueSystemManager : MonoBehaviour
     private int jumpToIndex = -1;
     private string dialogueOnDisplay;
     private bool typeWriterInEffect = false;
-    public bool finishedDialogue = false;
-
-    public bool advanceDisabled;
 
     private Dictionary<int, Vector2[]> NPCPositions = new()
     {
@@ -68,47 +67,29 @@ public class DialogueSystemManager : MonoBehaviour
 
     private Vector2[] targetPositions;
     
-    // data
-    public GameProgressionManager GameProgressionManager;
-
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        GameProgressionManager = GameObject.FindAnyObjectByType<GameProgressionManager>();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        string sceneName = visualNovelJSONFile.name;
+        string sceneName = scene.name;
 
-        if (sceneName.Contains("bloody_burger"))
+        if (sceneName.Equals("MainMenu"))
         {
-            GameProgressionManager.PlayMusic(2);
+            // GameProgressionManager.PlayMusic(1);
         }
-        else if (sceneName.Contains("kafe_kitty"))
+        else if (sceneName.Equals("Overworld"))
         {
-            GameProgressionManager.PlayMusic(0);
+            // GameProgressionManager.PlayMusic(1);
         }
-        else if (sceneName.Contains("spaghetti_western"))
+        else if (sceneName.Equals("HealingGame"))
         {
-            GameProgressionManager.PlayMusic(1);
-        }
-        else if (sceneName.Contains("jolly_roger"))
-        {
-            GameProgressionManager.PlayMusic(3);
-        }
-        else if (sceneName.Contains("fries_with_friends"))
-        {
-            GameProgressionManager.PlayMusic(4);
-        }
-        else if (sceneName.Contains("rat_city"))
-        {
-            GameProgressionManager.PlayMusic(5);
-        }
-        else
-        {
-            GameProgressionManager.StopMusic();
+            // GameProgressionManager.PlayMusic(1);
         }
     }
 
@@ -331,14 +312,14 @@ public class DialogueSystemManager : MonoBehaviour
 
             for (int i = 0; i < baseDialogue.speakerSprite.Count; i++)
             {
-                Sprite oldActiveNPCSprite = currentActiveNPC[i].GetComponent<Image>().sprite;
+                Sprite oldActiveNPCSprite = currentActiveSpeaker[i].GetComponent<Image>().sprite;
                 Sprite newActiveNPCSprite = spriteCache.sprites[baseDialogue.speakerSprite[i].ToString()];
 
                 if (!oldActiveNPCSprite.ToString().Equals(newActiveNPCSprite.ToString())) 
                 {
-                    oldActiveNPC[i].GetComponent<Image>().sprite = currentActiveNPC[i].GetComponent<Image>().sprite;
-                    StartCoroutine(Fade(currentActiveNPC[i], newActiveNPCSprite, 0, 1));
-                    StartCoroutine(Fade(oldActiveNPC[i], oldActiveNPCSprite, 1, -1));
+                    oldActiveSpeaker[i].GetComponent<Image>().sprite = currentActiveSpeaker[i].GetComponent<Image>().sprite;
+                    StartCoroutine(Fade(currentActiveSpeaker[i], newActiveNPCSprite, 0, 1));
+                    StartCoroutine(Fade(oldActiveSpeaker[i], oldActiveNPCSprite, 1, -1));
                 }
             }
 
@@ -346,20 +327,20 @@ public class DialogueSystemManager : MonoBehaviour
                                         ? positions
                                         : Array.Empty<Vector2>();
 
-            for (int i = 0; i < currentActiveNPC.Length; i++)
+            for (int i = 0; i < currentActiveSpeaker.Length; i++)
             {
                 bool npcIsActive = i < baseDialogue.speakerSprite.Count;
 
-                if (currentActiveNPC[i].activeSelf != npcIsActive)
+                if (currentActiveSpeaker[i].activeSelf != npcIsActive)
                 {
-                    oldActiveNPC[i].GetComponent<Image>().sprite = currentActiveNPC[i].GetComponent<Image>().sprite;
-                    StartCoroutine(Fade(currentActiveNPC[i], spriteCache.sprites["Transparent"], 0, 1));
-                    StartCoroutine(Fade(oldActiveNPC[i], oldActiveNPC[i].GetComponent<Image>().sprite, 1, -1));
+                    oldActiveSpeaker[i].GetComponent<Image>().sprite = currentActiveSpeaker[i].GetComponent<Image>().sprite;
+                    StartCoroutine(Fade(currentActiveSpeaker[i], spriteCache.sprites["Transparent"], 0, 1));
+                    StartCoroutine(Fade(oldActiveSpeaker[i], oldActiveSpeaker[i].GetComponent<Image>().sprite, 1, -1));
                 }
 
                 if (npcIsActive && i < targetPositions.Length)
                 {
-                    currentActiveNPCRectTransforms[i].anchoredPosition = targetPositions[i];
+                    currentActiveSpeakerRectTransforms[i].anchoredPosition = targetPositions[i];
                 }
             }
 

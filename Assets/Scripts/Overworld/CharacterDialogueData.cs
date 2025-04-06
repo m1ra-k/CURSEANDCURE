@@ -23,7 +23,7 @@ public class CharacterDialogueData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.KeypadEnter) && CanTalk())
         {
             // TODO: afia
-            GameProgressionManager.dialogueSystemManager.SetVisualNovelJSONFile(null);    
+            GameProgressionManager.DialogueSystemManager.SetVisualNovelJSONFile(null);    
         }
     }
 

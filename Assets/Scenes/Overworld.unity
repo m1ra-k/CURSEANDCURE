@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511715411906664142, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2190693963473393147, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 459979323}
   - component: {fileID: 459979322}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: DialogueCanvas
   m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 925428093}
   - component: {fileID: 925428092}
   m_Layer: 5
-  m_Name: CurrentActivePopup
+  m_Name: CurrentActiveSpeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,6 +809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterDialogues:
   - {fileID: 4900000, guid: 0f6478b179ad56148ae5e377d4f3e30a, type: 3}
+  GameProgressionManager: {fileID: 0}
 --- !u!114 &1441727880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,20 +1148,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab581b1caa3cf1d408e3bd081e6e1937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteCache: {fileID: 0}
-  currentActiveNPC: []
-  currentActiveNPCRectTransforms: []
-  oldActiveNPC: []
-  currentActiveBG: {fileID: 0}
-  oldActiveBG: {fileID: 0}
+  spriteCache: {fileID: 11400000, guid: ecc6c38cde025244ca3318fdd96fa11b, type: 2}
+  currentActiveSpeaker:
+  - {fileID: 925428090}
+  currentActiveSpeakerRectTransforms:
+  - {fileID: 2117793904}
+  oldActiveSpeaker: []
+  currentActiveBG: {fileID: 549761811}
+  oldActiveBG: {fileID: 162488843}
   currentActiveCG: {fileID: 0}
   oldActiveCG: {fileID: 0}
   normalBackground: {fileID: 0}
   cgBackground: {fileID: 0}
   cgStartTransition: {fileID: 0}
-  normalDialogue: {fileID: 0}
-  normalDialogueRectTransform: {fileID: 0}
-  normalCharacterName: {fileID: 0}
+  normalDialogue: {fileID: 1625262120}
+  normalDialogueRectTransform: {fileID: 1625262121}
+  normalCharacterName: {fileID: 1629895117}
   cgDialogue: {fileID: 0}
   cgCharacterName: {fileID: 0}
   choiceBoxes: {fileID: 0}
@@ -1339,7 +1342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757076324627688934, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8067632750021942381, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
       propertyPath: m_Pivot.x
@@ -1586,7 +1589,7 @@ GameObject:
   - component: {fileID: 2117793906}
   - component: {fileID: 2117793905}
   m_Layer: 5
-  m_Name: OldActivePopup
+  m_Name: OldActiveSpeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
