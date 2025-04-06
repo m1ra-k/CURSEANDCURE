@@ -65,7 +65,6 @@ public class HealingGameManager : MonoBehaviour
         {
             // change y position
             Vector2 anchoredPos = rangeRectTransform.anchoredPosition;
-            print(healingRangeList.healingRanges[round]);
             anchoredPos.y = healingRangeList.healingRanges[round].yPosition;
             rangeRectTransform.anchoredPosition = anchoredPos;
 
@@ -73,6 +72,15 @@ public class HealingGameManager : MonoBehaviour
             float currentWidth = rangeRectTransform.sizeDelta.x;
             float newHeight = healingRangeList.healingRanges[round].height;
             rangeRectTransform.sizeDelta = new Vector2(currentWidth, newHeight);
+
+            // update box collider
+            BoxCollider2D boxCollider = rangeRectTransform.GetComponent<BoxCollider2D>();
+            Vector2 colliderSize = boxCollider.size;
+            colliderSize.y = newHeight;
+            boxCollider.size = colliderSize;
+            Vector2 colliderOffset = boxCollider.offset;
+            colliderOffset.y = 0f;
+            boxCollider.offset = colliderOffset;
 
             round++;
         }
