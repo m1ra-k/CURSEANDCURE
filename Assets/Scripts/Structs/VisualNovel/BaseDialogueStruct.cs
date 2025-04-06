@@ -8,7 +8,7 @@ public class BaseDialogueStruct
 {
     public VNTypeEnum vnType;
     public CharacterEnum character;
-    public List<NPCSpriteEnum> npcSprite;
+    public List<SpeakerSpriteEnum> speakerSprite;
     public BGSpriteEnum bgSprite;
     public CGSpriteEnum cgSprite;
     public string dialogue;
@@ -18,7 +18,7 @@ public class BaseDialogueStruct
     {
         return "VNType: " + vnType.ToString() +
                 " | CharacterEnum: " + character.ToString() +
-                " | NPCSpriteEnum: " + npcSprite.ToString() +
+                " | SpeakerSpriteEnum: " + speakerSprite.ToString() +
                 " | BGSpriteEnum: " + bgSprite.ToString() +
                 " | CGSpriteEnum: " + cgSprite.ToString() +
                 " | dialogue: " + dialogue;

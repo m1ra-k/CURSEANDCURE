@@ -5,9 +5,13 @@ public enum CharacterEnum
 {
     [Description("")]
     None,
-    Lan,
-    Mateo,
-    Ravi
+    Lilith,
+    Ana,
+    TavernKeeper,
+    Man,
+    Woman,
+    Boy,
+    Girl
 }
 
 public static class EnumExtensions
