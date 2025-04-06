@@ -300,8 +300,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 549761814}
-  - {fileID: 925428091}
   - {fileID: 1895571100}
+  - {fileID: 925428091}
   - {fileID: 515100375}
   - {fileID: 1998837592}
   m_Father: {fileID: 509088370}
@@ -624,8 +624,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 155}
-  m_SizeDelta: {x: 800, y: 410}
+  m_AnchoredPosition: {x: -220, y: -100}
+  m_SizeDelta: {x: 300, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &925428092
 MonoBehaviour:
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 006f5eba50ecf9b45bbdba32963a38df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49c1ad08abbb86e4cb1b9f4f61091776, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -882,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -635, y: -235}
-  m_SizeDelta: {x: 50, y: 286.7918}
+  m_AnchoredPosition: {x: -320, y: -215}
+  m_SizeDelta: {x: 50, y: 200}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1625262122
 MonoBehaviour:
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 2048
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -623.2102, w: 0}
+  m_margin: {x: 0, y: 0, z: -348.48114, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1113,7 +1113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: -230}
+  m_AnchoredPosition: {x: -40, y: -225}
   m_SizeDelta: {x: 980, y: 132.8926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1895571095
@@ -1148,33 +1148,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab581b1caa3cf1d408e3bd081e6e1937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameProgressionManager: {fileID: 0}
   spriteCache: {fileID: 11400000, guid: ecc6c38cde025244ca3318fdd96fa11b, type: 2}
   currentActiveSpeaker:
   - {fileID: 925428090}
   currentActiveSpeakerRectTransforms:
-  - {fileID: 2117793904}
-  oldActiveSpeaker: []
+  - {fileID: 549761814}
+  oldActiveSpeaker:
+  - {fileID: 2117793903}
   currentActiveBG: {fileID: 549761811}
   oldActiveBG: {fileID: 162488843}
-  currentActiveCG: {fileID: 0}
-  oldActiveCG: {fileID: 0}
-  normalBackground: {fileID: 0}
-  cgBackground: {fileID: 0}
-  cgStartTransition: {fileID: 0}
+  normalBackground: {fileID: 549761811}
   normalDialogue: {fileID: 1625262120}
   normalDialogueRectTransform: {fileID: 1625262121}
   normalCharacterName: {fileID: 1629895117}
-  cgDialogue: {fileID: 0}
-  cgCharacterName: {fileID: 0}
-  choiceBoxes: {fileID: 0}
-  choiceClicked: 0
-  choiceMapping: -1
   visualNovelJSONFile: {fileID: 0}
   voices: []
   transitioningScene: 0
   finishedDialogue: 0
   advanceDisabled: 0
-  GameProgressionManager: {fileID: 0}
+  choiceBoxes: {fileID: 0}
+  choiceClicked: 0
+  choiceMapping: -1
 --- !u!114 &1895571097
 MonoBehaviour:
   m_ObjectHideFlags: 0
