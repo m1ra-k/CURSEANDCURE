@@ -5,17 +5,25 @@ using UnityEngine.UI;
 
 public class HealingGameManager : MonoBehaviour
 {
+    [Header("[State]")]
+    public GameProgressionManager GameProgressionManagerInstance;
     // just lilith for now
-    public string mode = "Lilith";
+    public string mode = "lilith";
+    // TODO eventually take off serializefield, just for debug
+    [SerializeField]    
+    private HealingRangeList healingRangeList;
     
+    [Header("[Gauge]")]
     [SerializeField]    
     private Slider healingGauge;
-    private float healingSpeed = 0.5f;
     private float healingGaugeValue = 0f;
+    private float healingSpeed = 0.5f;
+    
 
     void Start()
     {
-        
+        GameProgressionManagerInstance = new GameProgressionManager();
+        healingRangeList = JsonUtility.FromJson<HealingRangeList>(Resources.Load<TextAsset>($"Patients/{mode}_patient_" + GameProgressionManagerInstance.lilithPatientNumber).text);
     }
 
     void Update()
