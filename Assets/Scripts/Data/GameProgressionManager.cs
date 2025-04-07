@@ -6,19 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GameProgressionManager : MonoBehaviour
 {
-    public static GameProgressionManager GameProgressionManagerInstance;
-
-public string currentScene;
-
-    // Transition    
-    public FadeEffect fadeEffect;
-    public GameObject blackTransition;
-
     [Header("[State]")]
+    public static GameProgressionManager GameProgressionManagerInstance;
+    public string currentScene;
     public int sceneNumber;
     public int eventNumber;
     public bool transitioning;
     public string previousScene;
+    public int lilithPatientNumber;
 
     [Header("[Start Screen]")]
     private Button playButton;
@@ -43,6 +38,10 @@ public string currentScene;
     public List<AudioClip> audioClips = new List<AudioClip>();
     public AudioSource audioSourceBGM;
     private int currentTrack;
+
+    [Header("[References]")]  
+    public FadeEffect fadeEffect;
+    public GameObject blackTransition;
 
     void Awake()
     {        
