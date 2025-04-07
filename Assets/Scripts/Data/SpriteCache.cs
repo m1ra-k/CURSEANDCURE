@@ -1,5 +1,3 @@
-// BURGER
-
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +9,8 @@ public class SpriteCache : ScriptableObject
 
     void OnEnable() 
     {
-        LoadSprite("BG/", Enum.GetNames(typeof(BGSpriteEnum)));
+        LoadSprite("Sprites/BG/", Enum.GetNames(typeof(BGSpriteEnum)));
+        LoadSprite("Sprites/SpeakerSprites/", Enum.GetNames(typeof(SpeakerSpriteEnum)));
     }
 
     void LoadSprite(string path, string[] spriteNames) 
