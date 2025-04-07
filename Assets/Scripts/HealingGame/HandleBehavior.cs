@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class HandleBehavior : MonoBehaviour
 {
+    [Header("[Self]")]
     private Collider2D handleCollider;
+    private int framesInsideRange;
+
+    [Header("[Healing Game Manager]")]
+    [SerializeField]
+    private HealingGameManager healingGameManager;
 
     void Start()
     {
@@ -11,9 +17,12 @@ public class HandleBehavior : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (HandleFullyInside(handleCollider, other))
+        if (!healingGameManager.finishedGame && HandleFullyInside(handleCollider, other))
         {
             Debug.Log("fully inside trigger: " + other.name);
+            framesInsideRange++;
+            // two second leeway
+            healingGameManager.score = Mathf.FloorToInt(framesInsideRange / 1680f * 100);
         }
     }
 

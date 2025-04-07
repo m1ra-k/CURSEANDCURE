@@ -12,7 +12,7 @@ public class HealingGameManager : MonoBehaviour
     public string mode = "lilith";
     private int round;
     private bool startedGame;
-    private bool finishedGame;
+    public bool finishedGame;
 
     [Header("[Gauge]")]
     [SerializeField]    
@@ -27,16 +27,25 @@ public class HealingGameManager : MonoBehaviour
     [SerializeField]    
     private RectTransform rangeRectTransform;
 
-    [Header("[References]")]
+    [Header("[UI]")]
+    private Coroutine flashingStartTextCoroutine;
+    public int score;
+    private string cachedScore = "";
+    [SerializeField]
+    private TMP_FontAsset retroFont;
+    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI resultText;
 
     void Start()
     {
         // state
         GameProgressionManagerInstance = new GameProgressionManager();
-    
+
         // range
         healingRangeList = JsonUtility.FromJson<HealingRangeList>(Resources.Load<TextAsset>($"Patients/{mode}_patient_" + GameProgressionManagerInstance.lilithPatientNumber).text);
+    
+        // UI
+        flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
     }
 
     void Update()
@@ -48,8 +57,36 @@ public class HealingGameManager : MonoBehaviour
 
         if (!startedGame && (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return)))
         {
+            StopCoroutine(flashingStartTextCoroutine);
+            resultText.text = "";
             StartCoroutine(AdjustForAllHealingRange());
             startedGame = true;
+        }
+
+        
+        if ($"SCORE: {score}" != cachedScore)
+        {
+            scoreText.text = $"SCORE: {score}";
+            cachedScore = $"{score}";
+        }
+    }
+
+    private IEnumerator FlashingStartText()
+    {
+        resultText.text = "START?";
+
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            if (resultText.text == "START?")
+            {
+                resultText.text = "";
+            }
+            else
+            {
+                resultText.text = "START?";
+            }
         }
     }
 
@@ -76,7 +113,7 @@ public class HealingGameManager : MonoBehaviour
             if (round == 3)
             {
                 finishedGame = true;
-                resultText.text = "DONE!";
+                resultText.text = score >= 80 ? "GOOD!" : "FAIL!";
                 break;
             }
             AdjustHealingRange();
