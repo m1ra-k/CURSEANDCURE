@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class HealingGameManager : MonoBehaviour
     // just lilith for now
     public string mode = "lilith";
     private int round;
+    private bool startedGame;
+    private bool finishedGame;
 
     [Header("[Gauge]")]
     [SerializeField]    
@@ -23,7 +26,10 @@ public class HealingGameManager : MonoBehaviour
     private HealingRangeList healingRangeList;
     [SerializeField]    
     private RectTransform rangeRectTransform;
-    
+
+    [Header("[References]")]
+    public TextMeshProUGUI resultText;
+
     void Start()
     {
         // state
@@ -35,10 +41,16 @@ public class HealingGameManager : MonoBehaviour
 
     void Update()
     {
-        AdjustHealingGauge();
+        if (!finishedGame)
+        {
+            AdjustHealingGauge();
+        }
 
-        // auto does this every 10 secs later on
-        AdjustHealingRange();
+        if (!startedGame && (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return)))
+        {
+            StartCoroutine(AdjustForAllHealingRange());
+            startedGame = true;
+        }
     }
 
     private void AdjustHealingGauge()
@@ -55,34 +67,67 @@ public class HealingGameManager : MonoBehaviour
         healingGaugeValue = Mathf.Clamp01(healingGaugeValue);
 
         healingGauge.value = healingGaugeValue;
+    }
 
-        // print($"handle is at y = {healingGauge.handleRect.position.y}");
+    private IEnumerator AdjustForAllHealingRange()
+    {
+        while (true)
+        {
+            if (round == 3)
+            {
+                finishedGame = true;
+                resultText.text = "DONE!";
+                break;
+            }
+            AdjustHealingRange();
+            yield return new WaitForSeconds(10f);
+        }
     }
 
     private void AdjustHealingRange()
     {
-        if (Input.GetKeyDown(KeyCode.A) && round < 2)
+        StartCoroutine(SmoothAdjustHealingRange());
+    }
+
+    private IEnumerator SmoothAdjustHealingRange()
+    {
+        Vector2 startPos = rangeRectTransform.anchoredPosition;
+        float startY = startPos.y;
+
+        float startHeight = rangeRectTransform.sizeDelta.y;
+        float currentWidth = rangeRectTransform.sizeDelta.x;
+
+        BoxCollider2D boxCollider = rangeRectTransform.GetComponent<BoxCollider2D>();
+        float startColliderHeight = boxCollider.size.y;
+
+        float targetY = healingRangeList.healingRanges[round].yPosition;
+        float targetHeight = healingRangeList.healingRanges[round].height;
+
+        float duration = 0.5f; 
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
         {
-            // change y position
-            Vector2 anchoredPos = rangeRectTransform.anchoredPosition;
-            anchoredPos.y = healingRangeList.healingRanges[round].yPosition;
-            rangeRectTransform.anchoredPosition = anchoredPos;
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
 
-            // change height
-            float currentWidth = rangeRectTransform.sizeDelta.x;
-            float newHeight = healingRangeList.healingRanges[round].height;
-            rangeRectTransform.sizeDelta = new Vector2(currentWidth, newHeight);
+            rangeRectTransform.anchoredPosition = new Vector2(startPos.x, Mathf.Lerp(startY, targetY, t));
 
-            // update box collider
-            BoxCollider2D boxCollider = rangeRectTransform.GetComponent<BoxCollider2D>();
+            rangeRectTransform.sizeDelta = new Vector2(currentWidth, Mathf.Lerp(startHeight, targetHeight, t));
+
             Vector2 colliderSize = boxCollider.size;
-            colliderSize.y = newHeight;
+            colliderSize.y = Mathf.Lerp(startColliderHeight, targetHeight, t);
             boxCollider.size = colliderSize;
-            Vector2 colliderOffset = boxCollider.offset;
-            colliderOffset.y = 0f;
-            boxCollider.offset = colliderOffset;
 
-            round++;
+            boxCollider.offset = new Vector2(boxCollider.offset.x, 0f);
+
+            yield return null;
         }
+
+        rangeRectTransform.anchoredPosition = new Vector2(startPos.x, targetY);
+        rangeRectTransform.sizeDelta = new Vector2(currentWidth, targetHeight);
+        boxCollider.size = new Vector2(boxCollider.size.x, targetHeight);
+
+        round++;
     }
 }
