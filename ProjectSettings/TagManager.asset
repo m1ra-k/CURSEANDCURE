@@ -6,8 +6,7 @@ TagManager:
   tags:
   - Dialogue
   - Tutorial
-  - girl
-  - boy
+  - NPC
   layers:
   - Default
   - TransparentFX
