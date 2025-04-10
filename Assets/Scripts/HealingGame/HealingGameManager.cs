@@ -36,6 +36,11 @@ public class HealingGameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI resultText;
 
+    // SHAKE - TO SORT
+    public float shakeDuration = 0.5f;
+    private GameObject image;
+    private Vector3 originalImagePosition;
+
     void Start()
     {
         // state
@@ -46,6 +51,9 @@ public class HealingGameManager : MonoBehaviour
     
         // UI
         flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
+
+        image = GameObject.FindWithTag("Image");
+        originalImagePosition = image.transform.position;
     }
 
     void Update()
@@ -63,7 +71,6 @@ public class HealingGameManager : MonoBehaviour
             startedGame = true;
         }
 
-        
         if ($"SCORE: {score}" != cachedScore)
         {
             scoreText.text = $"SCORE: {score}";
@@ -110,10 +117,15 @@ public class HealingGameManager : MonoBehaviour
     {
         while (true)
         {
-            if (round == 3)
+            if (round == 5)
             {
                 finishedGame = true;
-                resultText.text = score >= 80 ? "GOOD!" : "FAIL!";
+                resultText.text = "GOOD!";
+                if (score < 80)
+                {
+                    resultText.text = "FAIL!";
+                    StartCoroutine(Shake());
+                }
                 break;
             }
             AdjustHealingRange();
@@ -166,5 +178,25 @@ public class HealingGameManager : MonoBehaviour
         boxCollider.size = new Vector2(boxCollider.size.x, targetHeight);
 
         round++;
+    }
+
+    private IEnumerator Shake()
+    {
+        int[] shakeAmounts = { 30, -60, 60, -60, 60 };
+
+        foreach (int shakeAmount in shakeAmounts)
+        {
+            float elapsedTime = 0f;
+            while (elapsedTime < shakeDuration)
+            {
+                float shakeOffset = Mathf.Sin(elapsedTime * Mathf.PI * 2) * shakeAmount;
+                image.transform.position = originalImagePosition + new Vector3(shakeOffset, 0f, 0f);
+
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        image.transform.position = originalImagePosition;
     }
 }
