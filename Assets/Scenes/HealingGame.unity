@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 375961080}
   m_Layer: 5
   m_Name: LilithBloodSucking
-  m_TagString: Untagged
+  m_TagString: Image
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c006479c7f2f64b4e8231858075ae35c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e883ae278fad20542aab2762d3541340, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -651,6 +651,7 @@ MonoBehaviour:
   retroFont: {fileID: 11400000, guid: e37ae4858b2a08f47b1b17426b96140f, type: 2}
   scoreText: {fileID: 188460501}
   resultText: {fileID: 1189883469}
+  shakeDuration: 0.5
 --- !u!4 &930277981
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,7 +1373,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 0, b: 0.75149965, a: 0}
+  m_BackGroundColor: {r: 1, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

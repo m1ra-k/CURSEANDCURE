@@ -21,8 +21,8 @@ public class HandleBehavior : MonoBehaviour
         {
             Debug.Log("fully inside trigger: " + other.name);
             framesInsideRange++;
-            // two second leeway
-            healingGameManager.score = Mathf.FloorToInt(framesInsideRange / 1680f * 100);
+            // five  second leeway
+            healingGameManager.score = Mathf.FloorToInt(framesInsideRange / 2700f * 100);
         }
     }
 
