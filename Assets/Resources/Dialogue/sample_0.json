@@ -6,15 +6,15 @@
                 "speakerSprite": [
                     "LilithExcited"
                 ],
-                "dialogue": "hey GIRL i am talking to you",
+                "dialogue": "<color=green>i love to talk</color> wait why was that green?",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Woman",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "WomanNeutral"
                 ],
                 "dialogue": "green is a cool color isn't it",
                 "textSpeed": 0
@@ -22,9 +22,9 @@
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Man",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "ManNeutral"
                 ],
                 "dialogue": "Haha, it is!",
                 "textSpeed": 0

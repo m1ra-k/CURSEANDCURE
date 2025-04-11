@@ -6,12 +6,12 @@ TagManager:
   tags:
   - Dialogue
   - Tutorial
-  - NPC
+  - Image
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - NPC
+  - 
   - Water
   - UI
   - 

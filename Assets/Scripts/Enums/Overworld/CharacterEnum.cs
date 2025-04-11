@@ -5,13 +5,13 @@ public enum CharacterEnum
 {
     [Description("")]
     None,
-    Ana,
-    Boy,
-    Girl,
     Lilith,
-    Man,
+    Ana,
     TavernKeeper,
+    Man,
     Woman,
+    Boy,
+    Girl
 }
 
 public static class EnumExtensions

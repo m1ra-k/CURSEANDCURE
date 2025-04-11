@@ -43,7 +43,6 @@ public class DialogueSystemManager : MonoBehaviour
     public bool transitioningScene;
     public bool finishedDialogue;
     public bool advanceDisabled;
-    public bool delay;
 
     [Header("[IGNORE - Choice Boxes]")]
     public GameObject choiceBoxes;
@@ -111,25 +110,39 @@ public class DialogueSystemManager : MonoBehaviour
     void Update()
     {
         // TODO: make sure to support saving on choice menu
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || choiceClicked) && !advanceDisabled)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.KeypadEnter) || choiceClicked) && !advanceDisabled
+            && 
+            (
+                ((currentBaseDialogue.vnType == VNTypeEnum.Choice || currentBaseDialogue.vnType == VNTypeEnum.Normal) && normalBackground.GetComponent<Image>().color.a == 1)
+            || 
+                ((currentBaseDialogue.vnType == VNTypeEnum.CGAndChoice || currentBaseDialogue.vnType == VNTypeEnum.CG) && cgBackground.GetComponent<Image>().color.a == 1))
+            ) 
         { 
-            if (currentDialogue.endOfScene)
+            if (currentDialogue.endOfScene && !transitioningScene)
             {
-                StartCoroutine(Fade(currentActiveSpeaker[0], spriteCache.sprites["Transparent"], 0, 1));
-                GameProgressionManager.dialogueCanvas.SetActive(false);
-                GameProgressionManager.currentlyTalking = false;
-                finishedDialogue = false;
-                dialogueIndex = -1;
-                enabled = false;
-                delay = true;
+                transitioningScene = true;
+                GameProgressionManager.TransitionScene(currentDialogue.flag);
             }
-            else if (!currentDialogue.endOfScene && !typeWriterInEffect && !finishedDialogue) 
+            else if (!currentDialogue.endOfScene && !typeWriterInEffect && !finishedDialogue && choiceBoxes.transform.childCount == 0) 
             {
-                ProgressMainVNSequence();
+                if (choiceMapping != -1) // jumping out of the main sequence
+                {
+                    ProgressMainVNSequence(skipToIndex: choiceMapping);
+                    choiceMapping = -1;
+                }
+                else if (jumpToIndex != -1) // jumping back into the main sequence
+                {
+                    ProgressMainVNSequence(skipToIndex: jumpToIndex);
+                    jumpToIndex = -1;
+                }
+                else
+                {
+                    ProgressMainVNSequence();
+                }
             }
             choiceClicked = false;
         }
-        else if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && typeWriterInEffect)
+        else if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.KeypadEnter)) && typeWriterInEffect)
         {
             SkipTypeWriterEffect(inCG: currentDialogue.baseDialogue.vnType == VNTypeEnum.CG);
         }
@@ -158,7 +171,7 @@ public class DialogueSystemManager : MonoBehaviour
             // }
             // Debug.Log($"VN Type: {dialogue.baseDialogue.vnType}");
             // Debug.Log($"Character: {dialogue.baseDialogue.character}");
-            // Debug.Log($"NPC Sprite: {dialogue.baseDialogue.speakerSprite}");
+            // Debug.Log($"NPC Sprite: {dialogue.baseDialogue.npcSprite}");
             // Debug.Log($"MC Sprite: {dialogue.baseDialogue.mcSprite}");
             // Debug.Log($"CG Sprite: {dialogue.baseDialogue.cgSprite}");
             // Debug.Log($"Dialogue: {dialogue.baseDialogue.dialogue}");
@@ -251,14 +264,56 @@ public class DialogueSystemManager : MonoBehaviour
     
     void SetSprite(BaseDialogueStruct baseDialogue, int dialogueIndexToUse) 
     {
+        bool isPreviousVnTypeCG = false;
+        // skipped progression
+        if (skippedFromIndex >= 0)
+        {
+            if (dialogueList[skippedFromIndex].baseDialogue.vnType == VNTypeEnum.CG || dialogueList[skippedFromIndex].baseDialogue.vnType == VNTypeEnum.CGAndChoice) 
+            {
+                isPreviousVnTypeCG = true;
+            }
+        }
+        // normal progression
+        else 
+        {
+            if (dialogueIndexToUse > 0)
+            {
+                if (dialogueList[dialogueIndexToUse - 1].baseDialogue.vnType == VNTypeEnum.CG || dialogueList[dialogueIndexToUse - 1].baseDialogue.vnType == VNTypeEnum.CGAndChoice) 
+                {
+                    isPreviousVnTypeCG = true;
+                } 
+            }
+        }
+
         bool atStart = dialogueIndexToUse == 0;
+        
+        // if the very first dialogue is not CG, we don't want the black transition
+        if (atStart && baseDialogue.vnType != VNTypeEnum.CG && baseDialogue.vnType != VNTypeEnum.CGAndChoice)
+        {
+            cgStartTransition.GetComponent<Image>().color = new Color(1, 1, 1, 0); 
+        }
 
         if (baseDialogue.vnType != VNTypeEnum.CG && baseDialogue.vnType != VNTypeEnum.CGAndChoice) 
         {
+            if (isPreviousVnTypeCG) 
+            {
+                oldActiveCG.SetActive(false);
+
+                // CG - BG
+                Sprite normalBackgroundSprite = normalBackground.GetComponent<Image>().sprite;
+                Sprite cgBackgroundSprite = cgBackground.GetComponent<Image>().sprite;
+
+                if (!cgBackgroundSprite.ToString().Equals(normalBackgroundSprite.ToString())) 
+                {
+                    StartCoroutine(Fade(cgBackground, cgBackgroundSprite, 1, -1));
+                    StartCoroutine(Fade(normalBackground, normalBackgroundSprite, 0, 1));
+                }
+            }
+
             for (int i = 0; i < baseDialogue.speakerSprite.Count; i++)
             {
                 Sprite oldActiveNPCSprite = currentActiveSpeaker[i].GetComponent<Image>().sprite;
-                Sprite newActiveNPCSprite = spriteCache.sprites[baseDialogue.speakerSprite[0].ToString()];
+                Sprite newActiveNPCSprite = spriteCache.sprites[baseDialogue.speakerSprite[i].ToString()];
 
                 if (!oldActiveNPCSprite.ToString().Equals(newActiveNPCSprite.ToString())) 
                 {
@@ -288,7 +343,7 @@ public class DialogueSystemManager : MonoBehaviour
                     currentActiveSpeakerRectTransforms[i].anchoredPosition = targetPositions[i];
                 }
             }
-            
+
             Sprite oldActiveBGSprite = currentActiveBG.GetComponent<Image>().sprite;
             Sprite newActiveBGSprite = spriteCache.sprites[baseDialogue.bgSprite.ToString()];
 
@@ -307,6 +362,49 @@ public class DialogueSystemManager : MonoBehaviour
                 }
             }
         }
+        else 
+        {
+            if (!isPreviousVnTypeCG) 
+            {
+                oldActiveCG.SetActive(true);
+
+                // BG - CG
+                if (atStart) 
+                {
+                    Color normalBackgroundColor = normalBackground.GetComponent<Image>().color;
+                    normalBackground.GetComponent<Image>().color = new Color(normalBackgroundColor.r, normalBackgroundColor.g, normalBackgroundColor.b, 0);
+                }
+
+                Sprite normalBackgroundSprite = normalBackground.GetComponent<Image>().sprite;
+                Sprite cgBackgroundSprite = spriteCache.sprites[baseDialogue.cgSprite.ToString()];
+
+                if (!cgBackgroundSprite.ToString().Equals(normalBackgroundSprite.ToString())) {
+                    if (!atStart) 
+                    {
+                        StartCoroutine(Fade(normalBackground, normalBackgroundSprite, 1, -1)); // fade out
+                    }
+                    StartCoroutine(Fade(cgBackground, cgBackgroundSprite, 0, 1, speed: 0.025f)); // fade in
+                } 
+            }
+            else
+            {
+                // CG
+                Sprite oldActiveCGSprite = currentActiveCG.GetComponent<Image>().sprite;
+                Sprite newActiveCGSprite = spriteCache.sprites[baseDialogue.cgSprite.ToString()];
+
+                if (!oldActiveCGSprite.ToString().Equals(newActiveCGSprite.ToString())) 
+                {
+                    if (atStart)
+                    {
+                        currentActiveCG.GetComponent<Image>().sprite = newActiveCGSprite;
+                    }
+                    else
+                    {
+                        StartCoroutine(Fade(currentActiveCG, newActiveCGSprite, 0, 1));
+                    }
+                }
+            }
+        }
 
         skippedFromIndex = -1;
     }
@@ -317,8 +415,20 @@ public class DialogueSystemManager : MonoBehaviour
 
         if (baseDialogue.vnType != VNTypeEnum.CG && baseDialogue.vnType != VNTypeEnum.CGAndChoice)
         { 
+            Color cgInvisibleColor = cgCharacterName.GetComponent<TextMeshProUGUI>().color;
+            cgInvisibleColor.a = 0;
+
+            // set character name
+            cgCharacterName.GetComponent<TextMeshProUGUI>().color = cgInvisibleColor;
+
+            // set dialogue
+            cgDialogue.GetComponent<TextMeshProUGUI>().color = cgInvisibleColor;
+
             // set character name
             normalCharacterName.GetComponent<TextMeshProUGUI>().text = baseDialogue.character.GetParsedName();
+
+            // baseDialogue.character.GetParsedName().Equals("Tubby") ?
+            targetNormalDialogueWidth = 500f;
 
             if (normalDialogueRectTransform.sizeDelta.x != targetNormalDialogueWidth)
             {
@@ -491,6 +601,8 @@ public class DialogueSystemManager : MonoBehaviour
             }
             yield return null;
         }
+
+        cgStartTransition.GetComponent<Image>().color = new Color(0, 0, 0, 0);
     }
 
     public int GetDialogueIndex()

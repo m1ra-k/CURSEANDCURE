@@ -2,15 +2,15 @@ public enum SpeakerSpriteEnum
 {
     Transparent,
     AnaAngry,
-    AnaShocked,
-    BoyHappy,
-    GirlHappy,
+    AnaShocked,    
+    Boy,
+    Girl,
     LilithExcited,
     LilithSmile,
     LilithNeutral,
     LilithFrown,
     LilithShocked,
-    ManNeutral,
+    Man,
     TavernKeeperNeutral,
-    WomanNeutral
+    Woman
 }
