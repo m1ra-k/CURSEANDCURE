@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float stepSize = 0.9f;
+    [Header("[State]")]
+    public GameProgressionManager GameProgressionManagerInstance;
+
+    private Vector2 movementVector;
+    private float moveSpeed = 5f;
+    private float stepSize = 1f;
     private Vector2 targetPosition;
     private bool isMoving = false;
+
     void Start() 
     {
+        // state
+        GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+
         targetPosition = transform.position;
+    }
+
+    void Update() 
+    {
+        Move();
     }
 
     void Move() 
     {
-        if (!isMoving) 
+        if (!isMoving && !GameProgressionManagerInstance.currentlyTalking)
         {
-            Vector2 movementVector = Vector2.zero;
             if (Input.GetKey(KeyCode.UpArrow)) 
             {
                 movementVector = Vector2.up;
@@ -34,25 +46,25 @@ public class GridMovement : MonoBehaviour
             {
                 movementVector = Vector2.right;
             }
+            else
+            {
+                movementVector = Vector2.zero;
+            }
+
             if (movementVector != Vector2.zero) 
             {
-                targetPosition = (Vector2)transform.position + movementVector * stepSize;
+                targetPosition = (Vector2) transform.position + movementVector * stepSize;
                 isMoving = true;
             }
         }
         if (isMoving) 
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            if ((Vector2)transform.position == targetPosition) 
+            if ((Vector2) transform.position == targetPosition) 
             {
                 isMoving = false;
             }
         }
-    }
-
-    void Update() 
-    {
-        Move();
     }
 }
 

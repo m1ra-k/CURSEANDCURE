@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterDialogueData : MonoBehaviour
 {
-    public GameProgressionManager GameProgressionManager;
+    public GameProgressionManager GameProgressionManagerInstance;
     public List<TextAsset> characterDialogues;
     private HashSet<Vector2> adjacentLocations = new();
     private GameObject lilith;
@@ -12,8 +12,6 @@ public class CharacterDialogueData : MonoBehaviour
 
     void Awake()
     { 
-        GameProgressionManager = FindObjectOfType<GameProgressionManager>();
-        
         // locations
         adjacentLocations.UnionWith(new List<Vector2>
         {
@@ -27,6 +25,12 @@ public class CharacterDialogueData : MonoBehaviour
         lilith = GameObject.FindWithTag("Player");
     }
 
+    void Start()
+    {
+        // state
+        GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+    }
+
     void Update()
     {
         // lilithPosition
@@ -35,19 +39,19 @@ public class CharacterDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManager.currentlyTalking)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking)
         {
-            if (GameProgressionManager.DialogueSystemManager.delay)
+            if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
-                GameProgressionManager.DialogueSystemManager.delay = false;
+                GameProgressionManagerInstance.DialogueSystemManager.delay = false;
             }
             else
             {
                 // TODO: mira, hardcoded to 0 but needs to match GameProgressionManager progression value
-                GameProgressionManager.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[0]);
+                GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[0]);
                 // TODO: afia, now set dialogueCanvas to active and enable the DialogueSystemManager
-                GameProgressionManager.DialogueSystemManager.enabled=true;
-                GameProgressionManager.dialogueCanvas.SetActive(true);    
+                GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
+                GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    
             }
         }
     }

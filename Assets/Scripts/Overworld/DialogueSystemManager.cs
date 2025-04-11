@@ -9,7 +9,7 @@ using System;
 public class DialogueSystemManager : MonoBehaviour
 {
     [Header("[Data]")]
-    public GameProgressionManager GameProgressionManager;
+    public GameProgressionManager GameProgressionManagerInstance;
     public SpriteCache spriteCache;
 
     [Header("[Images]")]
@@ -71,7 +71,7 @@ public class DialogueSystemManager : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        GameProgressionManager = GameObject.FindAnyObjectByType<GameProgressionManager>();
+        GameProgressionManagerInstance = GameObject.FindAnyObjectByType<GameProgressionManager>();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -106,6 +106,8 @@ public class DialogueSystemManager : MonoBehaviour
         LoadVNDialogueFromJSON();
 
         ProgressMainVNSequence(isStartDialogue: true);
+
+        GameProgressionManagerInstance.currentlyTalking = true;
     }
 
     void Update()
@@ -116,8 +118,8 @@ public class DialogueSystemManager : MonoBehaviour
             if (currentDialogue.endOfScene)
             {
                 StartCoroutine(Fade(currentActiveSpeaker[0], spriteCache.sprites["Transparent"], 0, 1));
-                GameProgressionManager.dialogueCanvas.SetActive(false);
-                GameProgressionManager.currentlyTalking = false;
+                GameProgressionManagerInstance.dialogueCanvas.SetActive(false);
+                GameProgressionManagerInstance.currentlyTalking = false;
                 finishedDialogue = false;
                 dialogueIndex = -1;
                 enabled = false;
