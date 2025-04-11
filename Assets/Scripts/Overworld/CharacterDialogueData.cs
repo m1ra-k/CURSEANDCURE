@@ -8,6 +8,7 @@ public class CharacterDialogueData : MonoBehaviour
     private HashSet<Vector2> adjacentLocations = new();
     private GameObject lilith;
     private Vector2 lilithPosition;
+    private GameObject dialogueCanvas;
 
     void Awake()
     { 
@@ -45,6 +46,8 @@ public class CharacterDialogueData : MonoBehaviour
                 // TODO: mira, hardcoded to 0 but needs to match GameProgressionManager progression value
                 GameProgressionManager.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[0]);
                 // TODO: afia, now set dialogueCanvas to active and enable the DialogueSystemManager
+                GameProgressionManager.DialogueSystemManager.enabled=true;
+                GameProgressionManager.dialogueCanvas.SetActive(true);    
             }
         }
     }
