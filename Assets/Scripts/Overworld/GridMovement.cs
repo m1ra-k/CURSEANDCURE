@@ -7,6 +7,9 @@ public class GridMovement : MonoBehaviour
     [Header("[State]")]
     public GameProgressionManager GameProgressionManagerInstance;
 
+    [Header("[Properties]")]
+    public string directionFacing = "down";
+
     private Vector2 movementVector;
     private float moveSpeed = 5f;
     private float stepSize = 1f;
@@ -33,18 +36,22 @@ public class GridMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.UpArrow)) 
             {
                 movementVector = Vector2.up;
+                directionFacing = "up";
             }
             else if (Input.GetKey(KeyCode.DownArrow)) 
             {
                 movementVector = Vector2.down;
+                directionFacing = "down";
             }
             else if (Input.GetKey(KeyCode.LeftArrow)) 
             {
                 movementVector = Vector2.left;
+                directionFacing = "left";
             }
             else if (Input.GetKey(KeyCode.RightArrow)) 
             {
                 movementVector = Vector2.right;
+                directionFacing = "right";
             }
             else
             {
@@ -60,6 +67,7 @@ public class GridMovement : MonoBehaviour
         if (isMoving) 
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
             if ((Vector2) transform.position == targetPosition) 
             {
                 isMoving = false;
