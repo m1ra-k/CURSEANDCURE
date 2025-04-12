@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,9 +6,14 @@ public class AutomaticDialogueData : MonoBehaviour
 {
     // TODO sort but later
     public GameProgressionManager GameProgressionManagerInstance;
+
+    // EVENT
     public bool repeated;
     private bool triggeredOnce;
-    public List<TextAsset> characterDialogues;
+    public bool active;
+    public List<string> flagsToSet;
+    public int dialoguesIndex;
+    public List<TextAsset> dialogues;
 
     private GameObject lilith;
     private GridMovement gridMovement;
@@ -32,6 +38,11 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+    
+        foreach (string flag in flagsToSet)
+        {
+            GameProgressionManagerInstance.progressionSystem.SetFlag(flag, false);
+        }
     }
 
     void Update()
@@ -58,8 +69,7 @@ public class AutomaticDialogueData : MonoBehaviour
             else
             {
                 // TODO: mira, hardcoded to 0 but needs to match GameProgressionManager progression value
-                GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[0]);
-                // TODO: afia, now set dialogueCanvas to active and enable the DialogueSystemManager
+                GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(dialogues[0]);
                 GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
                 GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    
             }

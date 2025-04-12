@@ -8,6 +8,7 @@ public class GameProgressionManager : MonoBehaviour
 {
     [Header("[State]")]
     public static GameProgressionManager GameProgressionManagerInstance;
+    public ProgressionSystem progressionSystem;
     public string currentScene;
     public int sceneNumber;
     public int eventNumber;
@@ -45,6 +46,8 @@ public class GameProgressionManager : MonoBehaviour
 
     void Awake()
     {        
+        progressionSystem.Init();
+
         if (GameProgressionManagerInstance == null)
         {
             Application.targetFrameRate = 60;
@@ -105,7 +108,12 @@ public class GameProgressionManager : MonoBehaviour
 
     void Update()
     {
-        
+        // TODO GAME PROGRESSION SYSTEM this is just mock event completion but this approach works
+        // just follow this format for actual events
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            progressionSystem.SetFlag("again", true);
+        }
     }
 
     public void StopMusic()

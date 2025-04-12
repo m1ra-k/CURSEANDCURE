@@ -175,7 +175,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 1
-  characterDialogues:
+  active: 0
+  flagsToSet: []
+  dialoguesIndex: 0
+  dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
 --- !u!212 &119753683
 SpriteRenderer:
@@ -620,8 +623,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  flagsToSet:
+  - again
+  characterDialoguesIndex: 0
   characterDialogues:
   - {fileID: 4900000, guid: 34d591e8358b261408257d1de78f2c1c, type: 3}
+  - {fileID: 4900000, guid: dd5f3f0752b94f24990fb482c3c0cc45, type: 3}
 --- !u!61 &234544390
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2206,6 +2213,10 @@ PrefabInstance:
       propertyPath: sceneNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
+      propertyPath: progressionSystem
+      value: 
+      objectReference: {fileID: 11400000, guid: 6def72d7de14ecb40afa5e5e6a5b5615, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2754,7 +2765,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 0
-  characterDialogues:
+  active: 0
+  flagsToSet: []
+  dialoguesIndex: 0
+  dialogues:
   - {fileID: 4900000, guid: 984aa504302b97c41b7bfe08ba28be4e, type: 3}
 --- !u!212 &1161374574
 SpriteRenderer:
@@ -3303,6 +3317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  flagsToSet: []
+  characterDialoguesIndex: 0
   characterDialogues:
   - {fileID: 4900000, guid: 0f6478b179ad56148ae5e377d4f3e30a, type: 3}
 --- !u!61 &1704572839
