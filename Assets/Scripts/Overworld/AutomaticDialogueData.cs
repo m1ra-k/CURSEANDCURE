@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,9 +6,14 @@ public class AutomaticDialogueData : MonoBehaviour
 {
     // TODO sort but later
     public GameProgressionManager GameProgressionManagerInstance;
+
+    // EVENT
     public bool repeated;
+    public bool active;
+    public List<string> flagsToSet;
+    public int dialoguesIndex;
+    public List<TextAsset> dialogues;
     private bool triggeredOnce;
-    public List<TextAsset> characterDialogues;
 
     private GameObject lilith;
     private GridMovement gridMovement;
@@ -32,17 +38,36 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+    
+        foreach (string flag in flagsToSet)
+        {
+            GameProgressionManagerInstance.progressionSystem.SetFlag(flag, false);
+        }
     }
 
     void Update()
     {
         // lilithPosition
         lilithPosition = (Vector2) lilith.transform.position;
+
+        // flag check
+        if (!active && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[0])) // these will have: repeat - 2, !repeat - 1
+        {
+            // first flag being true is what makes it active
+            active = true;
+        }
+
+        if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[flagsToSet.Count - 1])) || (!repeated && triggeredOnce))
+        {
+            // no longer need to repeat, so it is no longer active
+            active = false;
+            enabled = false;
+        }
     }
 
     void LateUpdate()
     {
-        if (CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
+        if (active && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
             lilith.transform.position = transform.position;
 
@@ -58,8 +83,7 @@ public class AutomaticDialogueData : MonoBehaviour
             else
             {
                 // TODO: mira, hardcoded to 0 but needs to match GameProgressionManager progression value
-                GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[0]);
-                // TODO: afia, now set dialogueCanvas to active and enable the DialogueSystemManager
+                GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(dialogues[0]);
                 GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
                 GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    
             }
