@@ -38,8 +38,15 @@ public class HealingGameManager : MonoBehaviour
 
     // SHAKE - TO SORT
     public float shakeDuration = 0.5f;
-    private GameObject image;
-    private Vector3 originalImagePosition;
+    private GameObject minigameArt;
+    private Image minigameArtImage;
+    private Vector3 minigameArtPositionInitial;
+    int[] shakeAmounts = { 30, -60, 60, -60, 60 };
+    float flashInterval = 0.65f;
+    float flashDuration = 0.2f;
+    float timeSinceLastFlash = 0.65f;
+    float redTimer = 0f;
+    bool isRed = false;
 
     void Start()
     {
@@ -52,8 +59,9 @@ public class HealingGameManager : MonoBehaviour
         // UI
         flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
 
-        image = GameObject.FindWithTag("Image");
-        originalImagePosition = image.transform.position;
+        minigameArt = GameObject.FindWithTag("Image");
+        minigameArtImage = minigameArt.GetComponent<Image>();
+        minigameArtPositionInitial = minigameArt.transform.position;
     }
 
     void Update()
@@ -182,7 +190,7 @@ public class HealingGameManager : MonoBehaviour
 
     private IEnumerator Shake()
     {
-        int[] shakeAmounts = { 30, -60, 60, -60, 60 };
+        Color originalColor = minigameArtImage.color;
 
         foreach (int shakeAmount in shakeAmounts)
         {
@@ -190,13 +198,34 @@ public class HealingGameManager : MonoBehaviour
             while (elapsedTime < shakeDuration)
             {
                 float shakeOffset = Mathf.Sin(elapsedTime * Mathf.PI * 2) * shakeAmount;
-                image.transform.position = originalImagePosition + new Vector3(shakeOffset, 0f, 0f);
+                minigameArt.transform.position = minigameArtPositionInitial + new Vector3(shakeOffset, 0f, 0f);
 
                 elapsedTime += Time.deltaTime;
+                timeSinceLastFlash += Time.deltaTime;
+
+                if (!isRed && timeSinceLastFlash >= flashInterval)
+                {
+                    minigameArtImage.color = Color.red;
+                    isRed = true;
+                    redTimer = 0f;
+                    timeSinceLastFlash = 0f;
+                }
+
+                if (isRed)
+                {
+                    redTimer += Time.deltaTime;
+                    if (redTimer >= flashDuration)
+                    {
+                        minigameArtImage.color = originalColor;
+                        isRed = false;
+                    }
+                }
+
                 yield return null;
             }
         }
 
-        image.transform.position = originalImagePosition;
+        minigameArt.transform.position = minigameArtPositionInitial;
+        minigameArtImage.color = originalColor;
     }
 }
