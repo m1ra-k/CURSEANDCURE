@@ -1,0 +1,15 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithExcited"
+                ],
+                "dialogue": "oh, looks like its not time to do this yet",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

@@ -1,27 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterDialogueData : MonoBehaviour
+public class AutomaticDialogueData : MonoBehaviour
 {
+    // TODO sort but later
     public GameProgressionManager GameProgressionManagerInstance;
+    public bool repeated;
+    private bool triggeredOnce;
     public List<TextAsset> characterDialogues;
-    private HashSet<Vector2> adjacentLocations = new();
+
     private GameObject lilith;
+    private GridMovement gridMovement;
     private Vector2 lilithPosition;
+    
+    private Dictionary<string, Vector2> pushBackDirection = new Dictionary<string, Vector2>
+    {
+        { "up", Vector2.down },
+        { "down", Vector2.up },
+        { "left", Vector2.right },
+        { "right", Vector2.left }
+    };
 
     void Awake()
-    { 
-        // locations
-        adjacentLocations.UnionWith(new List<Vector2>
-        {
-            (Vector2) gameObject.transform.position + Vector2.up,
-            (Vector2) gameObject.transform.position + Vector2.down,
-            (Vector2) gameObject.transform.position + Vector2.left,
-            (Vector2) gameObject.transform.position + Vector2.right
-        });
-
+    {
         // lilith
         lilith = GameObject.FindWithTag("Player");
+        gridMovement = lilith.GetComponent<GridMovement>();
     }
 
     void Start()
@@ -38,11 +42,19 @@ public class CharacterDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking)
+        if (CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
+            triggeredOnce = true;
+
+            lilith.transform.position = transform.position;
+
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
                 GameProgressionManagerInstance.DialogueSystemManager.delay = false;
+                if (repeated)
+                {
+                    PushBack();
+                }
             }
             else
             {
@@ -57,6 +69,12 @@ public class CharacterDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        return adjacentLocations.Contains(lilithPosition);
+        return (Vector2) transform.position == lilithPosition && (repeated || !triggeredOnce);
+    }
+
+    private void PushBack()
+    {
+        gridMovement.overrideIsMoving = true;
+        gridMovement.movementVector = pushBackDirection[gridMovement.directionFacing];
     }
 }
