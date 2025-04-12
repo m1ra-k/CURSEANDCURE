@@ -20,7 +20,10 @@ public class ProgressionSystem : ScriptableObject
     public void SetFlag(string key, bool value)
     {
         flags[key] = value;
-        Debug.Log($"SetFlag: {key} = {value}");
+        if (value)
+        {
+            Debug.Log($"SetFlag: {key} = {value}");
+        }
     }
 
 }

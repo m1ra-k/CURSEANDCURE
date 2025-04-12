@@ -60,7 +60,6 @@ public class AutomaticDialogueData : MonoBehaviour
         if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[flagsToSet.Count - 1])) || (!repeated && triggeredOnce))
         {
             // no longer need to repeat, so it is no longer active
-            print("repeated for this goes away");
             active = false;
             enabled = false;
         }
