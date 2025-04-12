@@ -44,12 +44,11 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         if (CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
-            triggeredOnce = true;
-
             lilith.transform.position = transform.position;
 
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
+                triggeredOnce = true;
                 GameProgressionManagerInstance.DialogueSystemManager.delay = false;
                 if (repeated)
                 {
