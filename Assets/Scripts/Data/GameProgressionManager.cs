@@ -114,6 +114,10 @@ public class GameProgressionManager : MonoBehaviour
         {
             progressionSystem.SetFlag("again", true);
         }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            progressionSystem.SetFlag("wakeUp2", true);
+        }
     }
 
     public void StopMusic()

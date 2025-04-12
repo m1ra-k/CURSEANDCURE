@@ -9,11 +9,11 @@ public class AutomaticDialogueData : MonoBehaviour
 
     // EVENT
     public bool repeated;
-    private bool triggeredOnce;
     public bool active;
     public List<string> flagsToSet;
     public int dialoguesIndex;
     public List<TextAsset> dialogues;
+    private bool triggeredOnce;
 
     private GameObject lilith;
     private GridMovement gridMovement;
@@ -49,11 +49,18 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         // lilithPosition
         lilithPosition = (Vector2) lilith.transform.position;
+
+        // flag check
+        if (!active && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[0])) // these will have: repeat - 2, !repeat - 1
+        {
+            // first flag being true is what makes it active
+            active = true;
+        }
     }
 
     void LateUpdate()
     {
-        if (CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
+        if (active && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
             lilith.transform.position = transform.position;
 
