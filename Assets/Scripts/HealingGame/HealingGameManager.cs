@@ -35,18 +35,16 @@ public class HealingGameManager : MonoBehaviour
     private TMP_FontAsset retroFont;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI resultText;
-
-    // SHAKE - TO SORT
-    public float shakeDuration = 0.5f;
+    private float shakeDuration = 0.5f;
     private GameObject minigameArt;
     private Image minigameArtImage;
     private Vector3 minigameArtPositionInitial;
-    int[] shakeAmounts = { 30, -60, 60, -60, 60 };
-    float flashInterval = 0.65f;
-    float flashDuration = 0.2f;
-    float timeSinceLastFlash = 0.65f;
-    float redTimer = 0f;
-    bool isRed = false;
+    private int[] shakeAmounts = { 30, -60, 60, -60, 60 };
+    private float flashInterval = 0.65f;
+    private float flashDuration = 0.2f;
+    private float timeSinceLastFlash = 0.65f;
+    private float redTimer = 0f;
+    private bool isRed = false;
 
     void Start()
     {
