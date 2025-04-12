@@ -57,7 +57,7 @@ public class AutomaticDialogueData : MonoBehaviour
             active = true;
         }
 
-        if (repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[flagsToSet.Count - 1]))
+        if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[flagsToSet.Count - 1])) || (!repeated && triggeredOnce))
         {
             // no longer need to repeat, so it is no longer active
             print("repeated for this goes away");
@@ -68,11 +68,6 @@ public class AutomaticDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!repeated && triggeredOnce)
-        {
-            enabled = false;
-        }
-
         if (active && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
             lilith.transform.position = transform.position;
