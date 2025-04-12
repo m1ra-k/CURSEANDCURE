@@ -43,15 +43,15 @@ public class CharacterDialogueData : MonoBehaviour
 
     void Update()
     {
+        // lilithPosition
+        lilithPosition = (Vector2) lilith.transform.position;
+
+        // flag check
         // if the current flag is true, update dialogue to be the next one possible
         if (characterDialoguesIndex < flagsToSet.Count && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[characterDialoguesIndex]))
         {
-            print("moving index");
             characterDialoguesIndex++;
         }
-
-        // lilithPosition
-        lilithPosition = (Vector2) lilith.transform.position;
     }
 
     void LateUpdate()
