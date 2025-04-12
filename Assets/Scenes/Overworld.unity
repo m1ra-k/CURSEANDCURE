@@ -176,7 +176,8 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 1
   active: 1
-  flagsToSet: []
+  flagsToSet:
+  - goBackDONE
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
@@ -3097,6 +3098,7 @@ MonoBehaviour:
   active: 0
   flagsToSet:
   - goBack2
+  - goBack2DONE
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}

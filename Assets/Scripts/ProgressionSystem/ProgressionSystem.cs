@@ -9,7 +9,6 @@ public class ProgressionSystem : ScriptableObject
 
     public void Init()
     {
-        Debug.Log("progression system init");
         flags = new Dictionary<string, bool>();
     }
 
@@ -21,6 +20,7 @@ public class ProgressionSystem : ScriptableObject
     public void SetFlag(string key, bool value)
     {
         flags[key] = value;
+        Debug.Log($"SetFlag: {key} = {value}");
     }
 
 }

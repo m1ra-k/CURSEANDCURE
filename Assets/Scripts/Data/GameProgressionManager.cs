@@ -119,6 +119,14 @@ public class GameProgressionManager : MonoBehaviour
             progressionSystem.SetFlag("goBack2", true);
             progressionSystem.SetFlag("wakeUp2", true);
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            progressionSystem.SetFlag("goBackDONE", true);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            progressionSystem.SetFlag("goBack2DONE", true);
+        }
     }
 
     public void StopMusic()
