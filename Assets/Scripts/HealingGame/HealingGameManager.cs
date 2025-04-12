@@ -35,17 +35,31 @@ public class HealingGameManager : MonoBehaviour
     private TMP_FontAsset retroFont;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI resultText;
+    private float shakeDuration = 0.5f;
+    private GameObject minigameArt;
+    private Image minigameArtImage;
+    private Vector3 minigameArtPositionInitial;
+    private int[] shakeAmounts = { 30, -60, 60, -60, 60 };
+    private float flashInterval = 0.65f;
+    private float flashDuration = 0.2f;
+    private float timeSinceLastFlash = 0.65f;
+    private float redTimer = 0f;
+    private bool isRed = false;
 
     void Start()
     {
         // state
-        GameProgressionManagerInstance = new GameProgressionManager();
+        GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
         // range
         healingRangeList = JsonUtility.FromJson<HealingRangeList>(Resources.Load<TextAsset>($"Patients/{mode}_patient_" + GameProgressionManagerInstance.lilithPatientNumber).text);
     
         // UI
         flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
+
+        minigameArt = GameObject.FindWithTag("Image");
+        minigameArtImage = minigameArt.GetComponent<Image>();
+        minigameArtPositionInitial = minigameArt.transform.position;
     }
 
     void Update()
@@ -63,7 +77,6 @@ public class HealingGameManager : MonoBehaviour
             startedGame = true;
         }
 
-        
         if ($"SCORE: {score}" != cachedScore)
         {
             scoreText.text = $"SCORE: {score}";
@@ -110,10 +123,15 @@ public class HealingGameManager : MonoBehaviour
     {
         while (true)
         {
-            if (round == 3)
+            if (round == 5)
             {
                 finishedGame = true;
-                resultText.text = score >= 80 ? "GOOD!" : "FAIL!";
+                resultText.text = "GOOD!";
+                if (score < 80)
+                {
+                    resultText.text = "FAIL!";
+                    StartCoroutine(Shake());
+                }
                 break;
             }
             AdjustHealingRange();
@@ -166,5 +184,46 @@ public class HealingGameManager : MonoBehaviour
         boxCollider.size = new Vector2(boxCollider.size.x, targetHeight);
 
         round++;
+    }
+
+    private IEnumerator Shake()
+    {
+        Color originalColor = minigameArtImage.color;
+
+        foreach (int shakeAmount in shakeAmounts)
+        {
+            float elapsedTime = 0f;
+            while (elapsedTime < shakeDuration)
+            {
+                float shakeOffset = Mathf.Sin(elapsedTime * Mathf.PI * 2) * shakeAmount;
+                minigameArt.transform.position = minigameArtPositionInitial + new Vector3(shakeOffset, 0f, 0f);
+
+                elapsedTime += Time.deltaTime;
+                timeSinceLastFlash += Time.deltaTime;
+
+                if (!isRed && timeSinceLastFlash >= flashInterval)
+                {
+                    minigameArtImage.color = Color.red;
+                    isRed = true;
+                    redTimer = 0f;
+                    timeSinceLastFlash = 0f;
+                }
+
+                if (isRed)
+                {
+                    redTimer += Time.deltaTime;
+                    if (redTimer >= flashDuration)
+                    {
+                        minigameArtImage.color = originalColor;
+                        isRed = false;
+                    }
+                }
+
+                yield return null;
+            }
+        }
+
+        minigameArt.transform.position = minigameArtPositionInitial;
+        minigameArtImage.color = originalColor;
     }
 }
