@@ -116,6 +116,7 @@ public class GameProgressionManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
+            progressionSystem.SetFlag("goBack2", true);
             progressionSystem.SetFlag("wakeUp2", true);
         }
     }
