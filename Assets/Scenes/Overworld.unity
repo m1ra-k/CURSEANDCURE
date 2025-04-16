@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 234544389}
   - component: {fileID: 234544390}
   m_Layer: 3
-  m_Name: Boy
+  m_Name: BoyNPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3799,7 +3799,7 @@ GameObject:
   - component: {fileID: 1704572838}
   - component: {fileID: 1704572839}
   m_Layer: 3
-  m_Name: Girl
+  m_Name: GirlNPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4930,7 +4930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1202840684404602179, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: TavernDOOR
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.x
@@ -4946,7 +4946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorB.y
-      value: -11
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: offsetDoorA.x
@@ -4962,7 +4962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: offsetDoorB.y
-      value: -12
+      value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: GameProgressionManagerInstance
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
