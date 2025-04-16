@@ -12,7 +12,7 @@ public class GridMovement : MonoBehaviour
     public Vector2 movementVector;
     public bool isMoving;
     public bool overrideIsMoving;
-
+    public bool currentlyDoorTransitioning;
 
     private float moveSpeed = 5f;
     private float stepSize = 1f;
@@ -35,7 +35,7 @@ public class GridMovement : MonoBehaviour
     {
         if (!overrideIsMoving)
         {
-            if (GameProgressionManagerInstance.currentlyTalking)
+            if (GameProgressionManagerInstance.currentlyTalking || currentlyDoorTransitioning)
             {
                 isMoving = false;
                 movementVector = Vector2.zero;
@@ -102,8 +102,8 @@ public class GridMovement : MonoBehaviour
                     isMoving = false;
                     overrideIsMoving = false;
                 }
-            }    
-        }
+            }
+        }  
     }
 }
 
