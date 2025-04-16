@@ -14,7 +14,6 @@ public class GridMovement : MonoBehaviour
     public bool overrideIsMoving;
     public bool currentlyDoorTransitioning;
 
-
     private float moveSpeed = 5f;
     private float stepSize = 1f;
     private Vector2 targetPosition;
@@ -36,7 +35,7 @@ public class GridMovement : MonoBehaviour
     {
         if (!overrideIsMoving)
         {
-            if (GameProgressionManagerInstance.currentlyTalking)
+            if (GameProgressionManagerInstance.currentlyTalking || currentlyDoorTransitioning)
             {
                 isMoving = false;
                 movementVector = Vector2.zero;
@@ -89,24 +88,21 @@ public class GridMovement : MonoBehaviour
         }
         else
         {
-            if (!currentlyDoorTransitioning)
+            if (!isMoving)
             {
-                if (!isMoving)
-                {
-                    targetPosition = (Vector2) transform.position + movementVector * stepSize;
-                    isMoving = true;
-                }
-                else
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                targetPosition = (Vector2) transform.position + movementVector * stepSize;
+                isMoving = true;
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                    if ((Vector2) transform.position == targetPosition) 
-                    {
-                        isMoving = false;
-                        overrideIsMoving = false;
-                    }
-                } 
-            }   
+                if ((Vector2) transform.position == targetPosition) 
+                {
+                    isMoving = false;
+                    overrideIsMoving = false;
+                }
+            }
         }  
     }
 }
