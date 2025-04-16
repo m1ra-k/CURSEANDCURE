@@ -8,7 +8,7 @@
 - Adrina Khan (kqc4zd)
     - Dialogue Script, Main Menu, Overworld Transitions
 - Joyce Yang (afe5jy)
-    - Camera, Colliisons, Character Sprites and Animations 
+    - Camera, Collisions, Character Sprites and Animations 
 
 ## Game Pitch
 
