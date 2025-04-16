@@ -16,6 +16,7 @@ public class DoorBehavior : MonoBehaviour
     // lilith
     private GameObject lilith;
     private Vector2 lilithPosition;
+    private GridMovement lilithGridMovement;
 
     // transition
     private bool currentlyDoorTransitioning;
@@ -24,6 +25,7 @@ public class DoorBehavior : MonoBehaviour
     {
         // lilith
         lilith = GameObject.FindWithTag("Player");
+        lilithGridMovement = lilith.GetComponent<GridMovement>();
     }
 
     void Start()
@@ -44,9 +46,9 @@ public class DoorBehavior : MonoBehaviour
 
     private void CheckDoor(Vector2 door, Vector2 offsetDoor)
     {
-        if (lilithPosition == door && !currentlyDoorTransitioning)
+        if (lilithPosition == door && !lilithGridMovement.currentlyDoorTransitioning)
         {
-            currentlyDoorTransitioning = true;
+            lilithGridMovement.currentlyDoorTransitioning = true;
             StartCoroutine(DoorTransition(offsetDoor));
         }
     }
@@ -59,6 +61,6 @@ public class DoorBehavior : MonoBehaviour
         GameProgressionManagerInstance.fadeEffect.FadeOut(GameProgressionManagerInstance.blackTransition, 0.5f);
 
         yield return new WaitForSeconds(0.5f);
-        currentlyDoorTransitioning = false;
+        lilithGridMovement.currentlyDoorTransitioning = false;
     }
 }
