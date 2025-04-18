@@ -126,15 +126,14 @@ public class HealingGameManager : MonoBehaviour
             if (round == 5)
             {
                 finishedGame = true;
-                resultText.text = "GOOD!";
-                if (score < 80)
-                {
-                    resultText.text = "FAIL!";
-                    StartCoroutine(Shake());
-                }
+
+                StartCoroutine(score < 80 ? DisplayLost() : DisplayWon());
+
                 break;
             }
+
             AdjustHealingRange();
+            
             yield return new WaitForSeconds(10f);
         }
     }
@@ -186,8 +185,10 @@ public class HealingGameManager : MonoBehaviour
         round++;
     }
 
-    private IEnumerator Shake()
+    private IEnumerator DisplayLost()
     {
+        resultText.text = "FAIL!";
+
         Color originalColor = minigameArtImage.color;
 
         foreach (int shakeAmount in shakeAmounts)
@@ -225,5 +226,16 @@ public class HealingGameManager : MonoBehaviour
 
         minigameArt.transform.position = minigameArtPositionInitial;
         minigameArtImage.color = originalColor;
+
+        GameProgressionManagerInstance.TransitionScene("Lost");
+    }
+
+    private IEnumerator DisplayWon()
+    {
+        resultText.text = "GOOD!";
+
+        yield return new WaitForSeconds(2.5f);
+
+        GameProgressionManagerInstance.TransitionScene("Won");
     }
 }

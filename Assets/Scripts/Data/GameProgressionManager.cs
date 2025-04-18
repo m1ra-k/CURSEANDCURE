@@ -14,7 +14,7 @@ public class GameProgressionManager : MonoBehaviour
     public int eventNumber;
     public bool transitioning;
     public string previousScene;
-    public int lilithPatientNumber;
+    public int lilithPatientNumber = 0;
 
     [Header("[Start Screen]")]
     private Button playButton;
@@ -25,6 +25,11 @@ public class GameProgressionManager : MonoBehaviour
     public DialogueSystemManager DialogueSystemManager;
     public bool currentlyTalking;
     public bool finishedCurrentRound;
+    public GameObject lilith;
+    public Vector2 lilithPosition;
+    public string lastTalkedNPC;
+    public bool healedPatient;
+    public CharacterDialogueData patientCharacterDialogueData;
 
     [Header("[Healing Game]")]
     private HealingGameManager healingGameManager;
@@ -87,7 +92,19 @@ public class GameProgressionManager : MonoBehaviour
             case "Overworld":
                 dialogueCanvas = GameObject.FindWithTag("Dialogue");
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
+                DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
+
+                lilith = GameObject.FindWithTag("Player");
+                lilith.transform.position = lilithPosition;
+
+                if (healedPatient)
+                {
+                    patientCharacterDialogueData = GameObject.Find(lastTalkedNPC).GetComponent<CharacterDialogueData>();
+                    patientCharacterDialogueData.characterDialoguesIndex++;
+                    patientCharacterDialogueData.postHealingGame = true;
+                }
+
                 break;
 
             case "HealingGame":
@@ -103,17 +120,13 @@ public class GameProgressionManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         // TODO GAME PROGRESSION SYSTEM this is just mock event completion but this approach works
         // just follow this format for actual events
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            progressionSystem.SetFlag("again", true);
-        }
         if (Input.GetKeyDown(KeyCode.U))
         {
             progressionSystem.SetFlag("goBack2", true);
@@ -174,47 +187,51 @@ public class GameProgressionManager : MonoBehaviour
     {
         string sceneType = "";
 
+        transitioning = true;
+
+        // TODO - CONVERT TO SWITCH STATEMENT LOL
         // not true always tho hmm
-        if (possibleFlag.Equals("play"))
+        if (possibleFlag.Equals("Play"))
         {
             sceneNumber += 1;
             // sceneType = sceneProgressionLookup[sceneNumber][0];
         }
-        else if (possibleFlag.Equals("lost"))
+        else if (possibleFlag.Equals("Won"))
+        {
+            sceneType = "Overworld";
+
+            healedPatient = true;
+        }
+        else if (possibleFlag.Equals("Lost"))
         {
             sceneType = "GameOver";
         }
-        else if (possibleFlag.Equals("retry"))
+        else if (possibleFlag.Equals("Retry"))
         {
-            fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "CookingGame");
-            transitioning = true;
+            fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
             return;
         }
         else
         {
-            sceneType = currentScene.Equals("RestaurantOverworld") ? "CookingGame" : "RestaurantOverworld";
+            sceneType = possibleFlag;
         }
         
         switch (sceneType)
         {
             case "Overworld":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "Overworld");
-                transitioning = true;
                 break;
                 
             case "HealingGame":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
-                transitioning = true;
                 break;
 
             case "GameOver":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "GameOver");
-                transitioning = true;
                 break;
 
             case "EndScreen":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "EndScreen");
-                transitioning = true;
                 break;
         }
     }
@@ -222,6 +239,6 @@ public class GameProgressionManager : MonoBehaviour
     // BUTTONS - TODO MOVE
     public void PlayGame()
     {
-        TransitionScene("play");
+        TransitionScene("Play");
     } 
 }

@@ -835,6 +835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  patient: 0
+  postHealingGame: 0
   flagsToSet:
   - again
   characterDialoguesIndex: 0
@@ -2431,6 +2433,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
+      propertyPath: lilithPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
+      propertyPath: lilithPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
       value: 
       objectReference: {fileID: 11400000, guid: 6def72d7de14ecb40afa5e5e6a5b5615, type: 2}
@@ -3912,6 +3922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  patient: -1
+  postHealingGame: 0
   flagsToSet: []
   characterDialoguesIndex: 0
   characterDialogues:
@@ -4256,7 +4268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757076324627688934, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4444946307903869599, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
       propertyPath: m_IsActive

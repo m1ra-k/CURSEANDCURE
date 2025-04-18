@@ -71,7 +71,6 @@ public class DialogueSystemManager : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        GameProgressionManagerInstance = GameObject.FindAnyObjectByType<GameProgressionManager>();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

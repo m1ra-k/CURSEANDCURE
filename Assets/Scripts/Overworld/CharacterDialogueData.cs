@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CharacterDialogueData : MonoBehaviour
 {
     public GameProgressionManager GameProgressionManagerInstance;
 
-    // EVENT
+    [Header("[EVENT]")]
+    public int patient = -1;
+    public bool postHealingGame;
     public List<string> flagsToSet;
     public int characterDialoguesIndex;
     public List<TextAsset> characterDialogues;
@@ -56,15 +57,24 @@ public class CharacterDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking)
+        if (((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && !GameProgressionManagerInstance.transitioning) || postHealingGame)
         {
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
                 GameProgressionManagerInstance.DialogueSystemManager.delay = false;
+
+                GameProgressionManagerInstance.lastTalkedNPC = gameObject.name;
+
+                postHealingGame = false;
+
+                if (patient == GameProgressionManagerInstance.lilithPatientNumber)
+                {
+                    GameProgressionManagerInstance.lilithPatientNumber++;
+                    GameProgressionManagerInstance.TransitionScene("HealingGame");
+                }
             }
             else
             {
-                // TODO: mira, hardcoded to 0 but needs to match GameProgressionManager progression value
                 GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[characterDialoguesIndex]);
                 GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
                 GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    

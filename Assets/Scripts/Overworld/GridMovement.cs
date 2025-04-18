@@ -35,7 +35,7 @@ public class GridMovement : MonoBehaviour
     {
         if (!overrideIsMoving)
         {
-            if (GameProgressionManagerInstance.currentlyTalking || currentlyDoorTransitioning)
+            if (GameProgressionManagerInstance.currentlyTalking || currentlyDoorTransitioning || GameProgressionManagerInstance.transitioning)
             {
                 isMoving = false;
                 movementVector = Vector2.zero;
