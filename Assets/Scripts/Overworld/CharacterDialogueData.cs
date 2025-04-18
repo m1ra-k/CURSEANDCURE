@@ -57,7 +57,7 @@ public class CharacterDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && !GameProgressionManagerInstance.transitioning)
         {
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {

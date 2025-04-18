@@ -25,6 +25,8 @@ public class GameProgressionManager : MonoBehaviour
     public DialogueSystemManager DialogueSystemManager;
     public bool currentlyTalking;
     public bool finishedCurrentRound;
+    public GameObject lilith;
+    public Vector2 lilithPosition;
 
     [Header("[Healing Game]")]
     private HealingGameManager healingGameManager;
@@ -87,7 +89,12 @@ public class GameProgressionManager : MonoBehaviour
             case "Overworld":
                 dialogueCanvas = GameObject.FindWithTag("Dialogue");
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
+                DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
+
+                lilith = GameObject.FindWithTag("Player");
+                lilith.transform.position = lilithPosition;
+
                 break;
 
             case "HealingGame":
@@ -174,6 +181,8 @@ public class GameProgressionManager : MonoBehaviour
     {
         string sceneType = "";
 
+        transitioning = true;
+
         // TODO - CONVERT TO SWITCH STATEMENT LOL
         // not true always tho hmm
         if (possibleFlag.Equals("Play"))
@@ -193,7 +202,6 @@ public class GameProgressionManager : MonoBehaviour
         else if (possibleFlag.Equals("Retry"))
         {
             fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
-            transitioning = true;
             return;
         }
         else
@@ -205,22 +213,18 @@ public class GameProgressionManager : MonoBehaviour
         {
             case "Overworld":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "Overworld");
-                transitioning = true;
                 break;
                 
             case "HealingGame":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
-                transitioning = true;
                 break;
 
             case "GameOver":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "GameOver");
-                transitioning = true;
                 break;
 
             case "EndScreen":
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "EndScreen");
-                transitioning = true;
                 break;
         }
     }

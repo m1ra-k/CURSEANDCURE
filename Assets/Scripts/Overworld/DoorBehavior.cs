@@ -14,30 +14,21 @@ public class DoorBehavior : MonoBehaviour
     public Vector2 offsetDoorB;
     
     // lilith
-    private GameObject lilith;
-    private Vector2 lilithPosition;
     private GridMovement lilithGridMovement;
-
-    // transition
-    private bool currentlyDoorTransitioning;
-
-    void Awake()
-    {
-        // lilith
-        lilith = GameObject.FindWithTag("Player");
-        lilithGridMovement = lilith.GetComponent<GridMovement>();
-    }
 
     void Start()
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+
+        // lilith
+        lilithGridMovement = GameProgressionManagerInstance.lilith.GetComponent<GridMovement>();
     }
 
     void Update()
     {
         // update position
-        lilithPosition = (Vector2) lilith.transform.position;
+        GameProgressionManagerInstance.lilithPosition = (Vector2) GameProgressionManagerInstance.lilith.transform.position;
 
         // door overlap check
         CheckDoor(doorA, offsetDoorB);
@@ -46,7 +37,7 @@ public class DoorBehavior : MonoBehaviour
 
     private void CheckDoor(Vector2 door, Vector2 offsetDoor)
     {
-        if (lilithPosition == door && !lilithGridMovement.currentlyDoorTransitioning)
+        if (GameProgressionManagerInstance.lilithPosition == door && !lilithGridMovement.currentlyDoorTransitioning)
         {
             lilithGridMovement.currentlyDoorTransitioning = true;
             StartCoroutine(DoorTransition(offsetDoor));
@@ -57,7 +48,7 @@ public class DoorBehavior : MonoBehaviour
     {
         GameProgressionManagerInstance.fadeEffect.FadeIn(GameProgressionManagerInstance.blackTransition, 0.5f);
         yield return new WaitForSeconds(0.75f);
-        lilith.transform.position = offsetDoor;
+        GameProgressionManagerInstance.lilith.transform.position = offsetDoor;
         GameProgressionManagerInstance.fadeEffect.FadeOut(GameProgressionManagerInstance.blackTransition, 0.5f);
 
         yield return new WaitForSeconds(0.5f);

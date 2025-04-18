@@ -19,9 +19,8 @@ public class HandleBehavior : MonoBehaviour
     {
         if (!healingGameManager.finishedGame && HandleFullyInside(handleCollider, other))
         {
-            Debug.Log("fully inside trigger: " + other.name);
             framesInsideRange++;
-            // five  second leeway
+            // five second leeway
             healingGameManager.score = Mathf.FloorToInt(framesInsideRange / 2700f * 100);
         }
     }
