@@ -27,6 +27,9 @@ public class GameProgressionManager : MonoBehaviour
     public bool finishedCurrentRound;
     public GameObject lilith;
     public Vector2 lilithPosition;
+    public string lastTalkedNPC;
+    public bool healedPatient;
+    public CharacterDialogueData patientCharacterDialogueData;
 
     [Header("[Healing Game]")]
     private HealingGameManager healingGameManager;
@@ -95,6 +98,13 @@ public class GameProgressionManager : MonoBehaviour
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
 
+                if (healedPatient)
+                {
+                    patientCharacterDialogueData = GameObject.Find(lastTalkedNPC).GetComponent<CharacterDialogueData>();
+                    patientCharacterDialogueData.characterDialoguesIndex++;
+                    patientCharacterDialogueData.postHealingGame = true;
+                }
+
                 break;
 
             case "HealingGame":
@@ -110,17 +120,13 @@ public class GameProgressionManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         // TODO GAME PROGRESSION SYSTEM this is just mock event completion but this approach works
         // just follow this format for actual events
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            progressionSystem.SetFlag("again", true);
-        }
         if (Input.GetKeyDown(KeyCode.U))
         {
             progressionSystem.SetFlag("goBack2", true);
@@ -193,7 +199,8 @@ public class GameProgressionManager : MonoBehaviour
         else if (possibleFlag.Equals("Won"))
         {
             sceneType = "Overworld";
-            // something to designate that just healed patient (need to make new bool TODO)
+
+            healedPatient = true;
         }
         else if (possibleFlag.Equals("Lost"))
         {

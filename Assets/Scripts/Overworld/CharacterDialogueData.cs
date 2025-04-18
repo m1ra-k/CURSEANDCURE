@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CharacterDialogueData : MonoBehaviour
 {
@@ -8,6 +7,7 @@ public class CharacterDialogueData : MonoBehaviour
 
     [Header("[EVENT]")]
     public int patient = -1;
+    public bool postHealingGame;
     public List<string> flagsToSet;
     public int characterDialoguesIndex;
     public List<TextAsset> characterDialogues;
@@ -57,11 +57,15 @@ public class CharacterDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && !GameProgressionManagerInstance.transitioning)
+        if (((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && !GameProgressionManagerInstance.transitioning) || postHealingGame)
         {
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
                 GameProgressionManagerInstance.DialogueSystemManager.delay = false;
+
+                GameProgressionManagerInstance.lastTalkedNPC = gameObject.name;
+
+                postHealingGame = false;
 
                 if (patient == GameProgressionManagerInstance.lilithPatientNumber)
                 {
