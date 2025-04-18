@@ -13,6 +13,6 @@ public class RetryButton : MonoBehaviour
 
     public void RetryGame()
     {
-        GameProgressionManager.TransitionScene("retry");
+        GameProgressionManager.TransitionScene("Retry");
     }
 }

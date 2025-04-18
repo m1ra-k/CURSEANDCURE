@@ -132,6 +132,12 @@ public class HealingGameManager : MonoBehaviour
                     resultText.text = "FAIL!";
                     StartCoroutine(Shake());
                 }
+                else
+                {
+                    // ELSE WIN COROUTINE (MAKE NEW)
+                    // yield return new WaitForSeconds(1f);
+                    // GameProgressionManagerInstance.TransitionScene("Won");
+                }
                 break;
             }
             AdjustHealingRange();
@@ -226,8 +232,8 @@ public class HealingGameManager : MonoBehaviour
         minigameArt.transform.position = minigameArtPositionInitial;
         minigameArtImage.color = originalColor;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
-        GameProgressionManagerInstance.TransitionScene("lost");
+        GameProgressionManagerInstance.TransitionScene("Lost");
     }
 }

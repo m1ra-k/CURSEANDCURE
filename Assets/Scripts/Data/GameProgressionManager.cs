@@ -174,17 +174,23 @@ public class GameProgressionManager : MonoBehaviour
     {
         string sceneType = "";
 
+        // TODO - CONVERT TO SWITCH STATEMENT LOL
         // not true always tho hmm
-        if (possibleFlag.Equals("play"))
+        if (possibleFlag.Equals("Play"))
         {
             sceneNumber += 1;
             // sceneType = sceneProgressionLookup[sceneNumber][0];
         }
-        else if (possibleFlag.Equals("lost"))
+        else if (possibleFlag.Equals("Won"))
+        {
+            sceneType = "Overworld";
+            // something to designate that just healed patient (need to make new bool TODO)
+        }
+        else if (possibleFlag.Equals("Lost"))
         {
             sceneType = "GameOver";
         }
-        else if (possibleFlag.Equals("retry"))
+        else if (possibleFlag.Equals("Retry"))
         {
             fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
             transitioning = true;
@@ -222,6 +228,6 @@ public class GameProgressionManager : MonoBehaviour
     // BUTTONS - TODO MOVE
     public void PlayGame()
     {
-        TransitionScene("play");
+        TransitionScene("Play");
     } 
 }
