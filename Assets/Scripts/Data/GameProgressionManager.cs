@@ -14,7 +14,7 @@ public class GameProgressionManager : MonoBehaviour
     public int eventNumber;
     public bool transitioning;
     public string previousScene;
-    public int lilithPatientNumber;
+    public int lilithPatientNumber = 0;
 
     [Header("[Start Screen]")]
     private Button playButton;
@@ -186,13 +186,13 @@ public class GameProgressionManager : MonoBehaviour
         }
         else if (possibleFlag.Equals("retry"))
         {
-            fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "CookingGame");
+            fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
             transitioning = true;
             return;
         }
         else
         {
-            sceneType = currentScene.Equals("RestaurantOverworld") ? "CookingGame" : "RestaurantOverworld";
+            sceneType = possibleFlag;
         }
         
         switch (sceneType)

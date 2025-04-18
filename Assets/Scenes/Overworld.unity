@@ -835,6 +835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  patient: 0
   flagsToSet:
   - again
   characterDialoguesIndex: 0
@@ -3912,6 +3913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  patient: -1
   flagsToSet: []
   characterDialoguesIndex: 0
   characterDialogues:

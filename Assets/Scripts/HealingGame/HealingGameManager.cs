@@ -225,5 +225,9 @@ public class HealingGameManager : MonoBehaviour
 
         minigameArt.transform.position = minigameArtPositionInitial;
         minigameArtImage.color = originalColor;
+
+        yield return new WaitForSeconds(1.5f);
+
+        GameProgressionManagerInstance.TransitionScene("lost");
     }
 }
