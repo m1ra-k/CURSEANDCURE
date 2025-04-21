@@ -22,6 +22,8 @@ public class AutomaticDialogueData : MonoBehaviour
 
     [SerializeField]
     private List<string> triggeredFlags;
+
+    private Vector2 setPosition;
     
     private Dictionary<string, Vector2> pushBackDirection = new Dictionary<string, Vector2>
     {
@@ -69,7 +71,7 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         if (active && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
-            lilith.transform.position = transform.position;
+            lilith.transform.position = setPosition;
 
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
@@ -105,6 +107,7 @@ public class AutomaticDialogueData : MonoBehaviour
         {
             if (triggerPosition == lilithPosition && (repeated || !triggeredOnce))
             {
+                setPosition = triggerPosition;
                 return true;
             }
         }
