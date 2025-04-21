@@ -1,0 +1,25 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "character_woman_0_1",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "ok",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

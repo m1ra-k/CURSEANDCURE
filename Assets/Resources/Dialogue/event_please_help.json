@@ -1,0 +1,25 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Unknown",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "please help!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "I'll take care of her now!",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

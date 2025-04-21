@@ -1,0 +1,35 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "LilithExcited"
+                ],
+                "dialogue": "SECOND PATIENT default dialogue after healing",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "honey we dont have a dog",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Haha, it is!",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

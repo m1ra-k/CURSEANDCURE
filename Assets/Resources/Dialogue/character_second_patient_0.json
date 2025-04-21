@@ -1,0 +1,35 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithExcited"
+                ],
+                "dialogue": "SECOND pre blood suck dialogue",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "green is a cool color isn't it",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Haha, it is!",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}
