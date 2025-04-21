@@ -61,6 +61,12 @@ public class CharacterDialogueData : MonoBehaviour
 
                 GameProgressionManagerInstance.lastTalkedNPC = gameObject.name;
 
+                // other dialogue after getting healed (usually). plays after thank you cutscene.
+                if (postHealingGame)
+                {
+                    characterDialoguesIndex++;
+                }
+
                 postHealingGame = false;
 
                 if (patient == GameProgressionManagerInstance.lilithPatientNumber)

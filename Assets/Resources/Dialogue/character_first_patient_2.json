@@ -1,0 +1,35 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "LilithExcited"
+                ],
+                "dialogue": "i need to get home and walk my dog",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "honey we dont have a dog",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Haha, it is!",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}
