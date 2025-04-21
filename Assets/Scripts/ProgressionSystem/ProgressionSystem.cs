@@ -11,7 +11,8 @@ public class ProgressionSystem : ScriptableObject
     {
         flags = new Dictionary<string, bool> { 
             { "firstHealed", false }, 
-            { "secondHealed", false }, 
+            { "secondHealed", false },
+            { "calledForHelp", false }, 
             { "thirdHealed", false }
         };
     }

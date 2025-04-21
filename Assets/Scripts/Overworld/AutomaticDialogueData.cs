@@ -8,6 +8,7 @@ public class AutomaticDialogueData : MonoBehaviour
     public GameProgressionManager GameProgressionManagerInstance;
 
     // EVENT
+    public List<Vector2> triggerPositions;
     public bool repeated;
     public bool active;
     public List<string> flags;
@@ -18,6 +19,11 @@ public class AutomaticDialogueData : MonoBehaviour
     private GameObject lilith;
     private GridMovement gridMovement;
     private Vector2 lilithPosition;
+
+    [SerializeField]
+    private List<string> triggeredFlags;
+
+    private Vector2 setPosition;
     
     private Dictionary<string, Vector2> pushBackDirection = new Dictionary<string, Vector2>
     {
@@ -32,6 +38,8 @@ public class AutomaticDialogueData : MonoBehaviour
         // lilith
         lilith = GameObject.FindWithTag("Player");
         gridMovement = lilith.GetComponent<GridMovement>();
+
+        triggerPositions.Add((Vector2) transform.position);
     }
 
     void Start()
@@ -51,8 +59,7 @@ public class AutomaticDialogueData : MonoBehaviour
             // first flag being true is what makes it active
             active = true;
         }
-
-        if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[flags.Count - 1])) || (!repeated && triggeredOnce))
+        else if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[flags.Count - 1])) || (!repeated && triggeredOnce))
         {
             // no longer need to repeat, so it is no longer active
             active = false;
@@ -64,7 +71,7 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         if (active && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && (!repeated || (repeated && !gridMovement.overrideIsMoving)))
         {
-            lilith.transform.position = transform.position;
+            lilith.transform.position = setPosition;
 
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
@@ -77,6 +84,11 @@ public class AutomaticDialogueData : MonoBehaviour
                 else
                 {
                     GameProgressionManagerInstance.complementedOneTimeEvents.Add(name);
+
+                    foreach (var triggeredFlag in triggeredFlags)
+                    {
+                        GameProgressionManagerInstance.progressionSystem.SetFlag(triggeredFlag, true);
+                    }
                 }
             }
             else
@@ -91,7 +103,15 @@ public class AutomaticDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        return (Vector2) transform.position == lilithPosition && (repeated || !triggeredOnce);
+        foreach (var triggerPosition in triggerPositions)
+        {
+            if (triggerPosition == lilithPosition && (repeated || !triggeredOnce))
+            {
+                setPosition = triggerPosition;
+                return true;
+            }
+        }
+        return false;
     }
 
     private void PushBack()

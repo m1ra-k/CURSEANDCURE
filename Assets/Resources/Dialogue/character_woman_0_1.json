@@ -2,21 +2,21 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Woman",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "TavernKeeperHappy"
                 ],
-                "dialogue": "post blood suck: hilda 1",
+                "dialogue": "character_woman_0_1",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Woman",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "LilithNeutral"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "ok",
                 "textSpeed": 0
             },
             "endOfScene": true

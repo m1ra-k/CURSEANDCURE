@@ -2,21 +2,21 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Unknown",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "TavernKeeperHappy"
                 ],
-                "dialogue": "post blood suck: hilda 1",
+                "dialogue": "please help!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "LilithNeutral"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "I'll take care of her now!",
                 "textSpeed": 0
             },
             "endOfScene": true
