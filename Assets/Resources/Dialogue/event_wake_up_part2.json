@@ -1,0 +1,35 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "*Yawwwnn* Last night was too taxing.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "It seemed as though the residents' ailments were worsening.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "I hope this plague subsides soon, I don't think I can ever welcome the taste of tarnished blood.",
+                "textSpeed": 0
+            },   
+            "endOfScene": true
+        }
+    ]
+}

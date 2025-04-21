@@ -1,0 +1,35 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Hilda",
+                "speakerSprite": [
+                    "Transparent"
+                ],
+                "dialogue": "Lilith! Wake up, the sun has almost set!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Hilda",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "Mhmm…",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "Just a bit longer, please…",
+                "textSpeed": 0
+            },   
+            "endOfScene": true
+        }
+    ]
+}

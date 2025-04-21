@@ -4,9 +4,9 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "LilithNeutral"
                 ],
-                "dialogue": "SOMETHING WHERE LILITH SAYS i cant go theres something i have to do here",
+                "dialogue": "I should cure the patient in the tavern first.",
                 "textSpeed": 0
             },
             "endOfScene": true
