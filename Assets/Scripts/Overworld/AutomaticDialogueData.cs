@@ -8,6 +8,7 @@ public class AutomaticDialogueData : MonoBehaviour
     public GameProgressionManager GameProgressionManagerInstance;
 
     // EVENT
+    public List<Vector2> triggerPositions;
     public bool repeated;
     public bool active;
     public List<string> flags;
@@ -35,6 +36,8 @@ public class AutomaticDialogueData : MonoBehaviour
         // lilith
         lilith = GameObject.FindWithTag("Player");
         gridMovement = lilith.GetComponent<GridMovement>();
+
+        triggerPositions.Add((Vector2) transform.position);
     }
 
     void Start()
@@ -52,13 +55,11 @@ public class AutomaticDialogueData : MonoBehaviour
         if (!active && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[0])) // these will have: repeat - 2, !repeat - 1
         {
             // first flag being true is what makes it active
-            print("1");
             active = true;
         }
         else if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[flags.Count - 1])) || (!repeated && triggeredOnce))
         {
             // no longer need to repeat, so it is no longer active
-            print("2");
             active = false;
             enabled = false;
         }
@@ -100,7 +101,14 @@ public class AutomaticDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        return (Vector2) transform.position == lilithPosition && (repeated || !triggeredOnce);
+        foreach (var triggerPosition in triggerPositions)
+        {
+            if (triggerPosition == lilithPosition && (repeated || !triggeredOnce))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void PushBack()
