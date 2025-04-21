@@ -8,7 +8,7 @@ public class CharacterDialogueData : MonoBehaviour
     [Header("[EVENT]")]
     public int patient = -1;
     public bool postHealingGame;
-    public List<string> flagsToSet;
+    public List<string> flags;
     public int characterDialoguesIndex;
     public List<TextAsset> characterDialogues;
     
@@ -35,11 +35,6 @@ public class CharacterDialogueData : MonoBehaviour
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
-    
-        foreach (string flag in flagsToSet)
-        {
-            GameProgressionManagerInstance.progressionSystem.SetFlag(flag, false);
-        }
     }
 
     void Update()
@@ -49,8 +44,9 @@ public class CharacterDialogueData : MonoBehaviour
 
         // flag check
         // if the current flag is true, update dialogue to be the next one possible
-        if (characterDialoguesIndex < flagsToSet.Count && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[characterDialoguesIndex]))
+        if (characterDialoguesIndex < flags.Count && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[characterDialoguesIndex]))
         {
+            print("this should happen for hilda lol");
             characterDialoguesIndex++;
         }
     }

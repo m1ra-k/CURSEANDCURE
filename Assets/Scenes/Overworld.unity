@@ -176,8 +176,8 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 1
   active: 1
-  flagsToSet:
-  - goBackDONE
+  flags:
+  - firstHealed
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
@@ -627,8 +627,8 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   patient: 0
   postHealingGame: 0
-  flagsToSet:
-  - again
+  flags:
+  - firstHealed
   characterDialoguesIndex: 0
   characterDialogues:
   - {fileID: 4900000, guid: 34d591e8358b261408257d1de78f2c1c, type: 3}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 0
   active: 1
-  flagsToSet: []
+  flags: []
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: e01ccc2b08f059f41a191b63d61ef26c, type: 3}
@@ -1792,8 +1792,8 @@ Transform:
   m_Children:
   - {fileID: 1161374572}
   - {fileID: 412885583}
-  - {fileID: 967703848}
   - {fileID: 119753681}
+  - {fileID: 967703848}
   - {fileID: 1297377895}
   m_Father: {fileID: 402925039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1815,7 +1815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &967703848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1850,8 +1850,7 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 0
   active: 0
-  flagsToSet:
-  - wakeUp2
+  flags: []
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: 984aa504302b97c41b7bfe08ba28be4e, type: 3}
@@ -1968,7 +1967,7 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 0
   active: 1
-  flagsToSet: []
+  flags: []
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: 984aa504302b97c41b7bfe08ba28be4e, type: 3}
@@ -2276,7 +2275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297377895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2311,9 +2310,7 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   repeated: 1
   active: 0
-  flagsToSet:
-  - goBack2
-  - goBack2DONE
+  flags: []
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
@@ -2774,7 +2771,8 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   patient: -1
   postHealingGame: 0
-  flagsToSet: []
+  flags:
+  - firstHealed
   characterDialoguesIndex: 0
   characterDialogues:
   - {fileID: 4900000, guid: 0f6478b179ad56148ae5e377d4f3e30a, type: 3}
