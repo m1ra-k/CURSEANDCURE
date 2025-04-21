@@ -9,8 +9,11 @@ public class ProgressionSystem : ScriptableObject
 
     public void Init()
     {
-        flags = new Dictionary<string, bool>();
-        SetFlag("firstHealed", false);
+        flags = new Dictionary<string, bool> { 
+            { "firstHealed", false }, 
+            { "secondHealed", false }, 
+            { "thirdHealed", false }
+        };
     }
 
     public bool GetFlag(string key)
@@ -21,10 +24,7 @@ public class ProgressionSystem : ScriptableObject
     public void SetFlag(string key, bool value)
     {
         flags[key] = value;
-        if (value)
-        {
-            Debug.Log($"SetFlag: {key} = {value}");
-        }
+        Debug.Log($"SetFlag: {key} = {value}");
     }
 
 }

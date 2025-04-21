@@ -51,10 +51,10 @@ public class GameProgressionManager : MonoBehaviour
 
     void Awake()
     {        
-        progressionSystem.Init();
-
         if (GameProgressionManagerInstance == null)
         {
+            progressionSystem.Init();
+
             Application.targetFrameRate = 60;
             GameProgressionManagerInstance = this;
             DontDestroyOnLoad(gameObject);

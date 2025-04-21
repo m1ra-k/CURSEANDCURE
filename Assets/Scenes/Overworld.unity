@@ -633,6 +633,7 @@ MonoBehaviour:
   characterDialogues:
   - {fileID: 4900000, guid: 34d591e8358b261408257d1de78f2c1c, type: 3}
   - {fileID: 4900000, guid: dd5f3f0752b94f24990fb482c3c0cc45, type: 3}
+  - {fileID: 4900000, guid: 24d82af8ce2c27643bcbcfb03297615c, type: 3}
 --- !u!61 &234544390
 BoxCollider2D:
   m_ObjectHideFlags: 0
