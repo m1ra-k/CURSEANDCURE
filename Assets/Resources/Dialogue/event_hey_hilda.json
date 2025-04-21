@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Good morn- Ah, goodnight, Lilith.",
+                "dialogue": "Good morn--Ah, goodnight, Lilith.",
                 "textSpeed": 0
             }
         },
@@ -76,7 +76,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Yes, but-",
+                "dialogue": "Yes, but--",
                 "textSpeed": 0
             }
         },
@@ -96,7 +96,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Hahaha!",
+                "dialogue": "Hah.",
                 "textSpeed": 0
             }
         },
@@ -134,7 +134,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithSmile"
+                    "LilithHappy"
                 ],
                 "dialogue": "I prefer the title of miracle doctor, hahaha.",
                 "textSpeed": 0
@@ -146,7 +146,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Ah, speaking of which-",
+                "dialogue": "Ah, speaking of which--",
                 "textSpeed": 0
             }
         },
@@ -156,17 +156,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "You have 3 new patients tonight.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "TavernKeeper",
-                "speakerSprite": [
-                    "TavernKeeperFrown"
-                ],
-                "dialogue": "There's the man in the tavern, the woman down across the river, and the old man waiting in the park.",
+                "dialogue": "The night has come. You know what that means, right?",
                 "textSpeed": 0
             }
         },
@@ -174,9 +164,19 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
-                "dialogue": "The man in the tavern?!",
+                "dialogue": "Ah of course...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "It's time to heal my patients for the day.",
                 "textSpeed": 0
             }
         },
@@ -186,7 +186,37 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Yes, he's sitting at that table over there.",
+                "dialogue": "Yeah.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "There's the woman who lives down across the river in the blue house as well as the boy who should be waiting in the park later in the night shortly after.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "But your first patient of the night is that man over there.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "He's sitting at the table by the front.",
                 "textSpeed": 0
             }
         },
@@ -206,7 +236,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "At first I thought he just had one-to-many drinks!",
+                "dialogue": "At first I thought he just had one too many drinks.",
                 "textSpeed": 0
             }
         },
@@ -216,7 +246,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "But it seems like it's more serious than that.",
+                "dialogue": "Unfortunately, it seems as though it's more serious than that.",
                 "textSpeed": 0
             }
         },
@@ -226,7 +256,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Tend to him for me please.",
+                "dialogue": "His symptoms are all lining up with the epidemic.",
                 "textSpeed": 0
             }
         },
@@ -236,7 +266,57 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Ah, and remember to put your hood up.",
+                "dialogue": "SOMETHING ABOUT DIFFERENT SYMPTOMS: these are symptoms that match a drug of lower memory understanding think zero escape virus.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "I've already asked the other guests to leave the area, just in case it's dangerous.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "That's right... Hilda, please be safe too...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Don't worry about me, I'll be fine. I'll keep watch from here.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "You go do your thing, 'kay Lilith? We're all counting on you.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "THIS SHOULD BE LATER: Ah, and remember to put your hood up.",
                 "textSpeed": 0
             }
         },
@@ -256,7 +336,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "Yeah, got it.",
+                "dialogue": "Yeah, of course.",
                 "textSpeed": 0
             }
         },
@@ -266,7 +346,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "I'll take care of him now.",
+                "dialogue": "I'll take care of him now!",
                 "textSpeed": 0
             },
             "endOfScene": true

@@ -2,7 +2,7 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Hilda",
+                "character": "TavernKeeper",
                 "speakerSprite": [
                     "Transparent"
                 ],
@@ -12,7 +12,7 @@
         },
         {
             "baseDialogue": {
-                "character": "Hilda",
+                "character": "Lilith",
                 "speakerSprite": [
                     "LilithFrown"
                 ],

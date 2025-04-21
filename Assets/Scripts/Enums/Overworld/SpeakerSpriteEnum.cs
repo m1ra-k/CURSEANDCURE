@@ -6,7 +6,7 @@ public enum SpeakerSpriteEnum
     BoyHappy,
     GirlHappy,
     LilithExcited,
-    LilithSmile,
+    LilithHappy,
     LilithNeutral,
     LilithFrown,
     LilithShocked,
