@@ -6,7 +6,17 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "I should cure the patient in the tavern first.",
+                "dialogue": "I shouldn't leave yet.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "There's still something I have to do here.",
                 "textSpeed": 0
             },
             "endOfScene": true
