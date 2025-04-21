@@ -2,33 +2,33 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Unknown",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "Transparent"
                 ],
-                "dialogue": "default dialogue after healing",
+                "dialogue": "Lilith! Wake up, the sun's almost set!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Woman",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "LilithFrown"
                 ],
-                "dialogue": "honey we dont have a dog",
+                "dialogue": "Mhmm...",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "LilithFrown"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "Just a bit longer, please...",
                 "textSpeed": 0
-            },
+            },   
             "endOfScene": true
         }
     ]

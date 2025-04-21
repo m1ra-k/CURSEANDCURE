@@ -4,29 +4,19 @@
             "baseDialogue": {
                 "character": "TavernKeeper",
                 "speakerSprite": [
-                    "TavernKeeperNeutral"
+                    "TavernKeeperHappy"
                 ],
-                "dialogue": "pre blood suck hilda saying lilith please do what you can to help him: hilda 0",
+                "dialogue": "TODO: time in btwn wake up and not healed first patient",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "LilithNeutral"
                 ],
-                "dialogue": "green is a cool color isn't it",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Girl",
-                "speakerSprite": [
-                    "GirlHappy"
-                ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "",
                 "textSpeed": 0
             },
             "endOfScene": true

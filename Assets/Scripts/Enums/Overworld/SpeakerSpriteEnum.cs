@@ -6,11 +6,12 @@ public enum SpeakerSpriteEnum
     BoyHappy,
     GirlHappy,
     LilithExcited,
-    LilithSmile,
+    LilithHappy,
     LilithNeutral,
     LilithFrown,
     LilithShocked,
     ManNeutral,
-    TavernKeeperNeutral,
+    TavernKeeperHappy,
+    TavernKeeperFrown,
     WomanNeutral
 }
