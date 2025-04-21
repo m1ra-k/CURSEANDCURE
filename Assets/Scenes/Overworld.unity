@@ -181,6 +181,7 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
+  triggeredFlags: []
 --- !u!212 &119753683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -300,10 +301,12 @@ MonoBehaviour:
   repeated: 1
   active: 0
   flags:
-  - talkedWoman
+  - calledForHelp
+  - secondHealed
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
+  triggeredFlags: []
 --- !u!212 &132211673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1325,6 +1328,7 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: e01ccc2b08f059f41a191b63d61ef26c, type: 3}
+  triggeredFlags: []
 --- !u!212 &412885585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2169,6 +2173,8 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: 742acaf8fb2b7424fad9a0ee4887f05c, type: 3}
+  triggeredFlags:
+  - calledForHelp
 --- !u!212 &886356017
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2399,6 +2405,7 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: 984aa504302b97c41b7bfe08ba28be4e, type: 3}
+  triggeredFlags: []
 --- !u!212 &967703850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2516,6 +2523,7 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: 984aa504302b97c41b7bfe08ba28be4e, type: 3}
+  triggeredFlags: []
 --- !u!212 &1161374574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2633,6 +2641,7 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: d23376381cd8d3a40a1454f35c21c209, type: 3}
+  triggeredFlags: []
 --- !u!212 &1165028235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3241,6 +3250,7 @@ MonoBehaviour:
   dialoguesIndex: 0
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
+  triggeredFlags: []
 --- !u!212 &1297377897
 SpriteRenderer:
   m_ObjectHideFlags: 0

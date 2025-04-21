@@ -18,6 +18,9 @@ public class AutomaticDialogueData : MonoBehaviour
     private GameObject lilith;
     private GridMovement gridMovement;
     private Vector2 lilithPosition;
+
+    [SerializeField]
+    private List<string> triggeredFlags;
     
     private Dictionary<string, Vector2> pushBackDirection = new Dictionary<string, Vector2>
     {
@@ -49,12 +52,13 @@ public class AutomaticDialogueData : MonoBehaviour
         if (!active && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[0])) // these will have: repeat - 2, !repeat - 1
         {
             // first flag being true is what makes it active
+            print("1");
             active = true;
         }
-
-        if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[flags.Count - 1])) || (!repeated && triggeredOnce))
+        else if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[flags.Count - 1])) || (!repeated && triggeredOnce))
         {
             // no longer need to repeat, so it is no longer active
+            print("2");
             active = false;
             enabled = false;
         }
@@ -77,6 +81,11 @@ public class AutomaticDialogueData : MonoBehaviour
                 else
                 {
                     GameProgressionManagerInstance.complementedOneTimeEvents.Add(name);
+
+                    foreach (var triggeredFlag in triggeredFlags)
+                    {
+                        GameProgressionManagerInstance.progressionSystem.SetFlag(triggeredFlag, true);
+                    }
                 }
             }
             else
