@@ -1,0 +1,25 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithExcited"
+                ],
+                "dialogue": "hey hilda",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithExcited"
+                ],
+                "dialogue": "oh you have work for me?",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

@@ -2,11 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Lilith",
+                "character": "TavernKeeper",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "TavernKeeperNeutral"
                 ],
-                "dialogue": "hey GIRL i am talking to you",
+                "dialogue": "post blood suck: hilda 1",
                 "textSpeed": 0
             }
         },
