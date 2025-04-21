@@ -93,10 +93,8 @@ public class DialogueSystemManager : MonoBehaviour
         }
     }
 
-    // TODO: AFIA; call this method from CharacterDialogueData
     public void SetVisualNovelJSONFile(TextAsset characterDialogue)
     {
-        // this should prob work
         visualNovelJSONFile = characterDialogue;
     }
 

@@ -2,21 +2,21 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Lilith",
+                "character": "Man",
                 "speakerSprite": [
                     "LilithExcited"
                 ],
-                "dialogue": "hey BOY i am talking to you",
+                "dialogue": "default dialogue i need to get home and walk my dog",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Woman",
                 "speakerSprite": [
                     "BoyHappy"
                 ],
-                "dialogue": "green is a cool color isn't it",
+                "dialogue": "honey we dont have a dog",
                 "textSpeed": 0
             }
         },

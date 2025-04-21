@@ -48,6 +48,9 @@ public class HealingGameManager : MonoBehaviour
 
     void Start()
     {
+        // TODO REMOVE THIS IS JUST FOR DEBUG
+        StartCoroutine(DisplayWon());
+
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
@@ -235,6 +238,22 @@ public class HealingGameManager : MonoBehaviour
         resultText.text = "GOOD!";
 
         yield return new WaitForSeconds(2.5f);
+
+        switch (GameProgressionManagerInstance.lilithPatientNumber)
+        {
+            case 1:
+                // healed first patient, set flag
+                GameProgressionManagerInstance.progressionSystem.SetFlag("firstHealed", true);
+                break;
+            case 2:
+                // healed second patient, set flag
+                GameProgressionManagerInstance.progressionSystem.SetFlag("secondHealed", true);
+                break;
+            case 3:
+                // healed third patient, set flag
+                GameProgressionManagerInstance.progressionSystem.SetFlag("thirdHealed", true);
+                break;
+        }
 
         GameProgressionManagerInstance.TransitionScene("Won");
     }
