@@ -74,6 +74,10 @@ public class AutomaticDialogueData : MonoBehaviour
                 {
                     PushBack();
                 }
+                else
+                {
+                    GameProgressionManagerInstance.complementedOneTimeEvents.Add(name);
+                }
             }
             else
             {

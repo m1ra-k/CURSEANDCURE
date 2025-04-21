@@ -27,6 +27,7 @@ public class GameProgressionManager : MonoBehaviour
     public bool finishedCurrentRound;
     public GameObject lilith;
     public Vector2 lilithPosition;
+    public List<string> complementedOneTimeEvents;
     public string lastTalkedNPC;
     public bool healedPatient;
     public CharacterDialogueData patientCharacterDialogueData;
@@ -97,6 +98,11 @@ public class GameProgressionManager : MonoBehaviour
 
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
+
+                foreach (var complementedOneTimeEvent in complementedOneTimeEvents)
+                {
+                    GameObject.Find(complementedOneTimeEvent).SetActive(false);
+                }
 
                 if (healedPatient)
                 {

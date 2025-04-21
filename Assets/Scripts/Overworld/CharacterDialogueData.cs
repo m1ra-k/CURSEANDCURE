@@ -46,7 +46,6 @@ public class CharacterDialogueData : MonoBehaviour
         // if the current flag is true, update dialogue to be the next one possible
         if (characterDialoguesIndex < flags.Count && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[characterDialoguesIndex]))
         {
-            print("this should happen for hilda lol");
             characterDialoguesIndex++;
         }
     }

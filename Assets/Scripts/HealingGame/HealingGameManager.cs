@@ -242,15 +242,15 @@ public class HealingGameManager : MonoBehaviour
         switch (GameProgressionManagerInstance.lilithPatientNumber)
         {
             case 1:
-                print("healed first patient. setting flags.");
+                // healed first patient, set flag
                 GameProgressionManagerInstance.progressionSystem.SetFlag("firstHealed", true);
                 break;
             case 2:
-                print("healed second patient. setting flags.");
+                // healed second patient, set flag
                 GameProgressionManagerInstance.progressionSystem.SetFlag("secondHealed", true);
                 break;
             case 3:
-                print("healed third patient. setting flags.");
+                // healed third patient, set flag
                 GameProgressionManagerInstance.progressionSystem.SetFlag("thirdHealed", true);
                 break;
         }
