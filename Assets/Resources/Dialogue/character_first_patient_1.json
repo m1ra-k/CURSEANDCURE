@@ -22,11 +22,51 @@
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "TavernKeeper",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "TavernKeeperFrown"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "Ah, Lilith, remember to keep your hood up when you're outside.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Can't have the wrong people seeing you like that, right?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "There's been word of the churchpeople making rounds here.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Be careful, okay?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Thank you, Hilda, I'll make sure to.",
                 "textSpeed": 0
             },
             "endOfScene": true

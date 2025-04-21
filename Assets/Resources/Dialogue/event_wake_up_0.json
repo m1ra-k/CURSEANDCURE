@@ -2,11 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "TavernKeeper",
+                "character": "Unknown",
                 "speakerSprite": [
                     "Transparent"
                 ],
-                "dialogue": "Lilith! Wake up, the sun has almost set!",
+                "dialogue": "Lilith! Wake up, the sun's almost set!",
                 "textSpeed": 0
             }
         },
@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "Mhmm…",
+                "dialogue": "Mhmm...",
                 "textSpeed": 0
             }
         },
@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "Just a bit longer, please…",
+                "dialogue": "Just a bit longer, please...",
                 "textSpeed": 0
             },   
             "endOfScene": true

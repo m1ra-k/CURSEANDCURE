@@ -12,6 +12,8 @@ public enum CharacterEnum
     Man,
     [Description("Hilda")]
     TavernKeeper,
+    [Description("???")]
+    Unknown,
     Woman,
 }
 

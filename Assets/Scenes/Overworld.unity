@@ -1828,35 +1828,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.x
-      value: -4.5
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.y
-      value: 0.5
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorB.x
-      value: -17.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorB.y
-      value: -17.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorA.x
-      value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorA.y
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorB.x
+      propertyPath: offsetDoorA.x
       value: -18.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorB.y
+      propertyPath: offsetDoorA.y
       value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: offsetDoorB.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: offsetDoorB.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: GameProgressionManagerInstance

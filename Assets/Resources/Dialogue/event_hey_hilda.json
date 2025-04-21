@@ -2,7 +2,7 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "TavernKeeper",
+                "character": "Unknown",
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "Owner, you look especially well today.",
+                "dialogue": "Hilda, you look especially well today.",
                 "textSpeed": 0
             }
         },
@@ -86,7 +86,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "I just pray the illnesses die down soon.",
+                "dialogue": "I just pray the epidemic dies down soon.",
                 "textSpeed": 0
             }
         },
@@ -136,7 +136,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "I prefer the title of miracle doctor, hahaha.",
+                "dialogue": "I prefer the title of miracle doctor, haha.",
                 "textSpeed": 0
             }
         },
@@ -307,26 +307,6 @@
                     "TavernKeeperFrown"
                 ],
                 "dialogue": "You go do your thing, 'kay Lilith? We're all counting on you.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "TavernKeeper",
-                "speakerSprite": [
-                    "TavernKeeperFrown"
-                ],
-                "dialogue": "THIS SHOULD BE LATER: Ah, and remember to put your hood up.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "TavernKeeper",
-                "speakerSprite": [
-                    "TavernKeeperFrown"
-                ],
-                "dialogue": "Can't have people seeing you like that, right...",
                 "textSpeed": 0
             }
         },
