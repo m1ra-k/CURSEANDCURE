@@ -10,6 +10,7 @@ public class ProgressionSystem : ScriptableObject
     public void Init()
     {
         flags = new Dictionary<string, bool>();
+        SetFlag("firstHealed", false);
     }
 
     public bool GetFlag(string key)

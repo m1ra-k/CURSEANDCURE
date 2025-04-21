@@ -10,7 +10,7 @@ public class AutomaticDialogueData : MonoBehaviour
     // EVENT
     public bool repeated;
     public bool active;
-    public List<string> flagsToSet;
+    public List<string> flags;
     public int dialoguesIndex;
     public List<TextAsset> dialogues;
     private bool triggeredOnce;
@@ -38,11 +38,6 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
-    
-        foreach (string flag in flagsToSet)
-        {
-            GameProgressionManagerInstance.progressionSystem.SetFlag(flag, false);
-        }
     }
 
     void Update()
@@ -51,13 +46,13 @@ public class AutomaticDialogueData : MonoBehaviour
         lilithPosition = (Vector2) lilith.transform.position;
 
         // flag check
-        if (!active && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[0])) // these will have: repeat - 2, !repeat - 1
+        if (!active && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[0])) // these will have: repeat - 2, !repeat - 1
         {
             // first flag being true is what makes it active
             active = true;
         }
 
-        if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flagsToSet[flagsToSet.Count - 1])) || (!repeated && triggeredOnce))
+        if ((repeated && GameProgressionManagerInstance.progressionSystem.GetFlag(flags[flags.Count - 1])) || (!repeated && triggeredOnce))
         {
             // no longer need to repeat, so it is no longer active
             active = false;
