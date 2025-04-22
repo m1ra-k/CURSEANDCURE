@@ -6,7 +6,7 @@
 - Afia Paracha (hcx2td)
     - Grid Movement, Dialogue System, Background Sprites
 - Adrina Khan (kqc4zd)
-    - Dialogue Script, Main Menu, Overworld Transitions
+    - Dialogue Script, Overworld Transitions
 - Joyce Yang (afe5jy)
     - Camera, Collisions, Character Sprites and Animations 
 
