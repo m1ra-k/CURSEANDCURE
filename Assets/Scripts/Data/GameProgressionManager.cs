@@ -196,11 +196,9 @@ public class GameProgressionManager : MonoBehaviour
         transitioning = true;
 
         // TODO - CONVERT TO SWITCH STATEMENT LOL
-        // not true always tho hmm
         if (possibleFlag.Equals("Play"))
         {
-            sceneNumber += 1;
-            // sceneType = sceneProgressionLookup[sceneNumber][0];
+            sceneType = "Overworld";
         }
         else if (possibleFlag.Equals("Won"))
         {
