@@ -18,17 +18,33 @@ public class GridMovement : MonoBehaviour
     private float stepSize = 1f;
     private Vector2 targetPosition;
 
+    private Animator animator;
+
+    private Vector2 lastDir = Vector2.down;
+    [SerializeField] float walkAnimSpeed = 0.5f;
+    [SerializeField] float idleAnimSpeed = 1f;
+
     void Start() 
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
         targetPosition = transform.position;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update() 
     {
         Move();
+        UpdateAnimation();
+        if (isMoving) {
+            animator.speed = walkAnimSpeed;
+        } 
+        else 
+        {
+            animator.speed = idleAnimSpeed;
+        }
     }
 
     void Move() 
@@ -104,6 +120,23 @@ public class GridMovement : MonoBehaviour
                 }
             }
         }  
+    }
+
+    void UpdateAnimation()
+    {
+        animator.SetBool("IsWalking", isMoving);
+
+        if (movementVector != Vector2.zero)
+        {
+            lastDir = movementVector;
+            animator.SetFloat("Horizontal", movementVector.x);
+            animator.SetFloat("Vertical",   movementVector.y);
+        }
+        else
+        {
+            animator.SetFloat("Horizontal", lastDir.x);
+            animator.SetFloat("Vertical",   lastDir.y);
+        }
     }
 }
 
