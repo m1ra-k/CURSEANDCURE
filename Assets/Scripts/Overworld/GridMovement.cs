@@ -98,10 +98,6 @@ public class GridMovement : MonoBehaviour
                             targetPosition = proposedPosition;
                             isMoving = true;
                         }
-                        else
-                        {
-                            isMoving=false;
-                        }
                     }
                 }
                 else 
@@ -128,10 +124,6 @@ public class GridMovement : MonoBehaviour
                 {
                     targetPosition = proposedPosition;
                     isMoving = true;
-                }
-                else
-                {
-                    isMoving=false;
                 }
             }
             else
