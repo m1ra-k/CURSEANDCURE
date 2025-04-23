@@ -33,7 +33,7 @@ public class GameProgressionManager : MonoBehaviour
     public CharacterDialogueData patientCharacterDialogueData;
 
     [Header("[Healing Game]")]
-    private HealingGameManager healingGameManager;
+    private HealingGameManager HealingGameManager;
 
     [Header("[Game Over]")]
     public Button retryButton;
@@ -72,6 +72,8 @@ public class GameProgressionManager : MonoBehaviour
         // currentTrack = -1;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        tutorial = GameObject.FindWithTag("Tutorial");
+        tutorial.SetActive(false);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -114,7 +116,7 @@ public class GameProgressionManager : MonoBehaviour
                 break;
 
             case "HealingGame":
-                healingGameManager = FindObjectOfType<HealingGameManager>();
+                HealingGameManager = FindObjectOfType<HealingGameManager>();
                 break;
 
             case "GameOver":
@@ -145,6 +147,13 @@ public class GameProgressionManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             progressionSystem.SetFlag("goBack2DONE", true);
+        }
+        if(currentScene == "Overworld" || (currentScene == "HealingGame" && HealingGameManager.startedGame ))
+        {
+             if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    tutorial.SetActive(!tutorial.activeSelf);
+                }
         }
     }
 
