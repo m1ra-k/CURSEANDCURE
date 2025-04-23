@@ -2,61 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
-                "dialogue": "Lilith!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "You're here!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "Please help my wife,",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": " her symptoms are getting much worse.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "Her breath is labored and her skin is turning pale.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "She'll be okay, right Lilith??",
+                "dialogue": "Big sis!",
                 "textSpeed": 0
             }
         },
@@ -64,9 +14,9 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithFrown"
+                    "LilithHappy"
                 ],
-                "dialogue": "Don't worry,",
+                "dialogue": "Hey kiddo!",
                 "textSpeed": 0
             }
         },
@@ -74,9 +24,49 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithFrown"
+                    "LilithHappy"
                 ],
-                "dialogue": "I'll take care of her.",
+                "dialogue": "A little late to be out, huh?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Ah! I'm heading home soon!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "I'm just looking for my ball.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "If you find it we should play catch again soon.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Yes!! I can't wait.",
                 "textSpeed": 0
             },
             "endOfScene": true

@@ -6,7 +6,17 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "*yawwwnn* Last night was too taxing.",
+                "dialogue": "*yawwwnn*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Last night was too taxing.",
                 "textSpeed": 0
             }
         },
@@ -26,7 +36,17 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "I hope this plague subsides soon, I don't think I can ever welcome the taste of tarnished blood.",
+                "dialogue": "I hope this plague subsides soon,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "I don't think I can ever welcome the taste of tarnished blood in my mouth.",
                 "textSpeed": 0
             },   
             "endOfScene": true

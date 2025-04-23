@@ -2,11 +2,31 @@
     "dialogues": [
         {
             "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Honey...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Man",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "ManNeutral"
                 ],
-                "dialogue": "SECOND PATIENT default dialogue after healing",
+                "dialogue": "It's alright,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "you should take it easy.",
                 "textSpeed": 0
             }
         },
@@ -14,19 +34,19 @@
             "baseDialogue": {
                 "character": "Woman",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "WomanNeutral"
                 ],
-                "dialogue": "honey we dont have a dog",
+                "dialogue": "... I love you.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Man",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "ManNeutral"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "I love you too, dear.",
                 "textSpeed": 0
             },
             "endOfScene": true
