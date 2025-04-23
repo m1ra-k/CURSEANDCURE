@@ -34,7 +34,6 @@ public class GameProgressionManager : MonoBehaviour
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
-
     [Header("[Game Over]")]
     public Button retryButton;
 
@@ -72,8 +71,6 @@ public class GameProgressionManager : MonoBehaviour
         // currentTrack = -1;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-        tutorial = GameObject.FindWithTag("Tutorial");
-        tutorial.SetActive(false);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -97,6 +94,8 @@ public class GameProgressionManager : MonoBehaviour
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
                 DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
+                tutorial = GameObject.FindWithTag("Tutorial");
+                tutorial.SetActive(false);
 
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
@@ -116,6 +115,8 @@ public class GameProgressionManager : MonoBehaviour
                 break;
 
             case "HealingGame":
+                tutorial = GameObject.FindWithTag("Tutorial");
+                tutorial.SetActive(false);
                 HealingGameManager = FindObjectOfType<HealingGameManager>();
                 break;
 
