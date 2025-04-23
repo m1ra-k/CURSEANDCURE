@@ -6,7 +6,27 @@
                 "speakerSprite": [
                     "BoyHappy"
                 ],
-                "dialogue": "Big sis Lilith!",
+                "dialogue": "Big sis!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Big sis Lilith!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "[BOY0], [GIRL2]! How are you guys doing?",
                 "textSpeed": 0
             }
         },
@@ -72,6 +92,26 @@
         },
         {
             "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Mm, put it on!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Haha, 'kay!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
                     "LilithHappy"
@@ -96,57 +136,7 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "You're so pretty!!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Lilith",
-                "speakerSprite": [
-                    "LilithHappy"
-                ],
-                "dialogue": "Not as pretty as you, haha.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Lilith",
-                "speakerSprite": [
-                    "LilithHappy"
-                ],
-                "dialogue": "I'll have to give you two a gift back...",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Lilith",
-                "speakerSprite": [
-                    "LilithHappy"
-                ],
-                "dialogue": "... next time you come by the tavern",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Lilith",
-                "speakerSprite": [
-                    "LilithHappy"
-                ],
-                "dialogue": "I'll make you two a very yummy drink!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Boy",
-                "speakerSprite": [
-                    "BoyHappy"
-                ],
-                "dialogue": "Yay!",
+                "dialogue": "Big sis Lilith, you're so pretty!!",
                 "textSpeed": 0
             }
         },
@@ -156,7 +146,87 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "Thanks sis!",
+                "dialogue": "So cool! So cool!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Not as pretty as you, [GIRL2].",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "And as cool as you, [BOY0].",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "This really is so well made.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Hmmm. I'll have to give a gift back in return...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "... next time you two drop by the tavern.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Get ready for some very yummy drinks!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Yay!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Thanks big sis!",
                 "textSpeed": 0
             },
             "endOfScene": true
