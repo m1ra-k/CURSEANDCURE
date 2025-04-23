@@ -11,7 +11,7 @@ public class HealingGameManager : MonoBehaviour
     // just lilith for now
     public string mode = "lilith";
     private int round;
-    private bool startedGame;
+    public bool startedGame;
     public bool finishedGame;
 
     [Header("[Gauge]")]

@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Image
   - Button
+  - Parchment
   layers:
   - Default
   - TransparentFX

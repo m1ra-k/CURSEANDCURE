@@ -21,10 +21,10 @@ public class CharacterDialogueData : MonoBehaviour
         // locations
         adjacentLocations.UnionWith(new List<Vector2>
         {
-            (Vector2) gameObject.transform.position + Vector2.up,
-            (Vector2) gameObject.transform.position + Vector2.down,
-            (Vector2) gameObject.transform.position + Vector2.left,
-            (Vector2) gameObject.transform.position + Vector2.right
+            (Vector2) gameObject.transform.localPosition + Vector2.up,
+            (Vector2) gameObject.transform.localPosition + Vector2.down,
+            (Vector2) gameObject.transform.localPosition + Vector2.left,
+            (Vector2) gameObject.transform.localPosition + Vector2.right
         });
 
         // lilith

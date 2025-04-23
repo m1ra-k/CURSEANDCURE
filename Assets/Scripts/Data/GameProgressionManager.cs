@@ -33,8 +33,7 @@ public class GameProgressionManager : MonoBehaviour
     public CharacterDialogueData patientCharacterDialogueData;
 
     [Header("[Healing Game]")]
-    private HealingGameManager healingGameManager;
-
+    private HealingGameManager HealingGameManager;
     [Header("[Game Over]")]
     public Button retryButton;
 
@@ -95,6 +94,8 @@ public class GameProgressionManager : MonoBehaviour
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
                 DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
+                tutorial = GameObject.FindWithTag("Tutorial");
+                tutorial.SetActive(false);
 
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
@@ -114,7 +115,9 @@ public class GameProgressionManager : MonoBehaviour
                 break;
 
             case "HealingGame":
-                healingGameManager = FindObjectOfType<HealingGameManager>();
+                tutorial = GameObject.FindWithTag("Tutorial");
+                tutorial.SetActive(false);
+                HealingGameManager = FindObjectOfType<HealingGameManager>();
                 break;
 
             case "GameOver":
@@ -145,6 +148,13 @@ public class GameProgressionManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             progressionSystem.SetFlag("goBack2DONE", true);
+        }
+        if(currentScene == "Overworld" || (currentScene == "HealingGame" && HealingGameManager.startedGame ))
+        {
+             if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    tutorial.SetActive(!tutorial.activeSelf);
+                }
         }
     }
 
@@ -198,20 +208,24 @@ public class GameProgressionManager : MonoBehaviour
         // TODO - CONVERT TO SWITCH STATEMENT LOL
         if (possibleFlag.Equals("Play"))
         {
+            print("flag was play");
             sceneType = "Overworld";
         }
         else if (possibleFlag.Equals("Won"))
         {
+            print("flag was won");
             sceneType = "Overworld";
 
             healedPatient = true;
         }
         else if (possibleFlag.Equals("Lost"))
         {
+            print("flag was lost");
             sceneType = "GameOver";
         }
         else if (possibleFlag.Equals("Retry"))
         {
+            print("flag was retry");
             fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
             return;
         }

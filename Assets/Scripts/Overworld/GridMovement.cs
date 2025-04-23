@@ -138,5 +138,10 @@ public class GridMovement : MonoBehaviour
             animator.SetFloat("Vertical",   lastDir.y);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log($"{gameObject.name} col with {col.collider.name}");
+    }
 }
 
