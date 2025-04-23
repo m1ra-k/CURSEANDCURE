@@ -49,6 +49,8 @@ public class GridMovement : MonoBehaviour
 
    [SerializeField] private float checkRadius = 0.1f;
 
+   [SerializeField] private float checkRadius = 0.1f;
+
     void Move() 
     {
         if (!overrideIsMoving)
@@ -96,6 +98,10 @@ public class GridMovement : MonoBehaviour
                             targetPosition = proposedPosition;
                             isMoving = true;
                         }
+                        else
+                        {
+                            isMoving=false;
+                        }
                     }
                 }
                 else 
@@ -122,6 +128,10 @@ public class GridMovement : MonoBehaviour
                 {
                     targetPosition = proposedPosition;
                     isMoving = true;
+                }
+                else
+                {
+                    isMoving=false;
                 }
             }
             else
