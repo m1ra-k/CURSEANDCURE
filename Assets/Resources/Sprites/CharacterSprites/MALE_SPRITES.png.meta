@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,763 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MALE_SPRITES_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 100
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa4f52106b97ea4abc0308d789e4326
+      internalID: 802331593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 100
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fd11d87d49ae9429ba5e38c267c9ea
+      internalID: -957012542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 100
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dbfc25e3d6a8649a5d4693512f6fdc
+      internalID: -149168246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_3
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 100
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ceb32f2fa944b242ade760cb5677584
+      internalID: 733207829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 100
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b354c67015f777d4faa7850f9c6c910b
+      internalID: -203939604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 100
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce163f299fc4e9e489750cef557236c6
+      internalID: -66260144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 100
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6eb7ec237cfe9945bbe66a796238edb
+      internalID: -113953230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_7
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 100
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378d1a403a1758448bcf5b043b38184f
+      internalID: -1251543649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_8
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 100
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ecdf4fd6c1d5264ea389c8f7cc9d911
+      internalID: 1016426857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3be929ee85d7484d9e1436a2c18920f
+      internalID: 1019599641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_10
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d56d8e5127eea4cbc3fb09bd665c5e
+      internalID: -836654934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b8bc6558b138741a3fda1a369c7910
+      internalID: -1908585069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_12
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 67
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de50b57ebc779dd4b9d3e26b7b3b2ddd
+      internalID: 1211565306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_13
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 67
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3a4ea2464245bc4c902f7a7b986a292
+      internalID: 1965255895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_14
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 67
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2873c94152ed24f46b3af020e48c8da4
+      internalID: -1380889841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_15
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c7f50467c138147b15b1253ff88eec
+      internalID: -968269081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_16
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a4c96788e044945babae86e0c2b3a6
+      internalID: 880717074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_17
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 67
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631e30ef12ddb0646b129b9d1035cd05
+      internalID: 863206496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 34
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a42a2b37b3f4bb45a1068cace2e40ed
+      internalID: 632011731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_19
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 34
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c6fb4df5052d84fac6f86f4d95f9bc
+      internalID: 150539548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 34
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d23d5c9ea18f0a4da8714838303be59
+      internalID: -959137733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_21
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 34
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82884cf59ad2cdf439a1fcf22a3a31ab
+      internalID: -1202591356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_22
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 34
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5557581d9b9622b47b05f81f3da3a152
+      internalID: 681932704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_23
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 34
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a1854ae930f04429cd4d80399451e4
+      internalID: -1857621946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_24
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 34
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e94fe8aef72dc4e9537166adf7f280
+      internalID: 874437899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_25
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 34
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb9c2296159ac741921b3fb389ed018
+      internalID: -13754761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_26
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 34
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec9564f9133aea439e525dca0f64afa
+      internalID: 1311793468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_27
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdb2ff0c7d98bd428a0d56d871de356
+      internalID: -199587212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_28
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48bcebd385f37a479ca7d8b2826c78d
+      internalID: 535626061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_29
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe8d65bb0078214bbf68cd74f106736
+      internalID: 548289906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_30
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c273d66509e9d1b49953d01abbe75a5b
+      internalID: -1922621990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_31
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a49e23cb56f7d4e978d9e6468a3dff
+      internalID: -456336359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_32
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212ba5604be96c94a9818180440645d3
+      internalID: 1467029224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_33
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5e837e0bb28e34098912e0ac4b88c1
+      internalID: -275366057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_34
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befdc96e518af404fb9e83a4f99433b4
+      internalID: -547934666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MALE_SPRITES_35
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131ee3bc77caf5e4f98e6a4a96338269
+      internalID: -971977200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +888,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MALE_SPRITES_0: 802331593
+      MALE_SPRITES_1: -957012542
+      MALE_SPRITES_10: -836654934
+      MALE_SPRITES_11: -1908585069
+      MALE_SPRITES_12: 1211565306
+      MALE_SPRITES_13: 1965255895
+      MALE_SPRITES_14: -1380889841
+      MALE_SPRITES_15: -968269081
+      MALE_SPRITES_16: 880717074
+      MALE_SPRITES_17: 863206496
+      MALE_SPRITES_18: 632011731
+      MALE_SPRITES_19: 150539548
+      MALE_SPRITES_2: -149168246
+      MALE_SPRITES_20: -959137733
+      MALE_SPRITES_21: -1202591356
+      MALE_SPRITES_22: 681932704
+      MALE_SPRITES_23: -1857621946
+      MALE_SPRITES_24: 874437899
+      MALE_SPRITES_25: -13754761
+      MALE_SPRITES_26: 1311793468
+      MALE_SPRITES_27: -199587212
+      MALE_SPRITES_28: 535626061
+      MALE_SPRITES_29: 548289906
+      MALE_SPRITES_3: 733207829
+      MALE_SPRITES_30: -1922621990
+      MALE_SPRITES_31: -456336359
+      MALE_SPRITES_32: 1467029224
+      MALE_SPRITES_33: -275366057
+      MALE_SPRITES_34: -547934666
+      MALE_SPRITES_35: -971977200
+      MALE_SPRITES_4: -203939604
+      MALE_SPRITES_5: -66260144
+      MALE_SPRITES_6: -113953230
+      MALE_SPRITES_7: -1251543649
+      MALE_SPRITES_8: 1016426857
+      MALE_SPRITES_9: 1019599641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
