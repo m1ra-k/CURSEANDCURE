@@ -1206,6 +1206,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
+      propertyPath: progressionSystem
+      value: 
+      objectReference: {fileID: 11400000, guid: 6def72d7de14ecb40afa5e5e6a5b5615, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2147,7 +2151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2341306546966269134, guid: 33c4f8063a9383a4bba90f68915e6525, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2982992589558687787, guid: 33c4f8063a9383a4bba90f68915e6525, type: 3}
       propertyPath: m_AnchoredPosition.y

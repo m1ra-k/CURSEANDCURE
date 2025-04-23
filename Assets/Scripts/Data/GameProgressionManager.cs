@@ -208,20 +208,24 @@ public class GameProgressionManager : MonoBehaviour
         // TODO - CONVERT TO SWITCH STATEMENT LOL
         if (possibleFlag.Equals("Play"))
         {
+            print("flag was play");
             sceneType = "Overworld";
         }
         else if (possibleFlag.Equals("Won"))
         {
+            print("flag was won");
             sceneType = "Overworld";
 
             healedPatient = true;
         }
         else if (possibleFlag.Equals("Lost"))
         {
+            print("flag was lost");
             sceneType = "GameOver";
         }
         else if (possibleFlag.Equals("Retry"))
         {
+            print("flag was retry");
             fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
             return;
         }
