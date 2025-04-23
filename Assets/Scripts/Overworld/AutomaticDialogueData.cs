@@ -39,7 +39,7 @@ public class AutomaticDialogueData : MonoBehaviour
         lilith = GameObject.FindWithTag("Player");
         gridMovement = lilith.GetComponent<GridMovement>();
 
-        triggerPositions.Add((Vector2) transform.position);
+        triggerPositions.Add((Vector2) transform.localPosition);
     }
 
     void Start()
