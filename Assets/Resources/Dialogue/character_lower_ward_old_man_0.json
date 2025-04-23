@@ -2,21 +2,91 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "LilithHappy"
                 ],
-                "dialogue": "empty",
+                "dialogue": "Hey, gramps!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "LilithHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "How is your wife doing?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Hey, gramps!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "How are you?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Hey, gr-",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "(I don't think third time's a charm...)",
                 "textSpeed": 0
             },
             "endOfScene": true

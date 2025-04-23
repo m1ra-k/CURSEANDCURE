@@ -2,21 +2,71 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
-                "dialogue": "empty",
+                "dialogue": "Big sis!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "LilithHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Hey kiddo!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "A little late to be out, huh?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Ah! I'm heading home soon!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "I'm just looking for my ball.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "If you find it we should play catch again soon.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Yes!! I can't wait.",
                 "textSpeed": 0
             },
             "endOfScene": true

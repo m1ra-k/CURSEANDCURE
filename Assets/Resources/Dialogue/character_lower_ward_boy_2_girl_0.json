@@ -2,11 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
-                "dialogue": "empty",
+                "dialogue": "Big sis Lilith!",
                 "textSpeed": 0
             }
         },
@@ -16,7 +16,147 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Look what we made!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Awww, what is it?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "It's a flower crown!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "We made one for you too.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Mama always tells us to give gifts to people we love!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Put it on!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "How do I look?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Wow!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "You're so pretty!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Not as pretty as you, haha.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "I'll have to give you two a gift back...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "... next time you come by the tavern",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "I'll make you two a very yummy drink!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Yay!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Thanks sis!",
                 "textSpeed": 0
             },
             "endOfScene": true
