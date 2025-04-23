@@ -108,7 +108,8 @@
                 ],
                 "dialogue": "I won't keep you any longer. Go get to healing, 'kay?",
                 "textSpeed": 0
-            }
+            },
+            "endOfScene": true
         }
     ]
 }

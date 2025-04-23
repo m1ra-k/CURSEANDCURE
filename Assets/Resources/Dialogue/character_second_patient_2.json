@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "I love you.",
+                "dialogue": "... I love you.",
                 "textSpeed": 0
             }
         },
@@ -46,7 +46,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "I love you too, dear",
+                "dialogue": "I love you too, dear.",
                 "textSpeed": 0
             },
             "endOfScene": true
