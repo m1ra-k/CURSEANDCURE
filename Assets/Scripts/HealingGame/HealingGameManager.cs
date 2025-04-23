@@ -49,7 +49,7 @@ public class HealingGameManager : MonoBehaviour
     void Start()
     {
         // TODO REMOVE THIS IS JUST FOR DEBUG
-        StartCoroutine(DisplayWon());
+        // StartCoroutine(DisplayWon());
 
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();

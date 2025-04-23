@@ -266,7 +266,17 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "SOMETHING ABOUT DIFFERENT SYMPTOMS: these are symptoms that match a drug of lower memory understanding think zero escape virus.",
+                "dialogue": "His speech is slurred and his skin is as pale as the moon.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Looks like he's moving slowly too...",
                 "textSpeed": 0
             }
         },
