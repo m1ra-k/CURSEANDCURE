@@ -47,6 +47,8 @@ public class GridMovement : MonoBehaviour
         }
     }
 
+   [SerializeField] private float checkRadius = 0.1f;
+
     void Move() 
     {
         if (!overrideIsMoving)
@@ -87,15 +89,24 @@ public class GridMovement : MonoBehaviour
 
                     if (movementVector != Vector2.zero) 
                     {
-                        targetPosition = (Vector2) transform.position + movementVector * stepSize;
-                        isMoving = true;
+                        Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
+                        
+                        if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
+                        {
+                            targetPosition = proposedPosition;
+                            isMoving = true;
+                        }
+                        else
+                        {
+                            isMoving=false;
+                        }
                     }
                 }
                 else 
                 {
                     transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                    if ((Vector2) transform.position == targetPosition) 
+                    if ((Vector2)transform.position == targetPosition) 
                     {
                         isMoving = false;
                     }
@@ -106,21 +117,32 @@ public class GridMovement : MonoBehaviour
         {
             if (!isMoving)
             {
-                targetPosition = (Vector2) transform.position + movementVector * stepSize;
-                isMoving = true;
+                Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
+
+                if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
+                {
+                    targetPosition = proposedPosition;
+                    isMoving = true;
+                }
+                else
+                {
+                    isMoving=false;
+                }
             }
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                if ((Vector2) transform.position == targetPosition) 
+                if ((Vector2)transform.position == targetPosition) 
                 {
                     isMoving = false;
                     overrideIsMoving = false;
                 }
             }
-        }  
+        }
     }
+
+
 
     void UpdateAnimation()
     {
