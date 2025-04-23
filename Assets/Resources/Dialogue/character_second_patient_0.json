@@ -2,31 +2,81 @@
     "dialogues": [
         {
             "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Lilith!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "You're here!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Please help my wife,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": " her symptoms are getting much worse.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Her breath is labored and her skin is turning pale.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "She'll be okay, right Lilith??",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "LilithFrown"
                 ],
-                "dialogue": "SECOND pre blood suck dialogue",
+                "dialogue": "Don't worry,",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "LilithFrown"
                 ],
-                "dialogue": "green is a cool color isn't it",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Boy",
-                "speakerSprite": [
-                    "BoyHappy"
-                ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "I'll take care of her.",
                 "textSpeed": 0
             },
             "endOfScene": true

@@ -2,61 +2,341 @@
     "dialogues": [
         {
             "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Honey?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Oh, you're alright!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "How are you feeling, dear?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Mhmm...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "LilithFrown"
                 ],
-                "dialogue": "SECOND PATIENT post blood suck, thank you",
+                "dialogue": "Don't push her too hard.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "LilithNeutral"
                 ],
-                "dialogue": "green is a cool color isn't it",
+                "dialogue": "Let her rest. She should be better in the morning.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "TavernKeeper",
+                "character": "Man",
                 "speakerSprite": [
-                    "TavernKeeperFrown"
+                    "ManNeutral"
                 ],
-                "dialogue": "Ah, Lilith, remember to keep your hood up when you're outside.",
+                "dialogue": "I-",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "TavernKeeper",
+                "character": "Man",
                 "speakerSprite": [
-                    "TavernKeeperFrown"
+                    "ManNeutral"
                 ],
-                "dialogue": "Can't have the wrong people seeing you like that, right?",
+                "dialogue": "I don't know how to thank you, Lilith!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "TavernKeeper",
+                "character": "Man",
                 "speakerSprite": [
-                    "TavernKeeperFrown"
+                    "ManNeutral"
                 ],
-                "dialogue": "There's been word of the churchpeople making rounds here.",
+                "dialogue": "It's like you're doing God's work.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "TavernKeeper",
+                "character": "Man",
                 "speakerSprite": [
-                    "TavernKeeperFrown"
+                    "ManNeutral"
                 ],
-                "dialogue": "Be careful, okay?",
+                "dialogue": "Unlike the people from the church.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Seems like the second the epidemic began they flooded the streets",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "handing out their holy water.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithShocked"
+                ],
+                "dialogue": "Holy water?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "You haven't seen it?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "The small vials they pass around to us folk?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "No, I haven't.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Hmm, it might be because you're only around at night.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "They tend to scurry around during the day.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Caught my wife drinking some of their water after she fell ill.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "She seemed to be doing better at first but-",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I don't know.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "After a while, she could barely get up.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*sigh*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Maybe I'm just too worried about her,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "or protective",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Sorry for rambling, Lilith.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "You must have other patients for tonight.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(Come to think of it,)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(I should check up on the man in the tavern before I see my last patient",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "and see if he's doing better.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(I can check in with Hilda while I'm at it.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Thank you again for your help.",
                 "textSpeed": 0
             }
         },
@@ -66,7 +346,17 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "Thank you, Hilda, I'll make sure to.",
+                "dialogue": "Of course.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Goodnight",
                 "textSpeed": 0
             },
             "endOfScene": true
