@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "Umm, yes. My name is-",
+                "dialogue": "Umm, yes. My name is--",
                 "textSpeed": 0
             }
         },
@@ -46,7 +46,7 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "Have you heard of the husband stealer at the bar??",
+                "dialogue": "Have you heard of the husband stealer at the bar???",
                 "textSpeed": 0
             }
         },
@@ -76,7 +76,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "No, I haven't",
+                "dialogue": "No, I haven't?",
                 "textSpeed": 0
             }
         },
@@ -96,7 +96,7 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "My husbands been sick with that illness spreading around,",
+                "dialogue": "My husband's been sick with that illness spreading around,",
                 "textSpeed": 0
             }
         },
@@ -166,7 +166,7 @@
                 "speakerSprite": [
                     "LilithShocked" 
                 ],
-                "dialogue": "(I should get going...",
+                "dialogue": "(I should get going...)",
                 "textSpeed": 0
             },
             "endOfScene": true
