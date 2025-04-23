@@ -2,21 +2,216 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Lilith",
+                "character": "Man",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "ManNeutral"
                 ],
-                "dialogue": "post blood suck, thank you",
+                "dialogue": "Ergh...",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Man",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "ManNeutral"
                 ],
-                "dialogue": "green is a cool color isn't it",
+                "dialogue": "Th-",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Thank you.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I think I had too much to drink...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I shouldn't have drank before coming...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I don't even know what it was.",
+                "textSpeed": 0
+            }
+        },
+        
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "You ordered a beer, or four...",
+                "textSpeed": 0
+            }
+        },
+        
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "No,",
+                "textSpeed": 0
+            }
+        },
+        
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I mean what I drank at home.",
+                "textSpeed": 0
+            }
+        },
+        
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Oh?",
+                "textSpeed": 0
+            }
+        },
+        
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "There was a small vial lying by the door that I drank.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "Maybe don't drink random things next time?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Just maybe...",
+                "textSpeed": 0
+            }
+        }, 
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Anyway,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "you should be off, kiddo.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Yeah,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "II'll make my rounds to the other patients for tonight.",
                 "textSpeed": 0
             }
         },

@@ -2,31 +2,101 @@
     "dialogues": [
         {
             "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Urgh!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "LilithShocked"
                 ],
-                "dialogue": "pre blood suck dialogue",
+                "dialogue": "Let me see your arm!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Man",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "ManNeutral"
                 ],
-                "dialogue": "green is a cool color isn't it",
+                "dialogue": "Li-",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Man",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "ManNeutral"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "Lilith...?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Yes, it's me.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Don't worry, you'll be feeling better soon!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*blehhh*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(It's okay. I've done this before.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I just have to take out the cursed blood.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I got this!!)",
                 "textSpeed": 0
             },
             "endOfScene": true

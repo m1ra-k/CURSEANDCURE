@@ -4,29 +4,159 @@
             "baseDialogue": {
                 "character": "Man",
                 "speakerSprite": [
-                    "LilithExcited"
+                    "ManNeutral"
                 ],
-                "dialogue": "default dialogue after healing",
+                "dialogue": "Thanks again, Lilith.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Woman",
+                "character": "Man",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "ManNeutral"
                 ],
-                "dialogue": "honey we dont have a dog",
+                "dialogue": "We're lucky to have you here.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "LilithHappy"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "Flattery won't get you a free drink, mister.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Haha!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "But really,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I mean it.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Especially with Hilda...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Seems like she's been a lot happier since you've come around!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "She's done so much for me.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "The least I can do is make her happy.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Yeah.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Lilith...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Do you mind grabbing me another drink?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithShocked"
+                ],
+                "dialogue": "What?!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "You need to rest!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "But drinking is the best medicine!",
                 "textSpeed": 0
             },
             "endOfScene": true

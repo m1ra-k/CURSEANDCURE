@@ -2,21 +2,131 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "TavernKeeper",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "TavernKeeperHappy"
                 ],
-                "dialogue": "post blood suck: hilda 1",
+                "dialogue": "Thanks for the help, Lilith.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "TavernKeeper",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "TavernKeeperHappy"
                 ],
-                "dialogue": "Haha, it is!",
+                "dialogue": "I don't know what life down here would be without you.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Hilda, you know I'd say the same.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Haha,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "still I hope the works not too much for you.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "It's not.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Don't worry about me.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Okay...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Remember to visit the rest of your patients for tonight.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Yeah, I'll see to them.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Drop by if you need anything, 'kay?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Alright!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Stay safe, kiddo.",
                 "textSpeed": 0
             },
             "endOfScene": true
