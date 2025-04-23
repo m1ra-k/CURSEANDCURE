@@ -76,7 +76,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "I-",
+                "dialogue": "I--",
                 "textSpeed": 0
             }
         },
@@ -116,7 +116,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Seems like the second the epidemic began they flooded the streets",
+                "dialogue": "Almost seems like the epidemic the second they began flooding the streets,",
                 "textSpeed": 0
             }
         },
@@ -146,7 +146,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "You haven't seen it?",
+                "dialogue": "You haven't heard?",
                 "textSpeed": 0
             }
         },
@@ -176,7 +176,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Hmm, it might be because you're only around at night.",
+                "dialogue": "Hmm, it must be 'cause you're only around at night.",
                 "textSpeed": 0
             }
         },
@@ -206,7 +206,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "She seemed to be doing better at first but-",
+                "dialogue": "She seemed to be doing better at first but--",
                 "textSpeed": 0
             }
         },
@@ -266,7 +266,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "or protective",
+                "dialogue": "or protective.",
                 "textSpeed": 0
             }
         },
@@ -306,7 +306,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "(I should check up on the man in the tavern before I see my last patient",
+                "dialogue": "(I should check up on the man in the tavern before I see my last patient and see if he's doing better.)",
                 "textSpeed": 0
             }
         },
@@ -316,17 +316,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "and see if he's doing better.)",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Lilith",
-                "speakerSprite": [
-                    "LilithNeutral"
-                ],
-                "dialogue": "(I can check in with Hilda while I'm at it.)",
+                "dialogue": "(I can check in with Hilda and help around the tavern while I'm at it.)",
                 "textSpeed": 0
             }
         },
@@ -336,7 +326,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Thank you again for your help.",
+                "dialogue": "Lilith, thank you again for your help.",
                 "textSpeed": 0
             }
         },
@@ -356,7 +346,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "Goodnight",
+                "dialogue": "Have a good night, you two.",
                 "textSpeed": 0
             },
             "endOfScene": true
