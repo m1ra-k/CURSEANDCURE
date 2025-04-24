@@ -129,12 +129,9 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   patient: -1
   postHealingGame: 0
-  flags:
-  - firstHealed
+  flags: []
   characterDialoguesIndex: 0
-  characterDialogues:
-  - {fileID: 4900000, guid: 0f6478b179ad56148ae5e377d4f3e30a, type: 3}
-  - {fileID: 4900000, guid: 6d3ba0c5b6dbd71468d2a08b25cda65b, type: 3}
+  characterDialogues: []
 --- !u!61 &9103756190318337458
 BoxCollider2D:
   m_ObjectHideFlags: 0

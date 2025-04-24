@@ -390,19 +390,19 @@ public class DialogueSystemManager : MonoBehaviour
                 {
                     case "Lilith":
                         characterNumber = 0;
-                        audioSource.pitch = 1.75f;
+                        audioSource.pitch = 1.55f;
                         break;
                     case "Ana":
                         characterNumber = 3;
-                        audioSource.pitch = 1.25f;
+                        audioSource.pitch = 1.85f;
                         break;
                     case "TavernKeeper":
                         characterNumber = 0;
-                        audioSource.pitch = 0.85f;
+                        audioSource.pitch = 1.20f;
                         break;
                     case "Man":
                         characterNumber = 2;
-                        audioSource.pitch = 2f;
+                        audioSource.pitch = 0.75f;
                         break;
                     case "Woman":
                         characterNumber = 1;
@@ -410,7 +410,7 @@ public class DialogueSystemManager : MonoBehaviour
                         break;
                     case "Boy":
                         characterNumber = 1;
-                        audioSource.pitch = 1.9f;
+                        audioSource.pitch = 1.1f;
                         break;
                     case "Girl":
                         characterNumber = 3;
