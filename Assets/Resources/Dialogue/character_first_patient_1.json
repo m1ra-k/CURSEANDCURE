@@ -211,7 +211,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "II'll make my rounds to the other patients for tonight.",
+                "dialogue": "I'll make my rounds to the other patients for tonight.",
                 "textSpeed": 0
             }
         },
@@ -221,7 +221,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Ah, Lilith, remember to keep your hood up when you're outside.",
+                "dialogue": "Ah, Lilith, do remember to keep your hood up when you're outside.",
                 "textSpeed": 0
             }
         },
