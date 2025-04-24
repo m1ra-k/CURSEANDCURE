@@ -94,7 +94,6 @@ public class GridMovement : MonoBehaviour
 
                     if (movementVector != Vector2.zero) 
                     {
-                        print("2");
                         TryStep();
                     }
                 }
@@ -108,7 +107,6 @@ public class GridMovement : MonoBehaviour
         {
             if (!isMoving)
             {
-                print("1");
                 TryStep();
             }
             else
