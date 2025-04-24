@@ -49,8 +49,6 @@ public class GridMovement : MonoBehaviour
 
    [SerializeField] private float checkRadius = 0.1f;
 
-   [SerializeField] private float checkRadius = 0.1f;
-
     void Move() 
     {
         if (!overrideIsMoving)
