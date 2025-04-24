@@ -196,7 +196,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "There's the woman who lives down across the river in the blue house as well as the boy who should be waiting in the park later in the night shortly after.",
+                "dialogue": "There's the woman who lives down across the river in the blue house with her husband,",
                 "textSpeed": 0
             }
         },
@@ -206,7 +206,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "But your first patient of the night is that man over there.",
+                "dialogue": "as well as the boy who should be waiting in the park later in the night.",
                 "textSpeed": 0
             }
         },
@@ -216,7 +216,17 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "He's sitting at the table by the front.",
+                "dialogue": "But your first patient is that man over there,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "sitting at the table by the front.",
                 "textSpeed": 0
             }
         },
@@ -236,7 +246,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "At first I thought he just had one too many drinks.",
+                "dialogue": "I mean, at first I thought he just had one too many drinks.",
                 "textSpeed": 0
             }
         },
