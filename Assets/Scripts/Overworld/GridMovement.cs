@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridMovement : MonoBehaviour
@@ -20,6 +21,9 @@ public class GridMovement : MonoBehaviour
 
     private Animator animator;
 
+    private AudioSource audioSource;
+    private string bumpDirection = "";
+
     private Vector2 lastDir = Vector2.down;
     [SerializeField] float walkAnimSpeed = 0.5f;
     [SerializeField] float idleAnimSpeed = 1f;
@@ -32,6 +36,7 @@ public class GridMovement : MonoBehaviour
         targetPosition = transform.position;
 
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() 
@@ -89,6 +94,7 @@ public class GridMovement : MonoBehaviour
 
                     if (movementVector != Vector2.zero) 
                     {
+                        print("2");
                         TryStep();
                     }
                 }
@@ -102,6 +108,7 @@ public class GridMovement : MonoBehaviour
         {
             if (!isMoving)
             {
+                print("1");
                 TryStep();
             }
             else
@@ -134,11 +141,17 @@ public class GridMovement : MonoBehaviour
                         
         if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
         {
+            bumpDirection = "";
             targetPosition = proposedPosition;
             isMoving = true;
         }
         else
         {
+            if (!bumpDirection.Equals(directionFacing))
+            {
+                audioSource.PlayOneShot(audioSource.clip);
+                bumpDirection = directionFacing;
+            }
             isMoving = false;
         }
     }
@@ -152,11 +165,6 @@ public class GridMovement : MonoBehaviour
             isMoving = false;
             overrideIsMoving = false;
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log($"{gameObject.name} col with {col.collider.name}");
     }
 }
 
