@@ -17,6 +17,9 @@ public class CharacterDialogueData : MonoBehaviour
     private Vector2 lilithPosition;
     private GridMovement lilithGridMovement;
 
+    // TODO DELETE JUST FOR DEBUG
+    public bool canTalk;
+
     void Awake()
     { 
         // locations
@@ -41,6 +44,8 @@ public class CharacterDialogueData : MonoBehaviour
 
     void Update()
     {
+        canTalk = CanTalk();
+
         // lilithPosition
         lilithPosition = (Vector2) lilith.transform.position;
 

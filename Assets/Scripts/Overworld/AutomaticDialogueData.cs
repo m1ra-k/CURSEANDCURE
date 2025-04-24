@@ -24,7 +24,8 @@ public class AutomaticDialogueData : MonoBehaviour
     private List<string> triggeredFlags;
 
     private Vector2 setPosition;
-    
+
+
     private Dictionary<string, Vector2> pushBackDirection = new Dictionary<string, Vector2>
     {
         { "up", Vector2.down },

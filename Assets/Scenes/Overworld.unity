@@ -266,6 +266,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: 7ae34ad3b1bdc2644a1daa2c4c858ccd, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &81275118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -756,6 +757,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &119753684
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -829,6 +831,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: f2831ccdec3c4e346b363843b0c93802, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &132211674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2458,6 +2461,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: e01ccc2b08f059f41a191b63d61ef26c, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &412885586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2555,6 +2559,7 @@ MonoBehaviour:
   characterDialoguesIndex: 0
   characterDialogues:
   - {fileID: 4900000, guid: a068bc76a6984c0468d08fa92b643abd, type: 3}
+  canTalk: 0
 --- !u!1001 &454069864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3672,11 +3677,11 @@ Transform:
   m_GameObject: {fileID: 559301017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -11.639999, y: 3.75, z: 0}
+  m_LocalPosition: {x: 11.5, y: -16.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1395810646}
+  m_Father: {fileID: 965028195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &559301019
 BoxCollider2D:
@@ -3744,6 +3749,7 @@ MonoBehaviour:
   characterDialogues:
   - {fileID: 4900000, guid: cf158367cc587b94db0b164f8e7dded6, type: 3}
   - {fileID: 4900000, guid: a1a2ea4e0ada0624aa25c3fe0d2f5380, type: 3}
+  canTalk: 0
 --- !u!50 &559301021
 Rigidbody2D:
   serializedVersion: 4
@@ -7454,6 +7460,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 742acaf8fb2b7424fad9a0ee4887f05c, type: 3}
   triggeredFlags:
   - calledForHelp
+  canTalk: 0
 --- !u!222 &886356018
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7568,6 +7575,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: 1fae7a2faa0487d4baa9ed771c91df19, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &920078024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7885,6 +7893,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1824398817}
+  - {fileID: 559301018}
   - {fileID: 1395810646}
   m_Father: {fileID: 650971804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8567,6 +8576,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: 984aa504302b97c41b7bfe08ba28be4e, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &1161374575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8635,6 +8645,7 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4900000, guid: d23376381cd8d3a40a1454f35c21c209, type: 3}
   triggeredFlags: []
+  canTalk: 0
 --- !u!222 &1165028236
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12498,8 +12509,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 559301018}
+  m_Children: []
   m_Father: {fileID: 965028195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
