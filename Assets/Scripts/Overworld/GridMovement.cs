@@ -49,7 +49,7 @@ public class GridMovement : MonoBehaviour
 
     [SerializeField] private float checkRadius = 0.1f;
     public LayerMask obstacleLayer;
-    public Vector2 boxSize = new Vector2(0.8f, 0.8f);
+    public Vector2 boxSize = new Vector2(1f, 1f);
 
     void Move()
     {
