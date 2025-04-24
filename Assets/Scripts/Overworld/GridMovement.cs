@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridMovement : MonoBehaviour
@@ -20,6 +21,9 @@ public class GridMovement : MonoBehaviour
 
     private Animator animator;
 
+    private AudioSource audioSource;
+    private string bumpDirection = "";
+
     private Vector2 lastDir = Vector2.down;
     [SerializeField] float walkAnimSpeed = 0.5f;
     [SerializeField] float idleAnimSpeed = 1f;
@@ -32,6 +36,7 @@ public class GridMovement : MonoBehaviour
         targetPosition = transform.position;
 
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() 
@@ -89,26 +94,13 @@ public class GridMovement : MonoBehaviour
 
                     if (movementVector != Vector2.zero) 
                     {
-                        Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
-                        
-                        if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
-                        {
-                            targetPosition = proposedPosition;
-                            isMoving = true;
-                        }
+                        print("2");
+                        TryStep();
                     }
                 }
                 else 
                 {
-                   if (!Physics2D.OverlapCircle(targetPosition, checkRadius))
-                    {
-                         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    }
-
-                    if ((Vector2)transform.position == targetPosition) 
-                    {
-                        isMoving = false;
-                    }
+                    FinishStep();
                 }
             }
         }
@@ -116,31 +108,15 @@ public class GridMovement : MonoBehaviour
         {
             if (!isMoving)
             {
-                Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
-
-                if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
-                {
-                    targetPosition = proposedPosition;
-                    isMoving = true;
-                }
+                print("1");
+                TryStep();
             }
             else
             {
-               if (!Physics2D.OverlapCircle(targetPosition, checkRadius))
-                    {
-                         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    }
-
-                if ((Vector2)transform.position == targetPosition) 
-                {
-                    isMoving = false;
-                    overrideIsMoving = false;
-                }
+                FinishStep();
             }
         }
     }
-
-
 
     void UpdateAnimation()
     {
@@ -150,18 +126,45 @@ public class GridMovement : MonoBehaviour
         {
             lastDir = movementVector;
             animator.SetFloat("Horizontal", movementVector.x);
-            animator.SetFloat("Vertical",   movementVector.y);
+            animator.SetFloat("Vertical", movementVector.y);
         }
         else
         {
             animator.SetFloat("Horizontal", lastDir.x);
-            animator.SetFloat("Vertical",   lastDir.y);
+            animator.SetFloat("Vertical", lastDir.y);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void TryStep()
     {
-        Debug.Log($"{gameObject.name} col with {col.collider.name}");
+        Vector2 proposedPosition = (Vector2) transform.position + movementVector * stepSize;
+                        
+        if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
+        {
+            bumpDirection = "";
+            targetPosition = proposedPosition;
+            isMoving = true;
+        }
+        else
+        {
+            if (!bumpDirection.Equals(directionFacing))
+            {
+                audioSource.PlayOneShot(audioSource.clip);
+                bumpDirection = directionFacing;
+            }
+            isMoving = false;
+        }
+    }
+
+    void FinishStep()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        if ((Vector2) transform.position == targetPosition) 
+        {
+            isMoving = false;
+            overrideIsMoving = false;
+        }
     }
 }
 

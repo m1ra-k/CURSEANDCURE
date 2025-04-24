@@ -15,6 +15,7 @@ public class CharacterDialogueData : MonoBehaviour
     private HashSet<Vector2> adjacentLocations = new();
     private GameObject lilith;
     private Vector2 lilithPosition;
+    private GridMovement lilithGridMovement;
 
     void Awake()
     { 
@@ -29,6 +30,7 @@ public class CharacterDialogueData : MonoBehaviour
 
         // lilith
         lilith = GameObject.FindWithTag("Player");
+        lilithGridMovement = lilith.GetComponent<GridMovement>();
     }
 
     void Start()
@@ -85,6 +87,29 @@ public class CharacterDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        return adjacentLocations.Contains(lilithPosition);
+        if (!adjacentLocations.Contains(lilithPosition))
+        {
+            return false;
+        }
+
+        Vector2 offset = (Vector2) transform.localPosition - lilithPosition;
+        float epsilon = 0.05f;
+
+        switch (true)
+        {
+            case true when Mathf.Abs(offset.x) < epsilon && Mathf.Abs(offset.y - 1f) < epsilon:
+                return lilithGridMovement.directionFacing.Equals("up");
+
+            case true when Mathf.Abs(offset.x) < epsilon && Mathf.Abs(offset.y + 1f) < epsilon:
+                return lilithGridMovement.directionFacing.Equals("down");
+
+            case true when Mathf.Abs(offset.x - 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
+                return lilithGridMovement.directionFacing.Equals("right");
+
+            case true when Mathf.Abs(offset.x + 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
+                return lilithGridMovement.directionFacing.Equals("left");
+        }
+
+        return false;
     }
 }
