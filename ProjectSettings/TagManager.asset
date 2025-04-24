@@ -10,6 +10,8 @@ TagManager:
   - Image
   - Button
   - Parchment
+  - Night
+  - Evening
   layers:
   - Default
   - TransparentFX
