@@ -47,9 +47,11 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-   [SerializeField] private float checkRadius = 0.1f;
+    [SerializeField] private float checkRadius = 0.1f;
+    public LayerMask obstacleLayer;
+    public Vector2 boxSize = new Vector2(0.8f, 0.8f);
 
-    void Move() 
+    void Move()
     {
         if (!overrideIsMoving)
         {
@@ -87,25 +89,31 @@ public class GridMovement : MonoBehaviour
                         movementVector = Vector2.zero;
                     }
 
-                    if (movementVector != Vector2.zero) 
+                    if (movementVector != Vector2.zero)
                     {
-                        Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
+                        Vector2 target = (Vector2)transform.position + movementVector * stepSize;
                         
-                        if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
+                        bool blocked = Physics2D.BoxCast(
+                            origin: transform.position,
+                            size: boxSize,
+                            angle: 0f,
+                            direction: movementVector,
+                            distance: stepSize,
+                            layerMask: obstacleLayer
+                        );
+
+                        if (!blocked)
                         {
-                            targetPosition = proposedPosition;
+                            targetPosition = target;
                             isMoving = true;
                         }
                     }
                 }
-                else 
+                else
                 {
-                   if (!Physics2D.OverlapCircle(targetPosition, checkRadius))
-                    {
-                         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    }
+                    transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                    if ((Vector2)transform.position == targetPosition) 
+                    if ((Vector2)transform.position == targetPosition)
                     {
                         isMoving = false;
                     }
@@ -116,22 +124,44 @@ public class GridMovement : MonoBehaviour
         {
             if (!isMoving)
             {
-                Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
+                Vector2 pos = transform.position;
 
-                if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
+                bool xNeedsSnap = pos.x % 1f != 0.5f;
+                bool yNeedsSnap = pos.y % 1f != 0.5f;
+
+                if (xNeedsSnap || yNeedsSnap)
                 {
-                    targetPosition = proposedPosition;
+                    print("needed snap, so i snapped");
+                    GridSnap();
+                }
+
+
+        Debug.Log("m");
+        
+                Vector2 target = (Vector2)transform.position + movementVector * stepSize;
+
+                bool blocked = Physics2D.BoxCast(
+                    origin: transform.position,
+                    size: boxSize,
+                    angle: 0f,
+                    direction: movementVector,
+                    distance: stepSize,
+                    layerMask: obstacleLayer
+                );
+
+                if (!blocked)
+                {
+                    targetPosition = target;
                     isMoving = true;
                 }
             }
             else
             {
-               if (!Physics2D.OverlapCircle(targetPosition, checkRadius))
-                    {
-                         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    }
+        
+                print("hi");
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                if ((Vector2)transform.position == targetPosition) 
+                if ((Vector2)transform.position == targetPosition)
                 {
                     isMoving = false;
                     overrideIsMoving = false;
@@ -139,8 +169,6 @@ public class GridMovement : MonoBehaviour
             }
         }
     }
-
-
 
     void UpdateAnimation()
     {
@@ -159,9 +187,24 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void GridSnap()
+    {
+        Vector2 pos = transform.position;
+        float snappedX = Mathf.Round(pos.x * 2f) / 2f;
+        float snappedY = Mathf.Round(pos.y * 2f) / 2f;
+        print($"need to snap to: {snappedX}, {snappedY}");
+        transform.position = new Vector2(snappedX, snappedY);
+    }
+
+    void OnCollisionExit2D(Collision2D col)
     {
         Debug.Log($"{gameObject.name} col with {col.collider.name}");
+        if (col.collider.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            Debug.Log("i need to snap!");
+            isMoving = false;
+            GridSnap();
+        }
     }
 }
 
