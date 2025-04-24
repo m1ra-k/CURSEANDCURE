@@ -85,6 +85,14 @@ public class CharacterDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        return adjacentLocations.Contains(lilithPosition);
+        foreach (var adjacentLocation in adjacentLocations)
+        {
+            if (Vector2.Distance(adjacentLocation, lilithPosition) <= 0.05f)
+            {
+                lilith.transform.position = adjacentLocation;
+                return true;
+            }
+        }
+        return false;
     }
 }
