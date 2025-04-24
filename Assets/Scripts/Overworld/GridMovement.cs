@@ -190,9 +190,17 @@ public class GridMovement : MonoBehaviour
     void GridSnap()
     {
         Vector2 pos = transform.position;
+        
+        // get nearest 0.5 for both x and y
         float snappedX = Mathf.Round(pos.x * 2f) / 2f;
         float snappedY = Mathf.Round(pos.y * 2f) / 2f;
+        
+        // truncate to 1 decimal place
+        snappedX = Mathf.Round(snappedX * 10f) / 10f;
+        snappedY = Mathf.Round(snappedY * 10f) / 10f;
+
         print($"need to snap to: {snappedX}, {snappedY}");
+        
         transform.position = new Vector2(snappedX, snappedY);
     }
 
