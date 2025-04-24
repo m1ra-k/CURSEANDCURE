@@ -1151,7 +1151,6 @@ MonoBehaviour:
   currentlyDoorTransitioning: 0
   walkAnimSpeed: 0.5
   idleAnimSpeed: 1
-  checkRadius: 0.1
 --- !u!61 &189428857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2731,11 +2730,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 34.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: -26.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
@@ -22208,10 +22207,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1879304835}
     m_Modifications:
-    - target: {fileID: 1104841198359975605, guid: 76db802a3a2fc1349a61c260d3961e4c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1272405341783826750, guid: 76db802a3a2fc1349a61c260d3961e4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -197
@@ -22656,10 +22651,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1879304835}
     m_Modifications:
-    - target: {fileID: 1104841198359975605, guid: 76db802a3a2fc1349a61c260d3961e4c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1272405341783826750, guid: 76db802a3a2fc1349a61c260d3961e4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -213.5
