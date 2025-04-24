@@ -145,17 +145,14 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    void FinishStep(bool wasOverriding = false)
+    void FinishStep()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         if ((Vector2) transform.position == targetPosition) 
         {
             isMoving = false;
-            if (wasOverriding)
-            {
-                overrideIsMoving = false;
-            }
+            overrideIsMoving = false;
         }
     }
 
