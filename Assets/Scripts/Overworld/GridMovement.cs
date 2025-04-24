@@ -96,14 +96,15 @@ public class GridMovement : MonoBehaviour
                             targetPosition = proposedPosition;
                             isMoving = true;
                         }
+                        else
+                        {
+                            isMoving=false;
+                        }
                     }
                 }
                 else 
                 {
-                   if (!Physics2D.OverlapCircle(targetPosition, checkRadius))
-                    {
-                         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    }
+                    transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
                     if ((Vector2)transform.position == targetPosition) 
                     {
@@ -123,13 +124,14 @@ public class GridMovement : MonoBehaviour
                     targetPosition = proposedPosition;
                     isMoving = true;
                 }
+                else
+                {
+                    isMoving=false;
+                }
             }
             else
             {
-               if (!Physics2D.OverlapCircle(targetPosition, checkRadius))
-                    {
-                         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-                    }
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
                 if ((Vector2)transform.position == targetPosition) 
                 {
