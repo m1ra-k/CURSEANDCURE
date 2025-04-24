@@ -92,7 +92,7 @@
         },
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Lilith",
                 "speakerSprite": [
                     "LilithHappy"
                 ],
@@ -126,7 +126,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Do you mind grabbing me another drink?",
+                "dialogue": "Ya mind grabbing me another drink?",
                 "textSpeed": 0
             }
         },
@@ -146,7 +146,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "You need to rest!!",
+                "dialogue": "Seriously, go home and get some rest!",
                 "textSpeed": 0
             }
         },
@@ -156,7 +156,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "But drinking is the best medicine!",
+                "dialogue": "But drinking is the best medicine~~",
                 "textSpeed": 0
             },
             "endOfScene": true
