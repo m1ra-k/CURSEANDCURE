@@ -91,27 +91,12 @@ public class GridMovement : MonoBehaviour
 
                     if (movementVector != Vector2.zero) 
                     {
-                        Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
-                        
-                        if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
-                        {
-                            targetPosition = proposedPosition;
-                            isMoving = true;
-                        }
-                        else
-                        {
-                            isMoving=false;
-                        }
+                        TryStep();
                     }
                 }
                 else 
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-                    if ((Vector2)transform.position == targetPosition) 
-                    {
-                        isMoving = false;
-                    }
+                    FinishStep();
                 }
             }
         }
@@ -119,32 +104,14 @@ public class GridMovement : MonoBehaviour
         {
             if (!isMoving)
             {
-                Vector2 proposedPosition = (Vector2)transform.position + movementVector * stepSize;
-
-                if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
-                {
-                    targetPosition = proposedPosition;
-                    isMoving = true;
-                }
-                else
-                {
-                    isMoving=false;
-                }
+                TryStep();
             }
             else
             {
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-                if ((Vector2)transform.position == targetPosition) 
-                {
-                    isMoving = false;
-                    overrideIsMoving = false;
-                }
+                FinishStep();
             }
         }
     }
-
-
 
     void UpdateAnimation()
     {
@@ -154,12 +121,41 @@ public class GridMovement : MonoBehaviour
         {
             lastDir = movementVector;
             animator.SetFloat("Horizontal", movementVector.x);
-            animator.SetFloat("Vertical",   movementVector.y);
+            animator.SetFloat("Vertical", movementVector.y);
         }
         else
         {
             animator.SetFloat("Horizontal", lastDir.x);
-            animator.SetFloat("Vertical",   lastDir.y);
+            animator.SetFloat("Vertical", lastDir.y);
+        }
+    }
+
+    void TryStep()
+    {
+        Vector2 proposedPosition = (Vector2) transform.position + movementVector * stepSize;
+                        
+        if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
+        {
+            targetPosition = proposedPosition;
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+    }
+
+    void FinishStep(bool wasOverriding = false)
+    {
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        if ((Vector2) transform.position == targetPosition) 
+        {
+            isMoving = false;
+            if (wasOverriding)
+            {
+                overrideIsMoving = false;
+            }
         }
     }
 
