@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af361da80b5e0c94ba3cb4ba2714a03e
+      internalID: 534835727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 97
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef737057c534c04e9962ef0676cf7d5
+      internalID: -1320454540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 97
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5074bb4e6c1e749a88ff63d16060ea
+      internalID: -1357327852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 65
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd5243888d50b045b44a6f6186100ba
+      internalID: -1809506615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 65
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbdf4fac68dcd04189c28de5d111335
+      internalID: -1830964762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 65
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6054078d8a3f6194081ca944ff9f21c5
+      internalID: 2084509353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 33
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a2400511763d149be95d2d1bc64802
+      internalID: -770512805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 33
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a6a3119fc849c4ebd2635f04da7e3e
+      internalID: 289012698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 33
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037d248994c21bb478772e2242f4ff93
+      internalID: 1379798878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa118110ab232441aa9d6b80b40b676
+      internalID: -2073035056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf5fa781c49e9646b6f0702fc2ea26e
+      internalID: -173819674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LILITH_HOOD_SPRITE_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31046e6b745bff42803fcee184d7f31
+      internalID: 797802687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +384,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LILITH_HOOD_SPRITE_0: 534835727
+      LILITH_HOOD_SPRITE_1: -1320454540
+      LILITH_HOOD_SPRITE_10: -173819674
+      LILITH_HOOD_SPRITE_11: 797802687
+      LILITH_HOOD_SPRITE_2: -1357327852
+      LILITH_HOOD_SPRITE_3: -1809506615
+      LILITH_HOOD_SPRITE_4: -1830964762
+      LILITH_HOOD_SPRITE_5: 2084509353
+      LILITH_HOOD_SPRITE_6: -770512805
+      LILITH_HOOD_SPRITE_7: 289012698
+      LILITH_HOOD_SPRITE_8: 1379798878
+      LILITH_HOOD_SPRITE_9: -2073035056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
