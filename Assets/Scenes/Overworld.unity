@@ -25335,7 +25335,7 @@ GameObject:
   - component: {fileID: 1912798830}
   m_Layer: 0
   m_Name: BusyTavern
-  m_TagString: Untagged
+  m_TagString: Night
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26911,6 +26911,10 @@ PrefabInstance:
       propertyPath: characterDialogues.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: 7dac945e42de4234a8c0e9f1bb44eb70, type: 3}
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: characterDialogues.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: 7dac945e42de4234a8c0e9f1bb44eb70, type: 3}
     - target: {fileID: 5465163243255384806, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
       propertyPath: m_Name
       value: HildaNPC
@@ -27193,11 +27197,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: flags.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: flags.Array.data[0]
       value: firstHealed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
+      propertyPath: flags.Array.data[1]
+      value: secondHealed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
+      propertyPath: flags.Array.data[2]
+      value: secondHealed
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: characterDialogues.Array.size
