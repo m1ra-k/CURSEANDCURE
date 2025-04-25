@@ -59,6 +59,8 @@ A mysterious vampire from the lower ward. Her identity is only known by the peop
 
 --> Wow... bump sound effects when you bump into something! Small details.
 
+--> There's a dancing NPC. She's recurring in a few places too. Try finding her in both!
+
 ## References
 The overworld character sprites heavily reference the video game *OMORI*'s.
 
