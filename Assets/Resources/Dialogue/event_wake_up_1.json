@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "Last night was too taxing.",
+                "dialogue": "Last night was too much work...",
                 "textSpeed": 0
             }
         },
@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "It seemed as though the residents' ailments were worsening.",
+                "dialogue": "It looks like the townsfolk are just getting worse.",
                 "textSpeed": 0
             }
         },
@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "I hope this plague subsides soon,",
+                "dialogue": "I hope the plague dies down soon,",
                 "textSpeed": 0
             }
         },
@@ -46,7 +46,17 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "I don't think I can ever welcome the taste of tarnished blood in my mouth.",
+                "dialogue": "I don't think I can ever get rid of",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "the taste of bad blood in my mouth.",
                 "textSpeed": 0
             },   
             "endOfScene": true
