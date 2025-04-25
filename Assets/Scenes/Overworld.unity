@@ -2875,11 +2875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 0.5
+      value: -21.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: 2.5
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem

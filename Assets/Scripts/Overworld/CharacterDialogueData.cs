@@ -17,6 +17,12 @@ public class CharacterDialogueData : MonoBehaviour
     private Vector2 lilithPosition;
     private GridMovement lilithGridMovement;
 
+    private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private Sprite[] faces;
+    [SerializeField]
+    private bool turnsFace = true;
+
     // TODO DELETE JUST FOR DEBUG
     public bool canTalk;
 
@@ -34,6 +40,8 @@ public class CharacterDialogueData : MonoBehaviour
         // lilith
         lilith = GameObject.FindWithTag("Player");
         lilithGridMovement = lilith.GetComponent<GridMovement>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -83,6 +91,11 @@ public class CharacterDialogueData : MonoBehaviour
             }
             else
             {
+                if (turnsFace)
+                {
+                    // TODO
+                    spriteRenderer.sprite = faces[0];
+                }
                 GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[characterDialoguesIndex]);
                 GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
                 GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    

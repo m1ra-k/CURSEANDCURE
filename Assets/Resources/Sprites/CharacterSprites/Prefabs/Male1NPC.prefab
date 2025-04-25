@@ -132,6 +132,12 @@ MonoBehaviour:
   flags: []
   characterDialoguesIndex: 0
   characterDialogues: []
+  faces:
+  - {fileID: 535626061, guid: 806afb32919730e448725db631bbc795, type: 3}
+  - {fileID: -957012542, guid: 806afb32919730e448725db631bbc795, type: 3}
+  - {fileID: -836654934, guid: 806afb32919730e448725db631bbc795, type: 3}
+  - {fileID: 150539548, guid: 806afb32919730e448725db631bbc795, type: 3}
+  canTalk: 0
 --- !u!61 &2962842283821936494
 BoxCollider2D:
   m_ObjectHideFlags: 0
