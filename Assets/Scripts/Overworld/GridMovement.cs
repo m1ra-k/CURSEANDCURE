@@ -27,10 +27,6 @@ public class GridMovement : MonoBehaviour
     private AudioSource audioSource;
     private string bumpDirection = "";
 
-    private Vector2 lastDir = Vector2.down;
-    [SerializeField] float walkAnimSpeed = 0.5f;
-    [SerializeField] float idleAnimSpeed = 1f;
-
     [SerializeField] private float checkRadius = 0.1f;
 
     void Start() 
@@ -54,7 +50,7 @@ public class GridMovement : MonoBehaviour
             DetermineAnimation();
         }
 
-        if (!isMoving)
+        if (movementVector == Vector2.zero)
         {
             print("im not moving");
             DetermineStopFrame();
@@ -133,15 +129,19 @@ public class GridMovement : MonoBehaviour
         switch (movementVector)
         {
             case Vector2 v when v == Vector2.up:
+                print("up");
                 animator.Play(lilithAnimations[0].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.down:
+                print("down");
                 animator.Play(lilithAnimations[1].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.left:
+                print("left");
                 animator.Play(lilithAnimations[2].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.right:
+                print("right");
                 animator.Play(lilithAnimations[3].name, 0, 0f);
                 break;
         }

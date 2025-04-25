@@ -1380,6 +1380,7 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   directionFacing: down
   movementVector: {x: 0, y: 0}
+  prevMovementVector: {x: 0, y: 0}
   isMoving: 0
   overrideIsMoving: 0
   currentlyDoorTransitioning: 0
@@ -1388,8 +1389,6 @@ MonoBehaviour:
   - {fileID: 7400000, guid: e56e9305dd8bc134cbfc3748b025a860, type: 2}
   - {fileID: 7400000, guid: c8b286b08bc75aa48a0602d7cdb9c3ea, type: 2}
   - {fileID: 7400000, guid: 8e6508dd8e6ec1b47930ee56d2561225, type: 2}
-  walkAnimSpeed: 0.5
-  idleAnimSpeed: 1
   checkRadius: 0.1
 --- !u!61 &189428857
 BoxCollider2D:
@@ -1446,7 +1445,7 @@ Animator:
   m_GameObject: {fileID: 189428851}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf71291098f9e884a99f1627c484f84a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 923d9002bbb77384fb2d7546894ff2a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8684,7 +8683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1161374572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8750,7 +8749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1165028233
 RectTransform:
   m_ObjectHideFlags: 0
