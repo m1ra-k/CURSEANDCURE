@@ -47,7 +47,7 @@ A mysterious vampire from the lower ward. Her identity is only known by the peop
 ## Things You May Have Missed...
 --> We *really* wanted to focus on the worldbuilding aspect of the game, so talk to all the characters you see to learn more about the lore of CURSE AND CURE!
 
---> We did our best to make the dialogue fun and silly (an absolute must). Everyone in hte world has at least one dialogue, and different flags are set for more main events (namely patient healing) that make them switch between multiple dialogues. For example, Hilda will say different stuff depending on what part of the story you're at! Always talk!
+--> We did our best to make the dialogue fun and silly (an absolute must). Everyone in the world has at least one dialogue, and different flags are set for more main events (namely patient healing) that make them switch between multiple dialogues. For example, Hilda will say different stuff depending on what part of the story you're at! Always talk!
 
 --> Try stepping on the flowers between the two kids by all the houses! There's a cute interaction. Make sure to talk to them after too.
 
