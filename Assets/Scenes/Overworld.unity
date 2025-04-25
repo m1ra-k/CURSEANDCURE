@@ -1332,7 +1332,7 @@ Transform:
   m_GameObject: {fileID: 189428851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.5, y: -26.5, z: 0}
+  m_LocalPosition: {x: 27.5, y: -19.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2614,41 +2614,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5465163243255384806, guid: 35b595c9e2e138043860e5968455f220, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 430540536}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b595c9e2e138043860e5968455f220, type: 3}
 --- !u!4 &430540534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7843016994950978454, guid: 35b595c9e2e138043860e5968455f220, type: 3}
   m_PrefabInstance: {fileID: 430540533}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &430540535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5465163243255384806, guid: 35b595c9e2e138043860e5968455f220, type: 3}
-  m_PrefabInstance: {fileID: 430540533}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &430540536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430540535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbde55d9e20595469ddd365315682d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameProgressionManagerInstance: {fileID: 0}
-  patient: -1
-  postHealingGame: 0
-  flags: []
-  characterDialoguesIndex: 0
-  characterDialogues:
-  - {fileID: 4900000, guid: a068bc76a6984c0468d08fa92b643abd, type: 3}
-  canTalk: 0
 --- !u!1001 &454069864
 PrefabInstance:
   m_ObjectHideFlags: 0
