@@ -55,8 +55,9 @@ public class HealingGameManager : MonoBehaviour
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
         // range
+        print($"Patients/{mode}_patient_{GameProgressionManagerInstance.lilithPatientNumber}");
         healingRangeList = JsonUtility.FromJson<HealingRangeList>(Resources.Load<TextAsset>($"Patients/{mode}_patient_" + GameProgressionManagerInstance.lilithPatientNumber).text);
-    
+
         // UI
         flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
 
@@ -241,15 +242,15 @@ public class HealingGameManager : MonoBehaviour
 
         switch (GameProgressionManagerInstance.lilithPatientNumber)
         {
-            case 1:
+            case 0:
                 // healed first patient, set flag
                 GameProgressionManagerInstance.progressionSystem.SetFlag("firstHealed", true);
                 break;
-            case 2:
+            case 1:
                 // healed second patient, set flag
                 GameProgressionManagerInstance.progressionSystem.SetFlag("secondHealed", true);
                 break;
-            case 3:
+            case 2:
                 // healed third patient, set flag
                 GameProgressionManagerInstance.progressionSystem.SetFlag("thirdHealed", true);
                 break;

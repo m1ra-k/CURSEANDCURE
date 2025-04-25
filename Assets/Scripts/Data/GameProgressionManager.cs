@@ -31,8 +31,8 @@ public class GameProgressionManager : MonoBehaviour
     public string lastTalkedNPC;
     public bool healedPatient;
     public CharacterDialogueData patientCharacterDialogueData;
-    private GameObject evening;
-    private GameObject night;
+    private GameObject[] eveningObjects;
+    private GameObject[] nightObjects;
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
@@ -115,10 +115,13 @@ public class GameProgressionManager : MonoBehaviour
                     patientCharacterDialogueData.postHealingGame = true;
                 }
 
-                evening = GameObject.FindWithTag("Evening");
-                night = GameObject.FindWithTag("Night");
+                eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
+                nightObjects = GameObject.FindGameObjectsWithTag("Night");
 
-                (lilithPatientNumber < 2 ? night : evening).SetActive(false);
+                foreach (GameObject obj in lilithPatientNumber < 1 ? nightObjects : eveningObjects)
+                {
+                    obj.SetActive(false);
+                }
 
                 break;
 

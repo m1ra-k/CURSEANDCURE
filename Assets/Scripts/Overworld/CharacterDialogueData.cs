@@ -70,6 +70,7 @@ public class CharacterDialogueData : MonoBehaviour
                 // other dialogue after getting healed (usually). plays after thank you cutscene.
                 if (postHealingGame)
                 {
+                    GameProgressionManagerInstance.lilithPatientNumber++;
                     characterDialoguesIndex++;
                 }
 
@@ -77,7 +78,6 @@ public class CharacterDialogueData : MonoBehaviour
 
                 if (patient == GameProgressionManagerInstance.lilithPatientNumber)
                 {
-                    GameProgressionManagerInstance.lilithPatientNumber++;
                     GameProgressionManagerInstance.TransitionScene("HealingGame");
                 }
             }
