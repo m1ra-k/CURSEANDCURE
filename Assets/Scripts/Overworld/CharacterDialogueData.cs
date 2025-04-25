@@ -15,11 +15,12 @@ public class CharacterDialogueData : MonoBehaviour
     private HashSet<Vector2> adjacentLocations = new();
     private GameObject lilith;
     private Vector2 lilithPosition;
-    private GridMovement lilithGridMovement;
 
     private SpriteRenderer spriteRenderer;
+    private Sprite originalFace;
     [SerializeField]
     private Sprite[] faces;
+    private int talkingDirection;
     [SerializeField]
     private bool turnsFace = true;
 
@@ -39,7 +40,6 @@ public class CharacterDialogueData : MonoBehaviour
 
         // lilith
         lilith = GameObject.FindWithTag("Player");
-        lilithGridMovement = lilith.GetComponent<GridMovement>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -48,6 +48,8 @@ public class CharacterDialogueData : MonoBehaviour
     {
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+
+        originalFace = spriteRenderer.sprite;
     }
 
     void Update()
@@ -88,14 +90,17 @@ public class CharacterDialogueData : MonoBehaviour
                 {
                     GameProgressionManagerInstance.TransitionScene("HealingGame");
                 }
+
+                spriteRenderer.sprite = originalFace;
             }
             else
             {
                 if (turnsFace)
                 {
                     // TODO
-                    spriteRenderer.sprite = faces[0];
+                    spriteRenderer.sprite = faces[talkingDirection];
                 }
+
                 GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(characterDialogues[characterDialoguesIndex]);
                 GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
                 GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    
@@ -116,16 +121,20 @@ public class CharacterDialogueData : MonoBehaviour
         switch (true)
         {
             case true when Mathf.Abs(offset.x) < epsilon && Mathf.Abs(offset.y - 1f) < epsilon:
+                talkingDirection = 1;
                 return GameProgressionManagerInstance.directionFacing.Equals("up");
 
             case true when Mathf.Abs(offset.x) < epsilon && Mathf.Abs(offset.y + 1f) < epsilon:
+                talkingDirection = 0;
                 return GameProgressionManagerInstance.directionFacing.Equals("down");
 
-            case true when Mathf.Abs(offset.x - 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
-                return GameProgressionManagerInstance.directionFacing.Equals("right");
-
             case true when Mathf.Abs(offset.x + 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
+                talkingDirection = 3;
                 return GameProgressionManagerInstance.directionFacing.Equals("left");
+
+            case true when Mathf.Abs(offset.x - 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
+                talkingDirection = 2;
+                return GameProgressionManagerInstance.directionFacing.Equals("right");
         }
 
         return false;
