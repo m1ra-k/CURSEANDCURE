@@ -1,0 +1,25 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Ah, Lilith, you're back.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperHappy"
+                ],
+                "dialogue": "Stay safe, kiddo.",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "*busy tavern*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "I don't think I can ever welcome the taste of tarnished blood in my mouth.",
+                "textSpeed": 0
+            },   
+            "endOfScene": true
+        }
+    ]
+}
