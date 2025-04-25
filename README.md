@@ -16,7 +16,7 @@
 
 Ana, a devout nun, and Lilith, a mysterious vampire, find their fates intertwined through repeated encounters in a medieval city plagued by a mysterious illness. When a certain “truth” is revealed, Ana must decide how to stop the corruption at its source—by continuing to serve the church as a nun or becoming an outcast to side with the vampire.
 
-This is meant to be the first part of the game, specifically named LILITH: Prologue. Chronologically, this part is supposed to be played after (and optionally) ANA: Prologue, but due to the requirements of the project, we decided to implement our game as the prologue of the actual vampire instead. The game's original design was to feature two alternating protagonists and a branching narrative, heavily themed around moral philosophy, good and bad, and curse and cure.
+This is meant to be the first part of the game, specifically named LILITH: Prologue. Chronologically, this part is supposed to be played after (and optionally) ANA: Prologue, but due to the requirements of the project, we decided to implement our game as the prologue of the actual vampire instead. The game's original design was to feature two alternating protagonists (one during the day and the other during night) and a branching narrative, heavily themed around moral philosophy, good and bad, and curse and cure.
 
 ## Play!
 
