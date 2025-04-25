@@ -1385,10 +1385,10 @@ MonoBehaviour:
   overrideIsMoving: 0
   currentlyDoorTransitioning: 0
   lilithAnimations:
-  - {fileID: 7400000, guid: 9548e3bd96e99c1428bbb264656c7f88, type: 2}
-  - {fileID: 7400000, guid: e56e9305dd8bc134cbfc3748b025a860, type: 2}
-  - {fileID: 7400000, guid: c8b286b08bc75aa48a0602d7cdb9c3ea, type: 2}
-  - {fileID: 7400000, guid: 8e6508dd8e6ec1b47930ee56d2561225, type: 2}
+  - {fileID: 7400000, guid: 7b50517b5b960d04fb21b3e8ace1da71, type: 2}
+  - {fileID: 7400000, guid: 02872b1d10f3dff49b5330515f9392f4, type: 2}
+  - {fileID: 7400000, guid: 2d450f2fc1949534b8aa6259320201a3, type: 2}
+  - {fileID: 7400000, guid: 747e53f243e27734bbae030c4dc37a48, type: 2}
   checkRadius: 0.1
 --- !u!61 &189428857
 BoxCollider2D:
