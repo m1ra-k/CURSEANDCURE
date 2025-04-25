@@ -55,6 +55,10 @@ A mysterious vampire from the lower ward. Her identity is only known by the peop
 
 --> There is an optional part after healing the second patient Lilith hints at, where you can check in on Hilda at the tavern. Go see if there's anything new there!
 
+--> Speaking of after the second patient... it goes from evening to night. So a lot of people aren't outside anymore. Where could they be?
+
+--> Wow... bump sound effects when you bump into something! Small details.
+
 ## References
 The overworld character sprites heavily reference the video game *OMORI*'s.
 
