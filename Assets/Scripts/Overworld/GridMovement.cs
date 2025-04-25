@@ -14,6 +14,7 @@ public class GridMovement : MonoBehaviour
     public Vector2 movementVector;
     public Vector2 prevMovementVector;
     public bool isMoving;
+    private bool completedFirstMovement;
     public bool overrideIsMoving;
     public bool currentlyDoorTransitioning;
 
@@ -38,6 +39,7 @@ public class GridMovement : MonoBehaviour
 
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        animator.speed = 0;
     }
 
     void Update() 
@@ -46,11 +48,12 @@ public class GridMovement : MonoBehaviour
 
         if (movementVector != prevMovementVector)
         {
+            completedFirstMovement = true;
             print("started movement");
             DetermineAnimation();
         }
 
-        if (movementVector == Vector2.zero)
+        if (movementVector == Vector2.zero && completedFirstMovement)
         {
             print("im not moving");
             DetermineStopFrame();
