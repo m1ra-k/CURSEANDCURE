@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Hahaha, you don't say! It's 'cus business was great today!",
+                "dialogue": "Hahaha, you don't say! It's 'cus business has been looking good!",
                 "textSpeed": 0
             }
         },
@@ -156,7 +156,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "The night has come. You know what that means, right?",
+                "dialogue": "Night has come. You know what that means, right?",
                 "textSpeed": 0
             }
         },
@@ -176,7 +176,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "It's time to heal my patients for the day.",
+                "dialogue": "It's time to treat my patients for the day.",
                 "textSpeed": 0
             }
         },
@@ -196,7 +196,17 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "There's the woman who lives down across the river in the blue house with her husband,",
+                "dialogue": "There's the woman who lives down across the river",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "in the blue house with her husband,",
                 "textSpeed": 0
             }
         },
@@ -236,7 +246,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "He's been complaining about the his stomache ache.",
+                "dialogue": "He's been complaining about his stomache ache.",
                 "textSpeed": 0
             }
         },
