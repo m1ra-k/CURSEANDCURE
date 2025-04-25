@@ -1,0 +1,25 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "tavern woman 2",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "tempty",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}
