@@ -16,10 +16,9 @@ public class CharacterDialogueData : MonoBehaviour
     private GameObject lilith;
     private Vector2 lilithPosition;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private Sprite originalFace;
-    [SerializeField]
-    private Sprite[] faces;
+    public Sprite[] faces;
     private int talkingDirection;
     [SerializeField]
     private bool turnsFace = true;
