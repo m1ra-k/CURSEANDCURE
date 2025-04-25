@@ -55,7 +55,6 @@ public class HealingGameManager : MonoBehaviour
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
         // range
-        print($"Patients/{mode}_patient_{GameProgressionManagerInstance.lilithPatientNumber}");
         healingRangeList = JsonUtility.FromJson<HealingRangeList>(Resources.Load<TextAsset>($"Patients/{mode}_patient_" + GameProgressionManagerInstance.lilithPatientNumber).text);
 
         // UI

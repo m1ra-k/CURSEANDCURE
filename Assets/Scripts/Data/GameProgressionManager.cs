@@ -22,6 +22,7 @@ public class GameProgressionManager : MonoBehaviour
     [Header("[Overworld]")]
     public GameObject lilith;
     public Vector2 lilithPosition;
+    public string directionFacing = "down";
 
     public GameObject tutorial;
     public GameObject dialogueCanvas;
@@ -108,7 +109,7 @@ public class GameProgressionManager : MonoBehaviour
 
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
-
+                
                 foreach (var complementedOneTimeEvent in complementedOneTimeEvents)
                 {
                     GameObject.Find(complementedOneTimeEvent).SetActive(false);

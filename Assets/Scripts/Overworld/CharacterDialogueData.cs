@@ -103,16 +103,16 @@ public class CharacterDialogueData : MonoBehaviour
         switch (true)
         {
             case true when Mathf.Abs(offset.x) < epsilon && Mathf.Abs(offset.y - 1f) < epsilon:
-                return lilithGridMovement.directionFacing.Equals("up");
+                return GameProgressionManagerInstance.directionFacing.Equals("up");
 
             case true when Mathf.Abs(offset.x) < epsilon && Mathf.Abs(offset.y + 1f) < epsilon:
-                return lilithGridMovement.directionFacing.Equals("down");
+                return GameProgressionManagerInstance.directionFacing.Equals("down");
 
             case true when Mathf.Abs(offset.x - 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
-                return lilithGridMovement.directionFacing.Equals("right");
+                return GameProgressionManagerInstance.directionFacing.Equals("right");
 
             case true when Mathf.Abs(offset.x + 1f) < epsilon && Mathf.Abs(offset.y) < epsilon:
-                return lilithGridMovement.directionFacing.Equals("left");
+                return GameProgressionManagerInstance.directionFacing.Equals("left");
         }
 
         return false;

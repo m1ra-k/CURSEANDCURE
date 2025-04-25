@@ -416,6 +416,10 @@ public class DialogueSystemManager : MonoBehaviour
                         characterNumber = 3;
                         audioSource.pitch = 2f;
                         break;
+                    default:
+                        characterNumber = 0;
+                        audioSource.pitch = 1.20f;
+                        break;
                     // need to do this for everyone
                 }
 
