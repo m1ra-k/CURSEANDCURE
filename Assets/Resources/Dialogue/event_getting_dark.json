@@ -1,0 +1,45 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(Oh, it's already so dark.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(Come to think of it,)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(It'd be nice to check up on the man in the tavern before I see my last patient and see if he's doing better.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(I can check in with Hilda and help around the tavern while I'm at it.)",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}

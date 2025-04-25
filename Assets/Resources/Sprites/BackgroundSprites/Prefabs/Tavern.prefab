@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5466604097700087502}
   - component: {fileID: 6457125556629861457}
-  - component: {fileID: 2626758506169773304}
   m_Layer: 0
   m_Name: Tavern
   m_TagString: Untagged
@@ -26,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552896490395358967}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.319618, y: -36.97746, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -224.5, y: -452.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,67 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &2626758506169773304
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552896490395358967}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 3}
-    newSize: {x: 5, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.296875, y: 0.265625}
-      - {x: 2.296875, y: 0.421875}
-      - {x: 2.28125, y: 0.53125}
-      - {x: 2.21875, y: 0.578125}
-      - {x: 0.5, y: 0.578125}
-      - {x: 0.5, y: 1.046875}
-      - {x: 0.546875, y: 1.0625}
-      - {x: 0.515625, y: 1.171875}
-      - {x: 0.515625, y: 1.4375}
-      - {x: 0.4375, y: 1.484375}
-      - {x: -2.421875, y: 1.484375}
-      - {x: -2.5, y: 1.4375}
-      - {x: -2.5, y: 0.375}
-      - {x: -2.359375, y: 0.234375}
-      - {x: -2.359375, y: -1.5}
-      - {x: 2.1875, y: -1.5}
-      - {x: 2.1875, y: -0.28125}
-      - {x: 2.28125, y: -0.1875}
-      - {x: 2.28125, y: 0.265625}
-  m_UseDelaunayMesh: 0
