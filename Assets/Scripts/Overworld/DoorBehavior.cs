@@ -57,7 +57,7 @@ public class DoorBehavior : MonoBehaviour
         
         yield return new WaitForSeconds(0.75f);
 
-        lilithGridMovement.FlipHood();
+        lilithGridMovement.DetermineAnimation();
         
         GameProgressionManagerInstance.lilith.transform.position = offsetDoor;
         GameProgressionManagerInstance.fadeEffect.FadeOut(GameProgressionManagerInstance.blackTransition, 0.5f);

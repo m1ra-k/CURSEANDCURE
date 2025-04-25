@@ -26,12 +26,12 @@ public class AutomaticDialogueData : MonoBehaviour
     private Vector2 setPosition;
 
 
-    private Dictionary<string, Vector2> pushBackDirection = new Dictionary<string, Vector2>
+    private Dictionary<string, (Vector2, string)> pushBackDirection = new Dictionary<string, (Vector2, string)>
     {
-        { "up", Vector2.down },
-        { "down", Vector2.up },
-        { "left", Vector2.right },
-        { "right", Vector2.left }
+        { "up", (Vector2.down, "down") },
+        { "down", (Vector2.up, "up") },
+        { "left", (Vector2.right, "right") },
+        { "right", (Vector2.left, "left") }
     };
 
     void Awake()
@@ -118,6 +118,8 @@ public class AutomaticDialogueData : MonoBehaviour
     private void PushBack()
     {
         gridMovement.overrideIsMoving = true;
-        gridMovement.movementVector = pushBackDirection[gridMovement.directionFacing];
+        gridMovement.movementVector = pushBackDirection[gridMovement.GameProgressionManagerInstance.directionFacing].Item1;
+        GameProgressionManagerInstance.directionFacing = pushBackDirection[gridMovement.GameProgressionManagerInstance.directionFacing].Item2;
+        gridMovement.DetermineAnimation();
     }
 }

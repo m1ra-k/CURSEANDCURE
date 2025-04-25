@@ -49,13 +49,12 @@ public class HealingGameManager : MonoBehaviour
     void Start()
     {
         // TODO REMOVE THIS IS JUST FOR DEBUG
-        // StartCoroutine(DisplayWon());
+        StartCoroutine(DisplayWon());
 
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
         // range
-        print($"Patients/{mode}_patient_{GameProgressionManagerInstance.lilithPatientNumber}");
         healingRangeList = JsonUtility.FromJson<HealingRangeList>(Resources.Load<TextAsset>($"Patients/{mode}_patient_" + GameProgressionManagerInstance.lilithPatientNumber).text);
 
         // UI

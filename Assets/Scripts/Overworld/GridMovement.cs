@@ -1,6 +1,6 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 
 public class GridMovement : MonoBehaviour
 {
@@ -9,7 +9,6 @@ public class GridMovement : MonoBehaviour
     public GameProgressionManager GameProgressionManagerInstance;
 
     [Header("[Properties]")]
-    public string directionFacing = "down";
     public Vector2 movementVector;
     public Vector2 prevMovementVector;
     public Vector2 prevPrevMovementVector;
@@ -30,6 +29,13 @@ public class GridMovement : MonoBehaviour
 
     [SerializeField] private float checkRadius = 0.1f;
 
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        animator.Play("LilithWalkDown", 0, 0f);
+        animator.speed = 0;
+    }
+
     void Start() 
     {
         // state
@@ -37,10 +43,12 @@ public class GridMovement : MonoBehaviour
 
         targetPosition = transform.position;
 
-        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        animator.Play("LilithWalkDown", 0, 0f);
-        animator.speed = 0;
+        
+        if (GameProgressionManagerInstance.patientCharacterDialogueData != null && GameProgressionManagerInstance.patientCharacterDialogueData.postHealingGame)
+        {
+            DetermineAnimation();
+        }
     }
 
     void Update() 
@@ -50,6 +58,7 @@ public class GridMovement : MonoBehaviour
         if (movementVector != prevMovementVector)
         {
             completedFirstMovement = true;
+            animator.speed = 1;
             DetermineAnimation();
         }
 
@@ -78,22 +87,22 @@ public class GridMovement : MonoBehaviour
                     if (Input.GetKey(KeyCode.UpArrow)) 
                     {
                         movementVector = Vector2.up;
-                        directionFacing = "up";
+                        GameProgressionManagerInstance.directionFacing = "up";
                     }
                     else if (Input.GetKey(KeyCode.DownArrow)) 
                     {
                         movementVector = Vector2.down;
-                        directionFacing = "down";
+                        GameProgressionManagerInstance.directionFacing = "down";
                     }
                     else if (Input.GetKey(KeyCode.LeftArrow)) 
                     {
                         movementVector = Vector2.left;
-                        directionFacing = "left";
+                        GameProgressionManagerInstance.directionFacing = "left";
                     }
                     else if (Input.GetKey(KeyCode.RightArrow)) 
                     {
                         movementVector = Vector2.right;
-                        directionFacing = "right";
+                        GameProgressionManagerInstance.directionFacing = "right";
                     }
                     else
                     {
@@ -127,34 +136,7 @@ public class GridMovement : MonoBehaviour
     // ANIMATIONS
     public void DetermineAnimation()
     {
-        animator.speed = 1;
-
-        switch (movementVector)
-        {
-            case Vector2 v when v == Vector2.up:
-                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
-                break;
-            case Vector2 v when v == Vector2.down:
-                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 1 : 5].name, 0, 0f);
-                break;
-            case Vector2 v when v == Vector2.left:
-                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 2 : 6].name, 0, 0f);
-                break;
-            case Vector2 v when v == Vector2.right:
-                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 3 : 7].name, 0, 0f);
-                break;
-        }
-    }
-
-    public void DetermineStopFrame()
-    {
-        animator.Play(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
-        animator.speed = 0;
-    }
-
-    public void FlipHood()
-    {
-        switch (directionFacing)
+        switch (GameProgressionManagerInstance.directionFacing)
         {
             case "up":
                 animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
@@ -171,6 +153,12 @@ public class GridMovement : MonoBehaviour
         }
     }
 
+    public void DetermineStopFrame()
+    {
+        animator.Play(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
+        animator.speed = 0;
+    }
+
     // STEPS
     void TryStep()
     {
@@ -184,10 +172,10 @@ public class GridMovement : MonoBehaviour
         }
         else
         {
-            if (!bumpDirection.Equals(directionFacing))
+            if (!bumpDirection.Equals(GameProgressionManagerInstance.directionFacing))
             {
                 audioSource.PlayOneShot(audioSource.clip);
-                bumpDirection = directionFacing;
+                bumpDirection = GameProgressionManagerInstance.directionFacing;
             }
             isMoving = false;
         }
