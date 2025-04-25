@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GridMovement : MonoBehaviour
 {
@@ -39,6 +38,7 @@ public class GridMovement : MonoBehaviour
 
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        animator.Play("LilithWalkDown", 0, 0f);
         animator.speed = 0;
     }
 
@@ -49,13 +49,11 @@ public class GridMovement : MonoBehaviour
         if (movementVector != prevMovementVector)
         {
             completedFirstMovement = true;
-            print("started movement");
             DetermineAnimation();
         }
 
         if (movementVector == Vector2.zero && completedFirstMovement)
         {
-            print("im not moving");
             DetermineStopFrame();
         }
 
