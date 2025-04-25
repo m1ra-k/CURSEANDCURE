@@ -81,7 +81,7 @@ public class HealingGameManager : MonoBehaviour
             startedGame = true;
         }
 
-        if ($"SCORE: {score}" != cachedScore)
+        if ($"SCORE: {score}" != cachedScore && score <= 100)
         {
             scoreText.text = $"SCORE: {score}";
             cachedScore = $"{score}";
@@ -127,7 +127,7 @@ public class HealingGameManager : MonoBehaviour
     {
         while (true)
         {
-            if (round == 5)
+            if (round == 3)
             {
                 finishedGame = true;
 

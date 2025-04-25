@@ -20,8 +20,8 @@ public class HandleBehavior : MonoBehaviour
         if (!healingGameManager.finishedGame && HandleFullyInside(handleCollider, other))
         {
             framesInsideRange++;
-            // five second leeway
-            healingGameManager.score = Mathf.FloorToInt(framesInsideRange / 2700f * 100);
+            // some leeway factored in
+            healingGameManager.score = Mathf.FloorToInt(framesInsideRange / 1500f * 100);
         }
     }
 
