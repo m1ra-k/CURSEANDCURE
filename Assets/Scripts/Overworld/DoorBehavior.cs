@@ -12,7 +12,11 @@ public class DoorBehavior : MonoBehaviour
     public Vector2 offsetDoorA;
     public Vector2 doorB;
     public Vector2 offsetDoorB;
-    
+
+    [Header("[Location]")]
+    public string doorALocation;
+    public string doorBLocation;
+
     // lilith
     private GridMovement lilithGridMovement;
 
@@ -40,18 +44,26 @@ public class DoorBehavior : MonoBehaviour
         if (GameProgressionManagerInstance.lilithPosition == door && !lilithGridMovement.currentlyDoorTransitioning)
         {
             lilithGridMovement.currentlyDoorTransitioning = true;
-            StartCoroutine(DoorTransition(offsetDoor));
+            StartCoroutine(DoorTransition(offsetDoor == offsetDoorA ? doorBLocation : doorALocation, offsetDoor));
         }
     }
 
-    private IEnumerator DoorTransition(Vector2 offsetDoor)
+    private IEnumerator DoorTransition(string newLocation, Vector2 offsetDoor)
     {
+        GameProgressionManagerInstance.currentLocation = newLocation;
+        // lilithGridMovement.DetermineStopFrame();
+
         GameProgressionManagerInstance.fadeEffect.FadeIn(GameProgressionManagerInstance.blackTransition, 0.5f);
+        
         yield return new WaitForSeconds(0.75f);
+
+        lilithGridMovement.FlipHood();
+        
         GameProgressionManagerInstance.lilith.transform.position = offsetDoor;
         GameProgressionManagerInstance.fadeEffect.FadeOut(GameProgressionManagerInstance.blackTransition, 0.5f);
 
         yield return new WaitForSeconds(0.5f);
+        
         lilithGridMovement.currentlyDoorTransitioning = false;
     }
 }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WalkDown
+  m_Name: LilithHoodWalkLeft
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1524100844, guid: 432f834a578e7bb41b07b5d3a41798eb, type: 3}
-    - time: 0.016666668
-      value: {fileID: 13737064, guid: 432f834a578e7bb41b07b5d3a41798eb, type: 3}
-    - time: 0.033333335
-      value: {fileID: -1584960901, guid: 432f834a578e7bb41b07b5d3a41798eb, type: 3}
+      value: {fileID: -1809506615, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - time: 0.16666667
+      value: {fileID: -1830964762, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - time: 0.33333334
+      value: {fileID: -1809506615, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - time: 0.5
+      value: {fileID: 2084509353, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - time: 0.6666667
+      value: {fileID: 2084509353, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1524100844, guid: 432f834a578e7bb41b07b5d3a41798eb, type: 3}
-    - {fileID: 13737064, guid: 432f834a578e7bb41b07b5d3a41798eb, type: 3}
-    - {fileID: -1584960901, guid: 432f834a578e7bb41b07b5d3a41798eb, type: 3}
+    - {fileID: -1809506615, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - {fileID: -1830964762, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - {fileID: -1809506615, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - {fileID: 2084509353, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
+    - {fileID: 2084509353, guid: ed05fb2f7af0f1e42bd5c96dc573b1dc, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.050000004
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

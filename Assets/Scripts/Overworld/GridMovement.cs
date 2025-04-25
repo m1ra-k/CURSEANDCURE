@@ -1,17 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GridMovement : MonoBehaviour
 {
+    // TODO: NEED TO SORT ALL
     [Header("[State]")]
     public GameProgressionManager GameProgressionManagerInstance;
 
     [Header("[Properties]")]
     public string directionFacing = "down";
     public Vector2 movementVector;
+    public Vector2 prevMovementVector;
+    public Vector2 prevPrevMovementVector;
     public bool isMoving;
+    private bool completedFirstMovement;
     public bool overrideIsMoving;
     public bool currentlyDoorTransitioning;
 
@@ -19,14 +22,13 @@ public class GridMovement : MonoBehaviour
     private float stepSize = 1f;
     private Vector2 targetPosition;
 
+    public AnimationClip[] lilithAnimations;
     private Animator animator;
 
     private AudioSource audioSource;
     private string bumpDirection = "";
 
-    private Vector2 lastDir = Vector2.down;
-    [SerializeField] float walkAnimSpeed = 0.5f;
-    [SerializeField] float idleAnimSpeed = 1f;
+    [SerializeField] private float checkRadius = 0.1f;
 
     void Start() 
     {
@@ -37,22 +39,28 @@ public class GridMovement : MonoBehaviour
 
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        animator.Play("LilithWalkDown", 0, 0f);
+        animator.speed = 0;
     }
 
     void Update() 
     {
         Move();
-        UpdateAnimation();
-        if (isMoving) {
-            animator.speed = walkAnimSpeed;
-        } 
-        else 
-        {
-            animator.speed = idleAnimSpeed;
-        }
-    }
 
-   [SerializeField] private float checkRadius = 0.1f;
+        if (movementVector != prevMovementVector)
+        {
+            completedFirstMovement = true;
+            DetermineAnimation();
+        }
+
+        if (movementVector == Vector2.zero && completedFirstMovement)
+        {
+            DetermineStopFrame();
+        }
+
+        prevPrevMovementVector = prevMovementVector;
+        prevMovementVector = movementVector;
+    }
 
     void Move() 
     {
@@ -106,7 +114,7 @@ public class GridMovement : MonoBehaviour
         else
         {
             if (!isMoving)
-            {
+            {   
                 TryStep();
             }
             else
@@ -116,23 +124,54 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    void UpdateAnimation()
+    // ANIMATIONS
+    public void DetermineAnimation()
     {
-        animator.SetBool("IsWalking", isMoving);
+        animator.speed = 1;
 
-        if (movementVector != Vector2.zero)
+        switch (movementVector)
         {
-            lastDir = movementVector;
-            animator.SetFloat("Horizontal", movementVector.x);
-            animator.SetFloat("Vertical", movementVector.y);
-        }
-        else
-        {
-            animator.SetFloat("Horizontal", lastDir.x);
-            animator.SetFloat("Vertical", lastDir.y);
+            case Vector2 v when v == Vector2.up:
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
+                break;
+            case Vector2 v when v == Vector2.down:
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 1 : 5].name, 0, 0f);
+                break;
+            case Vector2 v when v == Vector2.left:
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 2 : 6].name, 0, 0f);
+                break;
+            case Vector2 v when v == Vector2.right:
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 3 : 7].name, 0, 0f);
+                break;
         }
     }
 
+    public void DetermineStopFrame()
+    {
+        animator.Play(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
+        animator.speed = 0;
+    }
+
+    public void FlipHood()
+    {
+        switch (directionFacing)
+        {
+            case "up":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
+                break;
+            case "down":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 1 : 5].name, 0, 0f);
+                break;
+            case "left":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 2 : 6].name, 0, 0f);
+                break;
+            case "right":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 3 : 7].name, 0, 0f);
+                break;
+        }
+    }
+
+    // STEPS
     void TryStep()
     {
         Vector2 proposedPosition = (Vector2) transform.position + movementVector * stepSize;

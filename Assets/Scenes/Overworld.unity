@@ -709,12 +709,12 @@ GameObject:
   - component: {fileID: 119753684}
   - component: {fileID: 119753682}
   m_Layer: 0
-  m_Name: GoBack0
+  m_Name: GoBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &119753681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1332,7 +1332,7 @@ Transform:
   m_GameObject: {fileID: 189428851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.5, y: -19.5, z: 0}
+  m_LocalPosition: {x: -22.5, y: -23.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1380,11 +1380,19 @@ MonoBehaviour:
   GameProgressionManagerInstance: {fileID: 0}
   directionFacing: down
   movementVector: {x: 0, y: 0}
+  prevMovementVector: {x: 0, y: 0}
   isMoving: 0
   overrideIsMoving: 0
   currentlyDoorTransitioning: 0
-  walkAnimSpeed: 0.5
-  idleAnimSpeed: 1
+  lilithAnimations:
+  - {fileID: 7400000, guid: 7b50517b5b960d04fb21b3e8ace1da71, type: 2}
+  - {fileID: 7400000, guid: 02872b1d10f3dff49b5330515f9392f4, type: 2}
+  - {fileID: 7400000, guid: 2d450f2fc1949534b8aa6259320201a3, type: 2}
+  - {fileID: 7400000, guid: 747e53f243e27734bbae030c4dc37a48, type: 2}
+  - {fileID: 7400000, guid: 8685d1ea5ad5d1844970612e71a078a4, type: 2}
+  - {fileID: 7400000, guid: 9f1c45fcff0b0c14bb5792ab0a7b55ad, type: 2}
+  - {fileID: 7400000, guid: 88f8495ff0fe2f944887d4e4e8494feb, type: 2}
+  - {fileID: 7400000, guid: be5711a85d8b7c64fa9460bbb4dc8c26, type: 2}
   checkRadius: 0.1
 --- !u!61 &189428857
 BoxCollider2D:
@@ -1441,7 +1449,7 @@ Animator:
   m_GameObject: {fileID: 189428851}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf71291098f9e884a99f1627c484f84a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 923d9002bbb77384fb2d7546894ff2a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2498,7 +2506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &412885583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2694,16 +2702,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
+      propertyPath: currentLocation
+      value: tavern
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: currentlyTalking
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 0.5
+      value: -22.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: 2.5
+      value: -23.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
@@ -3372,39 +3384,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1202840684404602179, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: m_Name
-      value: OverworldBlueHouseDOOR
+      value: LowerWardBlueHouseDOOR
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.x
-      value: 34.5
+      value: 55.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.y
-      value: -24.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: doorB.x
-      value: 55.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: doorB.y
       value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorA.x
+      propertyPath: doorB.x
       value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorA.y
-      value: -25.5
+      propertyPath: doorB.y
+      value: -24.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorB.x
+      propertyPath: doorALocation
+      value: lowerWard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: doorBLocation
+      value: blueHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: offsetDoorA.x
       value: 55.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
-      propertyPath: offsetDoorB.y
+      propertyPath: offsetDoorA.y
       value: -19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: offsetDoorB.x
+      value: 34.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: offsetDoorB.y
+      value: -25.5
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: GameProgressionManagerInstance
@@ -5669,6 +5689,14 @@ PrefabInstance:
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorB.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: doorALocation
+      value: tavern
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: doorBLocation
+      value: tavern
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: offsetDoorA.x
@@ -8679,7 +8707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1161374572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8745,7 +8773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1165028233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26532,7 +26560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1202840684404602179, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: m_Name
-      value: OverworldTavernDOOR
+      value: LowerWardTavernDOOR
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.x
@@ -26549,6 +26577,14 @@ PrefabInstance:
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorB.y
       value: -25.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: doorALocation
+      value: lowerWard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
+      propertyPath: doorBLocation
+      value: tavern
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: offsetDoorA.x

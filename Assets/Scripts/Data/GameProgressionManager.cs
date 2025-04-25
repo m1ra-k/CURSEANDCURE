@@ -20,19 +20,25 @@ public class GameProgressionManager : MonoBehaviour
     private Button playButton;
     
     [Header("[Overworld]")]
+    public GameObject lilith;
+    public Vector2 lilithPosition;
+
     public GameObject tutorial;
     public GameObject dialogueCanvas;
     public DialogueSystemManager DialogueSystemManager;
-    public bool currentlyTalking;
-    public bool finishedCurrentRound;
-    public GameObject lilith;
-    public Vector2 lilithPosition;
     public List<string> complementedOneTimeEvents;
+    public bool currentlyTalking;
     public string lastTalkedNPC;
+
+    public bool finishedCurrentRound;
     public bool healedPatient;
     public CharacterDialogueData patientCharacterDialogueData;
+
+    public string currentLocation;
+
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
+
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
