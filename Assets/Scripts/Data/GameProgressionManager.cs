@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameProgressionManager : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class GameProgressionManager : MonoBehaviour
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
 
+    [SerializeField]
+    public List<TextMeshProUGUI> tutorialText = new List<TextMeshProUGUI>();
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
@@ -106,7 +109,6 @@ public class GameProgressionManager : MonoBehaviour
                 dialogueCanvas.SetActive(false);
                 tutorial = GameObject.FindWithTag("Tutorial");
                 tutorial.SetActive(false);
-
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
                 
@@ -172,6 +174,7 @@ public class GameProgressionManager : MonoBehaviour
              if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     tutorial.SetActive(!tutorial.activeSelf);
+                    UpdateTutorial();
                 }
         }
     }
@@ -214,6 +217,12 @@ public class GameProgressionManager : MonoBehaviour
 
             currentTrack = index;
         }
+    }
+
+    public void UpdateTutorial()
+    {
+        TextMeshProUGUI text=tutorialText[lilithPatientNumber];
+        text.text = "<s>"+ text.text +"</s>";
     }
 
     // TODO: mira; this will need to be reworked a bit
