@@ -54,3 +54,11 @@ A mysterious vampire from the lower ward. Her identity is only known by the peop
 --> Lilith is in the lower ward... so is it possible to go to the upper ward as well? See what happens when you take the path to the upper ward.
 
 --> There is an optional part after healing the second patient Lilith hints at, where you can check in on Hilda at the tavern. Go see if there's anything new there!
+
+## References
+The overworld character sprites heavily reference the video game *OMORI*'s.
+
+Omocat, LLC. (2020). OMORI [Video game]. OMOCAT, LLC. https://omori-game.com
+
+All code is our own.
+
