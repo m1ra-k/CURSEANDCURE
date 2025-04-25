@@ -12,6 +12,7 @@ public class GridMovement : MonoBehaviour
     public string directionFacing = "down";
     public Vector2 movementVector;
     public Vector2 prevMovementVector;
+    public Vector2 prevPrevMovementVector;
     public bool isMoving;
     private bool completedFirstMovement;
     public bool overrideIsMoving;
@@ -57,6 +58,7 @@ public class GridMovement : MonoBehaviour
             DetermineStopFrame();
         }
 
+        prevPrevMovementVector = prevMovementVector;
         prevMovementVector = movementVector;
     }
 
@@ -123,35 +125,50 @@ public class GridMovement : MonoBehaviour
     }
 
     // ANIMATIONS
-    void DetermineAnimation()
+    public void DetermineAnimation()
     {
         animator.speed = 1;
 
         switch (movementVector)
         {
             case Vector2 v when v == Vector2.up:
-                print("up");
                 animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.down:
-                print("down");
                 animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 1 : 5].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.left:
-                print("left");
                 animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 2 : 6].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.right:
-                print("right");
                 animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 3 : 7].name, 0, 0f);
                 break;
         }
     }
 
-    void DetermineStopFrame()
+    public void DetermineStopFrame()
     {
         animator.Play(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
         animator.speed = 0;
+    }
+
+    public void FlipHood()
+    {
+        switch (directionFacing)
+        {
+            case "up":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
+                break;
+            case "down":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 1 : 5].name, 0, 0f);
+                break;
+            case "left":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 2 : 6].name, 0, 0f);
+                break;
+            case "right":
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 3 : 7].name, 0, 0f);
+                break;
+        }
     }
 
     // STEPS
