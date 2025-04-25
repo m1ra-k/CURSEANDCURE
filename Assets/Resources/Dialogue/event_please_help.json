@@ -4,19 +4,29 @@
             "baseDialogue": {
                 "character": "Unknown",
                 "speakerSprite": [
-                    "TavernKeeperHappy"
+                    "Transparent"
                 ],
-                "dialogue": "please help!",
+                "dialogue": "Hang in there, dear!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Lilith",
+                "character": "Unknown",
                 "speakerSprite": [
-                    "LilithNeutral"
+                    "Transparent"
                 ],
-                "dialogue": "I'll take care of her now!",
+                "dialogue": "Please help!!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Unknown",
+                "speakerSprite": [
+                    "Transparent"
+                ],
+                "dialogue": "Hurry!!",
                 "textSpeed": 0
             },
             "endOfScene": true
