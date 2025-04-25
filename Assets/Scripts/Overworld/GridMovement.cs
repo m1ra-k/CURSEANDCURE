@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
+    // TODO: NEED TO SORT ALL
     [Header("[State]")]
     public GameProgressionManager GameProgressionManagerInstance;
 
     [Header("[Properties]")]
     public string directionFacing = "down";
     public Vector2 movementVector;
+    public Vector2 prevMovementVector;
     public bool isMoving;
     public bool overrideIsMoving;
     public bool currentlyDoorTransitioning;
@@ -19,6 +21,7 @@ public class GridMovement : MonoBehaviour
     private float stepSize = 1f;
     private Vector2 targetPosition;
 
+    public AnimationClip[] lilithAnimations;
     private Animator animator;
 
     private AudioSource audioSource;
@@ -27,6 +30,8 @@ public class GridMovement : MonoBehaviour
     private Vector2 lastDir = Vector2.down;
     [SerializeField] float walkAnimSpeed = 0.5f;
     [SerializeField] float idleAnimSpeed = 1f;
+
+    [SerializeField] private float checkRadius = 0.1f;
 
     void Start() 
     {
@@ -42,17 +47,21 @@ public class GridMovement : MonoBehaviour
     void Update() 
     {
         Move();
-        UpdateAnimation();
-        if (isMoving) {
-            animator.speed = walkAnimSpeed;
-        } 
-        else 
-        {
-            animator.speed = idleAnimSpeed;
-        }
-    }
 
-   [SerializeField] private float checkRadius = 0.1f;
+        if (movementVector != prevMovementVector)
+        {
+            print("started movement");
+            DetermineAnimation();
+        }
+
+        if (!isMoving)
+        {
+            print("im not moving");
+            DetermineStopFrame();
+        }
+
+        prevMovementVector = movementVector;
+    }
 
     void Move() 
     {
@@ -106,7 +115,7 @@ public class GridMovement : MonoBehaviour
         else
         {
             if (!isMoving)
-            {
+            {   
                 TryStep();
             }
             else
@@ -116,23 +125,35 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-    void UpdateAnimation()
+    // ANIMATIONS
+    void DetermineAnimation()
     {
-        animator.SetBool("IsWalking", isMoving);
+        animator.speed = 1;
 
-        if (movementVector != Vector2.zero)
+        switch (movementVector)
         {
-            lastDir = movementVector;
-            animator.SetFloat("Horizontal", movementVector.x);
-            animator.SetFloat("Vertical", movementVector.y);
-        }
-        else
-        {
-            animator.SetFloat("Horizontal", lastDir.x);
-            animator.SetFloat("Vertical", lastDir.y);
+            case Vector2 v when v == Vector2.up:
+                animator.Play(lilithAnimations[0].name, 0, 0f);
+                break;
+            case Vector2 v when v == Vector2.down:
+                animator.Play(lilithAnimations[1].name, 0, 0f);
+                break;
+            case Vector2 v when v == Vector2.left:
+                animator.Play(lilithAnimations[2].name, 0, 0f);
+                break;
+            case Vector2 v when v == Vector2.right:
+                animator.Play(lilithAnimations[3].name, 0, 0f);
+                break;
         }
     }
 
+    void DetermineStopFrame()
+    {
+        animator.Play(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name, 0, 0);
+        animator.speed = 0;
+    }
+
+    // STEPS
     void TryStep()
     {
         Vector2 proposedPosition = (Vector2) transform.position + movementVector * stepSize;

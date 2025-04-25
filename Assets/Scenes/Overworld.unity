@@ -1383,6 +1383,11 @@ MonoBehaviour:
   isMoving: 0
   overrideIsMoving: 0
   currentlyDoorTransitioning: 0
+  lilithAnimations:
+  - {fileID: 7400000, guid: 9548e3bd96e99c1428bbb264656c7f88, type: 2}
+  - {fileID: 7400000, guid: e56e9305dd8bc134cbfc3748b025a860, type: 2}
+  - {fileID: 7400000, guid: c8b286b08bc75aa48a0602d7cdb9c3ea, type: 2}
+  - {fileID: 7400000, guid: 8e6508dd8e6ec1b47930ee56d2561225, type: 2}
   walkAnimSpeed: 0.5
   idleAnimSpeed: 1
   checkRadius: 0.1

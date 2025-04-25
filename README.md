@@ -8,7 +8,7 @@
 - Adrina Khan (kqc4zd)
     - Dialogue Script, Overworld Transitions
 - Joyce Yang (afe5jy)
-    - Camera, Collisions, Character Sprites and Animations 
+    - Camera, Collisions, Character Sprites 
 
 (Please read through this, there's lots of cool lore and features we wanted to show off! :D)
 
