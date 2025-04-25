@@ -131,19 +131,19 @@ public class GridMovement : MonoBehaviour
         {
             case Vector2 v when v == Vector2.up:
                 print("up");
-                animator.Play(lilithAnimations[0].name, 0, 0f);
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 0 : 4].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.down:
                 print("down");
-                animator.Play(lilithAnimations[1].name, 0, 0f);
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 1 : 5].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.left:
                 print("left");
-                animator.Play(lilithAnimations[2].name, 0, 0f);
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 2 : 6].name, 0, 0f);
                 break;
             case Vector2 v when v == Vector2.right:
                 print("right");
-                animator.Play(lilithAnimations[3].name, 0, 0f);
+                animator.Play(lilithAnimations[!GameProgressionManagerInstance.currentLocation.Equals("lowerWard") ? 3 : 7].name, 0, 0f);
                 break;
         }
     }

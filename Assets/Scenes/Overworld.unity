@@ -1389,6 +1389,10 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 02872b1d10f3dff49b5330515f9392f4, type: 2}
   - {fileID: 7400000, guid: 2d450f2fc1949534b8aa6259320201a3, type: 2}
   - {fileID: 7400000, guid: 747e53f243e27734bbae030c4dc37a48, type: 2}
+  - {fileID: 7400000, guid: 8685d1ea5ad5d1844970612e71a078a4, type: 2}
+  - {fileID: 7400000, guid: 9f1c45fcff0b0c14bb5792ab0a7b55ad, type: 2}
+  - {fileID: 7400000, guid: 88f8495ff0fe2f944887d4e4e8494feb, type: 2}
+  - {fileID: 7400000, guid: be5711a85d8b7c64fa9460bbb4dc8c26, type: 2}
   checkRadius: 0.1
 --- !u!61 &189428857
 BoxCollider2D:
@@ -3380,7 +3384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1202840684404602179, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: m_Name
-      value: BlueHouseLowerWardDOOR
+      value: LowerWardBlueHouseDOOR
       objectReference: {fileID: 0}
     - target: {fileID: 6971089461129138519, guid: fb87b987e06f60645a26e74d9e197fdc, type: 3}
       propertyPath: doorA.x
