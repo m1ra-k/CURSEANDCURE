@@ -2,7 +2,7 @@
 
 ## Credits
 - Mira Khan (ama9tk)
-    - Concept, Game Progression, Healing Game, Dialogue System, Overworld Transitions, Character Art, Background Sprites, Music, Dialogue Script
+    - Concept, Game Progression, Healing Game, Dialogue System, Overworld Transitions, Character Art, Background Sprites, Music, Dialogue Script, Animation Logic
 - Afia Paracha (hcx2td)
     - Grid Movement, Dialogue System, Background Sprites, Collisions, Tutorials
 - Adrina Khan (kqc4zd)
