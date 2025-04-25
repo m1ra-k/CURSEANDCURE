@@ -2095,6 +2095,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Night
       objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: c6cf679b368f190429859e79c80746e6, type: 3}
     - target: {fileID: 6857258699828932082, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2711,6 +2719,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1946598386}
     m_Modifications:
+    - target: {fileID: 1353190854210564566, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353190854210564566, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 0885c560be034b24d8a4c1ff53a12a6d, type: 3}
     - target: {fileID: 1548456828795602043, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12372,6 +12388,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Night
       objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 992bacc67cf8a84429503d0a7202eb2c, type: 3}
     - target: {fileID: 6857258699828932082, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12731,6 +12755,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1946598386}
     m_Modifications:
+    - target: {fileID: 1353190854210564566, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353190854210564566, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 3c4ea7fb946507c4abc55efccec87899, type: 3}
     - target: {fileID: 1548456828795602043, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -23966,6 +23998,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1946598386}
     m_Modifications:
+    - target: {fileID: 1353190854210564566, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353190854210564566, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: cd3e5ffc8c953b54fae203653bd94087, type: 3}
     - target: {fileID: 1548456828795602043, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -24362,6 +24402,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Night
       objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 665d7e69cf665f3489db83545361d0c9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26112,6 +26160,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1946598386}
     m_Modifications:
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: e35812524f5d4a94eb9591b33ebd6c94, type: 3}
     - target: {fileID: 1548456828795602043, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -27145,7 +27201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: characterDialogues.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: characterDialogues.Array.data[0]
@@ -27159,6 +27215,10 @@ PrefabInstance:
       propertyPath: characterDialogues.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: 24d82af8ce2c27643bcbcfb03297615c, type: 3}
+    - target: {fileID: 3671709258359283340, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
+      propertyPath: characterDialogues.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: 9c6dd71b10393c346a1d7882edf5bdff, type: 3}
     - target: {fileID: 6857258699828932082, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: m_Sprite
       value: 
