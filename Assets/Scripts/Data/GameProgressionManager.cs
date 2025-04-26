@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System;
+using System.Linq;
 
 public class GameProgressionManager : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class GameProgressionManager : MonoBehaviour
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
 
-    public GameObject[] tutorialText;
+    private GameObject[] tutorialTexts;
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
@@ -107,9 +107,7 @@ public class GameProgressionManager : MonoBehaviour
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
                 DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
-                tutorial = GameObject.FindWithTag("Tutorial");
-                tutorialText=GameObject.FindGameObjectsWithTag("TutorialText");
-                tutorial.SetActive(false);
+                
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
                 
@@ -128,11 +126,25 @@ public class GameProgressionManager : MonoBehaviour
                 eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
                 nightObjects = GameObject.FindGameObjectsWithTag("Night");
 
-                foreach (GameObject obj in lilithPatientNumber < 1 ? nightObjects : eveningObjects)
+                foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects)
                 {
                     obj.SetActive(false);
                 }
 
+                print("well overworld happened");
+                tutorial = GameObject.FindWithTag("Tutorial");
+                tutorialTexts = GameObject.FindGameObjectsWithTag("TutorialText");
+                tutorialTexts = tutorialTexts.OrderBy(go => go.name).ToArray();
+
+                for (int i = 0; i < tutorialTexts.Length; i++)
+                {
+                    if (i < lilithPatientNumber)
+                    {
+                        TextMeshProUGUI tmp = tutorialTexts[i].GetComponent<TextMeshProUGUI>();
+                        tmp.text = $"<s>{tmp.text}</s>";
+                    }
+                }
+                tutorial.SetActive(false);
 
                 break;
 
@@ -156,34 +168,9 @@ public class GameProgressionManager : MonoBehaviour
 
     void Update()
     {
-        // TODO GAME PROGRESSION SYSTEM this is just mock event completion but this approach works
-        // just follow this format for actual events
-        if (Input.GetKeyDown(KeyCode.U))
+        if (((currentScene == "Overworld" && !currentlyTalking) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
         {
-            progressionSystem.SetFlag("goBack2", true);
-            progressionSystem.SetFlag("wakeUp2", true);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            progressionSystem.SetFlag("goBackDONE", true);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            progressionSystem.SetFlag("goBack2DONE", true);
-        }
-        if(currentScene == "Overworld" || (currentScene == "HealingGame" && HealingGameManager.startedGame ))
-        {
-             if (Input.GetKeyDown(KeyCode.Escape) && !currentlyTalking)
-                {
-                    tutorial.SetActive(!tutorial.activeSelf);
-                    for (int i=0; i<3; i++)
-                    {
-                        TextMeshProUGUI toUpdate=tutorialText[i].GetComponent<TextMeshProUGUI>();
-                        if (lilithPatientNumber>i && !toUpdate.text.StartsWith("<s>")){
-                            toUpdate.text=$"<s>{toUpdate.text}</s>";
-                        }
-                    }
-                }
+            tutorial.SetActive(!tutorial.activeSelf);
         }
     }
 
@@ -224,19 +211,6 @@ public class GameProgressionManager : MonoBehaviour
             audioSourceBGM.Play();
 
             currentTrack = index;
-        }
-    }
-
-    public void UpdateTutorial()
-    {
-        if(lilithPatientNumber>0)
-        {
-            TextMeshProUGUI toUpdate=tutorialText[lilithPatientNumber-1].GetComponent<TextMeshProUGUI>();
-            Debug.Log(toUpdate.text);
-            if(!toUpdate.text.StartsWith("<s>"))
-            {
-                toUpdate.text = "<s>" + toUpdate.text + "</s>";
-            }
         }
     }
 

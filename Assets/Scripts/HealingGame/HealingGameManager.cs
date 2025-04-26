@@ -256,5 +256,7 @@ public class HealingGameManager : MonoBehaviour
         }
 
         GameProgressionManagerInstance.TransitionScene("Won");
+
+        GameProgressionManagerInstance.lilithPatientNumber++;
     }
 }
