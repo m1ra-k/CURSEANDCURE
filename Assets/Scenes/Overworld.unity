@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 189428857}
   - component: {fileID: 189428858}
   - component: {fileID: 189428859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lilith
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1385,7 +1385,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189428851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1407,10 +1407,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0074622333, y: 0.0015846491}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1421,7 +1421,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4898911, y: 0.54782677}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!95 &189428858
 Animator:
@@ -14371,6 +14371,10 @@ PrefabInstance:
       value: Evening
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: turnsFace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: characterDialogues.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17726,11 +17730,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8121f1e821f5244c9b6aa821fa1836d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameProgressionManagerInstance: {fileID: 0}
   pathCoordinates:
   - {x: 33.5, y: -18.5}
   - {x: 29.5, y: -18.5}
   - {x: 29.5, y: -21.5}
   - {x: 33.5, y: -21.5}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  checkRadius: 0.5
 --- !u!95 &1699463515
 Animator:
   serializedVersion: 5

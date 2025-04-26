@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class NPCRun : MonoBehaviour
 {
+    [Header("[State]")]
+    public GameProgressionManager GameProgressionManagerInstance;
+
     private Animator animator;
 
     private Vector2 movementDirection;
@@ -21,10 +24,15 @@ public class NPCRun : MonoBehaviour
     };
     private string currentAnimation = "Male1NPCWalkUp";
 
-    private float moveSpeed = 3f;
+    private float moveSpeed = 1f;
+
+    [Header("[Collision]")]
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float checkRadius = 0.5f;
 
     void Start()
     {
+        GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
         animator = GetComponent<Animator>();
         targetPosition = pathCoordinates[0];
         SetMovementDirection();
@@ -32,18 +40,38 @@ public class NPCRun : MonoBehaviour
 
     void Update()
     {
-        if ((Vector2)transform.localPosition != targetPosition)
+        if (Vector2.Distance(transform.localPosition, targetPosition) > 0.005f)
         {
-            transform.localPosition = Vector2.MoveTowards(
-                transform.localPosition,
-                targetPosition,
-                moveSpeed * Time.deltaTime
-            );
+            float distanceToMove = moveSpeed * Time.deltaTime;
+
+            while (distanceToMove > 0f)
+            {
+                Vector2 direction = (targetPosition - (Vector2)transform.localPosition).normalized;
+                float step = Mathf.Min(distanceToMove, 0.01f);
+
+                Vector2 nextPosition = (Vector2)transform.localPosition + direction * step;
+
+                // Snap next position to nearest .5 if close enough
+                // nextPosition = SnapToHalf(nextPosition);
+
+                // Collision check
+                if (Physics2D.OverlapCircle(nextPosition, checkRadius, playerLayer))
+                {
+                    Debug.Log("NPC would collide with player. Stopping movement.");
+                    transform.localPosition = SnapToHalf(transform.localPosition);
+                    return;
+                }
+
+                transform.localPosition = nextPosition;
+                distanceToMove -= step;
+            }
 
             CheckSwitchAnimation();
         }
         else
         {
+            // Reached target
+            transform.localPosition = SnapToHalf(targetPosition);
             index = (index + 1) % pathCoordinates.Length;
             targetPosition = pathCoordinates[index];
             SetMovementDirection();
@@ -74,5 +102,12 @@ public class NPCRun : MonoBehaviour
                 currentAnimation = newAnimation;
             }
         }
+    }
+
+    private Vector2 SnapToHalf(Vector2 position)
+    {
+        float snappedX = Mathf.Round(position.x * 2f) * 0.5f;
+        float snappedY = Mathf.Round(position.y * 2f) * 0.5f;
+        return new Vector2(snappedX, snappedY);
     }
 }
