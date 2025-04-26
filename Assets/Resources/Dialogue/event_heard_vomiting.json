@@ -12,11 +12,31 @@
         },
         {
             "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Blehhh!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(I got this.)",
+                "dialogue": "(Sounds like its coming from the park!!)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I should hurry.)",
                 "textSpeed": 0
             },
             "endOfScene": true

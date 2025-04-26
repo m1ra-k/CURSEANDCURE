@@ -26,7 +26,17 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "(It'd be nice to check up on the man in the tavern before I see my last patient and see if he's doing better.)",
+                "dialogue": "(It'd be nice to check up on the man in the tavern before I see my last patient",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "and see if he's doing better.)",
                 "textSpeed": 0
             }
         },

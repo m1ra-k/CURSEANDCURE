@@ -2,9 +2,9 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Unknown",
+                "character": "Man",
                 "speakerSprite": [
-                    "Transparent"
+                    "ManNeutral"
                 ],
                 "dialogue": "Hang in there, dear!",
                 "textSpeed": 0
@@ -12,9 +12,9 @@
         },
         {
             "baseDialogue": {
-                "character": "Unknown",
+                "character": "Man",
                 "speakerSprite": [
-                    "Transparent"
+                    "ManNeutral"
                 ],
                 "dialogue": "Please help!!!",
                 "textSpeed": 0
@@ -22,9 +22,9 @@
         },
         {
             "baseDialogue": {
-                "character": "Unknown",
+                "character": "Man",
                 "speakerSprite": [
-                    "Transparent"
+                    "ManNeutral"
                 ],
                 "dialogue": "Hurry!!",
                 "textSpeed": 0
