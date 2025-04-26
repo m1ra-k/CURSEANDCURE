@@ -186,7 +186,6 @@ public class GameProgressionManager : MonoBehaviour
     {
         if (lilithPatientNumber > 1 && currentTrack != 2)
         {
-            print("check music change");
             StartCoroutine(PlayMusic(2));
         }
     }
