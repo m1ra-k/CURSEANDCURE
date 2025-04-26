@@ -262,8 +262,8 @@ public class GameProgressionManager : MonoBehaviour
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "GameOver");
                 break;
 
-            case "EndScreen":
-                fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "EndScreen");
+            case "EndMenu":
+                fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "EndMenu");
                 break;
         }
     }

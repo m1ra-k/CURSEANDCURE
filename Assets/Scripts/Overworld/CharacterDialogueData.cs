@@ -13,7 +13,6 @@ public class CharacterDialogueData : MonoBehaviour
     public int characterDialoguesIndex;
     public List<TextAsset> characterDialogues;
     
-    private HashSet<Vector2> adjacentLocations = new();
     private GameObject lilith;
     private Vector2 lilithPosition;
 
@@ -29,15 +28,6 @@ public class CharacterDialogueData : MonoBehaviour
 
     void Awake()
     { 
-        // locations
-        adjacentLocations.UnionWith(new List<Vector2>
-        {
-            (Vector2) gameObject.transform.localPosition + Vector2.up,
-            (Vector2) gameObject.transform.localPosition + Vector2.down,
-            (Vector2) gameObject.transform.localPosition + Vector2.left,
-            (Vector2) gameObject.transform.localPosition + Vector2.right
-        });
-
         // lilith
         lilith = GameObject.FindWithTag("Player");
 
@@ -81,10 +71,9 @@ public class CharacterDialogueData : MonoBehaviour
                 if (postHealingGame)
                 {
                     characterDialoguesIndex++;
-                    if (GameProgressionManagerInstance.lilithPatientNumber == 2)
+                    if (GameProgressionManagerInstance.lilithPatientNumber == 3)
                     {
-                        print("loading end");
-                        SceneManager.LoadScene("EndMenu");
+                        GameProgressionManagerInstance.TransitionScene("EndMenu");
                     }
                 }
 
@@ -94,8 +83,10 @@ public class CharacterDialogueData : MonoBehaviour
                 {
                     GameProgressionManagerInstance.TransitionScene("HealingGame");
                 }
-
-                spriteRenderer.sprite = originalFace;
+                else
+                {
+                    spriteRenderer.sprite = originalFace;
+                }
             }
             else
             {
@@ -114,11 +105,6 @@ public class CharacterDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        if (!adjacentLocations.Contains(lilithPosition))
-        {
-            return false;
-        }
-
         Vector2 offset = (Vector2) transform.localPosition - lilithPosition;
         float epsilon = 0.05f;
 
