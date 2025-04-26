@@ -2,61 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Woman",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "WomanNeutral"
                 ],
-                "dialogue": "Lilith!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "You're here!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "Please help my wife,",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "her symptoms are getting much worse.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "Her breath is labored and her skin is turning pale.",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "She'll be okay, right Lilith??",
+                "dialogue": "Hah... hah... ha...",
                 "textSpeed": 0
             }
         },
@@ -66,7 +16,17 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "Don't worry,",
+                "dialogue": "(Her breathing is labored...)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Please, Lilith!",
                 "textSpeed": 0
             }
         },
@@ -74,9 +34,9 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithFrown"
+                    "LilithNeutral"
                 ],
-                "dialogue": "I'll take care of her.",
+                "dialogue": "I'll heal her now!",
                 "textSpeed": 0
             },
             "endOfScene": true
