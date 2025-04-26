@@ -14,12 +14,12 @@ public class NPCWalk : MonoBehaviour
 
     private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
     {
-        { Vector2.up, "LowerWardBoy0NPCWalkUp" },
-        { Vector2.down, "LowerWardBoy0NPCWalkDown" },
-        { Vector2.left, "LowerWardBoy0NPCWalkLeft" },
-        { Vector2.right, "LowerWardBoy0NPCWalkRight" }
+        { Vector2.up, "Male1NPCWalkUp" },
+        { Vector2.down, "Male1NPCWalkDown" },
+        { Vector2.left, "Male1NPCWalkLeft" },
+        { Vector2.right, "Male1NPCWalkRight" }
     };
-    private string currentAnimation = "LowerWardBoy0NPCWalkUp";
+    private string currentAnimation = "Male1NPCWalkUp";
 
     private float moveSpeed = 3f;
 
