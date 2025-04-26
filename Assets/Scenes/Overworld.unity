@@ -2195,7 +2195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1809399461024854049, guid: 9ab99b264efe0ef4990d8970248b34e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.501
+      value: 57.5
       objectReference: {fileID: 0}
     - target: {fileID: 1809399461024854049, guid: 9ab99b264efe0ef4990d8970248b34e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8308,7 +8308,7 @@ GameObject:
   - component: {fileID: 965076134}
   - component: {fileID: 965076135}
   m_Layer: 0
-  m_Name: Nightstand1
+  m_Name: Nightstand0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8323,7 +8323,7 @@ Transform:
   m_GameObject: {fileID: 965076133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.47, y: -12.290009, z: 0}
+  m_LocalPosition: {x: 54, y: -12.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9147,6 +9147,90 @@ Transform:
   - {fileID: 920078022}
   m_Father: {fileID: 650971804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1137213958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1137213959}
+  - component: {fileID: 1137213960}
+  m_Layer: 0
+  m_Name: PottedPlantSmallBlue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1137213959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137213958}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 55.005615, y: -15.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1171554407}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1137213960
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137213958}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: ac96fb64b644a2f4293cc8e6d6f38088, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1157723707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9487,9 +9571,10 @@ Transform:
   m_Children:
   - {fileID: 101703442}
   - {fileID: 1299833072}
-  - {fileID: 1534362858}
   - {fileID: 965076134}
   - {fileID: 1638077280}
+  - {fileID: 1534362858}
+  - {fileID: 1137213959}
   - {fileID: 386998304}
   m_Father: {fileID: 901573663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13577,7 +13662,7 @@ GameObject:
   - component: {fileID: 1534362858}
   - component: {fileID: 1534362859}
   m_Layer: 0
-  m_Name: Nightstand0
+  m_Name: Nightstand2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13592,7 +13677,7 @@ Transform:
   m_GameObject: {fileID: 1534362857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.47, y: -12.29, z: 0}
+  m_LocalPosition: {x: 56, y: -12.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -16625,7 +16710,7 @@ GameObject:
   - component: {fileID: 1638077280}
   - component: {fileID: 1638077281}
   m_Layer: 0
-  m_Name: Nightstand2
+  m_Name: Nightstand1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16640,7 +16725,7 @@ Transform:
   m_GameObject: {fileID: 1638077279}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.47, y: -12.290009, z: 0}
+  m_LocalPosition: {x: 55, y: -12.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -18116,17 +18201,17 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 0
+      e00: 2.0441585e+15
       e01: 0
       e02: -2.98156e-19
       e03: -2.98156e-19
-      e10: 0
+      e10: 4.5912e-41
       e11: 0
       e12: 6.47e-43
       e13: 6.47e-43
       e20: -4.7065007e-32
       e21: -0.0000000017484325
-      e22: 8.8930826e-29
+      e22: 6.102025e-29
       e23: -3.6808052
       e30: 4.5905e-41
       e31: 6.52e-43
@@ -18134,7 +18219,7 @@ Tilemap:
       e33: 6.5e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: 3.6249e-41, g: 3.6249e-41, b: 3.6249e-41, a: 3.6249e-41}
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
