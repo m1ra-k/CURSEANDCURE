@@ -1316,7 +1316,7 @@ Transform:
   m_GameObject: {fileID: 189428851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.5, y: -17.5, z: 0}
+  m_LocalPosition: {x: 28.5, y: -20.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2900,6 +2900,10 @@ PrefabInstance:
       propertyPath: characterDialogues.Array.data[0]
       value: 
       objectReference: {fileID: 4900000, guid: a068bc76a6984c0468d08fa92b643abd, type: 3}
+    - target: {fileID: 1548456828795602043, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1439808961, guid: 856f7d703488d4740be819866de4e9c8, type: 3}
     - target: {fileID: 5465163243255384806, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_Name
       value: LowerWardWoman0NPC
@@ -2910,7 +2914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.5
+      value: 28.5
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3122,11 +3126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 0.5
+      value: 28.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: 2.5
+      value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
@@ -8378,6 +8382,7 @@ Transform:
   - {fileID: 1001021836}
   - {fileID: 1874591502}
   - {fileID: 1157723708}
+  - {fileID: 1408001900}
   - {fileID: 242660821}
   - {fileID: 460541509}
   - {fileID: 1361345979}
@@ -14305,6 +14310,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395810645}
   m_CullTransparentMesh: 1
+--- !u!1001 &1408001899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 965028195}
+    m_Modifications:
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585609530025341657, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_Name
+      value: LowerWardBoy4NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585609530025341657, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_TagString
+      value: Evening
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: characterDialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: characterDialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 776dae148179cd34a9d728bfff3ed70e, type: 3}
+    - target: {fileID: 6857258699828932082, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 535626061, guid: 806afb32919730e448725db631bbc795, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+--- !u!4 &1408001900 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1187086914963464067, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+  m_PrefabInstance: {fileID: 1408001899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420776867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5465163243255384806, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}

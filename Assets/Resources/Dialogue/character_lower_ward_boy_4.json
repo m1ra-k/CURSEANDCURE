@@ -1,0 +1,15 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Mom! Mom! What's a huz ban steeler?",
+                "textSpeed": 0
+            },
+            "endOfScene": true
+        }
+    ]
+}
