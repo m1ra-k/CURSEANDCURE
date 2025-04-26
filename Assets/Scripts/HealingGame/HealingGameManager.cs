@@ -37,7 +37,8 @@ public class HealingGameManager : MonoBehaviour
     public TextMeshProUGUI resultText;
     private float shakeDuration = 0.5f;
     private GameObject minigameArt;
-    private Image minigameArtImage;
+    private Sprite minigameArtSprite;
+    private SpriteRenderer minigameArtSpriteRenderer;
     private Vector3 minigameArtPositionInitial;
     private int[] shakeAmounts = { 30, -60, 60, -60, 60 };
     private float flashInterval = 0.65f;
@@ -49,7 +50,7 @@ public class HealingGameManager : MonoBehaviour
     void Start()
     {
         // TODO REMOVE THIS IS JUST FOR DEBUG
-        StartCoroutine(DisplayWon());
+       // StartCoroutine(DisplayWon());
 
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
@@ -61,7 +62,15 @@ public class HealingGameManager : MonoBehaviour
         flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
 
         minigameArt = GameObject.FindWithTag("Image");
-        minigameArtImage = minigameArt.GetComponent<Image>();
+        if(minigameArt==null){
+            Debug.Log("Image lost");
+            return;
+        }
+         minigameArtSpriteRenderer=minigameArt.GetComponent<SpriteRenderer>();
+        if(minigameArtSpriteRenderer==null){
+            Debug.Log("Null renderer");
+        }
+        minigameArtSprite=minigameArtSpriteRenderer.sprite;
         minigameArtPositionInitial = minigameArt.transform.position;
     }
 
@@ -192,7 +201,7 @@ public class HealingGameManager : MonoBehaviour
     {
         resultText.text = "FAIL!";
 
-        Color originalColor = minigameArtImage.color;
+        Color originalColor = minigameArtSpriteRenderer.color;
 
         foreach (int shakeAmount in shakeAmounts)
         {
@@ -207,7 +216,7 @@ public class HealingGameManager : MonoBehaviour
 
                 if (!isRed && timeSinceLastFlash >= flashInterval)
                 {
-                    minigameArtImage.color = Color.red;
+                    minigameArtSpriteRenderer.color = Color.red;
                     isRed = true;
                     redTimer = 0f;
                     timeSinceLastFlash = 0f;
@@ -218,7 +227,7 @@ public class HealingGameManager : MonoBehaviour
                     redTimer += Time.deltaTime;
                     if (redTimer >= flashDuration)
                     {
-                        minigameArtImage.color = originalColor;
+                        minigameArtSpriteRenderer.color = originalColor;
                         isRed = false;
                     }
                 }
@@ -228,7 +237,7 @@ public class HealingGameManager : MonoBehaviour
         }
 
         minigameArt.transform.position = minigameArtPositionInitial;
-        minigameArtImage.color = originalColor;
+        minigameArtSpriteRenderer.color = originalColor;
 
         GameProgressionManagerInstance.TransitionScene("GameOver");
     }
