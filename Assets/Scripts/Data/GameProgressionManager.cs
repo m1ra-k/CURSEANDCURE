@@ -57,7 +57,7 @@ public class GameProgressionManager : MonoBehaviour
     [Header("[Music]")]
     public List<AudioClip> audioClips = new List<AudioClip>();
     public AudioSource audioSourceBGM;
-    private int currentTrack;
+    public int currentTrack = 1;
 
     [Header("[References]")]  
     public FadeEffect fadeEffect;
@@ -101,6 +101,7 @@ public class GameProgressionManager : MonoBehaviour
         {
             case "StartScreen":
                 playButton = GameObject.FindWithTag("Button").GetComponent<Button>();
+
                 break;
 
             case "Overworld":
@@ -133,7 +134,6 @@ public class GameProgressionManager : MonoBehaviour
                     obj.SetActive(false);
                 }
 
-                print("well overworld happened");
                 tutorial = GameObject.FindWithTag("Tutorial");
                 tutorialTexts = GameObject.FindGameObjectsWithTag("TutorialText");
                 tutorialTexts = tutorialTexts.OrderBy(go => go.name).ToArray();
@@ -151,23 +151,21 @@ public class GameProgressionManager : MonoBehaviour
                 break;
 
             case "HealingGame":
+                if (currentTrack == -1) StartCoroutine(PlayMusic(1));
+
                 tutorial = GameObject.FindWithTag("Tutorial");
                 tutorial.SetActive(false);
+
                 HealingGameManager = FindObjectOfType<HealingGameManager>();
+
                 break;
 
             case "GameOver":
                 StopMusic();
                 retryButton = GameObject.FindWithTag("Button").GetComponent<Button>();
+
                 break;
         }     
-    }
-
-    void Start()
-    {
-        // TODO DEBUG ONLY REMOVE AFTER
-        progressionSystem.SetFlag("firstHealed", true);
-        progressionSystem.SetFlag("secondHealed", true);
     }
 
     void Update()
@@ -184,7 +182,7 @@ public class GameProgressionManager : MonoBehaviour
         currentTrack = -1;
     }
 
-    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float cookingGameWaitTime = 0f)
+    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f)
     {
         float startVolume = audioSourceBGM.volume;
 
@@ -207,7 +205,7 @@ public class GameProgressionManager : MonoBehaviour
         audioSourceBGM.volume = 1;
         audioSourceBGM.UnPause();
 
-        yield return new WaitForSeconds(cookingGameWaitTime);
+        yield return new WaitForSeconds(gameWaitTime);
 
         if (index != currentTrack)
         {
@@ -225,29 +223,20 @@ public class GameProgressionManager : MonoBehaviour
 
         transitioning = true;
 
-        // TODO - CONVERT TO SWITCH STATEMENT LOL
-        if (possibleFlag.Equals("Play"))
+        switch (possibleFlag)
         {
-            sceneType = "Overworld";
-        }
-        else if (possibleFlag.Equals("Won"))
-        {
-            sceneType = "Overworld";
+            case "Won":
+                sceneType = "Overworld";
+                healedPatient = true;
+                break;
 
-            healedPatient = true;
-        }
-        else if (possibleFlag.Equals("Lost"))
-        {
-            sceneType = "GameOver";
-        }
-        else if (possibleFlag.Equals("Retry"))
-        {
-            fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
-            return;
-        }
-        else
-        {
-            sceneType = possibleFlag;
+            case "Retry":
+                fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
+                break;
+
+            default:
+                sceneType = possibleFlag;
+                break;
         }
         
         switch (sceneType)
@@ -269,10 +258,4 @@ public class GameProgressionManager : MonoBehaviour
                 break;
         }
     }
-
-    // BUTTONS - TODO MOVE
-    public void PlayGame()
-    {
-        TransitionScene("Play");
-    } 
 }
