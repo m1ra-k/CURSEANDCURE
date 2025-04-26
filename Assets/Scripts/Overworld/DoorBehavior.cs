@@ -65,5 +65,7 @@ public class DoorBehavior : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         
         lilithGridMovement.currentlyDoorTransitioning = false;
+
+        GameProgressionManagerInstance.CheckMusicChange();
     }
 }

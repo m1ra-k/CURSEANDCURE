@@ -22,6 +22,8 @@ public class AutomaticDialogueData : MonoBehaviour
 
     [SerializeField]
     private List<string> triggeredFlags;
+    [SerializeField]
+    private int triggerMusicIndex;
 
     private Vector2 setPosition;
 
@@ -94,7 +96,6 @@ public class AutomaticDialogueData : MonoBehaviour
             }
             else
             {
-                // TODO: mira, hardcoded to 0 but needs to match GameProgressionManager progression value
                 GameProgressionManagerInstance.DialogueSystemManager.SetVisualNovelJSONFile(dialogues[0]);
                 GameProgressionManagerInstance.DialogueSystemManager.enabled = true;
                 GameProgressionManagerInstance.dialogueCanvas.SetActive(true);    

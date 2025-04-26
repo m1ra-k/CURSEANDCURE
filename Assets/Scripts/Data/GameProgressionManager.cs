@@ -182,7 +182,16 @@ public class GameProgressionManager : MonoBehaviour
         currentTrack = -1;
     }
 
-    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f)
+    public void CheckMusicChange()
+    {
+        if (lilithPatientNumber > 1 && currentTrack != 2)
+        {
+            print("check music change");
+            StartCoroutine(PlayMusic(2));
+        }
+    }
+
+    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f, float pitch = 0.95f)
     {
         float startVolume = audioSourceBGM.volume;
 
@@ -204,6 +213,8 @@ public class GameProgressionManager : MonoBehaviour
 
         audioSourceBGM.volume = 1;
         audioSourceBGM.UnPause();
+
+        audioSourceBGM.pitch = pitch;
 
         yield return new WaitForSeconds(gameWaitTime);
 
