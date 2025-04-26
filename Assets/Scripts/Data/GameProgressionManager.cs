@@ -210,7 +210,7 @@ public class GameProgressionManager : MonoBehaviour
             gameObjectToDeactivate.SetActive(false);
         }
 
-        audioSourceBGM.volume = 1;
+        audioSourceBGM.volume = 0.6f;
         audioSourceBGM.UnPause();
 
         audioSourceBGM.pitch = pitch;
