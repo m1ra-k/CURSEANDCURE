@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterDialogueData : MonoBehaviour
 {
@@ -80,6 +81,11 @@ public class CharacterDialogueData : MonoBehaviour
                 if (postHealingGame)
                 {
                     characterDialoguesIndex++;
+                    if (GameProgressionManagerInstance.lilithPatientNumber == 2)
+                    {
+                        print("loading end");
+                        SceneManager.LoadScene("EndMenu");
+                    }
                 }
 
                 postHealingGame = false;
