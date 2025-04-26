@@ -64,7 +64,7 @@ public class GameProgressionManager : MonoBehaviour
     public GameObject blackTransition;
 
     void Awake()
-    {        
+    {                
         if (GameProgressionManagerInstance == null)
         {
             progressionSystem.Init();
@@ -165,7 +165,9 @@ public class GameProgressionManager : MonoBehaviour
 
     void Start()
     {
-
+        // TODO DEBUG ONLY REMOVE AFTER
+        progressionSystem.SetFlag("firstHealed", true);
+        progressionSystem.SetFlag("secondHealed", true);
     }
 
     void Update()
