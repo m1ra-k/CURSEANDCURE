@@ -11,7 +11,7 @@ public enum CharacterEnum
     Lilith,
     Man,
     [Description("SYSTEM")]
-    System
+    System,
     [Description("Hilda")]
     TavernKeeper,
     [Description("???")]
