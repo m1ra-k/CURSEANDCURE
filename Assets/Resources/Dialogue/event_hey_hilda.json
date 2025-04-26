@@ -358,6 +358,16 @@
                 ],
                 "dialogue": "I'll take care of him now!",
                 "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "System",
+                "speakerSprite": [
+                    "Transparent"
+                ],
+                "dialogue": "To access Lilith's pateint list for the night press ESC.",
+                "textSpeed": 0
             },
             "endOfScene": true
         }
