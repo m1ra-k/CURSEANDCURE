@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCRun : MonoBehaviour
+public class NPCWalk : MonoBehaviour
 {
     private Animator animator;
 
@@ -14,12 +14,12 @@ public class NPCRun : MonoBehaviour
 
     private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
     {
-        { Vector2.up, "Male1NPCWalkUp" },
-        { Vector2.down, "Male1NPCWalkDown" },
-        { Vector2.left, "Male1NPCWalkLeft" },
-        { Vector2.right, "Male1NPCWalkRight" }
+        { Vector2.up, "LowerWardBoy0NPCWalkUp" },
+        { Vector2.down, "LowerWardBoy0NPCWalkDown" },
+        { Vector2.left, "LowerWardBoy0NPCWalkLeft" },
+        { Vector2.right, "LowerWardBoy0NPCWalkRight" }
     };
-    private string currentAnimation = "Male1NPCWalkUp";
+    private string currentAnimation = "LowerWardBoy0NPCWalkUp";
 
     private float moveSpeed = 3f;
 
