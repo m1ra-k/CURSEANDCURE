@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class NPCWalk : MonoBehaviour
 {
+    [Header("[State]")]
+    public GameProgressionManager GameProgressionManagerInstance;
+
     private Animator animator;
 
     private Vector2 movementDirection;
@@ -23,8 +26,13 @@ public class NPCWalk : MonoBehaviour
 
     private float moveSpeed = 3f;
 
+    private bool isWalking = true;
+
     void Start()
     {
+        // state
+        GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+
         animator = GetComponent<Animator>();
         targetPosition = pathCoordinates[0];
         SetMovementDirection();
@@ -32,6 +40,9 @@ public class NPCWalk : MonoBehaviour
 
     void Update()
     {
+        if (!isWalking)
+            return;
+
         if ((Vector2)transform.localPosition != targetPosition)
         {
             transform.localPosition = Vector2.MoveTowards(
@@ -46,7 +57,13 @@ public class NPCWalk : MonoBehaviour
         {
             index = (index + 1) % pathCoordinates.Length;
             targetPosition = pathCoordinates[index];
-            SetMovementDirection();
+
+            CheckShouldStopWalking();
+
+            if (isWalking) // Only set new movement if still walking
+            {
+                SetMovementDirection();
+            }
         }
     }
 
@@ -74,5 +91,24 @@ public class NPCWalk : MonoBehaviour
                 currentAnimation = newAnimation;
             }
         }
+    }
+
+    private void CheckShouldStopWalking()
+    {
+        // Assuming you have a singleton called GameProgressionManagerInstance
+        Vector2 lilithPosition = GameProgressionManagerInstance.lilithPosition;
+        Vector2 lilithNextPosition = GameProgressionManagerInstance.lilithGridMovement.lilithNextPosition;
+
+        if (ApproximatelyEqual(targetPosition, lilithPosition) || ApproximatelyEqual(targetPosition, lilithNextPosition))
+        {
+            isWalking = false;
+        }
+    }
+
+    private bool ApproximatelyEqual(Vector2 a, Vector2 b)
+    {
+        // You can adjust this tolerance if needed
+        float tolerance = 0.01f;
+        return Vector2.Distance(a, b) < tolerance;
     }
 }
