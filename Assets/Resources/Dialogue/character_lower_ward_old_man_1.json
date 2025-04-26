@@ -6,17 +6,77 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "empty",
+                "dialogue": "Have a have a look~",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Man",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "ManNeutral"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "One pound fish!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Very very cheap~",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "one pound fish!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "6 for $5 or 1 for $2!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Come on Lilith, come on~",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Buy my fish!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LiithHappy"
+                ],
+                "dialogue": "Maybe next time, gramps!",
                 "textSpeed": 0
             },
             "endOfScene": true
