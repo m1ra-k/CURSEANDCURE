@@ -13,7 +13,7 @@ public class NPCWalk : MonoBehaviour
     private Vector2[] pathCoordinates;
     private int index;
 
-    private Vector2 targetPosition;
+    public Vector2 targetPosition;
 
     private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
     {
@@ -24,26 +24,26 @@ public class NPCWalk : MonoBehaviour
     };
     private string currentAnimation = "Male1NPCWalkUp";
 
-    private float moveSpeed = 3f;
+    private float moveSpeed = 1f;
 
     private bool isWalking = true;
 
     void Start()
     {
-        // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
 
         animator = GetComponent<Animator>();
-        targetPosition = pathCoordinates[0];
-        SetMovementDirection();
+        SetNextUnitTarget();
     }
 
     void Update()
     {
+        CheckShouldStopWalking();
+
         if (!isWalking)
             return;
 
-        if ((Vector2)transform.localPosition != targetPosition)
+        if ((Vector2) transform.localPosition != targetPosition)
         {
             transform.localPosition = Vector2.MoveTowards(
                 transform.localPosition,
@@ -55,30 +55,53 @@ public class NPCWalk : MonoBehaviour
         }
         else
         {
-            index = (index + 1) % pathCoordinates.Length;
-            targetPosition = pathCoordinates[index];
+            Vector2 fullTarget = pathCoordinates[index];
 
-            CheckShouldStopWalking();
-
-            if (isWalking) // Only set new movement if still walking
+            if ((Vector2) transform.localPosition == fullTarget)
             {
-                SetMovementDirection();
+                index = (index + 1) % pathCoordinates.Length;
+            }
+
+            if (isWalking)
+            {
+                SetNextUnitTarget();
             }
         }
     }
 
-    private void SetMovementDirection()
+    private void SetMovementDirection(Vector2 direction)
     {
         movementDirection = Vector2.zero;
 
-        if (Mathf.Abs(targetPosition.x - transform.localPosition.x) > Mathf.Epsilon)
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
-            movementDirection.x = targetPosition.x > transform.localPosition.x ? 1 : -1;
+            movementDirection.x = Mathf.Sign(direction.x);
         }
-        else if (Mathf.Abs(targetPosition.y - transform.localPosition.y) > Mathf.Epsilon)
+        else
         {
-            movementDirection.y = targetPosition.y > transform.localPosition.y ? 1 : -1;
+            movementDirection.y = Mathf.Sign(direction.y);
         }
+    }
+
+    private void SetNextUnitTarget()
+    {
+        Vector2 fullTarget = pathCoordinates[index];
+        Vector2 direction = fullTarget - (Vector2)transform.localPosition;
+
+        if (direction == Vector2.zero)
+        {
+            targetPosition = fullTarget;
+            return;
+        }
+
+        SetMovementDirection(direction);
+
+        Vector2 nextStep = (Vector2)transform.localPosition + new Vector2(
+            movementDirection.x,
+            movementDirection.y
+        );
+
+        targetPosition = nextStep;
     }
 
     private void CheckSwitchAnimation()
@@ -95,20 +118,20 @@ public class NPCWalk : MonoBehaviour
 
     private void CheckShouldStopWalking()
     {
-        // Assuming you have a singleton called GameProgressionManagerInstance
-        Vector2 lilithPosition = GameProgressionManagerInstance.lilithPosition;
+        Vector2 lilithPosition = GameProgressionManagerInstance.lilithGridMovement.lilithCurrentPosition;
         Vector2 lilithNextPosition = GameProgressionManagerInstance.lilithGridMovement.lilithNextPosition;
 
-        if (ApproximatelyEqual(targetPosition, lilithPosition) || ApproximatelyEqual(targetPosition, lilithNextPosition))
+        if (targetPosition == lilithPosition || targetPosition == lilithNextPosition)
         {
+            print($"boy's target: {targetPosition}, lilith position: {lilithPosition}, lilith next position: {lilithNextPosition}");
+        Vector2 targetSnapPosition = new Vector2(Mathf.Floor(transform.localPosition.x) + 0.5f, Mathf.Floor(transform.localPosition.y) + 0.5f);
+
+    transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
             isWalking = false;
         }
-    }
-
-    private bool ApproximatelyEqual(Vector2 a, Vector2 b)
-    {
-        // You can adjust this tolerance if needed
-        float tolerance = 0.01f;
-        return Vector2.Distance(a, b) < tolerance;
+        else
+        {
+            isWalking = true;
+        }
     }
 }
