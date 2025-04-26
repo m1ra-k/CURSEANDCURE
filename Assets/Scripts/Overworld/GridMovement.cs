@@ -9,10 +9,12 @@ public class GridMovement : MonoBehaviour
     public GameProgressionManager GameProgressionManagerInstance;
 
     [Header("[Properties]")]
+    public Vector2 lilithCurrentPosition;
+    public Vector2 lilithNextPosition;
     public Vector2 movementVector;
     public Vector2 prevMovementVector;
     public Vector2 prevPrevMovementVector;
-    public bool isMoving;
+    public bool startStep;
     private bool completedFirstMovement;
     public bool overrideIsMoving;
     public bool currentlyDoorTransitioning;
@@ -77,13 +79,14 @@ public class GridMovement : MonoBehaviour
         {
             if (GameProgressionManagerInstance.currentlyTalking || currentlyDoorTransitioning || GameProgressionManagerInstance.transitioning || GameProgressionManagerInstance.tutorial.activeSelf)
             {
-                isMoving = false;
+                startStep = false;
                 movementVector = Vector2.zero;
             }
             else
             {
-                if (!isMoving)
+                if (!startStep)
                 {
+                    lilithCurrentPosition = transform.localPosition;
                     if (Input.GetKey(KeyCode.UpArrow)) 
                     {
                         movementVector = Vector2.up;
@@ -122,7 +125,7 @@ public class GridMovement : MonoBehaviour
         }
         else
         {
-            if (!isMoving)
+            if (!startStep)
             {   
                 TryStep();
             }
@@ -130,6 +133,11 @@ public class GridMovement : MonoBehaviour
             {
                 FinishStep();
             }
+        }
+
+        if (!startStep)
+        {
+            lilithCurrentPosition = lilithNextPosition;
         }
     }
 
@@ -168,7 +176,8 @@ public class GridMovement : MonoBehaviour
         {
             bumpDirection = "";
             targetPosition = proposedPosition;
-            isMoving = true;
+            lilithNextPosition = targetPosition;
+            startStep = true;
         }
         else
         {
@@ -177,7 +186,7 @@ public class GridMovement : MonoBehaviour
                 audioSource.PlayOneShot(audioSource.clip);
                 bumpDirection = GameProgressionManagerInstance.directionFacing;
             }
-            isMoving = false;
+            startStep = false;
         }
     }
 
@@ -185,9 +194,15 @@ public class GridMovement : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
+        print($"curr was: {lilithCurrentPosition} and target is {lilithNextPosition}");
+
+
         if ((Vector2) transform.position == targetPosition) 
         {
-            isMoving = false;
+            print("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            lilithCurrentPosition = targetPosition;
+            print($"curr: {lilithCurrentPosition}");
+            startStep = false;
             overrideIsMoving = false;
         }
     }
