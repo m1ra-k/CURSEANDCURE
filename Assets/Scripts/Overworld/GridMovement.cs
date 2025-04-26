@@ -163,7 +163,13 @@ public class GridMovement : MonoBehaviour
     void TryStep()
     {
         Vector2 proposedPosition = (Vector2) transform.position + movementVector * stepSize;
-                        
+
+        if (Physics2D.OverlapCircle(proposedPosition, 0.5f, LayerMask.GetMask("Water")))
+        {
+            isMoving = false;
+            return;
+        }
+
         if (!Physics2D.OverlapCircle(proposedPosition, checkRadius))
         {
             bumpDirection = "";

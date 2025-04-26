@@ -8,12 +8,17 @@ public class NPCRun : MonoBehaviour
 
     private Animator animator;
 
-    private Vector2 movementDirection;
-    [SerializeField]
-    private Vector2[] pathCoordinates;
+    [SerializeField] private Vector2[] pathCoordinates;
     private int index;
-
     private Vector2 targetPosition;
+    private Vector2 movementDirection;
+
+    [Header("[Movement]")]
+    [SerializeField] private float moveSpeed = 1f;
+
+    [Header("[Collision]")]
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float checkDistance = 0.55f;
 
     private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
     {
@@ -22,79 +27,67 @@ public class NPCRun : MonoBehaviour
         { Vector2.left, "Male1NPCWalkLeft" },
         { Vector2.right, "Male1NPCWalkRight" }
     };
-    private string currentAnimation = "Male1NPCWalkUp";
+    private string currentAnimation = "";
 
-    private float moveSpeed = 1f;
-
-    [Header("[Collision]")]
-    [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private float checkRadius = 0.5f;
+    private bool isMoving = true;
+    private bool waitingForClearPath = false;
 
     void Start()
     {
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
         animator = GetComponent<Animator>();
+
         targetPosition = pathCoordinates[0];
         SetMovementDirection();
     }
 
     void Update()
     {
-        if (Vector2.Distance(transform.localPosition, targetPosition) > 0.005f)
+        if (!isMoving && waitingForClearPath)
         {
-            float distanceToMove = moveSpeed * Time.deltaTime;
-
-            while (distanceToMove > 0f)
-            {
-                Vector2 direction = (targetPosition - (Vector2)transform.localPosition).normalized;
-                float step = Mathf.Min(distanceToMove, 0.01f);
-
-                Vector2 nextPosition = (Vector2)transform.localPosition + direction * step;
-
-                // Snap next position to nearest .5 if close enough
-                // nextPosition = SnapToHalf(nextPosition);
-
-                // Collision check
-                if (Physics2D.OverlapCircle(nextPosition, checkRadius, playerLayer))
-                {
-                    Debug.Log("NPC would collide with player. Stopping movement.");
-                    transform.localPosition = SnapToHalf(transform.localPosition);
-                    return;
-                }
-
-                transform.localPosition = nextPosition;
-                distanceToMove -= step;
-            }
-
-            CheckSwitchAnimation();
+            TryResumeMovement();
+            return;
         }
-        else
+
+        if (!isMoving) return;
+
+        Vector2 direction = (targetPosition - (Vector2)transform.localPosition).normalized;
+
+        if (Physics2D.Raycast(transform.localPosition, direction, checkDistance, playerLayer))
         {
-            // Reached target
+            StopAndSnap();
+            return;
+        }
+
+        transform.localPosition += (Vector3)(direction * moveSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.localPosition, targetPosition) <= 0.05f)
+        {
             transform.localPosition = SnapToHalf(targetPosition);
             index = (index + 1) % pathCoordinates.Length;
             targetPosition = pathCoordinates[index];
             SetMovementDirection();
         }
+
+        UpdateAnimation();
     }
 
     private void SetMovementDirection()
     {
-        movementDirection = Vector2.zero;
-
-        if (Mathf.Abs(targetPosition.x - transform.localPosition.x) > Mathf.Epsilon)
+        Vector2 diff = targetPosition - (Vector2) transform.localPosition;
+        if (Mathf.Abs(diff.x) > Mathf.Abs(diff.y))
         {
-            movementDirection.x = targetPosition.x > transform.localPosition.x ? 1 : -1;
+            movementDirection = new Vector2(Mathf.Sign(diff.x), 0);
         }
-        else if (Mathf.Abs(targetPosition.y - transform.localPosition.y) > Mathf.Epsilon)
+        else
         {
-            movementDirection.y = targetPosition.y > transform.localPosition.y ? 1 : -1;
+            movementDirection = new Vector2(0, Mathf.Sign(diff.y));
         }
     }
 
-    private void CheckSwitchAnimation()
+    private void UpdateAnimation()
     {
-        if (movementDirection != Vector2.zero && animationLookup.TryGetValue(movementDirection, out string newAnimation))
+        if (animationLookup.TryGetValue(movementDirection, out string newAnimation))
         {
             if (currentAnimation != newAnimation)
             {
@@ -104,10 +97,33 @@ public class NPCRun : MonoBehaviour
         }
     }
 
+    private void StopAndSnap()
+    {
+        isMoving = false;
+        waitingForClearPath = true;
+        transform.localPosition = SnapToHalf(transform.localPosition);
+    }
+
+    private void TryResumeMovement()
+    {
+        Vector2 direction = (targetPosition - (Vector2)transform.localPosition).normalized;
+        Vector2 checkPosition = (Vector2)transform.localPosition + direction * 0.25f;
+
+        float checkRadius = 0.3f;
+
+        if (!Physics2D.OverlapCircle(checkPosition, checkRadius, playerLayer))
+        {
+            isMoving = true;
+            waitingForClearPath = false;
+            SetMovementDirection();
+        }
+    }
+
     private Vector2 SnapToHalf(Vector2 position)
     {
-        float snappedX = Mathf.Round(position.x * 2f) * 0.5f;
-        float snappedY = Mathf.Round(position.y * 2f) * 0.5f;
-        return new Vector2(snappedX, snappedY);
+        return new Vector2(
+            Mathf.Round(position.x * 2f) * 0.5f,
+            Mathf.Round(position.y * 2f) * 0.5f
+        );
     }
 }
