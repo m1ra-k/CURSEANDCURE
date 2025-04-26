@@ -2952,6 +2952,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9103756190318337458, guid: 35b595c9e2e138043860e5968455f220, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.28125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8381,8 +8385,8 @@ Transform:
   - {fileID: 2131516282}
   - {fileID: 1001021836}
   - {fileID: 1874591502}
-  - {fileID: 1157723708}
   - {fileID: 1408001900}
+  - {fileID: 1157723708}
   - {fileID: 242660821}
   - {fileID: 460541509}
   - {fileID: 1361345979}
@@ -9390,7 +9394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585609530025341657, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: m_Name
-      value: LowerWardBoy3NPC
+      value: LowerWardBoy4NPC
       objectReference: {fileID: 0}
     - target: {fileID: 3585609530025341657, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: m_TagString
@@ -14360,7 +14364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585609530025341657, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: m_Name
-      value: LowerWardBoy4NPC
+      value: LowerWardBoy3NPC
       objectReference: {fileID: 0}
     - target: {fileID: 3585609530025341657, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: m_TagString
