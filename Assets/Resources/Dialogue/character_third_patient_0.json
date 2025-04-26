@@ -2,21 +2,81 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
-                "dialogue": "empty",
+                "dialogue": "Lilith!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Boy",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "BoyHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Urgh!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(He's coughing up blood!!)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(He's coughing up blood!!)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(His skin is so pale and his eyes are bloodshot...)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I've never seen it get this bad.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I'll have to put my all into this one,)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(But I have to be careful, or else his symptoms could get much worse.)",
                 "textSpeed": 0
             },
             "endOfScene": true
