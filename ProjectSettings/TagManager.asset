@@ -12,6 +12,7 @@ TagManager:
   - Parchment
   - Night
   - Evening
+  - TutorialText
   layers:
   - Default
   - TransparentFX
