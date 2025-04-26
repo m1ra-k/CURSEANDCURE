@@ -24,6 +24,7 @@ public class GameProgressionManager : MonoBehaviour
     [Header("[Overworld]")]
     public GameObject lilith;
     public Vector2 lilithPosition;
+    public GridMovement lilithGridMovement;
     public string directionFacing = "down";
 
     public GameObject tutorial;
@@ -110,6 +111,7 @@ public class GameProgressionManager : MonoBehaviour
                 
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
+                lilithGridMovement = lilith.GetComponent<GridMovement>();
                 
                 foreach (var complementedOneTimeEvent in complementedOneTimeEvents)
                 {
@@ -168,7 +170,7 @@ public class GameProgressionManager : MonoBehaviour
 
     void Update()
     {
-        if (((currentScene == "Overworld" && !currentlyTalking) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
+        if (((currentScene == "Overworld" && !currentlyTalking) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape) && !lilithGridMovement.isMoving)
         {
             tutorial.SetActive(!tutorial.activeSelf);
         }
