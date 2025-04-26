@@ -49,7 +49,7 @@ public class HealingGameManager : MonoBehaviour
     void Start()
     {
         // TODO REMOVE THIS IS JUST FOR DEBUG
-        // StartCoroutine(DisplayWon());
+        StartCoroutine(DisplayWon());
 
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
@@ -230,7 +230,7 @@ public class HealingGameManager : MonoBehaviour
         minigameArt.transform.position = minigameArtPositionInitial;
         minigameArtImage.color = originalColor;
 
-        GameProgressionManagerInstance.TransitionScene("Lost");
+        GameProgressionManagerInstance.TransitionScene("GameOver");
     }
 
     private IEnumerator DisplayWon()
@@ -256,5 +256,7 @@ public class HealingGameManager : MonoBehaviour
         }
 
         GameProgressionManagerInstance.TransitionScene("Won");
+
+        GameProgressionManagerInstance.lilithPatientNumber++;
     }
 }

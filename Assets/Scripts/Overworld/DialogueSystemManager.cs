@@ -114,13 +114,17 @@ public class DialogueSystemManager : MonoBehaviour
         { 
             if (currentDialogue.endOfScene)
             {
-                StartCoroutine(Fade(currentActiveSpeaker[0], spriteCache.sprites["Transparent"], 0, 1));
-                GameProgressionManagerInstance.dialogueCanvas.SetActive(false);
                 GameProgressionManagerInstance.currentlyTalking = false;
                 finishedDialogue = false;
                 dialogueIndex = -1;
-                enabled = false;
                 delay = true;
+                enabled = false;
+
+                if (GameProgressionManagerInstance.lilithPatientNumber != 3)
+                {
+                    StartCoroutine(Fade(currentActiveSpeaker[0], spriteCache.sprites["Transparent"], 0, 1));
+                    GameProgressionManagerInstance.dialogueCanvas.SetActive(false);
+                }
             }
             else if (!currentDialogue.endOfScene && !typeWriterInEffect && !finishedDialogue) 
             {

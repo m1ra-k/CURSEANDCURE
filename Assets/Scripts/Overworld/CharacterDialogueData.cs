@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterDialogueData : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class CharacterDialogueData : MonoBehaviour
     public int characterDialoguesIndex;
     public List<TextAsset> characterDialogues;
     
-    private HashSet<Vector2> adjacentLocations = new();
     private GameObject lilith;
     private Vector2 lilithPosition;
 
@@ -28,15 +28,6 @@ public class CharacterDialogueData : MonoBehaviour
 
     void Awake()
     { 
-        // locations
-        adjacentLocations.UnionWith(new List<Vector2>
-        {
-            (Vector2) gameObject.transform.localPosition + Vector2.up,
-            (Vector2) gameObject.transform.localPosition + Vector2.down,
-            (Vector2) gameObject.transform.localPosition + Vector2.left,
-            (Vector2) gameObject.transform.localPosition + Vector2.right
-        });
-
         // lilith
         lilith = GameObject.FindWithTag("Player");
 
@@ -68,7 +59,7 @@ public class CharacterDialogueData : MonoBehaviour
 
     void LateUpdate()
     {
-        if (((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && !GameProgressionManagerInstance.transitioning) || postHealingGame)
+        if (((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && CanTalk() && !GameProgressionManagerInstance.currentlyTalking && !GameProgressionManagerInstance.transitioning && !GameProgressionManagerInstance.tutorial.activeSelf) || postHealingGame)
         {
             if (GameProgressionManagerInstance.DialogueSystemManager.delay)
             {
@@ -79,8 +70,11 @@ public class CharacterDialogueData : MonoBehaviour
                 // other dialogue after getting healed (usually). plays after thank you cutscene.
                 if (postHealingGame)
                 {
-                    GameProgressionManagerInstance.lilithPatientNumber++;
                     characterDialoguesIndex++;
+                    if (GameProgressionManagerInstance.lilithPatientNumber == 3)
+                    {
+                        GameProgressionManagerInstance.TransitionScene("EndMenu");
+                    }
                 }
 
                 postHealingGame = false;
@@ -89,8 +83,10 @@ public class CharacterDialogueData : MonoBehaviour
                 {
                     GameProgressionManagerInstance.TransitionScene("HealingGame");
                 }
-
-                spriteRenderer.sprite = originalFace;
+                else
+                {
+                    spriteRenderer.sprite = originalFace;
+                }
             }
             else
             {
@@ -109,11 +105,6 @@ public class CharacterDialogueData : MonoBehaviour
 
     private bool CanTalk()
     {
-        if (!adjacentLocations.Contains(lilithPosition))
-        {
-            return false;
-        }
-
         Vector2 offset = (Vector2) transform.localPosition - lilithPosition;
         float epsilon = 0.05f;
 

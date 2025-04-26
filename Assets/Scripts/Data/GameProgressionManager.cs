@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System.Linq;
 
 public class GameProgressionManager : MonoBehaviour
 {
@@ -22,6 +24,7 @@ public class GameProgressionManager : MonoBehaviour
     [Header("[Overworld]")]
     public GameObject lilith;
     public Vector2 lilithPosition;
+    public GridMovement lilithGridMovement;
     public string directionFacing = "down";
 
     public GameObject tutorial;
@@ -40,6 +43,7 @@ public class GameProgressionManager : MonoBehaviour
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
 
+    private GameObject[] tutorialTexts;
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
@@ -53,14 +57,14 @@ public class GameProgressionManager : MonoBehaviour
     [Header("[Music]")]
     public List<AudioClip> audioClips = new List<AudioClip>();
     public AudioSource audioSourceBGM;
-    private int currentTrack;
+    public int currentTrack = 1;
 
     [Header("[References]")]  
     public FadeEffect fadeEffect;
     public GameObject blackTransition;
 
     void Awake()
-    {        
+    {                
         if (GameProgressionManagerInstance == null)
         {
             progressionSystem.Init();
@@ -86,7 +90,7 @@ public class GameProgressionManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currentScene = scene.name;
-
+        
         blackTransition = GameObject.Find("Canvas").transform.Find("BlackTransition").gameObject;
 
         fadeEffect.FadeOut(blackTransition, 0.5f);
@@ -97,6 +101,7 @@ public class GameProgressionManager : MonoBehaviour
         {
             case "StartScreen":
                 playButton = GameObject.FindWithTag("Button").GetComponent<Button>();
+
                 break;
 
             case "Overworld":
@@ -104,11 +109,10 @@ public class GameProgressionManager : MonoBehaviour
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
                 DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
-                tutorial = GameObject.FindWithTag("Tutorial");
-                tutorial.SetActive(false);
-
+                
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
+                lilithGridMovement = lilith.GetComponent<GridMovement>();
                 
                 foreach (var complementedOneTimeEvent in complementedOneTimeEvents)
                 {
@@ -125,54 +129,50 @@ public class GameProgressionManager : MonoBehaviour
                 eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
                 nightObjects = GameObject.FindGameObjectsWithTag("Night");
 
-                foreach (GameObject obj in lilithPatientNumber < 1 ? nightObjects : eveningObjects)
+                foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects)
                 {
                     obj.SetActive(false);
                 }
 
+                tutorial = GameObject.FindWithTag("Tutorial");
+                tutorialTexts = GameObject.FindGameObjectsWithTag("TutorialText");
+                tutorialTexts = tutorialTexts.OrderBy(go => go.name).ToArray();
+
+                for (int i = 0; i < tutorialTexts.Length; i++)
+                {
+                    if (i < lilithPatientNumber)
+                    {
+                        TextMeshProUGUI tmp = tutorialTexts[i].GetComponent<TextMeshProUGUI>();
+                        tmp.text = $"<s>{tmp.text}</s>";
+                    }
+                }
+                tutorial.SetActive(false);
+
                 break;
 
             case "HealingGame":
+                if (currentTrack == -1) StartCoroutine(PlayMusic(1));
+
                 tutorial = GameObject.FindWithTag("Tutorial");
                 tutorial.SetActive(false);
+
                 HealingGameManager = FindObjectOfType<HealingGameManager>();
+
                 break;
 
             case "GameOver":
                 StopMusic();
                 retryButton = GameObject.FindWithTag("Button").GetComponent<Button>();
+
                 break;
         }     
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        // TODO GAME PROGRESSION SYSTEM this is just mock event completion but this approach works
-        // just follow this format for actual events
-        if (Input.GetKeyDown(KeyCode.U))
+        if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.isMoving) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
         {
-            progressionSystem.SetFlag("goBack2", true);
-            progressionSystem.SetFlag("wakeUp2", true);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            progressionSystem.SetFlag("goBackDONE", true);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            progressionSystem.SetFlag("goBack2DONE", true);
-        }
-        if(currentScene == "Overworld" || (currentScene == "HealingGame" && HealingGameManager.startedGame ))
-        {
-             if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    tutorial.SetActive(!tutorial.activeSelf);
-                }
+            tutorial.SetActive(!tutorial.activeSelf);
         }
     }
 
@@ -182,7 +182,15 @@ public class GameProgressionManager : MonoBehaviour
         currentTrack = -1;
     }
 
-    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float cookingGameWaitTime = 0f)
+    public void CheckMusicChange()
+    {
+        if (lilithPatientNumber > 1 && currentTrack != 2)
+        {
+            StartCoroutine(PlayMusic(2));
+        }
+    }
+
+    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f, float pitch = 0.95f)
     {
         float startVolume = audioSourceBGM.volume;
 
@@ -202,10 +210,12 @@ public class GameProgressionManager : MonoBehaviour
             gameObjectToDeactivate.SetActive(false);
         }
 
-        audioSourceBGM.volume = 1;
+        audioSourceBGM.volume = 0.6f;
         audioSourceBGM.UnPause();
 
-        yield return new WaitForSeconds(cookingGameWaitTime);
+        audioSourceBGM.pitch = pitch;
+
+        yield return new WaitForSeconds(gameWaitTime);
 
         if (index != currentTrack)
         {
@@ -223,29 +233,20 @@ public class GameProgressionManager : MonoBehaviour
 
         transitioning = true;
 
-        // TODO - CONVERT TO SWITCH STATEMENT LOL
-        if (possibleFlag.Equals("Play"))
+        switch (possibleFlag)
         {
-            sceneType = "Overworld";
-        }
-        else if (possibleFlag.Equals("Won"))
-        {
-            sceneType = "Overworld";
+            case "Won":
+                sceneType = "Overworld";
+                healedPatient = true;
+                break;
 
-            healedPatient = true;
-        }
-        else if (possibleFlag.Equals("Lost"))
-        {
-            sceneType = "GameOver";
-        }
-        else if (possibleFlag.Equals("Retry"))
-        {
-            fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
-            return;
-        }
-        else
-        {
-            sceneType = possibleFlag;
+            case "Retry":
+                fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "HealingGame");
+                break;
+
+            default:
+                sceneType = possibleFlag;
+                break;
         }
         
         switch (sceneType)
@@ -262,15 +263,9 @@ public class GameProgressionManager : MonoBehaviour
                 fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "GameOver");
                 break;
 
-            case "EndScreen":
-                fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "EndScreen");
+            case "EndMenu":
+                fadeEffect.FadeIn(blackTransition, fadeTime: 0.5f, scene: "EndMenu");
                 break;
         }
     }
-
-    // BUTTONS - TODO MOVE
-    public void PlayGame()
-    {
-        TransitionScene("Play");
-    } 
 }

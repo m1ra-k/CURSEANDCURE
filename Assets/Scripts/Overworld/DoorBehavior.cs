@@ -51,17 +51,18 @@ public class DoorBehavior : MonoBehaviour
     private IEnumerator DoorTransition(string newLocation, Vector2 offsetDoor)
     {
         GameProgressionManagerInstance.currentLocation = newLocation;
-        // lilithGridMovement.DetermineStopFrame();
 
         GameProgressionManagerInstance.fadeEffect.FadeIn(GameProgressionManagerInstance.blackTransition, 0.5f);
         
+        GameProgressionManagerInstance.CheckMusicChange();
+
         yield return new WaitForSeconds(0.75f);
 
         lilithGridMovement.DetermineAnimation();
         
         GameProgressionManagerInstance.lilith.transform.position = offsetDoor;
         GameProgressionManagerInstance.fadeEffect.FadeOut(GameProgressionManagerInstance.blackTransition, 0.5f);
-
+        
         yield return new WaitForSeconds(0.5f);
         
         lilithGridMovement.currentlyDoorTransitioning = false;

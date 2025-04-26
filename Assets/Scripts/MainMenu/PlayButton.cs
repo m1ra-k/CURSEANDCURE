@@ -13,6 +13,6 @@ public class PlayButton : MonoBehaviour
 
     public void PlayGame()
     {
-        GameProgressionManager.TransitionScene("Play");
+        GameProgressionManager.TransitionScene("Overworld");
     }
 }
