@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +5,12 @@ public class NPCRun : MonoBehaviour
 {
     private Animator animator;
 
-    private int frameNumber = 0;
-
     private Vector2 movementDirection;
     [SerializeField]
     private Vector2[] pathCoordinates;
     private int index;
+
+    private Vector2 targetPosition;
 
     private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
     {
@@ -22,53 +20,58 @@ public class NPCRun : MonoBehaviour
         { Vector2.right, "Male1NPCWalkRight" }
     };
     private string currentAnimation = "Male1NPCWalkUp";
-    private string possibleAnimation;
+
+    private float moveSpeed = 3f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        targetPosition = pathCoordinates[0];
+        SetMovementDirection();
     }
 
     void Update()
     {
-        CheckSwitchAnimation();
-
-        if (frameNumber == 10)
+        if ((Vector2)transform.localPosition != targetPosition)
         {
-            movementDirection = Vector2.zero;
+            transform.localPosition = Vector2.MoveTowards(
+                transform.localPosition,
+                targetPosition,
+                moveSpeed * Time.deltaTime
+            );
 
-            if (transform.localPosition.x != pathCoordinates[index].x)
-            {
-                movementDirection.x = pathCoordinates[index].x > transform.localPosition.x ? 1 : -1;
-            }
-            else if (transform.localPosition.y != pathCoordinates[index].y)
-            {
-                movementDirection.y = pathCoordinates[index].y > transform.localPosition.y ? 1 : -1;
-            }
-    
-            transform.localPosition = (Vector2) transform.localPosition + movementDirection;
-
-            if ((Vector2) transform.localPosition == pathCoordinates[index])
-            {
-                index = (index + 1) % 4;
-            }
-
-            frameNumber = 0;
+            CheckSwitchAnimation();
         }
+        else
+        {
+            index = (index + 1) % pathCoordinates.Length;
+            targetPosition = pathCoordinates[index];
+            SetMovementDirection();
+        }
+    }
 
-        frameNumber++;
+    private void SetMovementDirection()
+    {
+        movementDirection = Vector2.zero;
+
+        if (Mathf.Abs(targetPosition.x - transform.localPosition.x) > Mathf.Epsilon)
+        {
+            movementDirection.x = targetPosition.x > transform.localPosition.x ? 1 : -1;
+        }
+        else if (Mathf.Abs(targetPosition.y - transform.localPosition.y) > Mathf.Epsilon)
+        {
+            movementDirection.y = targetPosition.y > transform.localPosition.y ? 1 : -1;
+        }
     }
 
     private void CheckSwitchAnimation()
     {
-        if (movementDirection != Vector2.zero)
+        if (movementDirection != Vector2.zero && animationLookup.TryGetValue(movementDirection, out string newAnimation))
         {
-            possibleAnimation = animationLookup[movementDirection];
-
-            if (!currentAnimation.Equals(possibleAnimation))
+            if (currentAnimation != newAnimation)
             {
-                animator.Play(possibleAnimation);
-                currentAnimation = possibleAnimation;
+                animator.Play(newAnimation);
+                currentAnimation = newAnimation;
             }
         }
     }
