@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class GameProgressionManager : MonoBehaviour
 {
@@ -41,8 +42,7 @@ public class GameProgressionManager : MonoBehaviour
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
 
-    [SerializeField]
-    public List<TextMeshProUGUI> tutorialText = new List<TextMeshProUGUI>();
+    public GameObject[] tutorialText;
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
@@ -89,7 +89,7 @@ public class GameProgressionManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currentScene = scene.name;
-
+        
         blackTransition = GameObject.Find("Canvas").transform.Find("BlackTransition").gameObject;
 
         fadeEffect.FadeOut(blackTransition, 0.5f);
@@ -108,6 +108,7 @@ public class GameProgressionManager : MonoBehaviour
                 DialogueSystemManager.GameProgressionManagerInstance = this;
                 dialogueCanvas.SetActive(false);
                 tutorial = GameObject.FindWithTag("Tutorial");
+                tutorialText=GameObject.FindGameObjectsWithTag("TutorialText");
                 tutorial.SetActive(false);
                 lilith = GameObject.FindWithTag("Player");
                 lilith.transform.position = lilithPosition;
@@ -131,6 +132,7 @@ public class GameProgressionManager : MonoBehaviour
                 {
                     obj.SetActive(false);
                 }
+
 
                 break;
 
@@ -171,10 +173,16 @@ public class GameProgressionManager : MonoBehaviour
         }
         if(currentScene == "Overworld" || (currentScene == "HealingGame" && HealingGameManager.startedGame ))
         {
-             if (Input.GetKeyDown(KeyCode.Escape))
+             if (Input.GetKeyDown(KeyCode.Escape) && !currentlyTalking)
                 {
                     tutorial.SetActive(!tutorial.activeSelf);
-                    UpdateTutorial();
+                    for (int i=0; i<3; i++)
+                    {
+                        TextMeshProUGUI toUpdate=tutorialText[i].GetComponent<TextMeshProUGUI>();
+                        if (lilithPatientNumber>i && !toUpdate.text.StartsWith("<s>")){
+                            toUpdate.text=$"<s>{toUpdate.text}</s>";
+                        }
+                    }
                 }
         }
     }
@@ -221,8 +229,15 @@ public class GameProgressionManager : MonoBehaviour
 
     public void UpdateTutorial()
     {
-        TextMeshProUGUI text=tutorialText[lilithPatientNumber];
-        text.text = "<s>"+ text.text +"</s>";
+        if(lilithPatientNumber>0)
+        {
+            TextMeshProUGUI toUpdate=tutorialText[lilithPatientNumber-1].GetComponent<TextMeshProUGUI>();
+            Debug.Log(toUpdate.text);
+            if(!toUpdate.text.StartsWith("<s>"))
+            {
+                toUpdate.text = "<s>" + toUpdate.text + "</s>";
+            }
+        }
     }
 
     // TODO: mira; this will need to be reworked a bit
