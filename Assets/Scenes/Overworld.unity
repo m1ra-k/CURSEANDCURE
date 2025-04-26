@@ -2982,7 +2982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863129467556651436, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_Pitch
-      value: 0.875
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5863129467556651436, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_Volume
@@ -2991,7 +2991,7 @@ PrefabInstance:
     - target: {fileID: 5863129467556651436, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9716f33f75236d9409100eaef4a1dc1b, type: 3}
+      objectReference: {fileID: 8300000, guid: 2268651222c18744397383f98ef0178b, type: 3}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: sceneNumber
       value: 1
@@ -3031,7 +3031,7 @@ PrefabInstance:
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: audioClips.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 9716f33f75236d9409100eaef4a1dc1b, type: 3}
+      objectReference: {fileID: 8300000, guid: 2268651222c18744397383f98ef0178b, type: 3}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: tutorialText.Array.data[0]
       value: 
@@ -8202,7 +8202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &963052031
 Transform:
   m_ObjectHideFlags: 0
