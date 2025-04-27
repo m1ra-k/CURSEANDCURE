@@ -189,7 +189,6 @@ public class GameProgressionManager : MonoBehaviour
                 HealingGameManager.resultText.gameObject.SetActive(false);
             }
         }
-        
     }
 
     public void StopMusic()

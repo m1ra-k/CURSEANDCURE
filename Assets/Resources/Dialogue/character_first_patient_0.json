@@ -116,7 +116,17 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(His condition... looks like the disease hasn't fully taken effect yet. I should have a good amount of time.)",
+                "dialogue": "(His condition... looks like the illness hasn't fully taken effect yet.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I should have a good amount of time.)",
                 "textSpeed": 0
             }
         },
