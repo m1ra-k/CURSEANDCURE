@@ -85,7 +85,6 @@ public class CharacterDialogueData : MonoBehaviour
                 }
                 else if (turnsFace) 
                 {
-                    print("this shouldnt happen 1");
                     spriteRenderer.sprite = originalFace;
                 }
             }
@@ -93,8 +92,6 @@ public class CharacterDialogueData : MonoBehaviour
             {
                 if (turnsFace)
                 {
-                    // TODO
-                    print("this shouldnt happen 2");
                     spriteRenderer.sprite = faces[talkingDirection];
                 }
 
