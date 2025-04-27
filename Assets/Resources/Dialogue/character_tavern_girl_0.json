@@ -2,11 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Girl",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "GirlHappy"
                 ],
-                "dialogue": "tavern girl 0",
+                "dialogue": "Dad, please stop drinking!",
                 "textSpeed": 0
             }
         },
@@ -16,7 +16,77 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Big sis, Lilith! Please tell my dad to stop!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "He's had too many drinks.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Mama's going to be mad if I don't bring dad back home soon!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "And she said the money he doesn't waste on drinks can be used for my toys!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "I need to stop him!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I already told him to rest.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(Why is he drinking more after all of that?!)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "Dont't worry. I'll see what I can do...",
                 "textSpeed": 0
             },
             "endOfScene": true
