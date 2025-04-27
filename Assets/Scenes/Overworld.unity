@@ -3132,11 +3132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 28.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: -20.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
@@ -17738,7 +17738,6 @@ MonoBehaviour:
   - {x: 29.5, y: -18.5}
   - {x: 29.5, y: -21.5}
   - {x: 33.5, y: -21.5}
-  targetPosition: {x: 0, y: 0}
 --- !u!95 &1699463520
 Animator:
   serializedVersion: 5
