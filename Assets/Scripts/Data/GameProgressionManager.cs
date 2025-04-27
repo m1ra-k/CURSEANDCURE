@@ -180,13 +180,10 @@ public class GameProgressionManager : MonoBehaviour
         if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.startStep) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
         {
             tutorial.SetActive(!tutorial.activeSelf);
-            if(!tutorial.activeSelf && !HealingGameManager.resultText.gameObject.activeSelf)
+            
+            if (currentScene.Equals("HealingGame"))
             {
-                HealingGameManager.resultText.gameObject.SetActive(true);
-            }
-            if(tutorial.activeSelf)
-            {
-                HealingGameManager.resultText.gameObject.SetActive(false);
+                HealingGameManager.resultText.gameObject.SetActive(!HealingGameManager.resultText.gameObject.activeSelf);
             }
         }
     }
