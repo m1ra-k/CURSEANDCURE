@@ -2,21 +2,251 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Woman",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "WomanNeutral"
                 ],
-                "dialogue": "tavern woman 2",
+                "dialogue": "My friend's been dancing nonstop.",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Woman",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "WomanNeutral"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "But my friend across the table from me doesn't like it.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "I think he's just a bit worried...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Yes, but she's always been like this.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Ever since we were little, she would always be dancing.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "In school, walking back, helping with the plants.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "No matter what she did she always wanted to practice dancing.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "She must really love dancing then.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "*sigh*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Hm?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "I think it's my fault.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "You know about my bad leg, don't you, Lilith?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "Yes. I heard you injured it as a kid and it never healed.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Yes, and because of that I can't walk like you folks can.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "When I was little, before I hurt my leg, I would dance all of the time.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Me and her, we would dance together.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "It was my dream to dance on a stage.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "But...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "... I'm sorry.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "No, it's alright.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "But because of that my friend's been practing her dancing,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "to dance on a stage, to make my dream into our dream.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "I wish she didn't put such a heavy burden on herself.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "After all,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "my dream now is just to see her happy.",
                 "textSpeed": 0
             },
             "endOfScene": true

@@ -6,15 +6,23 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "tavern woman 1",
+                "dialogue": "",
                 "textSpeed": 0
             }
         },
+
+
+
+
+
+
+
+        
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Woman",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "WomanNeutral"
                 ],
                 "dialogue": "tempty",
                 "textSpeed": 0
