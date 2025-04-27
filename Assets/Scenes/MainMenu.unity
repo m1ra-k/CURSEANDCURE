@@ -745,14 +745,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1779485846}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1779485848}
-        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_TargetAssemblyTypeName: TransitionButton, Assembly-CSharp
+        m_MethodName: Transition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -809,10 +809,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1779485842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c85d7574a75e0794a828b4a8245088e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a6a518bbee84b749b687a27fbd3d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameProgressionManager: {fileID: 0}
+  GameProgressionManagerInstance: {fileID: 0}
+  buttonType: Play
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

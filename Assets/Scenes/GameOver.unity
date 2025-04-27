@@ -499,8 +499,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762522128}
-        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
-        m_MethodName: RetryGame
+        m_TargetAssemblyTypeName: TransitionButton, Assembly-CSharp
+        m_MethodName: Transition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -557,10 +557,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 762522123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ccbc561758e2045b837d9dab76a5a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a6a518bbee84b749b687a27fbd3d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameProgressionManager: {fileID: 0}
+  GameProgressionManagerInstance: {fileID: 0}
+  buttonType: Retry
 --- !u!1 &1116644515
 GameObject:
   m_ObjectHideFlags: 0
