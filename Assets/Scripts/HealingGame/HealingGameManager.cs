@@ -208,7 +208,7 @@ public class HealingGameManager : MonoBehaviour
             float elapsedTime = 0f;
             while (elapsedTime < shakeDuration)
             {
-                float shakeOffset = Mathf.Sin(elapsedTime * Mathf.PI * 2) * shakeAmount;
+                float shakeOffset = Mathf.Sin(elapsedTime * Mathf.PI * 2) * shakeAmount / 50;
                 minigameArt.transform.position = minigameArtPositionInitial + new Vector3(shakeOffset, 0f, 0f);
 
                 elapsedTime += Time.deltaTime;
