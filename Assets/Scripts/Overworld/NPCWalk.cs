@@ -24,7 +24,7 @@ public class NPCWalk : MonoBehaviour
     };
     private string currentAnimation = "Male1NPCWalkUp";
 
-    private float moveSpeed = 1f;
+    private float moveSpeed = 3f;
 
     private bool isWalking = true;
 
