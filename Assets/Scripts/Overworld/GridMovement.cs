@@ -194,14 +194,9 @@ public class GridMovement : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        print($"curr was: {lilithCurrentPosition} and target is {lilithNextPosition}");
-
-
         if ((Vector2) transform.position == targetPosition) 
         {
-            print("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             lilithCurrentPosition = targetPosition;
-            print($"curr: {lilithCurrentPosition}");
             startStep = false;
             overrideIsMoving = false;
         }
