@@ -8860,7 +8860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136, y: 161}
+  m_AnchoredPosition: {x: 136, y: 140}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068836464
@@ -25560,7 +25560,7 @@ PrefabInstance:
     - target: {fileID: 1548456828795602043, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1736686303, guid: 856f7d703488d4740be819866de4e9c8, type: 3}
+      objectReference: {fileID: -27494659, guid: 856f7d703488d4740be819866de4e9c8, type: 3}
     - target: {fileID: 5465163243255384806, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_Name
       value: TavernWoman2NPC
@@ -25571,7 +25571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.5
+      value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: 35b595c9e2e138043860e5968455f220, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26038,7 +26038,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1187086914963464067, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.5
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 1187086914963464067, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26092,6 +26092,10 @@ PrefabInstance:
       propertyPath: characterDialogues.Array.data[0]
       value: 
       objectReference: {fileID: 4900000, guid: 665d7e69cf665f3489db83545361d0c9, type: 3}
+    - target: {fileID: 6857258699828932082, guid: 2d092e65314f16d40bcd18168bc47c56, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1965255895, guid: 806afb32919730e448725db631bbc795, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
