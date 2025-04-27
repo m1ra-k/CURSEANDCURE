@@ -57,7 +57,7 @@ A mysterious vampire from the lower ward. Her identity is only known by the peop
 
 --> Speaking of after the second patient... it goes from evening to night. So a lot of people aren't outside anymore. Where could they be?
 
---> Wow... bump sound effects when you bump into something! Small details.
+--> Wow... bump sound effects when you bump into something! And doors when you go through them. Small details.
 
 --> Some characters turn to face you when you talk... and others don't. For comedic purposes!
 --> Some characters turn to face you when you talk... and others don't. For comedic purposes!
