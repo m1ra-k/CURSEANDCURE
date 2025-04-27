@@ -10,7 +10,7 @@ public enum CharacterEnum
     Girl,
     Lilith,
     Man,
-    [Description("SYSTEM")]
+    [Description("TIP!")]
     System,
     [Description("Hilda")]
     TavernKeeper,

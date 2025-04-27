@@ -17,9 +17,6 @@ public class GameProgressionManager : MonoBehaviour
     public bool transitioning;
     public string previousScene;
     public int lilithPatientNumber = 0;
-
-    [Header("[Start Screen]")]
-    private Button playButton;
     
     [Header("[Overworld]")]
     public GameObject lilith;
@@ -27,23 +24,24 @@ public class GameProgressionManager : MonoBehaviour
     public GridMovement lilithGridMovement;
     public string directionFacing = "down";
 
-    public GameObject tutorial;
-    public GameObject dialogueCanvas;
     public DialogueSystemManager DialogueSystemManager;
-    public List<string> complementedOneTimeEvents;
+    public GameObject dialogueCanvas;
+    public HashSet<string> complementedOneTimeEvents = new();
     public bool currentlyTalking;
     public string lastTalkedNPC;
 
+    public CharacterDialogueData patientCharacterDialogueData;
     public bool finishedCurrentRound;
     public bool healedPatient;
-    public CharacterDialogueData patientCharacterDialogueData;
 
     public string currentLocation;
 
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
 
+    public GameObject tutorial;
     private GameObject[] tutorialTexts;
+    private bool unlockedTutorial;
 
     [Header("[Healing Game]")]
     private HealingGameManager HealingGameManager;
@@ -99,11 +97,6 @@ public class GameProgressionManager : MonoBehaviour
 
         switch (currentScene)
         {
-            case "StartScreen":
-                playButton = GameObject.FindWithTag("Button").GetComponent<Button>();
-
-                break;
-
             case "Overworld":
                 dialogueCanvas = GameObject.FindWithTag("Dialogue");
                 DialogueSystemManager = dialogueCanvas.GetComponentInChildren<DialogueSystemManager>();
@@ -177,18 +170,21 @@ public class GameProgressionManager : MonoBehaviour
 
     void Update()
     {
-        if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.startStep) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
+        unlockedTutorial = unlockedTutorial || complementedOneTimeEvents.Contains("HeyHilda");
+
+        if (unlockedTutorial)
         {
-            tutorial.SetActive(!tutorial.activeSelf);
-            if(!tutorial.activeSelf && !HealingGameManager.resultText.gameObject.activeSelf)
+            if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.startStep && !lilithGridMovement.currentlyDoorTransitioning) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
             {
-                HealingGameManager.resultText.gameObject.SetActive(true);
-            }
-            if(tutorial.activeSelf)
-            {
-                HealingGameManager.resultText.gameObject.SetActive(false);
+                tutorial.SetActive(!tutorial.activeSelf);
+
+                if (currentScene.Equals("HealingGame"))
+                {
+                    HealingGameManager.resultText.gameObject.SetActive(!HealingGameManager.resultText.gameObject.activeSelf);
+                }
             }
         }
+        
     }
 
     public void StopMusic()

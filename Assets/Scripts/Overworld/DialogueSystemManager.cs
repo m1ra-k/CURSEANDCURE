@@ -29,6 +29,7 @@ public class DialogueSystemManager : MonoBehaviour
     public RectTransform normalDialogueRectTransform;
     private float targetNormalDialogueWidth;
     public GameObject normalCharacterName;
+    public GameObject normalIndicator;
     private GameObject cgDialogue;
     private GameObject cgCharacterName;
     public TextAsset visualNovelJSONFile;
@@ -318,47 +319,23 @@ public class DialogueSystemManager : MonoBehaviour
     {
         dialogueOnDisplay = baseDialogue.dialogue;
 
-        if (baseDialogue.vnType != VNTypeEnum.CG && baseDialogue.vnType != VNTypeEnum.CGAndChoice)
-        { 
-            // set character name
-            normalCharacterName.GetComponent<TextMeshProUGUI>().text = baseDialogue.character.GetParsedName();
+        // set character name
+        normalCharacterName.GetComponent<TextMeshProUGUI>().text = !baseDialogue.character.GetParsedName().Equals("TIP!") 
+                                                                    ? baseDialogue.character.GetParsedName()
+                                                                    : "";
 
-            if (normalDialogueRectTransform.sizeDelta.x != targetNormalDialogueWidth)
-            {
-                normalDialogueRectTransform.sizeDelta = new Vector2(targetNormalDialogueWidth, normalDialogueRectTransform.sizeDelta.y);
-            }
-
-            // set dialogue
-            typeWriterCoroutine = StartCoroutine(TypeWriterEffect(baseDialogue.character.ToString(), baseDialogue.dialogue));
-        }
-        else 
+        if (normalDialogueRectTransform.sizeDelta.x != targetNormalDialogueWidth)
         {
-            if (baseDialogue.vnType != VNTypeEnum.CG && baseDialogue.vnType != VNTypeEnum.CGAndChoice) 
-            {
-                // set character name
-                normalCharacterName.GetComponent<TextMeshProUGUI>().text = baseDialogue.character.GetParsedName();
-
-                // set dialogue
-                normalDialogue.GetComponent<TextMeshProUGUI>().text = baseDialogue.dialogue;
-            }
-            else
-            {
-                // set character name
-                cgCharacterName.GetComponent<TextMeshProUGUI>().text = baseDialogue.character.GetParsedName();
-
-                // set dialogue
-                cgDialogue.GetComponent<TextMeshProUGUI>().text = baseDialogue.dialogue;
-
-                // set dialogue
-                typeWriterCoroutine = StartCoroutine(TypeWriterEffect(baseDialogue.character.ToString(), baseDialogue.dialogue, inCG: true));
-
-                // set character name
-                StartCoroutine(Fade(cgCharacterName, null, 0, 1)); // fade in
-
-                // set dialogue
-                StartCoroutine(Fade(cgDialogue, null, 0, 1)); // fade in
-            }
+            normalDialogueRectTransform.sizeDelta = new Vector2(targetNormalDialogueWidth, normalDialogueRectTransform.sizeDelta.y);
         }
+
+        // set dialogue
+        typeWriterCoroutine = StartCoroutine(TypeWriterEffect(baseDialogue.character.ToString(), baseDialogue.dialogue));
+        
+        // set indicator, if needed
+        normalIndicator.GetComponent<TextMeshProUGUI>().text = baseDialogue.character.GetParsedName().Equals("TIP!") 
+                                                                ? baseDialogue.character.GetParsedName()
+                                                                : ""; 
     }
 
     void SkipTypeWriterEffect(bool inCG = false) 

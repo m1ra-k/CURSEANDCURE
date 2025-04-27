@@ -75,12 +75,12 @@ public class HealingGameManager : MonoBehaviour
 
     void Update()
     {
-        if (!finishedGame)
+        if (startedGame && !finishedGame)
         {
             AdjustHealingGauge();
         }
 
-        if (!startedGame && (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return)))
+        if (!startedGame && !GameProgressionManagerInstance.tutorial.activeSelf && (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return)))
         {
             StopCoroutine(flashingStartTextCoroutine);
             resultText.text = "";

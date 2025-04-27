@@ -6,6 +6,7 @@ public class TransitionButton : MonoBehaviour
     public GameProgressionManager GameProgressionManagerInstance;
     public string buttonType;
     private Button progressionButton;
+    private bool pressedButton;
 
     void Awake()
     {
@@ -19,9 +20,10 @@ public class TransitionButton : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)) && !pressedButton)
         {
             progressionButton.onClick.Invoke();
+            pressedButton = true;
         }
     }
 
