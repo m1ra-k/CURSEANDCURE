@@ -28,6 +28,12 @@ public class HealingGameManager : MonoBehaviour
     private RectTransform rangeRectTransform;
 
     [Header("[UI]")]
+    [SerializeField]
+    private AnimationClip[] lilithHealingAnimations;
+    // REMOVE
+    [SerializeField]
+    private Sprite[] lilithHealingAnimationStills;
+
     private Coroutine flashingStartTextCoroutine;
     public int score;
     private string cachedScore = "";
@@ -62,15 +68,8 @@ public class HealingGameManager : MonoBehaviour
         flashingStartTextCoroutine = StartCoroutine(FlashingStartText());
 
         minigameArt = GameObject.FindWithTag("Image");
-        if(minigameArt==null){
-            Debug.Log("Image lost");
-            return;
-        }
-         minigameArtSpriteRenderer=minigameArt.GetComponent<SpriteRenderer>();
-        if(minigameArtSpriteRenderer==null){
-            Debug.Log("Null renderer");
-        }
-        minigameArtSprite=minigameArtSpriteRenderer.sprite;
+        minigameArtSpriteRenderer = minigameArt.GetComponent<SpriteRenderer>();
+        minigameArtSprite = minigameArtSpriteRenderer.sprite;
         minigameArtPositionInitial = minigameArt.transform.position;
     }
 
@@ -87,6 +86,7 @@ public class HealingGameManager : MonoBehaviour
             resultText.text = "";
             StartCoroutine(AdjustForAllHealingRange());
             startedGame = true;
+            minigameArtSpriteRenderer.sprite = lilithHealingAnimationStills[1];
         }
 
         if ($"SCORE: {score}" != cachedScore && score <= 100)

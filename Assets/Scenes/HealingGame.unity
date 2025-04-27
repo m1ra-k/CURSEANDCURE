@@ -1038,7 +1038,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e883ae278fad20542aab2762d3541340, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abb32a9a8a6aeeb4b87a8fedfda45b68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1329,6 +1329,10 @@ MonoBehaviour:
   healingRangeList:
     healingRanges: []
   rangeRectTransform: {fileID: 1925854256}
+  lilithHealingAnimations: []
+  lilithHealingAnimationStills:
+  - {fileID: 21300000, guid: abb32a9a8a6aeeb4b87a8fedfda45b68, type: 3}
+  - {fileID: 21300000, guid: 5ec1a4ec06cad9844832903fc0909cff, type: 3}
   score: 0
   retroFont: {fileID: 11400000, guid: e37ae4858b2a08f47b1b17426b96140f, type: 2}
   scoreText: {fileID: 188460501}
