@@ -66,6 +66,16 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
+                "dialogue": "Uncontrollable dancing and being a maniac are symptoms, aren't they?!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
                 "dialogue": "You can heal her, right?!",
                 "textSpeed": 0
             }

@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "*busy tavern*",
+                "dialogue": "Wow. Looks like the tavern's pretty busy tonight.",
                 "textSpeed": 0
             }
         },
@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "I don't think I can ever welcome the taste of tarnished blood in my mouth.",
+                "dialogue": "I'll see if Hilda needs help and check on the patrons.",
                 "textSpeed": 0
             },   
             "endOfScene": true
