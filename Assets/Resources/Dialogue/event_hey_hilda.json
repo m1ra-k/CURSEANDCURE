@@ -366,7 +366,7 @@
                 "speakerSprite": [
                     "Transparent"
                 ],
-                "dialogue": "Press ESC to access Lilith's patient list for the night.",
+                "dialogue": "You can now press ESC to access your patient list for the night.",
                 "textSpeed": 0
             },
             "endOfScene": true
