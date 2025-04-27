@@ -13,7 +13,7 @@ public class NPCWalk : MonoBehaviour
     private Vector2[] pathCoordinates;
     private int index;
 
-    public Vector2 targetPosition;
+    private Vector2 targetPosition;
 
     private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
     {
@@ -126,8 +126,11 @@ public class NPCWalk : MonoBehaviour
             
             if ((Vector2) transform.localPosition != targetSnapPosition)    transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
             
-            animator.Play(currentAnimation, 0, 0f);
-            animator.speed = 0f;
+            if (!GameProgressionManagerInstance.currentlyTalking)
+            {
+                animator.Play(currentAnimation, 0, 0f);
+                animator.speed = 0f;
+            }
         }
         
         isWalking = !blocked;
