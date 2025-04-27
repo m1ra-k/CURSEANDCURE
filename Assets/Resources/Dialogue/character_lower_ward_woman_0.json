@@ -54,7 +54,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
                 "dialogue": "??",
                 "textSpeed": 0
@@ -164,7 +164,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked" 
+                    "LilithFrown" 
                 ],
                 "dialogue": "(I should get going...)",
                 "textSpeed": 0

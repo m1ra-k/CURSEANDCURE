@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Good morn--Ah, goodnight, Lilith.",
+                "dialogue": "Good morn--Ah, good night, Lilith.",
                 "textSpeed": 0
             }
         },
@@ -104,7 +104,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
                 "dialogue": "?",
                 "textSpeed": 0

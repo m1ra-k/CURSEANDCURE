@@ -134,7 +134,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
                 "dialogue": "Holy water?",
                 "textSpeed": 0

@@ -124,7 +124,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
                 "dialogue": "(A playdate?!)",
                 "textSpeed": 0
@@ -134,7 +134,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
                 "dialogue": "(I guess I shouldn't ask more...)",
                 "textSpeed": 0

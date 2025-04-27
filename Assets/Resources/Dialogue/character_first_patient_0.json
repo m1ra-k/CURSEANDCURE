@@ -14,7 +14,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "Here, let me see your arm!",
                 "textSpeed": 0

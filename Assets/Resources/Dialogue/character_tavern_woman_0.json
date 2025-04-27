@@ -44,7 +44,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "What?!",
                 "textSpeed": 0

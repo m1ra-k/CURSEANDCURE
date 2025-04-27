@@ -44,7 +44,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithNeutral"
                 ],
                 "dialogue": "!",
                 "textSpeed": 0
@@ -54,7 +54,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithNeutral"
+                    "LilithHappy"
                 ],
                 "dialogue": "Where are you going? I can walk you there.",
                 "textSpeed": 0
