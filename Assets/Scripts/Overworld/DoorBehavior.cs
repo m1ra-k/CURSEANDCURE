@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class DoorBehavior : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class DoorBehavior : MonoBehaviour
     // lilith
     private GridMovement lilithGridMovement;
 
+    // audio
+    private AudioSource parentAudioSource;
+
     void Start()
     {
         // state
@@ -27,6 +31,9 @@ public class DoorBehavior : MonoBehaviour
 
         // lilith
         lilithGridMovement = GameProgressionManagerInstance.lilith.GetComponent<GridMovement>();
+
+        // audio source
+        parentAudioSource = transform.parent.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -55,6 +62,8 @@ public class DoorBehavior : MonoBehaviour
         GameProgressionManagerInstance.fadeEffect.FadeIn(GameProgressionManagerInstance.blackTransition, 0.5f);
         
         GameProgressionManagerInstance.CheckMusicChange();
+
+        parentAudioSource.PlayOneShot(parentAudioSource.clip);
 
         yield return new WaitForSeconds(0.75f);
 
