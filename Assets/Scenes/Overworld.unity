@@ -1362,10 +1362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  lilithCurrentPosition: {x: 0, y: 0}
+  lilithNextPosition: {x: 0, y: 0}
   movementVector: {x: 0, y: 0}
   prevMovementVector: {x: 0, y: 0}
   prevPrevMovementVector: {x: 0, y: 0}
-  isMoving: 0
+  startStep: 0
   overrideIsMoving: 0
   currentlyDoorTransitioning: 0
   lilithAnimations:
@@ -17726,11 +17728,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8121f1e821f5244c9b6aa821fa1836d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameProgressionManagerInstance: {fileID: 0}
   pathCoordinates:
   - {x: 33.5, y: -18.5}
   - {x: 29.5, y: -18.5}
   - {x: 29.5, y: -21.5}
   - {x: 33.5, y: -21.5}
+  targetPosition: {x: 0, y: 0}
 --- !u!95 &1699463520
 Animator:
   serializedVersion: 5
