@@ -2,21 +2,201 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Woman",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "WomanNeutral"
                 ],
-                "dialogue": "tavern woman 0",
+                "dialogue": "*sigh*",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Woman",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "WomanNeutral"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Oh, hey, Lilith.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Hi, miss.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Lilith. Do you ever feel like you're surrounded by idiots?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithShocked"
+                ],
+                "dialogue": "What?!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "There's a drunkard on my right, and one in front of my face.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "My husband keeps whispering to himself to muster up courage to speak to me.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Seems like he's shy.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "But why?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "You two are married.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Looks like all the drinks made him forget...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "(That's kind of cute though...)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "And the man on my right, my good-for-nothing drunk brother,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "he's a lost cause.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "If he keeps drinking instead of conducting business",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "then the only business he'll have is funding this tavern with how much he drinks.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(That's a good thing for us, haha.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "*sigh* Sorry to keep you for so long, Lilith.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "I hope you enjoy the rest of your night.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "... I won't.",
                 "textSpeed": 0
             },
             "endOfScene": true
