@@ -56,7 +56,7 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "I'm practing to dance on a big stage.",
+                "dialogue": "I'm practicing to dance on a big stage.",
                 "textSpeed": 0
             }
         },
@@ -66,7 +66,27 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "Good luck! I believe in you!!",
+                "dialogue": "!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "That's sounds really fun!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Good luck, I believe in you!",
                 "textSpeed": 0
             }
         },

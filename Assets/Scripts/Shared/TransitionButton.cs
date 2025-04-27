@@ -27,6 +27,7 @@ public class TransitionButton : MonoBehaviour
 
     public void Transition()
     {
+        print("transition invoked");
         GameProgressionManagerInstance.TransitionScene(buttonType);
     }
 }

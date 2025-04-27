@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Have a have a look~",
+                "dialogue": "Have a look have a look~",
                 "textSpeed": 0
             }
         },
@@ -74,9 +74,19 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LiithHappy"
+                    "LilithHappy"
                 ],
                 "dialogue": "Maybe next time, gramps!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "(Can vampires even eat fish?)",
                 "textSpeed": 0
             },
             "endOfScene": true

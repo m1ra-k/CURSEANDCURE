@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithShocked"
                 ],
-                "dialogue": "Let me see your arm!",
+                "dialogue": "Here, let me see your arm!",
                 "textSpeed": 0
             }
         },
@@ -56,7 +56,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "Don't worry, you'll be feeling better soon!",
+                "dialogue": "Don't worry, you'll be feeling better soon.",
                 "textSpeed": 0
             }
         },
@@ -76,7 +76,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(It's okay. I've done this before.)",
+                "dialogue": "(It's okay. It's okay. I've done this before.)",
                 "textSpeed": 0
             }
         },
@@ -86,7 +86,37 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(I just have to take out the bad blood.)",
+                "dialogue": "(I just have to take out the tainted blood.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I have to be precise in my actions though...)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(It'd be horrible if I ended up draining too much.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(His condition... looks like the disease hasn't fully taken effect yet. I should have a good amount of time.)",
                 "textSpeed": 0
             }
         },

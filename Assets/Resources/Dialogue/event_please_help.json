@@ -16,7 +16,17 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Please help!!!",
+                "dialogue": "Lilith, thank goodness you're here!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "Please help!!",
                 "textSpeed": 0
             }
         },

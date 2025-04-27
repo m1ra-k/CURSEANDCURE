@@ -553,7 +553,7 @@ PrefabInstance:
     - target: {fileID: 5863129467556651436, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9716f33f75236d9409100eaef4a1dc1b, type: 3}
+      objectReference: {fileID: 8300000, guid: 2268651222c18744397383f98ef0178b, type: 3}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: sceneNumber
       value: 1
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
-  buttonType: Play
+  buttonType: Overworld
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

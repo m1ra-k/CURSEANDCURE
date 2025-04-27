@@ -146,7 +146,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Maybe I got the illness going around!!",
+                "dialogue": "Maybe I've got the illness that's been going around!!",
                 "textSpeed": 0
             }
         },
@@ -216,7 +216,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Erm-",
+                "dialogue": "Well-",
                 "textSpeed": 0
             },
             "endOfScene": true

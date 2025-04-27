@@ -711,7 +711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.08, y: -21.51}
+  m_AnchoredPosition: {x: -22.5, y: -24.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119753682
@@ -3064,7 +3064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511715411906664142, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2190693963473393147, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41496,7 +41496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757076324627688934, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4444946307903869599, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
       propertyPath: m_IsActive
@@ -41711,7 +41711,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1998837592}
   - component: {fileID: 1998837594}
-  - component: {fileID: 1998837593}
   m_Layer: 0
   m_Name: ChoiceBoxes
   m_TagString: Untagged
@@ -41738,18 +41737,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 170}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1998837593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998837591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31ff5d31d8dc87a4a9c32d6fc65b9141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1998837594
 MonoBehaviour:
   m_ObjectHideFlags: 0

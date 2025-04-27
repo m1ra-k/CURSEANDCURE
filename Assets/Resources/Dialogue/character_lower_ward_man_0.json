@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "Good evening.",
+                "dialogue": "Good evening, mister!",
                 "textSpeed": 0
             }
         },
@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "How is the tavern?",
+                "dialogue": "How's the tavern doing?",
                 "textSpeed": 0
             }
         },
@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Hope the church isn't goading on y'all too much.",
+                "dialogue": "Hope the church isn't goading on you all too much.",
                 "textSpeed": 0
             }
         },
@@ -97,6 +97,16 @@
                     "ManNeutral"
                 ],
                 "dialogue": "They don't care for our health, don't care for our kids,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "don't care for our kids,",
                 "textSpeed": 0
             }
         },

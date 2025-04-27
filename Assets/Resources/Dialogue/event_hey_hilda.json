@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Hahaha, you don't say! It's 'cus business has been looking good!",
+                "dialogue": "Hahaha, you don't say! It's 'cuz business has been pretty good these past couple of days.",
                 "textSpeed": 0
             }
         },
@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "And my day is even better to see you doing well.",
+                "dialogue": "And it makes my day even better to see you doing so well.",
                 "textSpeed": 0
             }
         },
@@ -46,7 +46,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "I feel like I've been putting too much pressure on you lately.",
+                "dialogue": "You know, I feel like I've been putting too much pressure on you lately.",
                 "textSpeed": 0
             }
         },
@@ -366,7 +366,7 @@
                 "speakerSprite": [
                     "Transparent"
                 ],
-                "dialogue": "To access Lilith's pateint list for the night press ESC.",
+                "dialogue": "Press ESC to access Lilith's patient list for the night.",
                 "textSpeed": 0
             },
             "endOfScene": true

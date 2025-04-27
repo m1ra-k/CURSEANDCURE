@@ -16,7 +16,37 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(Her breathing is labored...)",
+                "dialogue": "(Her breathing is strained...)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(It appears as though she's losing clarity in her judgment as well.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(Her husband is grasping her hand and supporting her back, but she keeps pushing him away.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(No sense of balance either... her condition really does seem quite bad...)",
                 "textSpeed": 0
             }
         },
