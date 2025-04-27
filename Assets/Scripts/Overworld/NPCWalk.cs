@@ -86,7 +86,7 @@ public class NPCWalk : MonoBehaviour
     private void SetNextUnitTarget()
     {
         Vector2 fullTarget = pathCoordinates[index];
-        Vector2 direction = fullTarget - (Vector2)transform.localPosition;
+        Vector2 direction = fullTarget - (Vector2) transform.localPosition;
 
         if (direction == Vector2.zero)
         {
@@ -118,20 +118,14 @@ public class NPCWalk : MonoBehaviour
 
     private void CheckShouldStopWalking()
     {
-        Vector2 lilithPosition = GameProgressionManagerInstance.lilithGridMovement.lilithCurrentPosition;
-        Vector2 lilithNextPosition = GameProgressionManagerInstance.lilithGridMovement.lilithNextPosition;
+        bool blocked = targetPosition == GameProgressionManagerInstance.lilithGridMovement.lilithCurrentPosition || targetPosition == GameProgressionManagerInstance.lilithGridMovement.lilithNextPosition;
 
-        if (targetPosition == lilithPosition || targetPosition == lilithNextPosition)
+        if (blocked)
         {
-            print($"boy's target: {targetPosition}, lilith position: {lilithPosition}, lilith next position: {lilithNextPosition}");
-        Vector2 targetSnapPosition = new Vector2(Mathf.Floor(transform.localPosition.x) + 0.5f, Mathf.Floor(transform.localPosition.y) + 0.5f);
-
-    transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
-            isWalking = false;
+            Vector2 targetSnapPosition = new Vector2(Mathf.Floor(transform.localPosition.x) + 0.5f, Mathf.Floor(transform.localPosition.y) + 0.5f);
+            transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
         }
-        else
-        {
-            isWalking = true;
-        }
+        
+        isWalking = !blocked;
     }
 }
