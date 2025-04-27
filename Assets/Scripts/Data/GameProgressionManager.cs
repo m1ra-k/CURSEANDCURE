@@ -154,9 +154,16 @@ public class GameProgressionManager : MonoBehaviour
                 if (currentTrack == -1) StartCoroutine(PlayMusic(1));
 
                 tutorial = GameObject.FindWithTag("Tutorial");
+
                 tutorial.SetActive(false);
 
                 HealingGameManager = FindObjectOfType<HealingGameManager>();
+
+                if (!HealingGameManager.startedGame && lilithPatientNumber==0)
+                {
+                    tutorial.SetActive(true);
+                    HealingGameManager.resultText.gameObject.SetActive(false);
+                }
 
                 break;
 
@@ -173,7 +180,16 @@ public class GameProgressionManager : MonoBehaviour
         if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.startStep) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
         {
             tutorial.SetActive(!tutorial.activeSelf);
+            if(!tutorial.activeSelf && !HealingGameManager.resultText.gameObject.activeSelf)
+            {
+                HealingGameManager.resultText.gameObject.SetActive(true);
+            }
+            if(tutorial.activeSelf)
+            {
+                HealingGameManager.resultText.gameObject.SetActive(false);
+            }
         }
+        
     }
 
     public void StopMusic()
