@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511715411906664142, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2190693963473393147, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -493,14 +493,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 762522126}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762522128}
-        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
-        m_MethodName: RetryGame
+        m_TargetAssemblyTypeName: TransitionButton, Assembly-CSharp
+        m_MethodName: Transition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -557,10 +557,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 762522123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ccbc561758e2045b837d9dab76a5a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a6a518bbee84b749b687a27fbd3d69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameProgressionManager: {fileID: 0}
+  GameProgressionManagerInstance: {fileID: 0}
+  buttonType: Retry
 --- !u!1 &1116644515
 GameObject:
   m_ObjectHideFlags: 0

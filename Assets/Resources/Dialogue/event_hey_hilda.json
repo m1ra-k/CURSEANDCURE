@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Hahaha, you don't say! It's 'cus business was great today!",
+                "dialogue": "Hahaha, you don't say! It's 'cuz business has been pretty good these past couple of days.",
                 "textSpeed": 0
             }
         },
@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "And my day is even better to see you doing well.",
+                "dialogue": "And it makes my day even better to see you doing so well.",
                 "textSpeed": 0
             }
         },
@@ -46,7 +46,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "I feel like I've been putting too much pressure on you lately.",
+                "dialogue": "You know, I feel like I've been putting too much pressure on you lately.",
                 "textSpeed": 0
             }
         },
@@ -156,7 +156,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "The night has come. You know what that means, right?",
+                "dialogue": "Night has come. You know what that means, right?",
                 "textSpeed": 0
             }
         },
@@ -176,7 +176,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "It's time to heal my patients for the day.",
+                "dialogue": "It's time to treat my patients for the day.",
                 "textSpeed": 0
             }
         },
@@ -196,7 +196,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "There's the woman who lives down across the river in the blue house with her husband,",
+                "dialogue": "There's the woman who lives down across the river in the blue house with her husband",
                 "textSpeed": 0
             }
         },
@@ -236,7 +236,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "He's been complaining about the his stomache ache.",
+                "dialogue": "He's been complaining about his stomacheache.",
                 "textSpeed": 0
             }
         },
@@ -277,6 +277,16 @@
                     "TavernKeeperFrown"
                 ],
                 "dialogue": "His speech is slurred and his skin is as pale as the moon.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "Sense of judgement doesn't seem very clear either, unless it's just the alcohol. I can't tell.",
                 "textSpeed": 0
             }
         },
@@ -347,6 +357,16 @@
                     "LilithNeutral"
                 ],
                 "dialogue": "I'll take care of him now!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "System",
+                "speakerSprite": [
+                    "Transparent"
+                ],
+                "dialogue": "Press ESC to access Lilith's patient list for the night.",
                 "textSpeed": 0
             },
             "endOfScene": true

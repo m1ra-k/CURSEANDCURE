@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Thank you again for doing this Lilith.",
+                "dialogue": "Thanks again for doing this, Lilith.",
                 "textSpeed": 0
             }
         },
@@ -66,7 +66,27 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "Right, with all these church-led targeted hunts for anyone they think's been 'touched by the night'...",
+                "dialogue": "Right, with all these church-led hunts that",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "target anyone they suspect has been 'touched by the night'.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "TavernKeeper",
+                "speakerSprite": [
+                    "TavernKeeperFrown"
+                ],
+                "dialogue": "...",
                 "textSpeed": 0
             }
         },
@@ -96,7 +116,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Haha. You're a good kid, Lilith.",
+                "dialogue": "... Haha. You're a good kid, Lilith.",
                 "textSpeed": 0
             }
         },

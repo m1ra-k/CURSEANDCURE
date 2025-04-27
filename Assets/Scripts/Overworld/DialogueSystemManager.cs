@@ -394,7 +394,7 @@ public class DialogueSystemManager : MonoBehaviour
                 {
                     case "Lilith":
                         characterNumber = 0;
-                        audioSource.pitch = 1.55f;
+                        audioSource.pitch = 1.275f;
                         break;
                     case "Ana":
                         characterNumber = 3;
@@ -419,6 +419,10 @@ public class DialogueSystemManager : MonoBehaviour
                     case "Girl":
                         characterNumber = 3;
                         audioSource.pitch = 2f;
+                        break;
+                    case "System":
+                        characterNumber = 2;
+                        audioSource.pitch = 0.6f;
                         break;
                     default:
                         characterNumber = 0;

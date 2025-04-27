@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "[BOY0], [GIRL2]! How are you guys doing?",
+                "dialogue": "Hey! How are you guys doing?",
                 "textSpeed": 0
             }
         },
@@ -142,9 +142,9 @@
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Boy",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "BoyHappy"
                 ],
                 "dialogue": "So cool! So cool!",
                 "textSpeed": 0
@@ -156,7 +156,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "Not as pretty as you, [GIRL2].",
+                "dialogue": "Not as pretty as you, lil' sis.",
                 "textSpeed": 0
             }
         },
@@ -166,7 +166,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "And as cool as you, [BOY0].",
+                "dialogue": "And as cool as you, lil' brother.",
                 "textSpeed": 0
             }
         },

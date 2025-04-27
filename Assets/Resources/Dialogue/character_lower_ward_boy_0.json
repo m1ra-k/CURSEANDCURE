@@ -2,21 +2,141 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
-                "dialogue": "empty",
+                "dialogue": "Vegetables!",
                 "textSpeed": 0
             }
         },
         {
             "baseDialogue": {
-                "character": "Girl",
+                "character": "Boy",
                 "speakerSprite": [
-                    "GirlHappy"
+                    "BoyHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Fresh vegetables!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Big sis! Come here!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "What are you doing here?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Selling vegetables!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "Where's your mom?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Not selling vegetables!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "I can see that...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "But she's usually the one selling vegetables, right?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "Yes!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "But mommy and daddy are going on a playdate tonight,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Boy",
+                "speakerSprite": [
+                    "BoyHappy"
+                ],
+                "dialogue": "so they asked me to sell vegetables.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithShocked"
+                ],
+                "dialogue": "(A playdate?!)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithShocked"
+                ],
+                "dialogue": "(I guess I shouldn't ask more...)",
                 "textSpeed": 0
             },
             "endOfScene": true

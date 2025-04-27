@@ -59,7 +59,8 @@ A mysterious vampire from the lower ward. Her identity is only known by the peop
 
 --> Wow... bump sound effects when you bump into something! Small details.
 
---> There's a dancing NPC. She's recurring in a few places too. Try finding her in both!
+--> Some characters turn to face you when you talk... and others don't. For comedic purposes!
+--> Some characters turn to face you when you talk... and others don't. For comedic purposes!
 
 --> There's a running NPC too! It was a big headache in terms of collision though... but he has funny dialogue if you listen to his mom by the well beforehand.
 
