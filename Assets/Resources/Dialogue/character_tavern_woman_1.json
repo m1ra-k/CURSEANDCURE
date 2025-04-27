@@ -2,29 +2,81 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Woman",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "WomanNeutral"
                 ],
-                "dialogue": "",
+                "dialogue": "La la la~",
                 "textSpeed": 0
             }
         },
-
-
-
-
-
-
-
-        
         {
             "baseDialogue": {
                 "character": "Woman",
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Lilith! Let's dance!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "I think I'll pass tonight.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Come on~",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "I'm sorry, I have more patients to see tonight.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "Ah, that's alright.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "But promise me a dance for next time~",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithHappy"
+                ],
+                "dialogue": "Haha, I promise!",
                 "textSpeed": 0
             },
             "endOfScene": true
