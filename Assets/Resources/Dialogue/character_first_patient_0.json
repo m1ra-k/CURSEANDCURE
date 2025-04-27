@@ -86,7 +86,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(I just have to take out the tainted blood.)",
+                "dialogue": "(I have to take out the tainted blood.)",
                 "textSpeed": 0
             }
         },
@@ -96,7 +96,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(I have to be precise in my actions though...)",
+                "dialogue": "(I just have to be precise in my actions though...)",
                 "textSpeed": 0
             }
         },
