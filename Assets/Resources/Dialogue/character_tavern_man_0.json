@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "tavern man 0",
+                "dialogue": "Drink! Drink! Drink!",
                 "textSpeed": 0
             }
         },
@@ -16,7 +16,157 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "tempty",
+                "dialogue": "Dad...",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "You're chanting for yourself.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "So what?",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "We need to celebrate my recovery, hahaha!!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*hiccup*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "I'm not even old enough to drink!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*hiccup* It's just medicine, sweety.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "It'll be alright! *hiccup*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Please, dad!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Let's go home already.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "You're daughter's right, mister.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "You should go home and get some rest.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*hiccup* *hiccup*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "What are you two talking about?!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "The night's still young, haha!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Girl",
+                "speakerSprite": [
+                    "GirlHappy"
+                ],
+                "dialogue": "Dad please!!",
                 "textSpeed": 0
             },
             "endOfScene": true
