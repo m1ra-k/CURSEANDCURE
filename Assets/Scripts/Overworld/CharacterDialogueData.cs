@@ -83,7 +83,7 @@ public class CharacterDialogueData : MonoBehaviour
                 {
                     GameProgressionManagerInstance.TransitionScene("HealingGame");
                 }
-                else
+                else if (turnsFace) 
                 {
                     spriteRenderer.sprite = originalFace;
                 }
@@ -92,7 +92,6 @@ public class CharacterDialogueData : MonoBehaviour
             {
                 if (turnsFace)
                 {
-                    // TODO
                     spriteRenderer.sprite = faces[talkingDirection];
                 }
 

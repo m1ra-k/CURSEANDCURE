@@ -170,7 +170,7 @@ public class GameProgressionManager : MonoBehaviour
 
     void Update()
     {
-        if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.isMoving) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
+        if (((currentScene == "Overworld" && !currentlyTalking && !lilithGridMovement.startStep) || (currentScene == "HealingGame" && !HealingGameManager.startedGame)) && Input.GetKeyDown(KeyCode.Escape))
         {
             tutorial.SetActive(!tutorial.activeSelf);
         }

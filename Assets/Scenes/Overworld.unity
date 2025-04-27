@@ -1362,10 +1362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
+  lilithCurrentPosition: {x: 0, y: 0}
+  lilithNextPosition: {x: 0, y: 0}
   movementVector: {x: 0, y: 0}
   prevMovementVector: {x: 0, y: 0}
   prevPrevMovementVector: {x: 0, y: 0}
-  isMoving: 0
+  startStep: 0
   overrideIsMoving: 0
   currentlyDoorTransitioning: 0
   lilithAnimations:
@@ -3130,11 +3132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 28.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: -20.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
@@ -14371,6 +14373,10 @@ PrefabInstance:
       value: Evening
       objectReference: {fileID: 0}
     - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
+      propertyPath: turnsFace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671709258359283340, guid: b5f056e200313e8458a705b06a7f24ff, type: 3}
       propertyPath: characterDialogues.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17726,6 +17732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8121f1e821f5244c9b6aa821fa1836d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameProgressionManagerInstance: {fileID: 0}
   pathCoordinates:
   - {x: 33.5, y: -18.5}
   - {x: 29.5, y: -18.5}

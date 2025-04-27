@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class NPCWalk : MonoBehaviour
 {
+    [Header("[State]")]
+    public GameProgressionManager GameProgressionManagerInstance;
+
     private Animator animator;
 
     private Vector2 movementDirection;
@@ -23,16 +26,24 @@ public class NPCWalk : MonoBehaviour
 
     private float moveSpeed = 3f;
 
+    private bool isWalking = true;
+
     void Start()
     {
+        GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
+
         animator = GetComponent<Animator>();
-        targetPosition = pathCoordinates[0];
-        SetMovementDirection();
+        SetNextUnitTarget();
     }
 
     void Update()
     {
-        if ((Vector2)transform.localPosition != targetPosition)
+        CheckShouldStopWalking();
+
+        if (!isWalking)
+            return;
+
+        if ((Vector2) transform.localPosition != targetPosition)
         {
             transform.localPosition = Vector2.MoveTowards(
                 transform.localPosition,
@@ -44,24 +55,53 @@ public class NPCWalk : MonoBehaviour
         }
         else
         {
-            index = (index + 1) % pathCoordinates.Length;
-            targetPosition = pathCoordinates[index];
-            SetMovementDirection();
+            Vector2 fullTarget = pathCoordinates[index];
+
+            if ((Vector2) transform.localPosition == fullTarget)
+            {
+                index = (index + 1) % pathCoordinates.Length;
+            }
+
+            if (isWalking)
+            {
+                SetNextUnitTarget();
+            }
         }
     }
 
-    private void SetMovementDirection()
+    private void SetMovementDirection(Vector2 direction)
     {
         movementDirection = Vector2.zero;
 
-        if (Mathf.Abs(targetPosition.x - transform.localPosition.x) > Mathf.Epsilon)
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
-            movementDirection.x = targetPosition.x > transform.localPosition.x ? 1 : -1;
+            movementDirection.x = Mathf.Sign(direction.x);
         }
-        else if (Mathf.Abs(targetPosition.y - transform.localPosition.y) > Mathf.Epsilon)
+        else
         {
-            movementDirection.y = targetPosition.y > transform.localPosition.y ? 1 : -1;
+            movementDirection.y = Mathf.Sign(direction.y);
         }
+    }
+
+    private void SetNextUnitTarget()
+    {
+        Vector2 fullTarget = pathCoordinates[index];
+        Vector2 direction = fullTarget - (Vector2) transform.localPosition;
+
+        if (direction == Vector2.zero)
+        {
+            targetPosition = fullTarget;
+            return;
+        }
+
+        SetMovementDirection(direction);
+
+        Vector2 nextStep = (Vector2)transform.localPosition + new Vector2(
+            movementDirection.x,
+            movementDirection.y
+        );
+
+        targetPosition = nextStep;
     }
 
     private void CheckSwitchAnimation()
@@ -74,5 +114,27 @@ public class NPCWalk : MonoBehaviour
                 currentAnimation = newAnimation;
             }
         }
+    }
+
+    private void CheckShouldStopWalking()
+    {
+        bool blocked = targetPosition == GameProgressionManagerInstance.lilithGridMovement.lilithCurrentPosition || targetPosition == GameProgressionManagerInstance.lilithGridMovement.lilithNextPosition;
+
+        if (blocked)
+        {
+            Vector2 targetSnapPosition = new Vector2(Mathf.Floor(transform.localPosition.x) + 0.5f, Mathf.Floor(transform.localPosition.y) + 0.5f);
+            
+            if ((Vector2) transform.localPosition != targetSnapPosition)    transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
+            
+            if (!GameProgressionManagerInstance.currentlyTalking)
+            {
+                animator.Play(currentAnimation, 0, 0f);
+                animator.speed = 0f;
+            }
+        }
+        
+        isWalking = !blocked;
+
+        if (isWalking && animator.speed == 0)  animator.speed = 1f;
     }
 }
