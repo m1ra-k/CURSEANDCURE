@@ -124,15 +124,10 @@ public class NPCWalk : MonoBehaviour
         {
             Vector2 targetSnapPosition = new Vector2(Mathf.Floor(transform.localPosition.x) + 0.5f, Mathf.Floor(transform.localPosition.y) + 0.5f);
             
-            if ((Vector2) transform.localPosition != targetSnapPosition)
-            {
-                transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
-            }
-            else
-            {
-                animator.Play(currentAnimation, 0, 0f);
-                animator.speed = 0f;
-            }
+            if ((Vector2) transform.localPosition != targetSnapPosition)    transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
+            
+            animator.Play(currentAnimation, 0, 0f);
+            animator.speed = 0f;
         }
         
         isWalking = !blocked;
