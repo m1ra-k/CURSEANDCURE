@@ -38,6 +38,7 @@ public class GameProgressionManager : MonoBehaviour
 
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
+    private GameObject lastPatient;
     private GameObject ana;
 
     public GameObject tutorial;
@@ -122,6 +123,7 @@ public class GameProgressionManager : MonoBehaviour
 
                 eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
                 nightObjects = GameObject.FindGameObjectsWithTag("Night");
+                lastPatient = GameObject.FindWithTag("LateNight");
                 ana = GameObject.FindWithTag("Midnight");
 
                 foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects)
