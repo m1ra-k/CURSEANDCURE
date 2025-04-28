@@ -156,7 +156,8 @@ public class GameProgressionManager : MonoBehaviour
 
                 HealingGameManager = FindObjectOfType<HealingGameManager>();
 
-                if (!HealingGameManager.startedGame && lilithPatientNumber==0)
+                // TODO CLEAN
+                if (!HealingGameManager.startedGame && lilithPatientNumber == 0)
                 {
                     tutorial.SetActive(true);
                     HealingGameManager.resultText.gameObject.SetActive(false);

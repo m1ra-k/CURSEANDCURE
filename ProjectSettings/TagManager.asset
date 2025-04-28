@@ -14,6 +14,7 @@ TagManager:
   - Evening
   - TutorialText
   - Midnight
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -134,7 +134,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithFrown"
+                    "LilithNeutral"
                 ],
                 "dialogue": "(I got this.)",
                 "textSpeed": 0

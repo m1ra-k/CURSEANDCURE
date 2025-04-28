@@ -28,6 +28,7 @@ public class HealingGameManager : MonoBehaviour
     private RectTransform rangeRectTransform;
 
     [Header("[UI]")]
+    private GameObject[] healingGameUI;
     [SerializeField]
     private AnimationClip[] lilithHealingAnimations;
     // REMOVE
@@ -71,6 +72,9 @@ public class HealingGameManager : MonoBehaviour
         minigameArtSpriteRenderer = minigameArt.GetComponent<SpriteRenderer>();
         minigameArtSprite = minigameArtSpriteRenderer.sprite;
         minigameArtPositionInitial = minigameArt.transform.position;
+
+        healingGameUI = GameObject.FindGameObjectsWithTag("UI");
+        foreach (var hGUI in healingGameUI) hGUI.SetActive(false);
     }
 
     void Update()
@@ -87,6 +91,8 @@ public class HealingGameManager : MonoBehaviour
             StartCoroutine(AdjustForAllHealingRange());
             startedGame = true;
             minigameArtSpriteRenderer.sprite = lilithHealingAnimationStills[1];
+
+            foreach (var hGUI in healingGameUI) hGUI.SetActive(true);
         }
 
         if ($"SCORE: {score}" != cachedScore && score <= 100)
