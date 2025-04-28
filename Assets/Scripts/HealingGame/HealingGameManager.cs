@@ -42,6 +42,9 @@ public class HealingGameManager : MonoBehaviour
     private TMP_FontAsset retroFont;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI resultText;
+    public TextMeshProUGUI timeText;
+    private int frameCount;
+    private int time = 30;
     private float shakeDuration = 0.5f;
     private GameObject minigameArt;
     private Sprite minigameArtSprite;
@@ -82,6 +85,16 @@ public class HealingGameManager : MonoBehaviour
         if (startedGame && !finishedGame)
         {
             AdjustHealingGauge();
+
+            print(frameCount);
+            
+            if (frameCount == 60)
+            {
+                time--;
+                timeText.text = $"00:{time:D2}";
+                frameCount = 0;
+            }
+            frameCount++;
         }
 
         if (!startedGame && !GameProgressionManagerInstance.tutorial.activeSelf && (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return)))

@@ -1344,6 +1344,7 @@ MonoBehaviour:
   retroFont: {fileID: 11400000, guid: e37ae4858b2a08f47b1b17426b96140f, type: 2}
   scoreText: {fileID: 188460501}
   resultText: {fileID: 1189883469}
+  timeText: {fileID: 1485615872}
 --- !u!4 &930277981
 Transform:
   m_ObjectHideFlags: 0
