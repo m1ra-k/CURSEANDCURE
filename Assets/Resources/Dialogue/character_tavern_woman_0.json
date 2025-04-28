@@ -172,6 +172,16 @@
         },
         {
             "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(I won't say that though.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
                 "character": "Woman",
                 "speakerSprite": [
                     "WomanNeutral"

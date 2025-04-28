@@ -2,9 +2,9 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
                 "dialogue": "Urgh!!",
                 "textSpeed": 0
@@ -12,9 +12,9 @@
         },
         {
             "baseDialogue": {
-                "character": "Man",
+                "character": "Boy",
                 "speakerSprite": [
-                    "ManNeutral"
+                    "BoyHappy"
                 ],
                 "dialogue": "Blehhh!",
                 "textSpeed": 0
@@ -36,7 +36,17 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(I should hurry.)",
+                "dialogue": "(That must be the last patient...)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "(I should hurry!)",
                 "textSpeed": 0
             },
             "endOfScene": true

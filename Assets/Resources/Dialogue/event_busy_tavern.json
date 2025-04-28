@@ -14,7 +14,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithFrown"
+                    "LilithHappy"
                 ],
                 "dialogue": "I'll see if Hilda needs help and check on the patrons.",
                 "textSpeed": 0

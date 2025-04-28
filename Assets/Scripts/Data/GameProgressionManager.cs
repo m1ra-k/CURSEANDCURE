@@ -38,6 +38,7 @@ public class GameProgressionManager : MonoBehaviour
 
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
+    private GameObject ana;
 
     public GameObject tutorial;
     private GameObject[] tutorialTexts;
@@ -121,11 +122,14 @@ public class GameProgressionManager : MonoBehaviour
 
                 eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
                 nightObjects = GameObject.FindGameObjectsWithTag("Night");
+                ana = GameObject.FindWithTag("Midnight");
 
                 foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects)
                 {
                     obj.SetActive(false);
                 }
+
+                ana.SetActive(lilithPatientNumber == 3);
 
                 tutorial = GameObject.FindWithTag("Tutorial");
                 tutorialTexts = GameObject.FindGameObjectsWithTag("TutorialText");

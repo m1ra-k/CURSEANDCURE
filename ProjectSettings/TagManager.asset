@@ -13,6 +13,7 @@ TagManager:
   - Night
   - Evening
   - TutorialText
+  - Midnight
   layers:
   - Default
   - TransparentFX

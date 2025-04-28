@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "You're chanting for yourself.",
+                "dialogue": "You're chanting for yourself...",
                 "textSpeed": 0
             }
         },
@@ -67,6 +67,16 @@
                     "ManNeutral"
                 ],
                 "dialogue": "It'll be aaaaaaaaaaaaalright! *hiccup*",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "I won't tell your mooooooooooooooom.",
                 "textSpeed": 0
             }
         },
