@@ -1316,7 +1316,7 @@ Transform:
   m_GameObject: {fileID: 189428851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.5, y: -20.5, z: 0}
+  m_LocalPosition: {x: 11.5, y: -17.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3132,11 +3132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.x
-      value: 0.5
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPosition.y
-      value: 2.5
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: progressionSystem
@@ -3144,7 +3144,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 6def72d7de14ecb40afa5e5e6a5b5615, type: 2}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: lilithPatientNumber
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7556296471560767542, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: audioClips.Array.size
@@ -21537,7 +21537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.5
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21575,10 +21575,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9103756190318337458, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.28125
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103756190318337458, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.484375
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1353190854210564566, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5465163243255384806, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1991034060}
+    - targetCorrespondingSourceObject: {fileID: 5465163243255384806, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1991034061}
   m_SourcePrefab: {fileID: 100100000, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
 --- !u!4 &1528515581 stripped
 Transform:
@@ -24881,6 +24896,8 @@ MonoBehaviour:
   - {x: 29.5, y: -18.5}
   - {x: 29.5, y: -21.5}
   - {x: 33.5, y: -21.5}
+  npcName: Male1NPC
+  moveSpeed: 3
 --- !u!95 &1699463520
 Animator:
   serializedVersion: 5
@@ -41899,6 +41916,49 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8067632750021942381, guid: 55348c1a47ebca74c9e73151b7cf4a9f, type: 3}
   m_PrefabInstance: {fileID: 1987230997}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1991034055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5465163243255384806, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
+  m_PrefabInstance: {fileID: 1528515580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1991034060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991034055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8121f1e821f5244c9b6aa821fa1836d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameProgressionManagerInstance: {fileID: 0}
+  pathCoordinates:
+  - {x: 14.5, y: -17.5}
+  npcName: Ana
+  moveSpeed: 1.25
+--- !u!95 &1991034061
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991034055}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4739682beab2b8a409df03ccd7d80b73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1995972186
 GameObject:
   m_ObjectHideFlags: 0

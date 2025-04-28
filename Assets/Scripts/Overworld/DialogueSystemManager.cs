@@ -332,6 +332,13 @@ public class DialogueSystemManager : MonoBehaviour
         // set dialogue
         typeWriterCoroutine = StartCoroutine(TypeWriterEffect(baseDialogue.character.ToString(), baseDialogue.dialogue));
         
+        // TODO SUPER HARDCODED
+        if (baseDialogue.dialogue.Contains("(and he stopped coughing as much.)"))
+        {
+            print("debug");
+            GameProgressionManagerInstance.PlayMusic(-1);
+        }
+
         // set indicator, if needed
         normalIndicator.GetComponent<TextMeshProUGUI>().text = baseDialogue.character.GetParsedName().Equals("TIP!") 
                                                                 ? baseDialogue.character.GetParsedName()

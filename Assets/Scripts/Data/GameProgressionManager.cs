@@ -233,7 +233,7 @@ public class GameProgressionManager : MonoBehaviour
 
         yield return new WaitForSeconds(gameWaitTime);
 
-        if (index != currentTrack)
+        if (index != currentTrack && index != -1)
         {
             audioSourceBGM.clip = audioClips[index];
             audioSourceBGM.Play();
