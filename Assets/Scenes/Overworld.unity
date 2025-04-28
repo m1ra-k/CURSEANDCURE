@@ -3064,7 +3064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511715411906664142, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2190693963473393147, guid: 0bc529b942a79c34595e64928b4717e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15299,13 +15299,13 @@ Transform:
   - {fileID: 1408001900}
   - {fileID: 1157723708}
   - {fileID: 242660821}
-  - {fileID: 460541509}
   - {fileID: 1361345979}
   - {fileID: 1082849914}
   - {fileID: 1911209480}
   - {fileID: 154333081}
   - {fileID: 1304392256}
   - {fileID: 430540534}
+  - {fileID: 460541509}
   - {fileID: 1395810646}
   m_Father: {fileID: 650971804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21541,7 +21541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.5
+      value: -16.5
       objectReference: {fileID: 0}
     - target: {fileID: 7843016994950978454, guid: ff873ae25f267bd4ca2d8aed777a534d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41935,7 +41935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameProgressionManagerInstance: {fileID: 0}
   pathCoordinates:
-  - {x: 14.5, y: -17.5}
+  - {x: 14.5, y: -16.5}
   npcName: Ana
   moveSpeed: 1
 --- !u!95 &1991034061
