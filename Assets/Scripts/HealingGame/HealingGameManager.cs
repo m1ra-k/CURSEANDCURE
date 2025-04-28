@@ -85,8 +85,6 @@ public class HealingGameManager : MonoBehaviour
         if (startedGame && !finishedGame)
         {
             AdjustHealingGauge();
-
-            print(frameCount);
             
             if (frameCount == 60)
             {
