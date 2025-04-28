@@ -232,7 +232,7 @@ public class GameProgressionManager : MonoBehaviour
 
         if (index != -1)
         {
-            audioSourceBGM.volume = 0.6f;
+            audioSourceBGM.volume = index == 1 ? 0.875f : 0.6f;
             audioSourceBGM.UnPause();
 
             audioSourceBGM.pitch = pitch;
