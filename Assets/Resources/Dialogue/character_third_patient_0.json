@@ -36,17 +36,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(He's coughing up blood!!)",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Lilith",
-                "speakerSprite": [
-                    "LilithFrown"
-                ],
-                "dialogue": "(His skin is so pale and his eyes are bloodshot...)",
+                "dialogue": "(His skin is so pale and his eyes are completely bloodshot...)",
                 "textSpeed": 0
             }
         },
@@ -76,7 +66,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(But I have to be careful, or else his symptoms could get much worse.)",
+                "dialogue": "(but I have to be careful, or else his symptoms could get much worse!)",
                 "textSpeed": 0
             },
             "endOfScene": true

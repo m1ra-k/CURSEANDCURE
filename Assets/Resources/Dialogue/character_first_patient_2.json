@@ -76,7 +76,17 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Seems like she's been a lot happier since you've come around!",
+                "dialogue": "You know how much she's been through these past couple years.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "It really does seem like she's been a lot happier since you've come around.",
                 "textSpeed": 0
             }
         },
@@ -134,7 +144,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "What?!",
                 "textSpeed": 0
@@ -144,7 +154,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithNeutral"
+                    "LilithFrown"
                 ],
                 "dialogue": "Seriously, go home and get some rest!",
                 "textSpeed": 0
@@ -156,7 +166,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "But drinking is the best medicine~~",
+                "dialogue": "But drinking is the best medicine~",
                 "textSpeed": 0
             },
             "endOfScene": true

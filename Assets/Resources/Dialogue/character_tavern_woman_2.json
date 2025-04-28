@@ -136,7 +136,7 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "Yes, and because of that I can't walk like you folks can.",
+                "dialogue": "Yes, and because of that, I can't walk the same way you folks can.",
                 "textSpeed": 0
             }
         },
@@ -206,7 +206,7 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "But because of that my friend's been practing her dancing,",
+                "dialogue": "But because of that, my friend's been practicing her dancing,",
                 "textSpeed": 0
             }
         },
@@ -216,7 +216,27 @@
                 "speakerSprite": [
                     "WomanNeutral"
                 ],
-                "dialogue": "to dance on a stage, to make my dream into our dream.",
+                "dialogue": "to dance on a stage,",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "and to make my dream into our dream.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Woman",
+                "speakerSprite": [
+                    "WomanNeutral"
+                ],
+                "dialogue": "But, I just really wish...",
                 "textSpeed": 0
             }
         },

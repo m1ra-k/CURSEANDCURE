@@ -38,6 +38,7 @@ public class GameProgressionManager : MonoBehaviour
 
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
+    private GameObject ana;
 
     public GameObject tutorial;
     private GameObject[] tutorialTexts;
@@ -121,11 +122,14 @@ public class GameProgressionManager : MonoBehaviour
 
                 eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
                 nightObjects = GameObject.FindGameObjectsWithTag("Night");
+                ana = GameObject.FindWithTag("Midnight");
 
                 foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects)
                 {
                     obj.SetActive(false);
                 }
+
+                ana.SetActive(lilithPatientNumber == 3);
 
                 tutorial = GameObject.FindWithTag("Tutorial");
                 tutorialTexts = GameObject.FindGameObjectsWithTag("TutorialText");
@@ -141,6 +145,8 @@ public class GameProgressionManager : MonoBehaviour
                 }
                 tutorial.SetActive(false);
 
+                if (lilithPatientNumber == 3) StartCoroutine(GameProgressionManagerInstance.PlayMusic(-1, fadeSpeed: 1));
+
                 break;
 
             case "HealingGame":
@@ -152,7 +158,8 @@ public class GameProgressionManager : MonoBehaviour
 
                 HealingGameManager = FindObjectOfType<HealingGameManager>();
 
-                if (!HealingGameManager.startedGame && lilithPatientNumber==0)
+                // TODO CLEAN
+                if (lilithPatientNumber == 0)
                 {
                     tutorial.SetActive(true);
                     HealingGameManager.resultText.gameObject.SetActive(false);
@@ -201,13 +208,13 @@ public class GameProgressionManager : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f, float pitch = 0.95f)
+    public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f, float pitch = 0.95f, float fadeSpeed = 0.25f)
     {
         float startVolume = audioSourceBGM.volume;
 
-        for (float t = 0; t < 0.25f; t += Time.deltaTime)
+        for (float t = 0; t < fadeSpeed; t += Time.deltaTime)
         {
-            audioSourceBGM.volume = Mathf.Lerp(startVolume, 0, t / 0.25f);
+            audioSourceBGM.volume = Mathf.Lerp(startVolume, 0, t / fadeSpeed);
             yield return null;
         }
 
@@ -221,20 +228,23 @@ public class GameProgressionManager : MonoBehaviour
             gameObjectToDeactivate.SetActive(false);
         }
 
-        audioSourceBGM.volume = 0.6f;
-        audioSourceBGM.UnPause();
-
-        audioSourceBGM.pitch = pitch;
-
-        yield return new WaitForSeconds(gameWaitTime);
-
-        if (index != currentTrack)
+        if (index != -1)
         {
-            audioSourceBGM.clip = audioClips[index];
-            audioSourceBGM.Play();
+            audioSourceBGM.volume = 0.6f;
+            audioSourceBGM.UnPause();
 
-            currentTrack = index;
-        }
+            audioSourceBGM.pitch = pitch;
+
+            yield return new WaitForSeconds(gameWaitTime);
+
+            if (index != currentTrack)
+            {
+                audioSourceBGM.clip = audioClips[index];
+                audioSourceBGM.Play();
+
+                currentTrack = index;
+            }
+        }   
     }
 
     // TODO: mira; this will need to be reworked a bit

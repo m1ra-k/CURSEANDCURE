@@ -5,6 +5,7 @@ public enum CharacterEnum
 {
     [Description("")]
     None,
+    [Description("???")]
     Ana,
     Boy,
     Girl,

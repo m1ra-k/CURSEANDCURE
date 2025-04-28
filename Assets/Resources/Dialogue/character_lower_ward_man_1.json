@@ -14,7 +14,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "Are you alri-",
                 "textSpeed": 0
@@ -154,7 +154,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "!!!",
                 "textSpeed": 0
@@ -164,7 +164,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "I'll treat you right now!",
                 "textSpeed": 0

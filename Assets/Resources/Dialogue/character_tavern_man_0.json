@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "Drink! Drink! Drink!",
+                "dialogue": "Beer! Beer! Beer!",
                 "textSpeed": 0
             }
         },
@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "You're chanting for yourself.",
+                "dialogue": "You're chanting for yourself...",
                 "textSpeed": 0
             }
         },
@@ -52,21 +52,11 @@
         },
         {
             "baseDialogue": {
-                "character": "Man",
-                "speakerSprite": [
-                    "ManNeutral"
-                ],
-                "dialogue": "*hiccup*",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
                 "character": "Girl",
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "I'm not even old enough to drink!",
+                "dialogue": "But I'm not even old enough to drink!",
                 "textSpeed": 0
             }
         },
@@ -76,7 +66,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "*hiccup* It's just medicine, sweety.",
+                "dialogue": "It'll be aaaaaaaaaaaaalright! *hiccup*",
                 "textSpeed": 0
             }
         },
@@ -86,7 +76,17 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "It'll be alright! *hiccup*",
+                "dialogue": "I won't tell your mooooooooooooooom.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*retches very loudly*",
                 "textSpeed": 0
             }
         },
@@ -106,7 +106,7 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "Let's go home already.",
+                "dialogue": "Come on, let's go home already!",
                 "textSpeed": 0
             }
         },
@@ -126,7 +126,17 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "You should go home and get some rest.",
+                "dialogue": "You should really go home and get some rest.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithFrown"
+                ],
+                "dialogue": "Why are you even still here?",
                 "textSpeed": 0
             }
         },
@@ -146,7 +156,7 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "What are you two talking about?!",
+                "dialogue": "What are you two taaaaaaaaaaalking about?!",
                 "textSpeed": 0
             }
         },
@@ -156,7 +166,17 @@
                 "speakerSprite": [
                     "ManNeutral"
                 ],
-                "dialogue": "The night's still young, haha!",
+                "dialogue": "The night's still young, haaaaaahaaaaaa!",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Man",
+                "speakerSprite": [
+                    "ManNeutral"
+                ],
+                "dialogue": "*vomits*",
                 "textSpeed": 0
             }
         },
@@ -166,7 +186,7 @@
                 "speakerSprite": [
                     "GirlHappy"
                 ],
-                "dialogue": "Dad please!!",
+                "dialogue": "Dad, please!!",
                 "textSpeed": 0
             },
             "endOfScene": true

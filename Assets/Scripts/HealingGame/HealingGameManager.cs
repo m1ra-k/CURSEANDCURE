@@ -28,6 +28,7 @@ public class HealingGameManager : MonoBehaviour
     private RectTransform rangeRectTransform;
 
     [Header("[UI]")]
+    private GameObject[] healingGameUI;
     [SerializeField]
     private AnimationClip[] lilithHealingAnimations;
     // REMOVE
@@ -41,6 +42,9 @@ public class HealingGameManager : MonoBehaviour
     private TMP_FontAsset retroFont;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI resultText;
+    public TextMeshProUGUI timeText;
+    private int frameCount;
+    private int time = 30;
     private float shakeDuration = 0.5f;
     private GameObject minigameArt;
     private Sprite minigameArtSprite;
@@ -56,7 +60,7 @@ public class HealingGameManager : MonoBehaviour
     void Start()
     {
         // TODO REMOVE THIS IS JUST FOR DEBUG
-       // StartCoroutine(DisplayWon());
+        // StartCoroutine(DisplayWon());
 
         // state
         GameProgressionManagerInstance = FindObjectOfType<GameProgressionManager>();
@@ -71,6 +75,9 @@ public class HealingGameManager : MonoBehaviour
         minigameArtSpriteRenderer = minigameArt.GetComponent<SpriteRenderer>();
         minigameArtSprite = minigameArtSpriteRenderer.sprite;
         minigameArtPositionInitial = minigameArt.transform.position;
+
+        healingGameUI = GameObject.FindGameObjectsWithTag("UI");
+        foreach (var hGUI in healingGameUI) hGUI.SetActive(false);
     }
 
     void Update()
@@ -78,6 +85,14 @@ public class HealingGameManager : MonoBehaviour
         if (startedGame && !finishedGame)
         {
             AdjustHealingGauge();
+            
+            if (frameCount == 60)
+            {
+                time--;
+                timeText.text = $"00:{time:D2}";
+                frameCount = 0;
+            }
+            frameCount++;
         }
 
         if (!startedGame && !GameProgressionManagerInstance.tutorial.activeSelf && (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Return)))
@@ -87,6 +102,8 @@ public class HealingGameManager : MonoBehaviour
             StartCoroutine(AdjustForAllHealingRange());
             startedGame = true;
             minigameArtSpriteRenderer.sprite = lilithHealingAnimationStills[1];
+
+            foreach (var hGUI in healingGameUI) hGUI.SetActive(true);
         }
 
         if ($"SCORE: {score}" != cachedScore && score <= 100)
@@ -138,6 +155,8 @@ public class HealingGameManager : MonoBehaviour
             if (round == 3)
             {
                 finishedGame = true;
+
+                timeText.text = "00:00";
 
                 StartCoroutine(score < 80 ? DisplayLost() : DisplayWon());
 

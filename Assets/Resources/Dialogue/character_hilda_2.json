@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "It seems like the infecteds' symptoms are getting worse...",
+                "dialogue": "It seems like the infected's symptoms are getting worse...",
                 "textSpeed": 0
             }
         },
@@ -66,7 +66,17 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "I think a steady treatment will heal them.",
+                "dialogue": "I think a consistent effort and treatment will do the most in healing the affected.",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "It really is all we can do right now.",
                 "textSpeed": 0
             }
         },
@@ -126,7 +136,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "It's great to see the townspeople so lively,",
+                "dialogue": "It's great to see the townspeople so lively, you know,",
                 "textSpeed": 0
             }
         },
@@ -136,7 +146,7 @@
                 "speakerSprite": [
                     "TavernKeeperFrown"
                 ],
-                "dialogue": "you know, with all the grim stuff that's been happening lately.",
+                "dialogue": "with all the grim events that have been happening lately.",
                 "textSpeed": 0
             }
         },
@@ -144,7 +154,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithNeutral"
+                    "LilithFrown"
                 ],
                 "dialogue": "Yeah...",
                 "textSpeed": 0
@@ -176,7 +186,7 @@
                 "speakerSprite": [
                     "TavernKeeperHappy"
                 ],
-                "dialogue": "Finish up your rounds and then you can help me with the drunks, hahaha!!.",
+                "dialogue": "Finish up your rounds for the night, and then you can help me with the drunks, hahaha!",
                 "textSpeed": 0
             }
         },

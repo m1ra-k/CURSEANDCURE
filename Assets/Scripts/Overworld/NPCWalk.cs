@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NPCWalk : MonoBehaviour
@@ -15,15 +16,12 @@ public class NPCWalk : MonoBehaviour
 
     private Vector2 targetPosition;
 
-    private Dictionary<Vector2, string> animationLookup = new Dictionary<Vector2, string>
-    {
-        { Vector2.up, "Male1NPCWalkUp" },
-        { Vector2.down, "Male1NPCWalkDown" },
-        { Vector2.left, "Male1NPCWalkLeft" },
-        { Vector2.right, "Male1NPCWalkRight" }
-    };
-    private string currentAnimation = "Male1NPCWalkUp";
+    public string npcName;
 
+    private Dictionary<Vector2, string> animationLookup;
+    private string currentAnimation;
+
+    [SerializeField]
     private float moveSpeed = 3f;
 
     private bool isWalking = true;
@@ -34,6 +32,16 @@ public class NPCWalk : MonoBehaviour
 
         animator = GetComponent<Animator>();
         SetNextUnitTarget();
+
+        currentAnimation = $"{npcName}WalkLeft";
+
+        animationLookup = new Dictionary<Vector2, string>
+        {
+            { Vector2.up, $"{npcName}WalkUp" },
+            { Vector2.down, $"{npcName}WalkDown" },
+            { Vector2.left, $"{npcName}WalkLeft" },
+            { Vector2.right, $"{npcName}WalkRight" }
+        };
     }
 
     void Update()
@@ -124,7 +132,7 @@ public class NPCWalk : MonoBehaviour
         {
             Vector2 targetSnapPosition = new Vector2(Mathf.Floor(transform.localPosition.x) + 0.5f, Mathf.Floor(transform.localPosition.y) + 0.5f);
             
-            if ((Vector2) transform.localPosition != targetSnapPosition)    transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
+            if ((Vector2) transform.localPosition != targetSnapPosition) transform.localPosition = Vector2.Lerp(transform.localPosition, targetSnapPosition, moveSpeed * 2 * Time.deltaTime);
             
             if (!GameProgressionManagerInstance.currentlyTalking)
             {
@@ -134,6 +142,14 @@ public class NPCWalk : MonoBehaviour
         }
         
         isWalking = !blocked;
+
+        // TODO CLEAN BUT JUST FOR ANA AT THE END
+        if (pathCoordinates.Length == 1 && (Vector2) transform.localPosition == pathCoordinates[0]) 
+        {
+            isWalking = false;
+            animator.Play(currentAnimation, 0, 0f);
+            animator.speed = 0f;
+        }
 
         if (isWalking && animator.speed == 0)  animator.speed = 1f;
     }

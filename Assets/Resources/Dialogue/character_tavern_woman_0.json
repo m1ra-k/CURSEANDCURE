@@ -44,7 +44,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithShocked"
+                    "LilithFrown"
                 ],
                 "dialogue": "What?!",
                 "textSpeed": 0
@@ -167,6 +167,16 @@
                     "LilithNeutral"
                 ],
                 "dialogue": "(That's a good thing for us, haha.)",
+                "textSpeed": 0
+            }
+        },
+        {
+            "baseDialogue": {
+                "character": "Lilith",
+                "speakerSprite": [
+                    "LilithNeutral"
+                ],
+                "dialogue": "(I won't say that though.)",
                 "textSpeed": 0
             }
         },
