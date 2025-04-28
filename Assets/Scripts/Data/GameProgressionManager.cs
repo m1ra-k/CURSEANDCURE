@@ -152,7 +152,7 @@ public class GameProgressionManager : MonoBehaviour
                 break;
 
             case "HealingGame":
-                if (currentTrack == -1) StartCoroutine(PlayMusic(1));
+                if (currentTrack == -1) StartCoroutine(PlayMusic(1, pitch: 0.875f));
 
                 tutorial = GameObject.FindWithTag("Tutorial");
 
@@ -232,7 +232,7 @@ public class GameProgressionManager : MonoBehaviour
 
         if (index != -1)
         {
-            audioSourceBGM.volume = index == 1 ? 0.875f : 0.6f;
+            audioSourceBGM.volume = 0.6f;
             audioSourceBGM.UnPause();
 
             audioSourceBGM.pitch = pitch;
