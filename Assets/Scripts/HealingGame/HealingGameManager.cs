@@ -156,6 +156,8 @@ public class HealingGameManager : MonoBehaviour
             {
                 finishedGame = true;
 
+                timeText.text = "00:00";
+
                 StartCoroutine(score < 80 ? DisplayLost() : DisplayWon());
 
                 break;
