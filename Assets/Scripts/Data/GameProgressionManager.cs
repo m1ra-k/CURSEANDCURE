@@ -38,7 +38,9 @@ public class GameProgressionManager : MonoBehaviour
 
     private GameObject[] eveningObjects;
     private GameObject[] nightObjects;
-    private GameObject lastPatient;
+    private GameObject[] lateNightObjects;
+    // SUPER HARDCODED TODO REMOVE
+    public GameObject noOneHere;
     private GameObject ana;
 
     public GameObject tutorial;
@@ -85,6 +87,10 @@ public class GameProgressionManager : MonoBehaviour
         // currentTrack = -1;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        // DEBUG ONLY
+        // progressionSystem.SetFlag("firstHealed", true);
+        // progressionSystem.SetFlag("secondHealed", true);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -123,13 +129,12 @@ public class GameProgressionManager : MonoBehaviour
 
                 eveningObjects = GameObject.FindGameObjectsWithTag("Evening");
                 nightObjects = GameObject.FindGameObjectsWithTag("Night");
-                lastPatient = GameObject.FindWithTag("LateNight");
+                lateNightObjects = GameObject.FindGameObjectsWithTag("LateNight");
                 ana = GameObject.FindWithTag("Midnight");
 
-                foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects)
-                {
-                    obj.SetActive(false);
-                }
+                foreach (GameObject obj in lilithPatientNumber < 2 ? nightObjects : eveningObjects) obj.SetActive(false);
+
+                foreach (GameObject obj in lateNightObjects) obj.SetActive(progressionSystem.GetFlag("HildaNightTavern"));
 
                 ana.SetActive(lilithPatientNumber == 3);
 
@@ -149,10 +154,12 @@ public class GameProgressionManager : MonoBehaviour
 
                 if (lilithPatientNumber == 3) StartCoroutine(GameProgressionManagerInstance.PlayMusic(-1, fadeSpeed: 1));
 
+                CheckFlagsSet();
+
                 break;
 
             case "HealingGame":
-                if (currentTrack == -1) StartCoroutine(PlayMusic(1));
+                if (currentTrack == -1) StartCoroutine(PlayMusic(1, pitch: 0.875f));
 
                 tutorial = GameObject.FindWithTag("Tutorial");
 
@@ -208,6 +215,17 @@ public class GameProgressionManager : MonoBehaviour
         {
             StartCoroutine(PlayMusic(2));
         }
+    }
+
+    public void CheckFlagsSet()
+    {
+        // TODO FUTURE IMPLEMTATION, SUPER HARDCODED
+        if (progressionSystem.GetFlag("HildaNightTavern"))
+        {
+            foreach (GameObject obj in lateNightObjects) obj.SetActive(true);
+            // SUPER HARDCODED
+            GameObject.Find("NoOneHere")?.SetActive(false);
+        }   
     }
 
     public IEnumerator PlayMusic(int index, float waitTime = 0.5f, GameObject gameObjectToDeactivate = null, float gameWaitTime = 0f, float pitch = 0.95f, float fadeSpeed = 0.25f)

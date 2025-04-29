@@ -2,21 +2,11 @@
     "dialogues": [
         {
             "baseDialogue": {
-                "character": "Boy",
+                "character": "Lilith",
                 "speakerSprite": [
-                    "BoyHappy"
+                    "LilithNeutral"
                 ],
-                "dialogue": "Urgh!!",
-                "textSpeed": 0
-            }
-        },
-        {
-            "baseDialogue": {
-                "character": "Boy",
-                "speakerSprite": [
-                    "BoyHappy"
-                ],
-                "dialogue": "Blehhh!",
+                "dialogue": "The last patient should be waiting here, according to Hilda...",
                 "textSpeed": 0
             }
         },
@@ -26,7 +16,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(That sounds like it's coming from the park!!)",
+                "dialogue": "But no one's here right now.",
                 "textSpeed": 0
             }
         },
@@ -36,7 +26,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "(That must be the last patient...)",
+                "dialogue": "I hope he's alright...",
                 "textSpeed": 0
             }
         },
@@ -44,9 +34,9 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithFrown"
+                    "LilithNeutral"
                 ],
-                "dialogue": "(I should hurry!)",
+                "dialogue": "I guess I'll stop by the tavern to chat with Hilda while I wait for him.",
                 "textSpeed": 0
             },
             "endOfScene": true

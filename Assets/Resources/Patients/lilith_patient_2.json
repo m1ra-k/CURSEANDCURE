@@ -1,6 +1,6 @@
 {
     "healingRanges": [
-        { "yPosition": 30, "height": 180},
+        { "yPosition": 30, "height": 160},
         { "yPosition": -100, "height": 120},
         { "yPosition": -140, "height": 100}
     ]
