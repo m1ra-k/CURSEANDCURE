@@ -73,6 +73,8 @@ public class DoorBehavior : MonoBehaviour
         GameProgressionManagerInstance.fadeEffect.FadeOut(GameProgressionManagerInstance.blackTransition, 0.5f);
         
         yield return new WaitForSeconds(0.5f);
+
+        GameProgressionManagerInstance.CheckFlagsSet();
         
         lilithGridMovement.currentlyDoorTransitioning = false;
     }

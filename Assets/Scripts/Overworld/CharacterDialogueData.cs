@@ -10,6 +10,7 @@ public class CharacterDialogueData : MonoBehaviour
     public int patient = -1;
     public bool postHealingGame;
     public List<string> flags;
+    public List<string> flagsToSet;
     public int characterDialoguesIndex;
     public List<TextAsset> characterDialogues;
     
@@ -66,6 +67,12 @@ public class CharacterDialogueData : MonoBehaviour
                 GameProgressionManagerInstance.DialogueSystemManager.delay = false;
 
                 GameProgressionManagerInstance.lastTalkedNPC = gameObject.name;
+
+                // TODO FOR FUTURE IMPLEMNTATIONS, SUPER HARDCODED
+                if (flagsToSet.Count > 0 &&  flagsToSet[0][0] == '2')
+                {
+                    GameProgressionManagerInstance.progressionSystem.SetFlag(flagsToSet[0].Substring(1), true);
+                }
 
                 // other dialogue after getting healed (usually). plays after thank you cutscene.
                 if (postHealingGame)
