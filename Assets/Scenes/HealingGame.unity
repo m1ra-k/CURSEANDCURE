@@ -703,7 +703,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -15, y: 80}
-  m_SizeDelta: {x: 435, y: 50}
+  m_SizeDelta: {x: 545, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268945789
 MonoBehaviour:
@@ -729,13 +729,13 @@ MonoBehaviour:
     ''tainted'' blood from ill patients.
 
 
-    press [Z] to successfully activate
-    her ability, and keep the bat icon within range of the darker area to ensure
-    precision in her action.
+    press [Z] or [ENTER] to increase the
+    bloodsucking gauge with her ability, and keep the bat icon within range of the
+    darker area to ensure precision in her action; the gauge will decrease otherwise.
 
 
-    blood quality (score) >= 80 is required to clear
-    this stage!'
+    blood
+    quality (score) >= 80 is required to clear this stage!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e37ae4858b2a08f47b1b17426b96140f, type: 2}
   m_sharedMaterial: {fileID: 6268582649035079504, guid: e37ae4858b2a08f47b1b17426b96140f, type: 2}
