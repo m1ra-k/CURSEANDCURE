@@ -41767,8 +41767,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1327108586}
   - {fileID: 1704572836}
+  - {fileID: 1327108586}
   - {fileID: 234544387}
   - {fileID: 384324603}
   - {fileID: 1274546884}
@@ -43310,6 +43310,22 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: faces.Array.data[0]
+      value: 
+      objectReference: {fileID: -895972662, guid: 3ef24c34386000d4e864a6c312ec112c, type: 3}
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: faces.Array.data[1]
+      value: 
+      objectReference: {fileID: -2137969297, guid: 3ef24c34386000d4e864a6c312ec112c, type: 3}
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: faces.Array.data[2]
+      value: 
+      objectReference: {fileID: 1263737701, guid: 3ef24c34386000d4e864a6c312ec112c, type: 3}
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: faces.Array.data[3]
+      value: 
+      objectReference: {fileID: -2131700714, guid: 3ef24c34386000d4e864a6c312ec112c, type: 3}
+    - target: {fileID: 1353190854210564566, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
       propertyPath: flags.Array.data[0]
       value: firstHealed
       objectReference: {fileID: 0}
@@ -43345,6 +43361,10 @@ PrefabInstance:
       propertyPath: characterDialogues.Array.data[3]
       value: 
       objectReference: {fileID: 4900000, guid: 7dac945e42de4234a8c0e9f1bb44eb70, type: 3}
+    - target: {fileID: 1548456828795602043, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2137969297, guid: 3ef24c34386000d4e864a6c312ec112c, type: 3}
     - target: {fileID: 5465163243255384806, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
       propertyPath: m_Name
       value: HildaNPC
@@ -43388,6 +43408,14 @@ PrefabInstance:
     - target: {fileID: 7843016994950978454, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103756190318337458, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103756190318337458, guid: ff650885dd2178b4795da5a22dfa989a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
