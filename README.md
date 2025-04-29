@@ -1,4 +1,8 @@
-# 🩸CURSE AND CURE💉
+# 🩸*CURSE AND CURE*💉
+
+## Play!
+
+You can play the WebGL build of *CURSE AND CURE* at this [link](https://m1ra-k.github.io/play-CURSEANDCURE/)!
 
 ## Credits
 - Mira Khan (ama9tk)
@@ -45,7 +49,7 @@ A devout nun from the upper ward. Desperate to prove her worth to the church who
 A mysterious vampire from the lower ward. Her identity is only known by the people of the lower ward, who accept her and refute the anti-vampire propaganda spread by the church. She was taken in by the tavern keeper at a young age and has since then used her blood-sucking abilities to drain tainted blood from her patients.
 
 ## Things You May Have Missed...
---> We *really* wanted to focus on the worldbuilding aspect of the game, so talk to all the characters you see to learn more about the lore of CURSE AND CURE!
+--> We *really* wanted to focus on the worldbuilding aspect of the game, so talk to all the characters you see to learn more about the lore of *CURSE AND CURE*!
 
 --> We did our best to make the dialogue fun and silly (an absolute must). Everyone in the world has at least one dialogue, and different flags are set for more main events (namely patient healing) that make them switch between multiple dialogues. For example, Hilda will say different stuff depending on what part of the story you're at! Always talk!
 
@@ -69,5 +73,5 @@ The overworld character sprites heavily reference the video game *OMORI*'s.
 
 Omocat, LLC. (2020). OMORI [Video game]. OMOCAT, LLC. https://omori-game.com
 
-All code is our own.
+All code and other drawn assets are our own.
 
