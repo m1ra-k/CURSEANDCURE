@@ -69,7 +69,7 @@ public class CharacterDialogueData : MonoBehaviour
                 GameProgressionManagerInstance.lastTalkedNPC = gameObject.name;
 
                 // TODO FOR FUTURE IMPLEMNTATIONS, SUPER HARDCODED
-                if (flagsToSet.Count > 0 &&  flagsToSet[0][0] == characterDialoguesIndex)
+                if (flagsToSet.Count > 0 &&  flagsToSet[0][0] == '2' && characterDialoguesIndex == 2)
                 {
                     GameProgressionManagerInstance.progressionSystem.SetFlag(flagsToSet[0].Substring(1), true);
                 }
