@@ -4,7 +4,7 @@
 
 You can play the WebGL build of *CURSE AND CURE* at this [link](https://m1ra-k.github.io/play-CURSEANDCURE/)!
 
-*At the time, we believe that the WebGL should work on both Chrome and Mac. However, if there is a problem, please open the Unity project!
+*At the time, we believe that the WebGL should work on both Chrome and Safari. However, if there is a problem, please open the Unity project!
 
 ## Credits
 - Mira Khan (ama9tk)
