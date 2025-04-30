@@ -26,7 +26,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "I think I'll pass tonight.",
+                "dialogue": "I... I think I'll pass tonight.",
                 "textSpeed": 0
             }
         },
@@ -44,7 +44,7 @@
             "baseDialogue": {
                 "character": "Lilith",
                 "speakerSprite": [
-                    "LilithNeutral"
+                    "LilithHappy"
                 ],
                 "dialogue": "I'm sorry, I have more patients to see tonight.",
                 "textSpeed": 0

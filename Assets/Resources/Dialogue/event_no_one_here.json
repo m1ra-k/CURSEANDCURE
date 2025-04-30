@@ -6,7 +6,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "The last patient should be waiting here, according to Hilda...",
+                "dialogue": "The last patient should be waiting here, according to Miss Hilda...",
                 "textSpeed": 0
             }
         },
@@ -36,7 +36,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "I guess I'll stop by the tavern to chat with Hilda while I wait for him.",
+                "dialogue": "I guess I'll stop by the tavern to chat with Miss Hilda while I wait for him.",
                 "textSpeed": 0
             },
             "endOfScene": true

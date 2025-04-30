@@ -107,7 +107,7 @@ public class AutomaticDialogueData : MonoBehaviour
     {
         foreach (var triggerPosition in triggerPositions)
         {
-            if (triggerPosition == lilithPosition && (repeated || !triggeredOnce))
+            if (Vector2.Distance(GameProgressionManagerInstance.lilithPosition, triggerPosition) < 0.05f  && (repeated || !triggeredOnce))
             {
                 setPosition = triggerPosition;
                 return true;

@@ -1,0 +1,15 @@
+{
+    "dialogues": [
+        {
+            "baseDialogue": {
+                "character": "System",
+                "speakerSprite": [
+                    "Transparent"
+                ],
+                "dialogue": "The sign reads 'LOWER WARD, DIVISION 7'.",
+                "textSpeed": 0
+            },   
+            "endOfScene": true
+        }
+    ]
+}

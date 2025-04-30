@@ -16,7 +16,7 @@
                 "speakerSprite": [
                     "LilithHappy"
                 ],
-                "dialogue": "Hilda, you look especially well today.",
+                "dialogue": "Miss Hilda, you look especially well today.",
                 "textSpeed": 0
             }
         },
@@ -316,7 +316,7 @@
                 "speakerSprite": [
                     "LilithFrown"
                 ],
-                "dialogue": "That's right... Hilda, please be safe too...",
+                "dialogue": "That's right... Miss Hilda, please be safe too...",
                 "textSpeed": 0
             }
         },

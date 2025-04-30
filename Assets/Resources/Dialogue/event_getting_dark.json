@@ -46,7 +46,7 @@
                 "speakerSprite": [
                     "LilithNeutral"
                 ],
-                "dialogue": "(I can check in with Hilda and help around the tavern while I'm at it.)",
+                "dialogue": "(I can check in with Miss Hilda and help around the tavern while I'm at it.)",
                 "textSpeed": 0
             },
             "endOfScene": true

@@ -48,7 +48,7 @@ public class DoorBehavior : MonoBehaviour
 
     private void CheckDoor(Vector2 door, Vector2 offsetDoor)
     {
-        if (GameProgressionManagerInstance.lilithPosition == door && !lilithGridMovement.currentlyDoorTransitioning)
+        if (Vector2.Distance(GameProgressionManagerInstance.lilithPosition, door) < 0.05f && !lilithGridMovement.currentlyDoorTransitioning)
         {
             lilithGridMovement.currentlyDoorTransitioning = true;
             StartCoroutine(DoorTransition(offsetDoor == offsetDoorA ? doorBLocation : doorALocation, offsetDoor));
