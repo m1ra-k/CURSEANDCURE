@@ -4,6 +4,8 @@
 
 You can play the WebGL build of *CURSE AND CURE* at this [link](https://m1ra-k.github.io/play-CURSEANDCURE/)!
 
+*At the time, we believe that the WebGL should work on both Chrome and Mac. However, if there is a problem, please open the Unity project!
+
 ## Credits
 - Mira Khan (ama9tk)
     - Concept, Game Progression, Healing Game, Dialogue System, Overworld Transitions, Character Art, Background Sprites, Music, Dialogue Script, Animation Logic
@@ -22,11 +24,11 @@ Ana, a devout nun, and Lilith, a mysterious vampire, find their fates intertwine
 
 This is meant to be the first part of the game, specifically named LILITH: Prologue. Chronologically, this part is supposed to be played after (and optionally) ANA: Prologue, but due to the requirements of the project, we decided to implement our game as the prologue of the actual vampire instead. The game's original design was to feature two alternating protagonists (one during the day and the other during night) and a branching narrative, heavily themed around moral philosophy, good and bad, and curse and cure.
 
-## Play!
+## How to Play
 
 This game is reminiscent of RPG Maker games, as a lot of our favorite games were made in the engine. For that reason, it follows a similar style in terms of execution.
 
-The Windows/Mac builds are located in the Executables folder. You can also play it in the editor (using Unity v2022.3.16f1), which may be better, but make sure to set the screen to 800x720.
+The WebGL is linked above. You can also play the game in the editor (using Unity v2022.3.16f1), which may be better, but make sure to set the screen to 800x720.
 
 Menu
 - Z/Enter - start game
