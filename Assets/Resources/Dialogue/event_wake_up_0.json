@@ -4,7 +4,7 @@
             "baseDialogue": {
                 "character": "Unknown",
                 "speakerSprite": [
-                    "Transparent"
+                    "TavernKeeperHappyGray"
                 ],
                 "dialogue": "Lilith! Wake up, the sun's almost set!",
                 "textSpeed": 0

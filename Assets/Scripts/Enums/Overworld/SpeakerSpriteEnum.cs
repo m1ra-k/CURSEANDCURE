@@ -12,6 +12,7 @@ public enum SpeakerSpriteEnum
     LilithShocked,
     ManNeutral,
     TavernKeeperHappy,
+    TavernKeeperHappyGray,
     TavernKeeperFrown,
     WomanNeutral
 }
